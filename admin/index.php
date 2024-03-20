@@ -29,6 +29,8 @@ match ($act) {
 
     'overview' => overListAll(),
 
+    'setting' => settingListAll(),
+
 //     // CRUD Category
 //     'categories' => categoryListAll(),
 //     'category-detail' => categoryShowOne($_GET['id']),

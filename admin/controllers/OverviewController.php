@@ -2,7 +2,7 @@
 
 function overListAll()
 {
-    $title = 'Danh sách User';
+    $title = 'Báo cáo thông tin';
     $view = 'overview/index';
     $script = 'datetime';
     $style = 'datatable';

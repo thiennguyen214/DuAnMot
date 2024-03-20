@@ -13,9 +13,7 @@
 
             <div class="tile">
 
-                <h3 class="tile-title">
-                    <?= $title ?>
-                </h3>
+                <h3 class="tile-title">Tạo mới người dùng</h3>
                 <div class="tile-body">
                     <!-- <div class="row element-button">
                         <div class="col-sm-2">
