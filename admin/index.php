@@ -29,6 +29,14 @@ match ($act) {
 
     'overview' => overListAll(),
 
+
+    //  / CRUD Category
+    'categories' => categoryListAll(),
+    //     'category-detail' => categoryShowOne($_GET['id']),
+    'category-update' => categoryUpdate($_GET['id']),
+    'category-create' => categoryCreate(),
+    'category-delete' => categoryDelete($_GET['id']),
+
     'setting' => settingListAll(),
 
 //     // CRUD Category
@@ -38,17 +46,18 @@ match ($act) {
 //     'category-update' => categoryUpdate($_GET['id']),
 //     'category-delete' => categoryDelete($_GET['id']),
 
-//     // CRUD tag
+
+    //     // CRUD tag
 //     'tags' => tagListAll(),
 //     'tag-detail' => tagShowOne($_GET['id']),
 //     'tag-create' => tagCreate(),
 //     'tag-update' => tagUpdate($_GET['id']),
 //     'tag-delete' => tagDelete($_GET['id']),
 
-//     // CRUD author
-//     'authors' => authorListAll(),
+    // CRUD products
+    'products' => productListAll(),
 //     'author-detail' => authorShowOne($_GET['id']),
-//     'author-create' => authorCreate(),
+    'product-create' => productCreate(),
 //     'author-update' => authorUpdate($_GET['id']),
 //     'author-delete' => authorDelete($_GET['id']),
 

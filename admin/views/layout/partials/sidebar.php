@@ -20,7 +20,7 @@
         </li>
         <li>
             <a class="app-menu__item <?= (isset ($active3)) ? $active3 : null ?>"
-                href="<?= BASE_URL_ADMIN . '?act=users' ?>"><i class='app-menu__icon bx bx-purchase-tag-alt'>
+                href="<?= BASE_URL_ADMIN . '?act=products' ?>"><i class='app-menu__icon bx bx-purchase-tag-alt'>
                 </i>
                 <span class="app-menu__label">
                     Quản lý sản phẩm</span>
