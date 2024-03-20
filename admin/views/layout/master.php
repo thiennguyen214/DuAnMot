@@ -48,7 +48,9 @@
     <?php require_once PATH_VIEW_ADMIN . $view . '.php'; ?>
 
     <!-- footer-->
-    <?php require_once PATH_VIEW_ADMIN . "layout/partials/footer.php"; ?>
+    <?php
+    require_once PATH_VIEW_ADMIN . "layout/partials/footer.php";
+    ?>
 
 
 

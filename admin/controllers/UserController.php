@@ -12,6 +12,7 @@ function userListAll()
 
     $users = listAll('users');
 
+
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
 
@@ -33,9 +34,9 @@ function userCreate()
 {
     $title = 'Thêm mới User';
     $view = 'users/create';
-    $style2 = 'form';
+    // $style2 = 'form';
     $script = 'datetime';
-    $style = 'datatable';
+    // $style = 'datatable';
     $script2 = 'create';
     $script3 = 'create2';
     $active2 = 'active';
@@ -157,13 +158,12 @@ function userUpdate($id)
         $ImageUpload = $_FILES['ImageUpload'] ?? null;
 
         // Kiểm tra xem có tệp tin được tải lên hay không
-        if (!empty ($ImageUpload)) {
+        if (!empty ($ImageUpload) && $ImageUpload['size'] > 0) {
             // Nếu có, thực hiện việc tải lên và cập nhật dữ liệu
             $data['img'] = upload_file($ImageUpload, 'uploads/user/');
         }
+
         update('users', $id, $data);
-
-
         // Kiểm tra điều kiện để xóa tệp tin cũ (nếu cần)
         if (
             !empty ($ImageUpload) && // Có tệp tin được tải lên
@@ -175,8 +175,8 @@ function userUpdate($id)
         }
 
 
-        $_SESSION['success'] = 'Thao tác thành công!';
-        header('Location: ' . BASE_URL_ADMIN . '?act=user-update&id=' . $id);
+        // $_SESSION['success'] = 'Thao tác thành công!';
+        header('Location: ' . BASE_URL_ADMIN . '?act=users');
         exit();
     }
 
@@ -232,6 +232,7 @@ function validateUserUpdate($id, $data)
         header('Location: ' . BASE_URL_ADMIN . '?act=user-update&id=' . $id);
         exit();
     }
+
 }
 
 function userDelete($id)

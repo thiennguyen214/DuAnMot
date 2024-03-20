@@ -12,7 +12,7 @@ define('PATH_VIEW_ADMIN', __DIR__ . '/../admin/views/');
 define('PATH_UPLOAD', __DIR__ . '/../');
 
 define('BASE_URL', 'http://localhost/DuAnMot/');
-define('BASE_URL_ADMIN', 'http://localhost/DuAnMot/');
+define('BASE_URL_ADMIN', 'http://localhost/DuAnMot/admin/');
 // echo PATH_CONTROLLER;
 // die;
 define('DB_HOST', 'localhost');

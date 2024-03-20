@@ -27,6 +27,8 @@ match ($act) {
     'user-update' => userUpdate($_GET['id']),
     'user-delete' => userDelete($_GET['id']),
 
+    'overview' => overListAll(),
+
 //     // CRUD Category
 //     'categories' => categoryListAll(),
 //     'category-detail' => categoryShowOne($_GET['id']),
