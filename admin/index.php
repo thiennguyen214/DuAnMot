@@ -29,12 +29,23 @@ match ($act) {
 
     'overview' => overListAll(),
 
+
     //  / CRUD Category
     'categories' => categoryListAll(),
     //     'category-detail' => categoryShowOne($_GET['id']),
     'category-update' => categoryUpdate($_GET['id']),
     'category-create' => categoryCreate(),
     'category-delete' => categoryDelete($_GET['id']),
+
+    'setting' => settingListAll(),
+
+//     // CRUD Category
+//     'categories' => categoryListAll(),
+//     'category-detail' => categoryShowOne($_GET['id']),
+//     'category-create' => categoryCreate(),
+//     'category-update' => categoryUpdate($_GET['id']),
+//     'category-delete' => categoryDelete($_GET['id']),
+
 
     //     // CRUD tag
 //     'tags' => tagListAll(),

@@ -84,7 +84,7 @@
                                 <th>Mã sản phẩm</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Giá tiền</th>
-                                <th>Danh mục</th>
+                                <th>Loại sản phẩm</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -93,31 +93,6 @@
                                 <td>Bàn ăn gỗ Theresa</td>
                                 <td>5.600.000 đ</td>
                                 <td>Bàn ăn</td>
-                            </tr>
-                            <tr>
-                                <td>62304003</td>
-                                <td>Bàn ăn Vitali mặt đá</td>
-                                <td>33.235.000 đ</td>
-                                <td>Bàn ăn</td>
-                            </tr>
-                            <tr>
-                                <td>72109004</td>
-                                <td>Ghế làm việc Zuno</td>
-                                <td>3.800.000 đ</td>
-                                <td>Ghế gỗ</td>
-                            </tr>
-                            <tr>
-                                <td>83826226</td>
-                                <td>Tủ ly - tủ bát</td>
-                                <td>2.450.000 đ</td>
-                                <td>Tủ</td>
-                            </tr>
-                            <tr>
-                                <td>71304041</td>
-                                <td>Bàn ăn mở rộng Vegas</td>
-                                <td>21.550.000 đ</td>
-                                <td>Bàn thông minh</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -148,42 +123,7 @@
                                 <td>Ghế làm việc Zuno, Bàn ăn gỗ Theresa</td>
                                 <td>2 sản phẩm</td>
                                 <td>9.400.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>MĐ8265</td>
-                                <td>Nguyễn Thị Ngọc Cẩm</td>
-                                <td>Ghế ăn gỗ Lucy màu trắng</td>
-                                <td>1 sản phẩm</td>
-                                <td>3.800.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>MT9835</td>
-                                <td>Đặng Hoàng Phúc</td>
-                                <td>Giường ngủ Jimmy, Bàn ăn mở rộng cao cấp Dolas, Ghế làm việc Zuno</td>
-                                <td>3 sản phẩm</td>
-                                <td>40.650.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>ER3835</td>
-                                <td>Nguyễn Thị Mỹ Yến</td>
-                                <td>Bàn ăn mở rộng Gepa</td>
-                                <td>1 sản phẩm</td>
-                                <td>16.770.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>AL3947</td>
-                                <td>Phạm Thị Ngọc</td>
-                                <td>Bàn ăn Vitali mặt đá, Ghế ăn gỗ Lucy màu trắng</td>
-                                <td>2 sản phẩm</td>
-                                <td>19.770.000 đ</td>
-                            </tr>
-                            <tr>
-                                <td>QY8723</td>
-                                <td>Ngô Thái An</td>
-                                <td>Giường ngủ Kara 1.6x2m</td>
-                                <td>1 sản phẩm</td>
-                                <td>14.500.000 đ</td>
-                            </tr>
+
                             <tr>
                                 <th colspan="4">Tổng cộng:</th>
                                 <td>104.890.000 đ</td>
@@ -256,22 +196,7 @@
                                 <td>0926737168</td>
                                 <td>Bán hàng</td>
                             </tr>
-                            <tr>
-                                <td>Trần Khả Ái</td>
-                                <td>6 Nguyễn Lương Bằng, Tân Phú, Quận 7, Hồ Chí Minh</td>
-                                <td>22/12/1999</td>
-                                <td>Nữ</td>
-                                <td>0931342432</td>
-                                <td>Bán hàng</td>
-                            </tr>
-                            <tr>
-                                <td>Nguyễn Đặng Trọng Nhân</td>
-                                <td>59C Nguyễn Đình Chiểu, Quận 3, Hồ Chí Minh </td>
-                                <td>23/07/1996</td>
-                                <td>Nam</td>
-                                <td>0846881155</td>
-                                <td>Dịch vụ</td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
