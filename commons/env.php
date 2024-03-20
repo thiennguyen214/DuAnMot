@@ -11,8 +11,8 @@ define('PATH_VIEW_ADMIN', __DIR__ . '/../admin/views/');
 
 define('PATH_UPLOAD', __DIR__ . '/../');
 
-define('BASE_URL', 'http://localhost/duan1/MVC_basic/');
-define('BASE_URL_ADMIN', 'http://localhost/duan1/MVC_basic/admin/');
+define('BASE_URL', 'http://localhost/DuAnMot/');
+define('BASE_URL_ADMIN', 'http://localhost/DuAnMot/');
 // echo PATH_CONTROLLER;
 // die;
 define('DB_HOST', 'localhost');
