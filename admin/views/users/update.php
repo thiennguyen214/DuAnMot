@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group  col-md-4">
                             <label class="control-label">Số điện thoại</label>
-                            <input class="form-control" type="number" name="tell" value="<?= $user['tell'] ?>">
+                            <input class="form-control" type="tel" name="tell" value="<?= $user['tell'] ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Địa chỉ</label>

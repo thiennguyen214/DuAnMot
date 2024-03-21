@@ -29,8 +29,10 @@ match ($act) {
 
     'overview' => overListAll(),
 
-    'setting' => settingListAll(),
-
+    'settings' => settingListAll(),
+    'setting-create' => settingCreate(),
+    'setting-update' => settingUpdate($_GET['id']),
+    'setting-delete' => settingDelete($_GET['id']),
 //     // CRUD Category
 //     'categories' => categoryListAll(),
 //     'category-detail' => categoryShowOne($_GET['id']),

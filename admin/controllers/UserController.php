@@ -34,7 +34,7 @@ function userCreate()
 {
     $title = 'Thêm mới User';
     $view = 'users/create';
-    // $style2 = 'form';
+    $style2 = 'form';
     $script = 'datetime';
     // $style = 'datatable';
     $script2 = 'create';

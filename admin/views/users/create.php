@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Địa chỉ email</label>
-                            <input class="form-control" type="text" name="email">
+                            <input class="form-control" type="email" name="email">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Password</label>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="form-group  col-md-4">
                             <label class="control-label">Số điện thoại</label>
-                            <input class="form-control" type="number" name="tell">
+                            <input class="form-control" type="tel" name="tell">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Địa chỉ</label>
@@ -83,7 +83,6 @@
                                 <p style="clear:both"></p>
                             </div>
                         </div>
-
                         <button class="btn btn-save" type="submit" name="add">Thêm mới</button>
                         <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=users' ?>">Hủy bỏ</a>
                     </form>

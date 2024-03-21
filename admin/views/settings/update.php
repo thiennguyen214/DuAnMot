@@ -31,18 +31,18 @@
                     <form class="row" action="" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-4">
                             <label class="control-label">Trường dữ liệu</label>
-                            <input class="form-control" type="text" name="key">
+                            <input class="form-control" type="text" name="key" value="<?= $setting['key'] ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Dữ liệu</label>
-                            <input class="form-control" type="text" name="value">
+                            <input class="form-control" type="text" name="value" value="<?= $setting['value'] ?>">
                         </div>
 
                         <div class="form-group col-md-12">
 
                         </div>
 
-                        <button class="btn btn-save" type="submit" name="add">Thêm mới</button>
+                        <button class="btn btn-save" type="submit" name="add">Cập nhật</button>
                         <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=settings' ?>">Hủy bỏ</a>
                     </form>
                 </div>

@@ -1,37 +1,37 @@
 <?php
 
-function settingListAll()
+function oderListAll()
 {
-    $title = 'Danh sách Setting';
-    $view = 'settings/index';
+    $title = 'Danh sách oder';
+    $view = 'oders/index';
     $script = 'datetime';
     $style = 'datatable';
     // $style2 = 'form';
     $script3 = 'table';
     $active6 = 'active';
 
-    $settings = listAll('settings');
+    $oders = listAll('oders');
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
-function settingShowOne($id)
+function oderShowOne($id)
 {
-    $setting = showOne('settings', $id);
+    $oder = showOne('oders', $id);
 
-    if (empty ($setting)) {
+    if (empty ($oder)) {
         e404();
     }
 
-    $title = 'Chi tiết setting: ' . $setting['name'];
-    $view = 'settings/show';
+    $title = 'Chi tiết oder: ' . $oder['name'];
+    $view = 'oders/show';
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
 
-function settingCreate()
+function oderCreate()
 {
-    $title = 'Thêm mới Setting';
-    $view = 'settings/create';
+    $title = 'Thêm mới oder';
+    $view = 'oders/create';
     $script = 'datetime';
     $active6 = 'active';
 
@@ -44,19 +44,19 @@ function settingCreate()
             "value" => $_POST['value'] ?? null,
         ];
 
-        validatesettingCreate($data);
-        insert('settings', $data);
+        validateoderCreate($data);
+        insert('oders', $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
 
-        header('Location: ' . BASE_URL_ADMIN . '?act=settings');
+        header('Location: ' . BASE_URL_ADMIN . '?act=oders');
         exit();
     }
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
 
-function validatesettingCreate($data)
+function validateoderCreate($data)
 {
     // name - bắt buộc, độ dài tối đa 50 ký tự
     // email - bắt buộc, phải là email, không được trùng
@@ -77,21 +77,21 @@ function validatesettingCreate($data)
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
-        header('Location: ' . BASE_URL_ADMIN . '?act=setting-create');
+        header('Location: ' . BASE_URL_ADMIN . '?act=oder-create');
         exit();
     }
 }
 
-function settingUpdate($id)
+function oderUpdate($id)
 {
-    $setting = showOne('settings', $id);
+    $oder = showOne('oders', $id);
 
-    if (empty ($setting)) {
+    if (empty ($oder)) {
         e404();
     }
 
-    $title = 'Cập nhật setting: ' . $setting['key'];
-    $view = 'settings/update';
+    $title = 'Cập nhật oder: ' . $oder['key'];
+    $view = 'oders/update';
     $script = 'datetime';
     $active6 = 'active';
 
@@ -100,17 +100,17 @@ function settingUpdate($id)
             "key" => $_POST['key'] ?? null,
             "value" => $_POST['value'] ?? null,
         ];
-        update('settings', $id, $data);
-        validatesettingUpdate($id, $data);
+        update('oders', $id, $data);
+        validateoderUpdate($id, $data);
         // $_SESSION['success'] = 'Thao tác thành công!';
-        header('Location: ' . BASE_URL_ADMIN . '?act=settings');
+        header('Location: ' . BASE_URL_ADMIN . '?act=oders');
         exit();
     }
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
 
-function validatesettingUpdate($id, $data)
+function validateoderUpdate($id, $data)
 {
     $errors = [];
 
@@ -125,18 +125,18 @@ function validatesettingUpdate($id, $data)
     if (!empty ($errors)) {
         $_SESSION['errors'] = $errors;
 
-        header('Location: ' . BASE_URL_ADMIN . '?act=setting-update&id=' . $id);
+        header('Location: ' . BASE_URL_ADMIN . '?act=oder-update&id=' . $id);
         exit();
     }
 
 }
 
-function settingDelete($id)
+function oderDelete($id)
 {
-    delete2('settings', $id);
+    delete2('oders', $id);
 
     $_SESSION['success'] = 'Thao tác thành công!';
 
-    header('Location: ' . BASE_URL_ADMIN . '?act=settings');
+    header('Location: ' . BASE_URL_ADMIN . '?act=oders');
     exit();
 }

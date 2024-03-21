@@ -35,7 +35,7 @@
                     thu</span></a>
         </li>
         <li><a class="app-menu__item <?= (isset ($active6)) ? $active6 : null ?>"
-                href="<?= BASE_URL_ADMIN . '?act=setting' ?>"><i class='app-menu__icon bx bx-cog'></i><span
+                href="<?= BASE_URL_ADMIN . '?act=settings' ?>"><i class='app-menu__icon bx bx-cog'></i><span
                     class="app-menu__label">Setting</span></a></li>
     </ul>
 </aside>
