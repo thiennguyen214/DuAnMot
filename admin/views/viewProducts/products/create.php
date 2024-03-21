@@ -11,12 +11,12 @@
 
             <div class="tile">
 
-                <h3 class="tile-title">Tạo mới người dùng</h3>
+                <h3 class="tile-title">Tạo mới sản phẩm</h3>
                 <div class="tile-body">
                     <div class="row element-button">
                         <div class="col-sm-2">
-                            <a href="<?= BASE_URL ?>?act=categories" class="btn btn-add btn-sm" data-toggle="modal"
-                                data-target="#exampleModalCenter"><b><i class="fas fa-folder-plus"></i> Tạo loại hàng
+                            <a href="<?= BASE_URL_ADMIN ?>?act=category-create" class="btn btn-add btn-sm"><b><i
+                                        class="fas fa-folder-plus"></i> Tạo loại hàng
                                     mới</b></a>
                         </div>
 
@@ -40,37 +40,33 @@
                         </div> -->
                         <div class="form-group col-md-4">
                             <label class="control-label">Tên sản phẩm</label>
-                            <input class="form-control" type="text" name="name">
+                            <input class="form-control" type="text" name="name" placeholder="Nhập tên sản phẩm">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Số lượng đã bán</label>
-                            <input class="form-control" type="text" name="pro_db">
+                            <input class="form-control" type="text" name="pro_db" placeholder="Số lượng đã bán">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Số lượng trong kho</label>
-                            <input class="form-control" type="text" name="pro_kho">
+                            <input class="form-control" type="text" name="pro_kho" placeholder="Số lượng trong kho">
                         </div>
                         <div class="form-group  col-md-4">
                             <label class="control-label">Giá bán</label>
-                            <input class="form-control" type="number" name="price">
+                            <input class="form-control" type="number" name="price" placeholder="Giá tiền">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label">Giá sales</label>
-                            <input class="form-control" type="text" name="price-sale">
+                            <input class="form-control" type="text" name="price-sale" placeholder="Giá sales">
                         </div>
-                        <!-- <div class="form-group col-md-4">
-                            <label class="control-label">Tạo ngày</label>
+                        <div class="form-group col-md-4">
+                            <label class="control-label">Ngày tạo</label>
                             <input class="form-control" type="date" name="create-day">
-                        </div> -->
-                        <!-- <div class="form-group col-md-4">
-                            <label class="control-label">Sửa ngày</label>
-                            <input class="form-control" type="date" name="update-day">
-                        </div> -->
+                        </div>
 
                         <div class="form-group col-md-3">
                             <label class="control-label">Thương hiệu</label>
-
                             <select name="brand" class="form-control" id="exampleSelect2" required>
+                                <option value=""></option>
                                 <?php foreach ($brands as $brand): ?>
                                     <option value="<?= $brand['id'] ?>">
                                         <?= $brand['name'] ?>
@@ -81,7 +77,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label class="control-label">Loại nước hoa</label>
-                            <select name="category" class="form-control" id="exampleSelect2" required>
+                            <select name="category" class="form-control" id="exampleSelect2" required multipart>
                                 <option value=""></option>
                                 <?php foreach ($categories as $category): ?>
                                     <option value="<?= $category['id'] ?>">
@@ -93,13 +89,21 @@
                         <div class="form-group col-md-3">
                             <label class="control-label">Xuất xứ</label>
                             <select name="origin" class="form-control" id="exampleSelect2" required>
+                                <option value=""></option>
                                 <?php foreach ($origins as $origin): ?>
                                     <option value="<?= $origin['id'] ?>">
                                         <?= $origin['name'] ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
+                        </div><br>
+
+                        <div class="form-group col-md-4">
+                            <label class="control-label">Mô tả</label><br>
+                            <textarea name="mota" id="mota" cols="30" rows="10"></textarea>
                         </div>
+
+
                         <div class="form-group col-md-12">
                             <label class="control-label">Ảnh sản phẩm</label>
                             <div id="myfileupload">
@@ -115,7 +119,7 @@
                                 <p style="clear:both"></p>
                             </div>
                         </div>
-
+                       
                         <button class="btn btn-save" type="submit" name="add">Thêm mới</button>
                         <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=products' ?>">Hủy bỏ</a>
                     </form>
