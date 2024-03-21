@@ -22,27 +22,44 @@
                             Tạo mới loại</a>
                     </div>
                     <div class="col-sm-2">
+
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=categories" title="Thêm"><i
+                                class="fas fa-plus"></i>
+                            Xuất xứ</a>
+                    </div>
+                    <div class="col-sm-2">
+
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=categories" title="Thêm"><i
+                                class="fas fa-plus"></i>
+                            Thương hiệu</a>
+                    </div>
+                    <div class="col-sm-2">
+
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=categories" title="Thêm"><i
+                                class="fas fa-plus"></i>
+                            Loại hương (mùi hương)</a>
+                    </div>
+                    <div class="col-sm-2">
                         <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
                                 class="fas fa-trash-alt"></i> Xóa tất cả </a>
                     </div>
                 </div>
-                <table class="table table-hover table-bordered" id="sampleTable" style="">
+                <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
                         <tr>
                             <th width="10"><input type="checkbox" id="all"></th>
                             <th>Mã sản phẩm</th>
                             <th>Tên sản phẩm</th>
                             <th>Ảnh</th>
-                            <th>Số lượng đã bán</th>
-                            <th>Số lượng kho</th>
+                            <!-- <th>Số lượng đã bán</th> -->
+                            <!-- <th>Số lượng kho</th> -->
                             <th>Giá tiền</th>
                             <th>Giá Sale</th>
-                            <th>Thương hiệu</th>
-                            <th>Loại</th>
-                            <th>Xuất xứ</th>
-                            <th>Mô tả</th>
-                            <th>Tạo ngày</th>
-                            <th>Sửa ngày</th>
+                            <!-- <th>Thương hiệu</th> -->
+                            <!-- <th>Loại</th> -->
+                            <!-- <th>Xuất xứ</th> -->
+                            <!-- <th>Mô tả</th> -->
+                            <th>Ngày tạo</th>
                             <th>Chức năng</th>
                         </tr>
                     </thead>
@@ -58,13 +75,7 @@
                                 <td>
                                     <?= $product['name'] ?>
                                 </td>
-                                <td><img src="/img-sanpham/theresa.jpg" alt="" width="100px;"></td>
-                                <td>
-                                    <?= $product['so_luong_ban'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['so_luong_kho'] ?>
-                                </td>
+                                <td><img src="<?= $product['img'] ?>" alt="" width="100px;"></td>
                                 <td>
                                     <?= $product['price'] ?>
                                 </td>
@@ -72,22 +83,7 @@
                                     <?= $product['price_sale'] ?>
                                 </td>
                                 <td>
-                                    <?= $product['brand_id'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['type_id'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['origin_id'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['mota'] ?>
-                                </td>
-                                <td>
                                     <?= $product['created'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['updeatd'] ?>
                                 </td>
                                 <td>
                                     <a href="<?= BASE_URL_ADMIN ?>?act=product-delete&id=<?= $product['id'] ?>"
@@ -121,7 +117,7 @@
   MODAL
 -->
 
-<!-- <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+<div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
     data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -188,7 +184,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!--
   MODAL

@@ -2,15 +2,17 @@
 
 function oderListAll()
 {
-    $title = 'Danh sách oder';
-    $view = 'oders/index';
+    $title = 'Danh sách Oder';
+    $view = 'order/index';
     $script = 'datetime';
     $style = 'datatable';
     // $style2 = 'form';
     $script3 = 'table';
-    $active6 = 'active';
+    $active4 = 'active';
 
-    $oders = listAll('oders');
+    $oders = listAll('cart_item');
+    $oderuser = listAll('carts');
+    $products = listAll('products');
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }

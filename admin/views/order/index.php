@@ -2,8 +2,10 @@
     <div class="app-title">
         <ul class="app-breadcrumb breadcrumb side">
             <li class="breadcrumb-item active"><a href="#"><b>
-                        <?= $title ?></b><
-                    /a></li>
+                        <?= $title ?>
+                    </b>
+                </a></li>
+
         </ul>
         <div id="clock"></div>
     </div>
@@ -39,12 +41,24 @@
                         <tbody>
                             <tr>
                                 <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                                <td>MD0837</td>
-                                <td>Triệu Thanh Phú</td>
-                                <td>Ghế làm việc Zuno, Bàn ăn gỗ Theresa</td>
-                                <td>2</td>
-                                <td>9.400.000 đ</td>
-                                <td><span class="badge bg-success">Hoàn thành</span></td>
+                                <td>
+                                    <?= $user['id'] ?>
+                                </td>
+                                <td>
+                                    <?= $user['user_id'] ?>
+                                </td>
+                                <td>
+                                    <?= $user['id'] ?>
+                                </td>
+                                <td>
+                                    <?= $user['id'] ?>
+                                </td>
+                                <td>
+                                    <?= $user['id'] ?> đ
+                                </td>
+                                <td><span class="badge bg-success">
+                                        <?= $user['id'] ?>
+                                    </span></td>
                                 <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i
                                             class="fas fa-trash-alt"></i> </button>
                                     <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i

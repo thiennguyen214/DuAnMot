@@ -56,12 +56,12 @@ match ($act) {
 //     'category-delete' => categoryDelete($_GET['id']),
 
 
-    //     // CRUD tag
-//     'tags' => tagListAll(),
-//     'tag-detail' => tagShowOne($_GET['id']),
-//     'tag-create' => tagCreate(),
-//     'tag-update' => tagUpdate($_GET['id']),
-//     'tag-delete' => tagDelete($_GET['id']),
+    // CRUD oder
+    'oders' => oderListAll(),
+    'oder-detail' => oderShowOne($_GET['id']),
+    'oder-create' => oderCreate(),
+    'oder-update' => oderUpdate($_GET['id']),
+    'oder-delete' => oderDelete($_GET['id']),
 
     // CRUD products
     'products' => productListAll(),

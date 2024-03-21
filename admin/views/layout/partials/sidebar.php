@@ -27,7 +27,7 @@
             </a>
         </li>
         <li><a class="app-menu__item <?= (isset ($active4)) ? $active4 : null ?>"
-                href="<?= BASE_URL_ADMIN . '?act=users' ?>"><i class='app-menu__icon bx bx-task'></i><span
+                href="<?= BASE_URL_ADMIN . '?act=oders' ?>"><i class='app-menu__icon bx bx-task'></i><span
                     class="app-menu__label">Quản lý đơn hàng</span></a></li>
         <li><a class="app-menu__item <?= (isset ($active5)) ? $active5 : null ?>"
                 href="<?= BASE_URL_ADMIN . '?act=overview' ?>"><i class='app-menu__icon bx bx-pie-chart-alt-2'></i><span
