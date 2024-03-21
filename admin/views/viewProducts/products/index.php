@@ -26,7 +26,8 @@
                                 class="fas fa-trash-alt"></i> Xóa tất cả </a>
                     </div>
                 </div>
-                <table class="table table-hover table-bordered" id="sampleTable" style="">
+                <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" id="sampleTable"
+                    cellspacing="0" border="0">
                     <thead>
                         <tr>
                             <th width="10"><input type="checkbox" id="all"></th>
@@ -42,7 +43,6 @@
                             <th>Xuất xứ</th>
                             <th>Mô tả</th>
                             <th>Tạo ngày</th>
-                            <th>Sửa ngày</th>
                             <th>Chức năng</th>
                         </tr>
                     </thead>
@@ -58,7 +58,9 @@
                                 <td>
                                     <?= $product['name'] ?>
                                 </td>
-                                <td><img src="/img-sanpham/theresa.jpg" alt="" width="100px;"></td>
+                                <td>
+                                <img class="img-card-person" src="<?= BASE_URL . $product['img'] ?>" alt="">
+                                </td>
                                 <td>
                                     <?= $product['so_luong_ban'] ?>
                                 </td>
@@ -85,9 +87,6 @@
                                 </td>
                                 <td>
                                     <?= $product['created'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['updeatd'] ?>
                                 </td>
                                 <td>
                                     <a href="<?= BASE_URL_ADMIN ?>?act=product-delete&id=<?= $product['id'] ?>"

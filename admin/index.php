@@ -91,7 +91,7 @@ match ($act) {
     //     'author-detail' => authorShowOne($_GET['id']),
     'product-create' => productCreate(),
 //     'author-update' => authorUpdate($_GET['id']),
-//     'author-delete' => authorDelete($_GET['id']),
+    'product-delete' => productDelete($_GET['id']),
 
 //     // CRUD post
 //     'posts' => postListAll(),

@@ -100,7 +100,10 @@
     </script> -->
     <?php
     //datetime.php
-    require_once PATH_VIEW_ADMIN . 'scripts/' . $script . '.php';
+    if (isset ($script) && $script) {
+        require_once PATH_VIEW_ADMIN . 'scripts/' . $script . '.php';
+    }
+    
     //create2
     if (isset ($script3) && $script3) {
         require_once PATH_VIEW_ADMIN . 'scripts/' . $script3 . '.php';
