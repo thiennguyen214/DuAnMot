@@ -29,28 +29,44 @@ match ($act) {
 
     'overview' => overListAll(),
 
+
     'settings' => settingListAll(),
     'setting-create' => settingCreate(),
     'setting-update' => settingUpdate($_GET['id']),
     'setting-delete' => settingDelete($_GET['id']),
-//     // CRUD Category
+
+    'viewProducts' => viewProductListAll(),
+
+
+    //  / CRUD Category
+    'categories' => categoryListAll(),
+    //     'category-detail' => categoryShowOne($_GET['id']),
+    'category-update' => categoryUpdate($_GET['id']),
+    'category-create' => categoryCreate(),
+    'category-delete' => categoryDelete($_GET['id']),
+
+    'setting' => settingListAll(),
+
+
+    //     // CRUD Category
 //     'categories' => categoryListAll(),
 //     'category-detail' => categoryShowOne($_GET['id']),
 //     'category-create' => categoryCreate(),
 //     'category-update' => categoryUpdate($_GET['id']),
 //     'category-delete' => categoryDelete($_GET['id']),
 
-//     // CRUD tag
+
+    //     // CRUD tag
 //     'tags' => tagListAll(),
 //     'tag-detail' => tagShowOne($_GET['id']),
 //     'tag-create' => tagCreate(),
 //     'tag-update' => tagUpdate($_GET['id']),
 //     'tag-delete' => tagDelete($_GET['id']),
 
-//     // CRUD author
-//     'authors' => authorListAll(),
-//     'author-detail' => authorShowOne($_GET['id']),
-//     'author-create' => authorCreate(),
+    // CRUD products
+    'products' => productListAll(),
+    //     'author-detail' => authorShowOne($_GET['id']),
+    'product-create' => productCreate(),
 //     'author-update' => authorUpdate($_GET['id']),
 //     'author-delete' => authorDelete($_GET['id']),
 

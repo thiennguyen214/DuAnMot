@@ -17,7 +17,7 @@
 
         swal({
             title: "Cảnh báo",
-            text: "Bạn có chắc chắn muốn xóa nhân viên này?",
+            text: "Bạn có chắc chắn muốn xóa không?",
             buttons: ["Hủy bỏ", "Đồng ý"],
         }).then((willDelete) => {
             if (willDelete) {
