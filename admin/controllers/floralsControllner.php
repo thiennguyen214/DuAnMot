@@ -5,7 +5,7 @@ function floralListAll()
 
     $title = 'Danh sách floral';
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/index';
+    $viewtable = 'florals/index';
     $script = 'datetime';
     // $script2 = 'florals/script';
     $script3 = 'table';
@@ -13,7 +13,7 @@ function floralListAll()
     $style2 = 'form';
     $active3 = 'active';
 
-    $florals = listAll('type_pro');
+    $florals = listAll('florals');
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
@@ -22,7 +22,7 @@ function floralListAll()
 //Delete floral
 function floralDelete($id)
 {
-    delete2('type_pro', $id);
+    delete2('florals', $id);
 
     $_SESSION['success'] = 'Thao tác thành công!';
 
@@ -36,7 +36,7 @@ function floralCreate()
     $script = 'datetime';
     $title = 'Thêm mới floral';
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/create';
+    $viewtable = 'florals/create';
     $script = 'datetime';
     $script3 = 'table';
     $style = 'datatable';
@@ -51,7 +51,7 @@ function floralCreate()
 
         validatefloralCreate($data);
 
-        insert('type_pro', $data);
+        insert('florals', $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
 
@@ -73,7 +73,7 @@ function validatefloralCreate($data)
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
-    } else if (!checkUniqueName('type_pro', $data['name'])) {
+    } else if (!checkUniqueName('florals', $data['name'])) {
         $errors[] = 'Name đã được sử dụng';
     }
 
@@ -89,7 +89,7 @@ function validatefloralCreate($data)
 //showone
 function floralShowOne($id)
 {
-    $floral = showOne('type_pro', $id);
+    $floral = showOne('florals', $id);
 
     if (empty ($floral)) {
         e404();
@@ -103,7 +103,7 @@ function floralShowOne($id)
 
 function floralUpdate($id)
 {
-    $floral = showOne('type_pro', $id);
+    $floral = showOne('florals', $id);
 
     if (empty ($floral)) {
         e404();
@@ -111,7 +111,7 @@ function floralUpdate($id)
 
     $title = 'Cập nhật floral: ' . $floral['name'];
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/update';
+    $viewtable = 'florals/update';
 
 
     if (!empty ($_POST)) {
@@ -121,7 +121,7 @@ function floralUpdate($id)
 
         validatefloralCreate($data);
 
-        update('type_pro', $id, $data);
+        update('florals', $id, $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
 

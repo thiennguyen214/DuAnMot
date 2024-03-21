@@ -17,6 +17,18 @@
             <h3 class="tile-title">Sửa loại hàng</h3>
             <div class="tile-body">
             </div>
+            <?php if (isset ($_SESSION['errors'])): ?>
+                        <div class="alert alert-danger">
+                            <ul>
+                                <?php foreach ($_SESSION['errors'] as $error): ?>
+                                    <li>
+                                        <?= $error ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <?php unset($_SESSION['errors']); ?>
+                    <?php endif; ?>
             <form class="row" method="post">
                 <!-- <div class="form-group col-md-4">
                             <label hidden class="control-label">ID loại hàng</label>

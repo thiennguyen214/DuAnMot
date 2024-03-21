@@ -23,19 +23,19 @@
                     </div>
                     <div class="col-sm-2">
 
-                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=categories" title="Thêm"><i
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=origins" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Xuất xứ</a>
                     </div>
                     <div class="col-sm-2">
 
-                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=categories" title="Thêm"><i
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=brands" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Thương hiệu</a>
                     </div>
                     <div class="col-sm-2">
 
-                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=categories" title="Thêm"><i
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=florals" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Loại hương (mùi hương)</a>
                     </div>
@@ -45,69 +45,75 @@
                     </div>
                 </div>
                 <table class="table table-hover table-bordered" id="sampleTable">
-                    <thead>
-                        <tr>
-                            <th width="10"><input type="checkbox" id="all"></th>
-                            <th>Mã sản phẩm</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Ảnh</th>
-                            <!-- <th>Số lượng đã bán</th> -->
-                            <!-- <th>Số lượng kho</th> -->
-                            <th>Giá tiền</th>
-                            <th>Giá Sale</th>
-                            <!-- <th>Thương hiệu</th> -->
-                            <!-- <th>Loại</th> -->
-                            <!-- <th>Xuất xứ</th> -->
-                            <!-- <th>Mô tả</th> -->
-                            <th>Ngày tạo</th>
-                            <th>Chức năng</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-
-                            <?php foreach ($products as $product): ?>
-
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                                <td>
-                                    <?= $product['id'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['name'] ?>
-                                </td>
-                                <td><img src="<?= $product['img'] ?>" alt="" width="100px;"></td>
-                                <td>
-                                    <?= $product['price'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['price_sale'] ?>
-                                </td>
-                                <td>
-                                    <?= $product['created'] ?>
-                                </td>
-                                <td>
-                                    <a href="<?= BASE_URL_ADMIN ?>?act=product-delete&id=<?= $product['id'] ?>"
-                                        class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                        onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
-                                    </a>
-
-                                    <a href="<?= BASE_URL_ADMIN ?>?act=product-detail&id=<?= $product['id'] ?>"
-                                        class="btn btn-primary btn-sm circle" type="button" title="Show">
-                                        <i class="fas fa-circle"></i>
-                                    </a>
-
-                                    <a href="<?= BASE_URL_ADMIN ?>?act=product-update&id=<?= $product['id'] ?>"
-                                        class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                                        data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                                    </a>
-
-                                </td>
+                    <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" id="sampleTable"
+                        cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th width="10"><input type="checkbox" id="all"></th>
+                                <th>ID</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Ảnh</th>
+                                <th>Số lượng đã bán</th>
+                                <th>Số lượng kho</th>
+                                <th>Giá tiền</th>
+                                <th>Giá Sale</th>
+                                <!-- <th>Thương hiệu</th> -->
+                                <!-- <th>Loại</th> -->
+                                <!-- <th>Xuất xứ</th> -->
+                                <!-- <th>Mô tả</th> -->
+                                <th width="135">Chức năng</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
 
-                        <?php endforeach; ?>
+                                <?php foreach ($products as $product): ?>
 
-                    </tbody>
-                </table>
+                                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                    <td>
+                                        <?= $product['id'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $product['name'] ?>
+                                    </td>
+                                    <td>
+                                        <img class="img-card-person" src="<?= BASE_URL . $product['img'] ?>" alt="">
+                                    </td>
+                                    <td>
+                                        <?= $product['so_luong_ban'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $product['so_luong_kho'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $product['price'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $product['price_sale'] ?>
+                                    </td>
+                                    <td>
+                                        <a href="<?= BASE_URL_ADMIN ?>?act=product-delete&id=<?= $product['id'] ?>"
+                                            class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <a href=" <?= BASE_URL_ADMIN ?>?act=product-detail&id=
+                                            <?= $product['id'] ?>" class="btn btn-primary btn-sm circle" type="button"
+                                            title="Show">
+                                            <i class="fas fa-circle"></i>
+                                        </a>
+
+                                        <a href="<?= BASE_URL_ADMIN ?>?act=product-update&id=<?= $product['id'] ?>"
+                                            class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
+                                            data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i> </a>
+
+                                    </td>
+                                </tr>
+
+                            <?php endforeach; ?>
+
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>

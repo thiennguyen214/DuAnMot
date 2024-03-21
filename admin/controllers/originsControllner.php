@@ -5,7 +5,7 @@ function originListAll()
 
     $title = 'Danh sách origin';
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/index';
+    $viewtable = 'origins/index';
     $script = 'datetime';
     // $script2 = 'origins/script';
     $script3 = 'table';
@@ -13,7 +13,7 @@ function originListAll()
     $style2 = 'form';
     $active3 = 'active';
 
-    $origins = listAll('type_pro');
+    $origins = listAll('origins');
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
@@ -22,7 +22,7 @@ function originListAll()
 //Delete origin
 function originDelete($id)
 {
-    delete2('type_pro', $id);
+    delete2('origins', $id);
 
     $_SESSION['success'] = 'Thao tác thành công!';
 
@@ -36,7 +36,7 @@ function originCreate()
     $script = 'datetime';
     $title = 'Thêm mới origin';
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/create';
+    $viewtable = 'origins/create';
     $script = 'datetime';
     $script3 = 'table';
     $style = 'datatable';
@@ -51,7 +51,7 @@ function originCreate()
 
         validateoriginCreate($data);
 
-        insert('type_pro', $data);
+        insert('origins', $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
 
@@ -73,7 +73,7 @@ function validateoriginCreate($data)
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
-    } else if (!checkUniqueName('type_pro', $data['name'])) {
+    } else if (!checkUniqueName('origins', $data['name'])) {
         $errors[] = 'Name đã được sử dụng';
     }
 
@@ -89,7 +89,7 @@ function validateoriginCreate($data)
 //showone
 function originShowOne($id)
 {
-    $origin = showOne('type_pro', $id);
+    $origin = showOne('origins', $id);
 
     if (empty ($origin)) {
         e404();
@@ -103,7 +103,7 @@ function originShowOne($id)
 
 function originUpdate($id)
 {
-    $origin = showOne('type_pro', $id);
+    $origin = showOne('origins', $id);
 
     if (empty ($origin)) {
         e404();
@@ -111,7 +111,7 @@ function originUpdate($id)
 
     $title = 'Cập nhật origin: ' . $origin['name'];
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/update';
+    $viewtable = 'origins/update';
 
 
     if (!empty ($_POST)) {
@@ -121,7 +121,7 @@ function originUpdate($id)
 
         validateoriginCreate($data);
 
-        update('type_pro', $id, $data);
+        update('origins', $id, $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
 

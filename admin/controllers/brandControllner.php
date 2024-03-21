@@ -5,7 +5,7 @@ function brandListAll()
 
     $title = 'Danh sách brand';
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/index';
+    $viewtable = 'brands/index';
     $script = 'datetime';
     // $script2 = 'brands/script';
     $script3 = 'table';
@@ -13,7 +13,7 @@ function brandListAll()
     $style2 = 'form';
     $active3 = 'active';
 
-    $brands = listAll('type_pro');
+    $brands = listAll('brands');
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
@@ -22,7 +22,7 @@ function brandListAll()
 //Delete brand
 function brandDelete($id)
 {
-    delete2('type_pro', $id);
+    delete2('brands', $id);
 
     $_SESSION['success'] = 'Thao tác thành công!';
 
@@ -36,7 +36,7 @@ function brandCreate()
     $script = 'datetime';
     $title = 'Thêm mới brand';
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/create';
+    $viewtable = 'brands/create';
     $script = 'datetime';
     $script3 = 'table';
     $style = 'datatable';
@@ -51,7 +51,7 @@ function brandCreate()
 
         validatebrandCreate($data);
 
-        insert('type_pro', $data);
+        insert('brands', $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
 
@@ -73,7 +73,7 @@ function validatebrandCreate($data)
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
-    } else if (!checkUniqueName('type_pro', $data['name'])) {
+    } else if (!checkUniqueName('brands', $data['name'])) {
         $errors[] = 'Name đã được sử dụng';
     }
 
@@ -89,7 +89,7 @@ function validatebrandCreate($data)
 //showone
 function brandShowOne($id)
 {
-    $brand = showOne('type_pro', $id);
+    $brand = showOne('brands', $id);
 
     if (empty ($brand)) {
         e404();
@@ -103,7 +103,7 @@ function brandShowOne($id)
 
 function brandUpdate($id)
 {
-    $brand = showOne('type_pro', $id);
+    $brand = showOne('brands', $id);
 
     if (empty ($brand)) {
         e404();
@@ -111,7 +111,7 @@ function brandUpdate($id)
 
     $title = 'Cập nhật brand: ' . $brand['name'];
     $view = 'viewProducts/index';
-    $viewtable = 'type_pros/update';
+    $viewtable = 'brands/update';
 
 
     if (!empty ($_POST)) {
@@ -121,7 +121,7 @@ function brandUpdate($id)
 
         validatebrandCreate($data);
 
-        update('type_pro', $id, $data);
+        update('brands', $id, $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
 

@@ -41,7 +41,7 @@ match ($act) {
     'brands' => brandListAll(),
     //     'brand-detail' => brandShowOne($_GET['id']),
     'brand-update' => brandUpdate($_GET['id']),
-    'brand-create' => brandCreate(),
+    'brands-create' => brandCreate(),
     'brand-delete' => brandDelete($_GET['id']),
 
 
@@ -87,11 +87,11 @@ match ($act) {
     'oder-delete' => oderDelete($_GET['id']),
 
     // CRUD products
-    'products' => productListAll(),
+    'products' => viewProductListAll(),
     //     'author-detail' => authorShowOne($_GET['id']),
     'product-create' => productCreate(),
-//     'author-update' => authorUpdate($_GET['id']),
-//     'author-delete' => authorDelete($_GET['id']),
+    //     'author-update' => authorUpdate($_GET['id']),
+    'product-delete' => productDelete($_GET['id']),
 
 //     // CRUD post
 //     'posts' => postListAll(),
