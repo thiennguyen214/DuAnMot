@@ -37,6 +37,29 @@ match ($act) {
 
     'viewProducts' => viewProductListAll(),
 
+    // CRUD brands
+    'brands' => brandListAll(),
+    //     'brand-detail' => brandShowOne($_GET['id']),
+    'brand-update' => brandUpdate($_GET['id']),
+    'brand-create' => brandCreate(),
+    'brand-delete' => brandDelete($_GET['id']),
+
+
+    // CRUD origins
+    'origins' => originListAll(),
+    //     'origin-detail' => originShowOne($_GET['id']),
+    'origin-update' => originUpdate($_GET['id']),
+    'origin-create' => originCreate(),
+    'origin-delete' => originDelete($_GET['id']),
+
+
+    // CRUD florals
+    'florals' => floralListAll(),
+    //     'floral-detail' => floralShowOne($_GET['id']),
+    'floral-update' => floralUpdate($_GET['id']),
+    'floral-create' => floralCreate(),
+    'floral-delete' => floralDelete($_GET['id']),
+
 
     //  / CRUD Category
     'categories' => categoryListAll(),
