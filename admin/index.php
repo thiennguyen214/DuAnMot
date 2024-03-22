@@ -90,7 +90,7 @@ match ($act) {
     'products' => viewProductListAll(),
     //     'author-detail' => authorShowOne($_GET['id']),
     'product-create' => productCreate(),
-    //     'author-update' => authorUpdate($_GET['id']),
+    'product-update' => productUpdate($_GET['id']),
     'product-delete' => productDelete($_GET['id']),
 
 //     // CRUD post
@@ -103,6 +103,8 @@ match ($act) {
 //     // Setting
 //     'setting-form' => settingShowForm(),
 //     'setting-save' => settingSave(),
+'showProduct' => productShowOne($_GET['id']),
+
 };
 
 require_once '../commons/disconnect_db.php';

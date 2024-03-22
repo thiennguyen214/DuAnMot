@@ -152,20 +152,26 @@ function productDelete($id)
 
 function productUpdate($id)
 {
+    
     $products = showOne('products', $id);
+    
 
     if (empty ($products)) {
         e404();
     }
 
     $title = 'Cập nhật Sản phẩm: ' . $products['name'];
-    $view = 'viewProducts/products/index';
+    $view = 'viewProducts/index';
+    $viewtable = "products/update";
     $style2 = 'form';
     $script = 'datetime';
     $style = 'datatable';
     $script2 = 'create';
     $script3 = 'create2';
     $active2 = 'active';
+    $brands = listAll('brands');
+    $origins = listAll('origins');
+    $categories = listAll('type_pro');
 
     if (!empty ($_POST)) {
         $data = [
@@ -176,7 +182,7 @@ function productUpdate($id)
             "mota" => $_POST['mota'] ?? null,
             "so_luong_ban" => $_POST['pro_db'] ?? null,
             "so_luong_kho" => $_POST['pro_kho'] ?? null,
-            "created" => $_POST['create-day'] ?? null,
+            // "created" => $_POST['create-day'] ?? null,
             "type_id" => $_POST['category'] ?? null,
             "origin_id" => $_POST['origin'] ?? null,
         ];
@@ -190,7 +196,7 @@ function productUpdate($id)
             $data['img'] = upload_file($ImageUpload, 'uploads/user/');
         }
 
-        update('users', $id, $data);
+        update('products', $id, $data);
         // Kiểm tra điều kiện để xóa tệp tin cũ (nếu cần)
         if (
             !empty ($ImageUpload) && // Có tệp tin được tải lên
@@ -218,7 +224,7 @@ function validateProductUpdate($id, $data)
     // password - bắt buộc, đồ dài nhỏ nhất là 8, lớn nhất là 20
     // type - bắt buộc, nó phải là 0 or 1
 
-    $errors = [];
+   
 
     $errors = [];
 
@@ -228,11 +234,11 @@ function validateProductUpdate($id, $data)
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     }
 
-    if (empty ($data['pro_db'])) {
+    if (empty ($data['so_luong_ban'])) {
         $errors[] = 'Trường hàng đã bán là bắt buộc';
     }
 
-    if (empty ($data['pro_kho'])) {
+    if (empty ($data['so_luong_kho'])) {
         $errors[] = 'Trường hàng trong kho là bắt buộc';
     }
 
@@ -247,14 +253,6 @@ function validateProductUpdate($id, $data)
 
     }
 
-
-    if ($data['created'] === null) {
-        $errors[] = 'Trường ngày tạo là bắt buộc';
-    }
-
-    if ($data['updeatd'] === null) {
-        $errors[] = 'Trường ngày sửa là bắt buộc';
-    }
 
     if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
@@ -275,3 +273,20 @@ function validateProductUpdate($id, $data)
 
 }
 
+
+function productShowOne($id)
+{
+    $products = showOne('products', $id);
+
+    if (empty ($products)) {
+        e404();
+    }
+    $brands = listAll('brands');
+    $origins = listAll('origins');
+    $categories = listAll('type_pro');
+    $title = 'Chi tiết User: ' . $products['name'];
+    $view = 'viewProducts/index';
+    $viewtable = "products/show";
+
+    require_once PATH_VIEW_ADMIN . 'layout/master.php';
+}
