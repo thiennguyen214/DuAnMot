@@ -13,6 +13,7 @@ function viewProductListAll()
     $active3 = 'active';
 
     $products = listAll('products');
+    $count = count($products);
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';

@@ -12,6 +12,8 @@ function overListAll()
 
     $users = listAll('users');
     $count = count($users);
+    // $ThuNhap = array_map(function($tong){ $tinhtong =  $tong + $tong; return $tinhtong; }, $users['id']);
+    // echo $ThuNhap;
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
