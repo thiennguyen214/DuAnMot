@@ -1,7 +1,7 @@
 <div class="app-title">
     <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><a href="<?= BASE_URL_ADMIN . '?act=products' ?>">Danh sách Sản Phẩm</a></li>
-        <li class="breadcrumb-item"><a href="#">Sửa sản phẩm</a></li>
+        <li class="breadcrumb-item"><a href="#">Chi tiết</a></li>
     </ul>
     <div id="clock"></div>
 </div>
@@ -10,7 +10,7 @@
 
         <div class="tile">
 
-            <h3 class="tile-title">Sửa sản phẩm</h3>
+            <h3 class="tile-title">Chi tiết sản phẩm</h3>
             <div class="tile-body">
                 <div class="row element-button">
                     <div class="col-sm-2">
@@ -39,27 +39,27 @@
                         </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Tên sản phẩm</label>
-                        <input class="form-control" type="text" value="<?= $products['name'] ?>"  name="name" placeholder="Nhập tên sản phẩm">
+                        <input class="form-control" type="text" value="<?= $products['name'] ?>" readonly  name="name" placeholder="Nhập tên sản phẩm">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Số lượng đã bán</label>
-                        <input class="form-control" type="text"  value="<?= $products['so_luong_ban'] ?>" name="pro_db" placeholder="Số lượng đã bán">
+                        <input class="form-control" type="text"  value="<?= $products['so_luong_ban'] ?>" readonly name="pro_db" placeholder="Số lượng đã bán">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Số lượng trong kho</label>
-                        <input class="form-control" type="text" value="<?= $products['so_luong_kho'] ?>"  name="pro_kho" placeholder="Số lượng trong kho">
+                        <input class="form-control" type="text" value="<?= $products['so_luong_kho'] ?>" readonly  name="pro_kho" placeholder="Số lượng trong kho">
                     </div>
                     <div class="form-group  col-md-4">
                         <label class="control-label">Giá bán</label>
-                        <input class="form-control" type="number"  value="<?= $products['price'] ?>" name="price" placeholder="Giá tiền">
+                        <input class="form-control" type="number"  value="<?= $products['price'] ?>" readonly name="price" placeholder="Giá tiền">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Giá sales</label>
-                        <input class="form-control" type="text" name="price-sale"  value="<?= $products['price_sale'] ?>" placeholder="Giá sales">
+                        <input class="form-control" type="text" name="price-sale" readonly  value="<?= $products['price_sale'] ?>" placeholder="Giá sales">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Thương hiệu</label>
-                        <select name="brand" class="form-control" id="exampleSelect2" required>
+                        <select readonly name="brand" class="form-control" id="exampleSelect2" required>
                             <option value="">-- Nhập thương hiệu --</option>
                             <?php foreach ($brands as $brand): ?>
                                 <option <?= ($brand['id'] == $products['brand_id']) ? 'selected' : null ?> value="<?= $brand['id'] ?>">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Loại nước hoa</label>
-                        <select name="category" class="form-control" id="exampleSelect2" required multipart>
+                        <select readonly name="category" class="form-control" id="exampleSelect2" required multipart>
                             <option value="">-- Nhập loại --</option>
                             <?php foreach ($categories as $category): ?>
                                 <option <?= ($category['id'] == $products['type_id']) ? 'selected' : null ?> value="<?= $category['id'] ?>">
@@ -82,10 +82,10 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Xuất xứ</label>
-                        <select name="origin" class="form-control" id="exampleSelect2" required>
+                        <select  name="origin" class="form-control" id="exampleSelect2" required>
                             <option value=""> -- Nhập xuất xứ -- </option>
                             <?php foreach ($origins as $origin): ?>
-                                <option <?= ($origin['id'] == $products['origin_id']) ? 'selected' : null ?>  value="<?= $origin['id'] ?>">
+                                <option <?= ($origin['id'] == $products['origin_id']) ? 'selected' : null ?> readonly value="<?= $origin['id'] ?>">
                                     <?= $origin['name'] ?>
                                 </option>
                             <?php endforeach; ?>

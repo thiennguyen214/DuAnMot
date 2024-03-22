@@ -153,20 +153,26 @@ function productDelete($id)
 
 function productUpdate($id)
 {
+    
     $products = showOne('products', $id);
+    
 
     if (empty ($products)) {
         e404();
     }
 
     $title = 'Cập nhật Sản phẩm: ' . $products['name'];
-    $view = 'viewProducts/products/index';
+    $view = 'viewProducts/index';
+    $viewtable = "products/update";
     $style2 = 'form';
     $script = 'datetime';
     $style = 'datatable';
     $script2 = 'create';
     $script3 = 'create2';
     $active2 = 'active';
+    $brands = listAll('brands');
+    $origins = listAll('origins');
+    $categories = listAll('type_pro');
 
     if (!empty ($_POST)) {
         $data = [
@@ -191,7 +197,7 @@ function productUpdate($id)
             $data['img'] = upload_file($ImageUpload, 'uploads/user/');
         }
 
-        update('users', $id, $data);
+        update('products', $id, $data);
         // Kiểm tra điều kiện để xóa tệp tin cũ (nếu cần)
         if (
             !empty ($ImageUpload) && // Có tệp tin được tải lên
@@ -248,6 +254,7 @@ function validateProductUpdate($id, $data)
     }
 
 
+
     // if ($data['created'] === null) {
     //     $errors[] = 'Trường ngày tạo là bắt buộc';
     // }
@@ -275,3 +282,20 @@ function validateProductUpdate($id, $data)
 
 }
 
+
+function productShowOne($id)
+{
+    $products = showOne('products', $id);
+
+    if (empty ($products)) {
+        e404();
+    }
+    $brands = listAll('brands');
+    $origins = listAll('origins');
+    $categories = listAll('type_pro');
+    $title = 'Chi tiết User: ' . $products['name'];
+    $view = 'viewProducts/index';
+    $viewtable = "products/show";
+
+    require_once PATH_VIEW_ADMIN . 'layout/master.php';
+}

@@ -14,6 +14,15 @@ function overListAll()
     $count = count($users);
     // $ThuNhap = array_map(function($tong){ $tinhtong =  $tong + $tong; return $tinhtong; }, $users['id']);
     // echo $ThuNhap;
+    $products = listAll('products');
+    $countpro = count($products);
+  
+
+   
+   
+
+
+
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
