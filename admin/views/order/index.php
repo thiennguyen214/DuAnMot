@@ -39,32 +39,51 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                                <td>
-                                    <?= $user['id'] ?>
-                                </td>
-                                <td>
-                                    <?= $user['user_id'] ?>
-                                </td>
-                                <td>
-                                    <?= $user['id'] ?>
-                                </td>
-                                <td>
-                                    <?= $user['id'] ?>
-                                </td>
-                                <td>
-                                    <?= $user['id'] ?> đ
-                                </td>
-                                <td><span class="badge bg-success">
-                                        <?= $user['id'] ?>
-                                    </span></td>
-                                <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i
-                                            class="fas fa-trash-alt"></i> </button>
-                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i
-                                            class="fa fa-edit"></i></button>
-                                </td>
-                            </tr>
+                            <?php
+                            foreach ($oders as $oder) {
+                                ?>
+                                <tr>
+                                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                    <td>
+                                        <?= $oder['id'] ?>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">
+                                            <?php
+                                            if ($oder['status'] == 1) {
+                                                echo 'Hoàn thành';
+                                            } else if ($oder['status'] == 2) {
+                                                echo 'Chờ thanh toán';
+                                            } else if ($oder['status'] == 3) {
+                                                echo 'Đang giao hàng';
+                                            } else if ($oder['status'] == 4) {
+                                                echo 'Đã hủy';
+                                            }
+                                            ?>
+                                        </span>
+
+                                    </td>
+                                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i
+                                                class="fas fa-trash-alt"></i> </button>
+                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i
+                                                class="fa fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

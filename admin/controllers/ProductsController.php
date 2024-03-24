@@ -152,9 +152,9 @@ function productDelete($id)
 
 function productUpdate($id)
 {
-    
+
     $products = showOne('products', $id);
-    
+
 
     if (empty ($products)) {
         e404();
@@ -168,7 +168,7 @@ function productUpdate($id)
     $style = 'datatable';
     $script2 = 'create';
     $script3 = 'create2';
-    $active2 = 'active';
+    $active3 = 'active';
     $brands = listAll('brands');
     $origins = listAll('origins');
     $categories = listAll('type_pro');
@@ -224,7 +224,7 @@ function validateProductUpdate($id, $data)
     // password - bắt buộc, đồ dài nhỏ nhất là 8, lớn nhất là 20
     // type - bắt buộc, nó phải là 0 or 1
 
-   
+
 
     $errors = [];
 

@@ -92,7 +92,26 @@ if (!function_exists('listAll')) {
     function listAll($tableName)
     {
         try {
-            $sql = "SELECT * FROM $tableName ORDER BY id DESC";
+            $sql = "SELECT * FROM $tableName ORDER BY id ASC";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}
+
+if (!function_exists('listOder')) {
+    function listOder()
+    {
+        try {
+            $sql = "SELECT cart_item.cart_id, carts.user_id, users.name
+        FROM cart_item
+        INNER -sers ON carts.user_id = users.id";
 
             $stmt = $GLOBALS['conn']->prepare($sql);
 
@@ -180,7 +199,7 @@ if (!function_exists('checkUniqueName')) {
 
             $data = $stmt->fetch();
 
-            return empty ($data) ? true : false;
+            return empty($data) ? true : false;
         } catch (\Exception $e) {
             debug($e);
         }
@@ -204,7 +223,7 @@ if (!function_exists('checkUniqueNameForUpdate')) {
 
             $data = $stmt->fetch();
 
-            return empty ($data) ? true : false;
+            return empty($data) ? true : false;
         } catch (\Exception $e) {
             debug($e);
         }

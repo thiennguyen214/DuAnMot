@@ -2,7 +2,7 @@
 
 function authenShowFormLogin()
 {
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         authenLogin();
     }
 
@@ -11,10 +11,11 @@ function authenShowFormLogin()
 
 function authenLogin()
 {
-    $user = getUserAdminByEmailAndPassword($_POST['email'], $_POST['password']);
+    $user = getUserAdminByEmailAndPassword($_POST['email'], $_POST['current-password']);
 
-    if (empty ($user)) {
+    if (empty($user)) {
         $_SESSION['error'] = 'Email hoặc password chưa đúng!';
+        // $error = 'asdf';
 
         header('Location: ' . BASE_URL_ADMIN . '?act=login');
         exit();
@@ -28,10 +29,10 @@ function authenLogin()
 
 function authenLogout()
 {
-    if (!empty ($_SESSION['user'])) {
+    if (!empty($_SESSION['user'])) {
         session_destroy();
     }
 
-    header('Location: ' . BASE_URL);
+    header('Location: ' . BASE_URL_ADMIN);
     exit();
 }

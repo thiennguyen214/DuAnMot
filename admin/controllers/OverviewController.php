@@ -13,5 +13,8 @@ function overListAll()
     $users = listAll('users');
     $count = count($users);
 
+    $products = listAll('products');
+
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
+
 }
