@@ -25,7 +25,7 @@
                 <div class="info">
                     <h4>Tổng sản phẩm</h4>
                      <p><b> <!--8580 sản phẩm -->
-                        <?= $count ?> sản phẩm
+                        <?= $countpro ?> sản phẩm
                     </b></p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="widget-small info coloured-icon"><i class='icon fa-3x bx bxs-user-badge'></i>
                 <div class="info">
                     <h4>Khách hàng mới</h4>
-                    <p><b>3 nhân viên</b></p>
+                    <p><b>2 nhân viên</b></p>
                 </div>
             </div>
         </div>

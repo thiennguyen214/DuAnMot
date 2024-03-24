@@ -24,5 +24,8 @@ function overListAll()
 
 
 
+    $products = listAll('products');
+
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
+
 }

@@ -15,10 +15,10 @@ require_file(PATH_MODEL_ADMIN);
 $act = $_GET['act'] ?? '/';
 
 // Kiểm tra xem user đã đăng nhập chưa
-// middleware_auth_check($act);
+middleware_auth_check($act);
 
 match ($act) {
-    '/' => dashboard(),
+    '/' => userListAll(),
 
     // CRUD User 
     'users' => userListAll(),
@@ -82,8 +82,8 @@ match ($act) {
     // CRUD oder
     'oders' => oderListAll(),
     'oder-detail' => oderShowOne($_GET['id']),
-    'oder-create' => oderCreate(),
-    'oder-update' => oderUpdate($_GET['id']),
+    // 'oder-create' => oderCreate(),
+    // 'oder-update' => oderUpdate($_GET['id']),s
     'oder-delete' => oderDelete($_GET['id']),
 
     // CRUD products
@@ -93,17 +93,21 @@ match ($act) {
     'product-update' => productUpdate($_GET['id']),
     'product-delete' => productDelete($_GET['id']),
 
-//     // CRUD post
+    //     // CRUD post
 //     'posts' => postListAll(),
 //     'post-detail' => postShowOne($_GET['id']),
 //     'post-create' => postCreate(),
 //     'post-update' => postUpdate($_GET['id']),
 //     'post-delete' => postDelete($_GET['id']),
 
-//     // Setting
+    //     // Setting
 //     'setting-form' => settingShowForm(),
 //     'setting-save' => settingSave(),
-'showProduct' => productShowOne($_GET['id']),
+    'showProduct' => productShowOne($_GET['id']),
+
+    'login' => authenShowFormLogin(),
+    'logout' => authenLogout(),
+// 'forgot' => authenShowFormForgot(),
 
 };
 
