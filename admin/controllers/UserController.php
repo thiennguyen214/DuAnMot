@@ -9,9 +9,9 @@ function userListAll()
     // $style2 = 'form';
     $script3 = 'table';
     $active2 = 'active';
+    $checkbox = 'create2';
 
     $users = listAll('users');
-
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
@@ -20,7 +20,7 @@ function userShowOne($id)
 {
     $user = showOne('users', $id);
 
-    if (empty ($user)) {
+    if (empty($user)) {
         e404();
     }
 
@@ -43,7 +43,7 @@ function userCreate()
 
 
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['name'] ?? null,
@@ -57,7 +57,7 @@ function userCreate()
         validateUserCreate($data);
 
         $ImageUpload = $_FILES['ImageUpload'] ?? null;
-        if (!empty ($ImageUpload) && $ImageUpload['size'] > 0) {
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
             $data['img'] = upload_file($ImageUpload, 'uploads/user/');
         }
 
@@ -81,13 +81,13 @@ function validateUserCreate($data)
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     }
 
-    if (empty ($data['email'])) {
+    if (empty($data['email'])) {
         $errors[] = 'Trường email là bắt buộc';
     } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Trường email không đúng định dạng';
@@ -95,7 +95,7 @@ function validateUserCreate($data)
         $errors[] = 'Email đã được sử dụng';
     }
 
-    if (empty ($data['pass'])) {
+    if (empty($data['pass'])) {
         $errors[] = 'Trường password là bắt buộc';
     } else if (strlen($data['pass']) < 8 || strlen($data['pass']) > 20) {
         $errors[] = 'Trường password đồ dài nhỏ nhất là 8, lớn nhất là 20';
@@ -108,7 +108,7 @@ function validateUserCreate($data)
         $errors[] = 'Trường role phải là 0 or 1';
     }
 
-    if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
 
         if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
@@ -118,7 +118,7 @@ function validateUserCreate($data)
         }
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
@@ -131,7 +131,7 @@ function userUpdate($id)
 {
     $user = showOne('users', $id);
 
-    if (empty ($user)) {
+    if (empty($user)) {
         e404();
     }
 
@@ -144,21 +144,21 @@ function userUpdate($id)
     $script3 = 'create2';
     $active2 = 'active';
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         $data = [
-            "name" => $_POST['name'] ?? null,
-            "email" => $_POST['email'] ?? null,
-            "pass" => $_POST['pass'] ?? null,
-            "tell" => $_POST['tell'] ?? null,
-            "address" => $_POST['address'] ?? null,
-            "role" => $_POST['role'] ?? null,
+            "name" => $_POST['name'] ?? $user['name'],
+            "email" => $_POST['email'] ?? $user['email'],
+            "pass" => $_POST['pass'] ?? $user['pass'],
+            "tell" => $_POST['tell'] ?? $user['tell'],
+            "address" => $_POST['address'] ?? $user['address'],
+            "role" => $_POST['role'] ?? $user['role'],
         ];
 
         validateUserUpdate($id, $data);
         $ImageUpload = $_FILES['ImageUpload'] ?? null;
 
         // Kiểm tra xem có tệp tin được tải lên hay không
-        if (!empty ($ImageUpload) && $ImageUpload['size'] > 0) {
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
             // Nếu có, thực hiện việc tải lên và cập nhật dữ liệu
             $data['img'] = upload_file($ImageUpload, 'uploads/user/');
         }
@@ -166,9 +166,9 @@ function userUpdate($id)
         update('users', $id, $data);
         // Kiểm tra điều kiện để xóa tệp tin cũ (nếu cần)
         if (
-            !empty ($ImageUpload) && // Có tệp tin được tải lên
-            !empty ($user['img']) && // Có giá trị hình ảnh cũ
-            !empty ($data['img']) && // Tệp tin mới được tải lên thành công
+            !empty($ImageUpload) && // Có tệp tin được tải lên
+            !empty($user['img']) && // Có giá trị hình ảnh cũ
+            !empty($data['img']) && // Tệp tin mới được tải lên thành công
             file_exists(PATH_UPLOAD . $user['img']) // Tệp tin cũ tồn tại trên hệ thống
         ) {
             unlink(PATH_UPLOAD . $user['img']);
@@ -192,13 +192,13 @@ function validateUserUpdate($id, $data)
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     }
 
-    if (empty ($data['email'])) {
+    if (empty($data['email'])) {
         $errors[] = 'Trường email là bắt buộc';
     } else if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Trường email không đúng định dạng';
@@ -206,7 +206,7 @@ function validateUserUpdate($id, $data)
         $errors[] = 'Email đã được sử dụng';
     }
 
-    if (empty ($data['pass'])) {
+    if (empty($data['pass'])) {
         $errors[] = 'Trường password là bắt buộc';
     } else if (strlen($data['pass']) < 8 || strlen($data['pass']) > 20) {
         $errors[] = 'Trường password đồ dài nhỏ nhất là 8, lớn nhất là 20';
@@ -216,7 +216,7 @@ function validateUserUpdate($id, $data)
     } else if (!in_array($data['role'], [0, 1])) {
         $errors[] = 'Trường type phải là 0 or 1';
     }
-    if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
 
         if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
@@ -226,7 +226,7 @@ function validateUserUpdate($id, $data)
         }
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
 
         header('Location: ' . BASE_URL_ADMIN . '?act=user-update&id=' . $id);

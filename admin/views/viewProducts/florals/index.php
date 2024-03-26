@@ -45,7 +45,8 @@
                         foreach ($florals as $floral) {
                             ?>
                             <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td width="10"><input type="checkbox" name="check<?= $floral['id'] ?>"
+                                        value="<?= $floral['id'] ?>"></td>
                                 <td>
                                     <?= $floral['id'] ?>
                                 </td>

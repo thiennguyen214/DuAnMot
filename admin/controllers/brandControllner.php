@@ -12,6 +12,7 @@ function brandListAll()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $checkbox = 'create2';
 
     $brands = listAll('brands');
 
@@ -43,7 +44,7 @@ function brandCreate()
     $style2 = 'form';
     $active3 = 'active';
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['brand_name'] ?? null,
@@ -69,7 +70,7 @@ function validatebrandCreate($data)
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
@@ -77,7 +78,7 @@ function validatebrandCreate($data)
         $errors[] = 'Name đã được sử dụng';
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
@@ -91,7 +92,7 @@ function brandShowOne($id)
 {
     $brand = showOne('brands', $id);
 
-    if (empty ($brand)) {
+    if (empty($brand)) {
         e404();
     }
 
@@ -105,7 +106,7 @@ function brandUpdate($id)
 {
     $brand = showOne('brands', $id);
 
-    if (empty ($brand)) {
+    if (empty($brand)) {
         e404();
     }
 
@@ -114,9 +115,9 @@ function brandUpdate($id)
     $viewtable = 'brands/update';
 
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         $data = [
-            "name" => $_POST['brand_name'] ?? null,
+            "name" => $_POST['brand_name'] ?? $brand['name'],
         ];
 
         validatebrandCreate($data);

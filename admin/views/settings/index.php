@@ -41,7 +41,8 @@
                             foreach ($settings as $setting) {
                                 ?>
                                 <tr>
-                                    <td width="10"><input type="checkbox" name="check1" value="<?= $setting['id'] ?>"></td>
+                                    <td width="10"><input type="checkbox" name="check<?= $setting['id'] ?>"
+                                            value="<?= $setting['id'] ?>"></td>
                                     <td width="20">
                                         <?= $setting['id'] ?>
                                     </td>

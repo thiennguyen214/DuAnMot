@@ -20,7 +20,7 @@
                     </div>
 
                 </div>
-                <?php if (isset ($_SESSION['errors'])): ?>
+                <?php if (isset($_SESSION['errors'])): ?>
                     <div class="alert alert-danger">
                         <ul>
                             <?php foreach ($_SESSION['errors'] as $error): ?>
@@ -34,35 +34,41 @@
                 <?php endif; ?>
                 <form class="row" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-4">
-                            <label class="control-label">ID sản phẩm</label>
-                            <input class="form-control" type="text" name="id" disabled>
-                        </div>
+                        <label class="control-label">ID sản phẩm</label>
+                        <input class="form-control" type="text" name="id" disabled>
+                    </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Tên sản phẩm</label>
-                        <input class="form-control" type="text" value="<?= $products['name'] ?>"  name="name" placeholder="Nhập tên sản phẩm">
+                        <input class="form-control" type="text" value="<?= $products['name'] ?>" name="name"
+                            placeholder="Nhập tên sản phẩm">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Số lượng đã bán</label>
-                        <input class="form-control" type="text"  value="<?= $products['so_luong_ban'] ?>" name="pro_db" placeholder="Số lượng đã bán">
+                        <input class="form-control" type="text" value="<?= $products['so_luong_ban'] ?>" name="pro_db"
+                            placeholder="Số lượng đã bán">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Số lượng trong kho</label>
-                        <input class="form-control" type="text" value="<?= $products['so_luong_kho'] ?>"  name="pro_kho" placeholder="Số lượng trong kho">
+                        <input class="form-control" type="text" value="<?= $products['so_luong_kho'] ?>" name="pro_kho"
+                            placeholder="Số lượng trong kho">
                     </div>
                     <div class="form-group  col-md-4">
                         <label class="control-label">Giá bán</label>
-                        <input class="form-control" type="number"  value="<?= $products['price'] ?>" name="price" placeholder="Giá tiền">
+                        <input class="form-control" type="number" value="<?= $products['price'] ?>" name="price"
+                            placeholder="Giá tiền">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Giá sales</label>
-                        <input class="form-control" type="text" name="price-sale"  value="<?= $products['price_sale'] ?>" placeholder="Giá sales">
+                        <input class="form-control" type="text" name="price-sale" value="<?= $products['price_sale'] ?>"
+                            placeholder="Giá sales">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Thương hiệu</label>
                         <select name="brand" class="form-control" id="exampleSelect2" required>
                             <option value="">-- Nhập thương hiệu --</option>
                             <?php foreach ($brands as $brand): ?>
-                                <option <?= ($brand['id'] == $products['brand_id']) ? 'selected' : null ?> value="<?= $brand['id'] ?>">
+                                <option <?= ($brand['id'] == $products['brand_id']) ? 'selected' : null ?>
+                                    value="<?= $brand['id'] ?>">
                                     <?= $brand['name'] ?>
                                 </option>
                             <?php endforeach; ?>
@@ -74,7 +80,8 @@
                         <select name="category" class="form-control" id="exampleSelect2" required multipart>
                             <option value="">-- Nhập loại --</option>
                             <?php foreach ($categories as $category): ?>
-                                <option <?= ($category['id'] == $products['type_id']) ? 'selected' : null ?> value="<?= $category['id'] ?>">
+                                <option <?= ($category['id'] == $products['type_id']) ? 'selected' : null ?>
+                                    value="<?= $category['id'] ?>">
                                     <?= $category['name'] ?>
                                 </option>
                             <?php endforeach; ?>
@@ -85,7 +92,8 @@
                         <select name="origin" class="form-control" id="exampleSelect2" required>
                             <option value=""> -- Nhập xuất xứ -- </option>
                             <?php foreach ($origins as $origin): ?>
-                                <option <?= ($origin['id'] == $products['origin_id']) ? 'selected' : null ?>  value="<?= $origin['id'] ?>">
+                                <option <?= ($origin['id'] == $products['origin_id']) ? 'selected' : null ?>
+                                    value="<?= $origin['id'] ?>">
                                     <?= $origin['name'] ?>
                                 </option>
                             <?php endforeach; ?>
@@ -94,7 +102,7 @@
 
                     <div class="form-group col-md-12">
                         <label class="control-label">Mô tả sản phẩm</label>
-                        <textarea class="form-control" name="mota" id="mota"></textarea>
+                        <textarea class="form-control" name="mota" id="mota"><?= $products['mota'] ?></textarea>
                         <script>CKEDITOR.replace('mota');</script>
                     </div>
 
@@ -106,7 +114,8 @@
                                 onchange="previewImage(this);" />
                         </div>
                         <div id="thumbbox">
-                            <img src="<?= BASE_URL . $products['img'] ?>" height="300" width="300" alt="Thumb image" id="thumbimage"  />
+                            <img src="<?= BASE_URL . $products['img'] ?>" height="300" width="300" alt="Thumb image"
+                                id="thumbimage" />
                             <a class="removeimg" href="javascript:"></a>
                         </div>
                         <div id="boxchoice">

@@ -44,7 +44,8 @@
                         foreach ($brands as $brand) {
                             ?>
                             <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td width="10"><input type="checkbox" name="check<?= $brand['id'] ?>"
+                                        value="<?= $brand['id'] ?>"></td>
                                 <td>
                                     <?= $brand['id'] ?>
                                 </td>

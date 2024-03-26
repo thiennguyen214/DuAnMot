@@ -34,6 +34,7 @@
                                 <th>Đơn hàng</th>
                                 <th>Số lượng</th>
                                 <th>Tổng tiền</th>
+                                <th>Ngày mua</th>
                                 <th>Tình trạng</th>
                                 <th>Tính năng</th>
                             </tr>
@@ -43,42 +44,57 @@
                             foreach ($oders as $oder) {
                                 ?>
                                 <tr>
-                                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                    <td width="10"><input type="checkbox" name="check<?= $oder['bi_id'] ?>"
+                                            value="<?= $oder['bi_id'] ?>"></td>
                                     <td>
-                                        <?= $oder['id'] ?>
+                                        <?= $oder['bi_id'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $oder['b_name'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $oder['p_name'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $oder['bi_quantity'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $oder['bi_price'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $oder['b_created'] ?>
                                     </td>
                                     <td>
 
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-                                        <span class="badge bg-success">
-                                            <?php
-                                            if ($oder['status'] == 1) {
-                                                echo 'Hoàn thành';
-                                            } else if ($oder['status'] == 2) {
-                                                echo 'Chờ thanh toán';
-                                            } else if ($oder['status'] == 3) {
-                                                echo 'Đang giao hàng';
-                                            } else if ($oder['status'] == 4) {
-                                                echo 'Đã hủy';
-                                            }
+                                        <?php
+                                        if ($oder['b_status'] == 1) {
                                             ?>
-                                        </span>
+                                            <span class="badge bg-success">
+                                                <?= 'Hoàn thành' ?>
+                                                <?php
+                                        } else if ($oder['b_status'] == 2) {
+                                            ?>
+                                                    <span class="badge bg-info">
+                                                    <?= 'Chờ thanh toán' ?>
+                                                    <?php
+                                        } else if ($oder['b_status'] == 3) { ?>
+                                                            <span class="badge bg-warning">
+                                                        <?= 'Đang giao hàng' ?>
+                                                        <?php
+                                        } else if ($oder['b_status'] == 4) { ?>
+                                                                    <span class="badge bg-danger">
+                                                            <?= 'Đã hủy' ?>
+                                                            <?php
+                                        }
+                                        ?>
+                                                    </span>
 
                                     </td>
-                                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i
-                                                class="fas fa-trash-alt"></i> </button>
-                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i
-                                                class="fa fa-edit"></i></button>
+                                    <td><a href="<?= BASE_URL_ADMIN ?>?act=oder-delete&id=<?= $oder['bi_id'] ?>"
+                                            class="btn btn-primary btn-sm trash" title="Xóa"
+                                            onclick="confirmDelete(event, this)"><i class="fas fa-trash-alt"></i> </a>
+                                        <a href="<?= BASE_URL_ADMIN ?>?act=oder-update&id=<?= $oder['bi_id'] ?>"
+                                            class="btn btn-primary btn-sm edit" title="Sửa"><i class="fa fa-edit"></i></a>
                                     </td>
                                 </tr>
                                 <?php

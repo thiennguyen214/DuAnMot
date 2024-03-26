@@ -1,43 +1,31 @@
 <?php
-
-function floralListAll()
+function imgProListAll()
 {
 
-    $title = 'Danh sách floral';
+    $title = 'Danh sách ảnh SP';
     $view = 'viewProducts/index';
-    $viewtable = 'florals/index';
+    $viewtable = "imgs_products/index";
     $script = 'datetime';
-    // $script2 = 'florals/script';
     $script3 = 'table';
+    // $script2 = 'products/script';
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
     $checkbox = 'create2';
 
-    $florals = listAll('florals');
+    $imgPros = listImg();
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 
 }
-//Delete floral
-function floralDelete($id)
-{
-    delete2('florals', $id);
 
-    $_SESSION['success'] = 'Thao tác thành công!';
-
-    header('Location: ' . BASE_URL_ADMIN . '?act=florals');
-    exit();
-}
-
-//Create floral
-function floralCreate()
+function imgProCreate()
 {
     $script = 'datetime';
     $title = 'Thêm mới floral';
     $view = 'viewProducts/index';
-    $viewtable = 'florals/create';
+    $viewtable = 'imgs_products/create';
     $script = 'datetime';
     $script3 = 'table';
     $style = 'datatable';
@@ -64,7 +52,7 @@ function floralCreate()
 }
 
 //validate floral-create
-function validatefloralCreate($data)
+function validateImgProCreate($data)
 {
     // name - bắt buộc, độ dài tối đa 50 ký tự, Không được trùng
 
@@ -86,52 +74,3 @@ function validatefloralCreate($data)
         exit();
     }
 }
-
-//showone
-function floralShowOne($id)
-{
-    $floral = showOne('florals', $id);
-
-    if (empty($floral)) {
-        e404();
-    }
-
-    $title = 'Chi tiết loại: ' . $floral['name'];
-    $view = 'florals/show';
-
-    require_once PATH_VIEW_ADMIN . 'layout/master.php';
-}
-
-function floralUpdate($id)
-{
-    $floral = showOne('florals', $id);
-
-    if (empty($floral)) {
-        e404();
-    }
-
-    $title = 'Cập nhật floral: ' . $floral['name'];
-    $view = 'viewProducts/index';
-    $viewtable = 'florals/update';
-
-
-    if (!empty($_POST)) {
-        $data = [
-            "name" => $_POST['floral_name'] ?? $floral['name'],
-        ];
-
-        validatefloralCreate($data);
-
-        update('florals', $id, $data);
-
-        $_SESSION['success'] = 'Thao tác thành công!';
-
-        header('Location: ' . BASE_URL_ADMIN . '?act=florals');
-        exit();
-    }
-
-    require_once PATH_VIEW_ADMIN . 'layout/master.php';
-}
-
-
-

@@ -3,7 +3,7 @@
 :root {
   --font_family: 'Roboto', sans-serif;
   --main_color: #001C40;
-  --main_bg: #FFD43B;
+  --main_bg: #FEE140;
   --login_bg: #001C40;
   --white_bg: #ffffff;
   --onehundred_percent: 100%;
@@ -372,8 +372,8 @@ iframe {
 
 input[type=submit] {
   font-size: var(--font_15);
-  background: linear-gradient(var(--back_bg) 5%, var(--back_bg) var(--onehundred_percent));
-  border: var(--px_1) solid var(--back_bg);
+  background: linear-gradient(to right, #FFCC70, #C850C0, #4158D0);
+  /* border: var(--px_1) solid var(--back_bg); */
   color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: var(--cursor_pointer);
@@ -381,6 +381,7 @@ input[type=submit] {
   border-radius: var(--radius_5px);
   padding: 10px 0;
   outline: none;
+  transition-delay: 3s;
 }
 
 
@@ -399,7 +400,8 @@ input[type=button] {
 }
 
 input[type=submit]:hover {
-  background: var(--main_bg);
+  background: linear-gradient(to left, #FFCC70, #C850C0, #4158D0);
+  transition: 2s;
 }
 
 .login100-form-btn {

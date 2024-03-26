@@ -72,8 +72,8 @@ match ($act) {
 
 
     //     // CRUD Category
-//     'categories' => categoryListAll(),
-//     'category-detail' => categoryShowOne($_GET['id']),
+    'imgs' => imgProListAll(),
+    //     'category-detail' => categoryShowOne($_GET['id']),
 //     'category-create' => categoryCreate(),
 //     'category-update' => categoryUpdate($_GET['id']),
 //     'category-delete' => categoryDelete($_GET['id']),
@@ -83,7 +83,7 @@ match ($act) {
     'oders' => oderListAll(),
     'oder-detail' => oderShowOne($_GET['id']),
     // 'oder-create' => oderCreate(),
-    // 'oder-update' => oderUpdate($_GET['id']),s
+    'oder-update' => orderUpdate($_GET['id']),
     'oder-delete' => oderDelete($_GET['id']),
 
     // CRUD products

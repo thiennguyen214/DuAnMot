@@ -4,7 +4,7 @@
                 <b>Danh sách sản phẩm</b></a>
         </li>
         <li class="breadcrumb-item "><a href="#">
-                Danh sách xuất xứ</a>
+                Danh sách hình ảnh SP</a>
         </li>
     </ul>
     <div id="clock"></div>
@@ -18,9 +18,9 @@
                 <div class="row element-button">
                     <div class="col-sm-2">
 
-                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=origin-create" title="Thêm"><i
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=imgPros-create" title="Thêm"><i
                                 class="fas fa-plus"></i>
-                            Tạo mới xuất xứ</a>
+                            Tạo thêm cho ảnh SP</a>
                     </div>
                     <div class="col-sm-2">
                         <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
@@ -32,8 +32,8 @@
                     <thead>
                         <tr>
                             <th width="10"><input type="checkbox" id="all"></th>
-                            <th width="200">ID xuất xứ</th>
-                            <th width="350">Tên xuất xứ</th>
+                            <th width="200">Tên sản phẩm</th>
+                            <th width="350">Ảnh</th>
                             <!-- <th>Ngày sinh</th> -->
                             <!-- <th>Giới tính</th> -->
                             <th width="100">Tính năng</th>
@@ -41,25 +41,28 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($origins as $origin) {
+                        foreach ($imgPros as $imgPro) {
+                            $imgs = explode(',', $imgPro['ip_img']);
                             ?>
                             <tr>
-                                <td width="10"><input type="checkbox" name="check<?= $origin['id'] ?>"
-                                        value="<?= $origin['id'] ?>"></td>
+                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>
-                                    <?= $origin['id'] ?>
+                                    <?= $imgPro['p_name'] ?>
                                 </td>
                                 <td>
-                                    <?= $origin['name'] ?>
+                                    <?php foreach ($imgs as $img) { ?>
+                                        <img class="img-card-person" src="<?= BASE_URL . $img ?>" alt=""
+                                            style="display: inline-block;">
+                                    <?php } ?>
                                 </td>
 
                                 <td class="table-td-center">
-                                    <a href="<?= BASE_URL_ADMIN ?>?act=origin-delete&id=<?= $origin['id'] ?>"
+                                    <a href="<?= BASE_URL_ADMIN ?>?act=imgPro-delete&id=<?= $imgPro['ip_id'] ?>"
                                         class="btn btn-primary btn-sm trash" title="Xóa"
                                         onclick="confirmDelete(event, this)">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
-                                    <a href="<?= BASE_URL_ADMIN ?>?act=origin-update&id=<?= $origin['id'] ?>"
+                                    <a href="<?= BASE_URL_ADMIN ?>?act=imgPro-update&id=<?= $imgPro['ip_id'] ?>"
                                         class="btn btn-primary btn-sm edit" title="Sửa" id="show-emp">
                                         <i class="fas fa-edit"></i>
                                     </a>

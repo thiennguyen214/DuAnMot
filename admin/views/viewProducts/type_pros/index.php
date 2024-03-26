@@ -44,7 +44,8 @@
                         foreach ($categories as $category) {
                             ?>
                             <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td width="10"><input type="checkbox" name="check<?= $category['id'] ?>"
+                                        value="<?= $category['id'] ?>"></td>
                                 <td>
                                     <?= $category['id'] ?>
                                 </td>

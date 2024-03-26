@@ -12,6 +12,7 @@ function categoryListAll()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $checkbox = 'create2';
 
     $categories = listAll('type_pro');
 
@@ -43,7 +44,7 @@ function categoryCreate()
     $style2 = 'form';
     $active3 = 'active';
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['category_name'] ?? null,
@@ -69,7 +70,7 @@ function validateCategoryCreate($data)
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
@@ -77,7 +78,7 @@ function validateCategoryCreate($data)
         $errors[] = 'Name đã được sử dụng';
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
@@ -91,7 +92,7 @@ function categoryShowOne($id)
 {
     $category = showOne('type_pro', $id);
 
-    if (empty ($category)) {
+    if (empty($category)) {
         e404();
     }
 
@@ -105,7 +106,7 @@ function categoryUpdate($id)
 {
     $category = showOne('type_pro', $id);
 
-    if (empty ($category)) {
+    if (empty($category)) {
         e404();
     }
 
@@ -114,9 +115,9 @@ function categoryUpdate($id)
     $viewtable = 'type_pros/update';
 
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         $data = [
-            "name" => $_POST['category_name'] ?? null,
+            "name" => $_POST['category_name'] ?? $category['name'],
         ];
 
         validateCategoryCreate($data);

@@ -105,24 +105,6 @@ if (!function_exists('listAll')) {
     }
 }
 
-if (!function_exists('listOder')) {
-    function listOder()
-    {
-        try {
-            $sql = "SELECT cart_item.cart_id, carts.user_id, users.name
-        FROM cart_item
-        INNER -sers ON carts.user_id = users.id";
-
-            $stmt = $GLOBALS['conn']->prepare($sql);
-
-            $stmt->execute();
-
-            return $stmt->fetchAll();
-        } catch (\Exception $e) {
-            debug($e);
-        }
-    }
-}
 
 if (!function_exists('showOne')) {
     function showOne($tableName, $id)
