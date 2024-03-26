@@ -13,6 +13,7 @@ function viewProductListAll()
     $active3 = 'active';
 
     $products = listAll('products');
+    $count = count($products);
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
@@ -225,7 +226,6 @@ function validateProductUpdate($id, $data)
     // type - bắt buộc, nó phải là 0 or 1
 
 
-
     $errors = [];
 
     if (empty ($data['name'])) {
@@ -253,6 +253,15 @@ function validateProductUpdate($id, $data)
 
     }
 
+
+
+    // if ($data['created'] === null) {
+    //     $errors[] = 'Trường ngày tạo là bắt buộc';
+    // }
+
+    if ($data['updeatd'] === null) {
+        $errors[] = 'Trường ngày sửa là bắt buộc';
+    }
 
     if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];

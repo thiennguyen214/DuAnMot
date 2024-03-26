@@ -12,7 +12,11 @@ function oderListAll()
     $oders = listAll('cart_item');
     $oderuser = listAll('carts');
     $products = listAll('products');
+
+    $count = count($oderuser);
+
     $users = listAll('users');
+
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
