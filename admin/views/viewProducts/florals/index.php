@@ -53,7 +53,7 @@
                                 <td>
                                     <?= $floral['name'] ?>
                                 </td>
-                                <td><img class="img-card-person" src="<?= BASE_URL . $user['img'] ?>" alt=""></td>
+                                <td><img class="img-card-person" src="<?= BASE_URL . $floral['img'] ?>" alt=""></td>
                                 <td class="table-td-center">
                                     <a href="<?= BASE_URL_ADMIN ?>?act=floral-delete&id=<?= $floral['id'] ?>"
                                         class="btn btn-primary btn-sm trash" title="Xóa"

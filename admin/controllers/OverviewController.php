@@ -13,6 +13,17 @@ function overListAll()
 
     $users = listAll('users');
     $count = count($users);
+    // $ThuNhap = array_map(function($tong){ $tinhtong =  $tong + $tong; return $tinhtong; }, $users['id']);
+    // echo $ThuNhap;
+    $products = listAll('products');
+    $countpro = count($products);
+  
+
+   
+   
+
+
+
 
     $products = listAll('products');
 

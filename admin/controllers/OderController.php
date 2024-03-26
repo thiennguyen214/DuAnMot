@@ -10,8 +10,19 @@ function oderListAll()
     $active4 = 'active';
     $checkbox = 'create2';
 
+<<<<<<< HEAD
     $oders = listOder();
     // debug($oders);
+=======
+    $oders = listAll('cart_item');
+    $oderuser = listAll('carts');
+    $products = listAll('products');
+
+    $count = count($oderuser);
+
+    $users = listAll('users');
+>>>>>>> acd30bfacf9a194b4dba4f60923884ebfe173c3e
+
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }

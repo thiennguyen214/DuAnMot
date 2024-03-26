@@ -14,6 +14,7 @@ function viewProductListAll()
     $checkbox = 'create2';
 
     $products = listAll('products');
+    $count = count($products);
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
@@ -226,7 +227,6 @@ function validateProductUpdate($id, $data)
     // type - bắt buộc, nó phải là 0 or 1
 
 
-
     $errors = [];
 
     if (empty($data['name'])) {
@@ -255,7 +255,20 @@ function validateProductUpdate($id, $data)
     }
 
 
+<<<<<<< HEAD
     if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+=======
+
+    // if ($data['created'] === null) {
+    //     $errors[] = 'Trường ngày tạo là bắt buộc';
+    // }
+
+    if ($data['updeatd'] === null) {
+        $errors[] = 'Trường ngày sửa là bắt buộc';
+    }
+
+    if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+>>>>>>> acd30bfacf9a194b4dba4f60923884ebfe173c3e
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
 
         if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {

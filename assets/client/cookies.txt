@@ -1,0 +1,8 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+bean-perfume.mysapo.net	TRUE	/	FALSE	1999999999	_landing_page	%2Frobots.txt
+bean-perfume.mysapo.net	TRUE	/	FALSE	1999999999	cart	1e19028ccf908593403d4aed718a1e9e
+bean-perfume.mysapo.net	TRUE	/	FALSE	1999999999	cart_sig	8b4e6f091323f2f49e1f9f93cc9cad95
+bean-perfume.mysapo.net	TRUE	/	FALSE	1999999999	cart_currency	VND
+bean-perfume.mysapo.net	TRUE	/	FALSE	1999999999	samesite	none
+
