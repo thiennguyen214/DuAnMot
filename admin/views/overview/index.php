@@ -15,7 +15,7 @@
                 <div class="info">
                     <h4>Tổng Khách Hàng</h4>
                     <p><b>
-                            <?= $count ?> khách hàng
+                            <?= $countcl ?> khách hàng
                         </b></p>
                 </div>
             </div>
@@ -24,7 +24,9 @@
             <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x'></i>
                 <div class="info">
                     <h4>Tổng sản phẩm</h4>
-                    <p><b>8580 sản phẩm</b></p>
+                    <p><b>
+                    <?= $countsp ?> sản phẩm
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -49,8 +51,10 @@
         <div class="col-md-6 col-lg-3">
             <div class="widget-small info coloured-icon"><i class='icon fa-3x bx bxs-user-badge'></i>
                 <div class="info">
-                    <h4>Khách hàng mới</h4>
-                    <p><b>3 nhân viên</b></p>
+                    <h4>Tài khoản nhân viên</h4>
+                    <p><b>
+                    <?= $countad ?> nhân viên
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -58,7 +62,9 @@
             <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-tag-x'></i>
                 <div class="info">
                     <h4>Hết hàng</h4>
-                    <p><b>1 sản phẩm</b></p>
+                    <p><b>
+                        <?= $sp_da_het ?> sản phẩm
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -84,16 +90,18 @@
                                 <th>Mã sản phẩm</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Giá tiền</th>
-                                <th>Loại sản phẩm</th>
+                                <th>Số lượng đã bán</th>
                             </tr>
                         </thead>
+                        <?php foreach( $hang_ban_chay as $hang ) :?>
                         <tbody>
                             <tr>
-                                <td>71309005</td>
-                                <td>Bàn ăn gỗ Theresa</td>
-                                <td>5.600.000 đ</td>
-                                <td>Bàn ăn</td>
+                                <td><?= $hang['id'] ?></td>
+                                <td><?= $hang['name'] ?></td>
+                                <td><?= $hang['price'] ?></td>
+                                <td><?= $hang['so_luong_ban'] ?></td>
                         </tbody>
+                        <?php endforeach; ?>
                     </table>
                 </div>
             </div>
@@ -150,19 +158,21 @@
                                 <th>Số lượng</th>
                                 <th>Tình trạng</th>
                                 <th>Giá tiền</th>
-                                <th>Danh mục</th>
+                                <th>Loại</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <?php foreach( $hang_da_het as $hh ) :?>
                             <tr>
-                                <td>83826226</td>
-                                <td>Tủ ly - tủ bát</td>
-                                <td><img src="/img-sanpham/tu.jpg" alt="" width="100px;"></td>
-                                <td>0</td>
+                                <td><?= $hh['id'] ?></td>
+                                <td><?= $hh['name'] ?></td>
+                                <td><img src="<?= BASE_URL. $hh['img'] ?>" alt="" width="100px;"></td>
+                                <td><?= $hh['so_luong_kho'] ?></td>
                                 <td><span class="badge bg-danger">Hết hàng</span></td>
-                                <td>2.450.000 đ</td>
-                                <td>Tủ</td>
+                                <td><?= $hh['price'] ?></td>
+                                <td><?= $hh['type_id'] ?></td>
                             </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

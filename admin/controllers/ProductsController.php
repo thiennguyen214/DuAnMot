@@ -99,13 +99,13 @@ function validateProductCreate($data)
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     }
 
-    if (empty ($data['so_luong_ban'])) {
-        $errors[] = 'Trường hàng đã bán là bắt buộc';
-    }
+    // if (empty ($data['so_luong_ban'])) {
+    //     $errors[] = 'Trường hàng đã bán là bắt buộc';
+    // }
 
-    if (empty ($data['so_luong_kho'])) {
-        $errors[] = 'Trường hàng trong kho là bắt buộc';
-    }
+    // if (empty ($data['so_luong_kho'])) {
+    //     $errors[] = 'Trường hàng trong kho là bắt buộc';
+    // }
 
     if (empty ($data['price'])) {
         $errors[] = 'Trường giá là bắt buộc';
@@ -234,13 +234,13 @@ function validateProductUpdate($id, $data)
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     }
 
-    if (empty ($data['so_luong_ban'])) {
-        $errors[] = 'Trường hàng đã bán là bắt buộc';
-    }
+    // if (empty ($data['so_luong_ban'])) {
+    //     $errors[] = 'Trường hàng đã bán là bắt buộc';
+    // }
 
-    if (empty ($data['so_luong_kho'])) {
-        $errors[] = 'Trường hàng trong kho là bắt buộc';
-    }
+    // if (empty ($data['so_luong_kho'])) {
+    //     $errors[] = 'Trường hàng trong kho là bắt buộc';
+    // }
 
     if (empty ($data['price'])) {
         $errors[] = 'Trường giá là bắt buộc';

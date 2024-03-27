@@ -229,3 +229,50 @@ if (!function_exists('checkUniqueNameForUpdate')) {
         }
     }
 }
+
+if (!function_exists('checkSoluongban')) {
+   
+    function checkSoluongban($tableName)
+    {
+        try {
+            $sql = "SELECT * FROM $tableName ORDER BY so_luong_ban DESC LIMIT 5";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            // $stmt->bindParam(":name", $name);
+            // $stmt->bindParam(":id", $id);
+
+            $stmt->execute();
+
+            $data = $stmt->fetchAll();
+
+            return $data;
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}
+
+
+if (!function_exists('checkSoluonghang')) {
+   
+    function checkSoluonghang($tableName)
+    {
+        try {
+            $sql = "SELECT * FROM $tableName WHERE  `so_luong_kho` = 0  ORDER BY `created` DESC ";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            // $stmt->bindParam(":name", $name);
+            // $stmt->bindParam(":id", $id);
+
+            $stmt->execute();
+
+            $data = $stmt->fetchAll();
+
+            return $data;
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}

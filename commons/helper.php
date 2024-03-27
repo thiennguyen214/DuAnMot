@@ -73,3 +73,17 @@ if (!function_exists('middleware_auth_check')) {
         }
     }
 }
+
+// if (!function_exists('userFilter')) {
+
+//     function userFilter($data)
+//     {
+
+//         array_filter($data, function ($item) {
+
+//            return  $kh = $item['role'] == 1;
+//         });
+//         return $kh;
+
+//     }
+// }

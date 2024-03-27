@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Thương hiệu</label>
-                        <select name="brand" class="form-control" id="exampleSelect2" required>
+                        <select name="brand" class="form-control" id="exampleSelect2" required >
                             <option value=""></option>
                             <?php foreach ($brands as $brand): ?>
                                 <option value="<?= $brand['id'] ?>">
