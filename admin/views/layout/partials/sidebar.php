@@ -1,12 +1,8 @@
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= BASE_URL . $_SESSION['user']['img'] ?>"
-            width="50px" alt="User Image">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+            src="<?= BASE_URL . $_SESSION['user']['img'] ?>" width="50px" alt="User Image">
         <div>
-
-            <p class="app-sidebar__user-name"><b>Thái Tú</b></p>
-            <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
-
             <p class="app-sidebar__user-name"><b>
                     Xin chào:
                     <?= $_SESSION['user']['name'] ?>

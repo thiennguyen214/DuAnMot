@@ -43,14 +43,15 @@ function floralCreate()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $script2 = 'create';
 
     if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['floral_name'] ?? null,
+            "img" => get_file_upload('ImageUpload'),
         ];
 
-        validatefloralCreate($data);
 
         insert('florals', $data);
 

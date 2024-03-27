@@ -23,7 +23,10 @@
                     <label class="control-label">Tên xuất xứ</label>
                     <input name="origin_name" class="form-control" type="text" required>
                 </div>
+                <div class="form-group col-md-12"></div>
+                <button class="btn btn-save" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=origins' ?>">Hủy bỏ</a>
+            </form>
         </div>
-        <button class="btn btn-save" type="submit">Lưu lại</button>
-        <a class="btn btn-cancel" href="/doc/table-data-table.html">Hủy bỏ</a>
+
     </div>

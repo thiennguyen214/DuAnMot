@@ -31,6 +31,7 @@ function imgProCreate()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $script2 = 'create';
 
     if (!empty($_POST)) {
 

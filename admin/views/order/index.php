@@ -14,12 +14,12 @@
             <div class="tile">
                 <div class="tile-body">
                     <div class="row element-button">
-                        <div class="col-sm-2">
+                        <!-- <div class="col-sm-2">
 
                             <a class="btn btn-add btn-sm" href="form-add-don-hang.html" title="Thêm"><i
                                     class="fas fa-plus"></i>
                                 Tạo mới đơn hàng</a>
-                        </div>
+                        </div> -->
                         <div class="col-sm-2">
                             <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
                                     class="fas fa-trash-alt"></i> Xóa tất cả </a>

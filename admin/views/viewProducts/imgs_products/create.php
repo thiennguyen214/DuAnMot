@@ -23,7 +23,11 @@
                     <label class="control-label">Tên hương nước hoa</label>
                     <input name="floral_name" class="form-control" type="text" required>
                 </div>
+                <div class="form-group col-md-12"></div>
+                <button class="btn btn-save" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="/doc/table-data-table.html">Hủy bỏ</a>
+            </form>
         </div>
-        <button class="btn btn-save" type="submit">Lưu lại</button>
-        <a class="btn btn-cancel" href="/doc/table-data-table.html">Hủy bỏ</a>
+
+
     </div>

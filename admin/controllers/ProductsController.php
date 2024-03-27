@@ -251,14 +251,7 @@ function validateProductUpdate($id, $data)
         $errors[] = 'Trường giá sale là bắt buộc';
     } else if ($data['price_sale'] >= $data['price']) {
         $errors[] = 'Giá sale không được lớn hơn giá thường';
-
     }
-
-
-<<<<<<< HEAD
-    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
-=======
-
     // if ($data['created'] === null) {
     //     $errors[] = 'Trường ngày tạo là bắt buộc';
     // }
@@ -267,8 +260,8 @@ function validateProductUpdate($id, $data)
         $errors[] = 'Trường ngày sửa là bắt buộc';
     }
 
-    if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
->>>>>>> acd30bfacf9a194b4dba4f60923884ebfe173c3e
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
 
         if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
@@ -301,6 +294,12 @@ function productShowOne($id)
     $title = 'Chi tiết User: ' . $products['name'];
     $view = 'viewProducts/index';
     $viewtable = "products/show";
+    $script = 'datetime';
+    // $script3 = 'table';
+    $style = 'datatable';
+    $style2 = 'form';
+    $active3 = 'active';
+    // $checkbox = 'create2';
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }

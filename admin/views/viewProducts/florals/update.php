@@ -24,10 +24,13 @@
                         </div> -->
                 <div class="form-group col-md-4">
                     <label class="control-label">Tên hương nước hoa</label>
-                    <input name="floral_name" class="form-control" type="text" value="<?= $floral['name'] ?>"
-                        required placeholder="Nhập tên loại nước hoa">
+                    <input name="floral_name" class="form-control" type="text" value="<?= $floral['name'] ?>" required
+                        placeholder="Nhập tên loại nước hoa">
                 </div>
+                <div class="form-group col-md-12"></div>
+                <button class="btn btn-save" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=florals' ?>">Hủy bỏ</a>
+            </form>
         </div>
-        <button class="btn btn-save" type="submit">Lưu lại</button>
-        <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=categories' ?>">Hủy bỏ</a>
+
     </div>
