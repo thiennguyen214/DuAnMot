@@ -8,6 +8,7 @@ define('PATH_VIEW', __DIR__ . '/../views/');
 define('PATH_CONTROLLER_ADMIN', __DIR__ . '/../admin/controllers/');
 define('PATH_MODEL_ADMIN', __DIR__ . '/../admin/models/');
 define('PATH_VIEW_ADMIN', __DIR__ . '/../admin/views/');
+define('PATH_VIEW_USER', __DIR__ . '/../views/layouts');
 
 define('PATH_UPLOAD', __DIR__ . '/../');
 
