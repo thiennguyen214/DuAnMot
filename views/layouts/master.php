@@ -205,14 +205,7 @@
 	<?php require_once PATH_VIEW_USER . '/partials/footer.php' ?>
 
 
-	<a href="#" class="backtop" title="Lên đầu trang">
-		<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="angle-up" role="img"
-			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-angle-up fa-w-10">
-			<path fill="currentColor"
-				d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z"
-				class=""></path>
-		</svg>
-	</a>
+	<?php require_once PATH_VIEW_USER . '/partials/backtop.php' ?>
 	<link rel="preload" as="style"
 		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/ajaxcart.scss02fb.css?1709175143725"
 		type="text/css">
@@ -916,20 +909,21 @@
 
 	</script>
 
+		<!-- sidecart -->
 	<script id="SideCartTemplate" type="text/template">
 
 <form action="/cart" method="post" novalidate class="cart ajaxcart">
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		<!-- item -->
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
-						{{/if}}
+						
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
 					</div>
 					<div class="grid">
@@ -950,11 +944,11 @@
 							
 						</div>
 					</div>
-					{{#if discountsApplied}}
+					
 					<div class="grid grid--table">
 						<div class="grid__item text-right">
 							<ul class="order-discount order-discount--list order-discount--title order-discount--cart order-discount--cart-title" aria-label="Giảm giá">
-								{{#each discounts}}
+								
 								<li class="order-discount__item">
 									<span class="icon icon-saletag" aria-hidden="true"></span>{{ this.discount_application.title }} (-{{{ this.formattedAmount }}})
 								</li>
@@ -972,9 +966,9 @@
 	</div>
 	<div class="ajaxcart__footer ajaxcart__footer--fixed cart-footer">
 		<div class="ajaxcart__subtotal">
-			{{#if cartDiscountsApplied}}
+			
 			<div class="grid grid--table ajaxcart__discounts">
-				{{#each cartDiscounts}}
+				
 				<div class="grid__item two-thirds">
 					<span class="order-discount order-discount--title order-discount--cart-title">
 						<span class="icon icon-saletag" aria-hidden="true"></span><span class="visually-hidden">%:</span>{{ this.title }}
@@ -1000,6 +994,7 @@
 
 </script>
 
+		
 	<script id="CartTemplate" type="text/template">
 
 <form action="/cart" method="post" novalidate class="cart ajaxcart cartpage">
@@ -1007,14 +1002,14 @@
 		<div>Thông tin sản phẩm</div><div>Đơn giá</div><div>Số lượng</div><div>Thành tiền</div>
 	</div>
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product {{itemquatang}}" data-line="{{line}}" dataidgift="{{idpro}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
@@ -1056,9 +1051,9 @@
 		<div class="row">
 			<div class="col-lg-4 col-12 offset-md-8 offset-lg-8 offset-xl-8">
 				<div class="ajaxcart__subtotal">
-					{{#if cartDiscountsApplied}}
+					
 					<div class="grid grid--table ajaxcart__discounts">
-						{{#each cartDiscounts}}
+						
 						<div class="grid__item two-thirds">
 							<span class="order-discount order-discount--title order-discount--cart-title">
 								<span class="icon icon-saletag" aria-hidden="true"></span><span class="visually-hidden">%:</span>{{ this.title }}
@@ -1089,14 +1084,14 @@
 
 <form action="/cart" method="post" novalidate class="cart ajaxcart cartheader">
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product {{itemquatang}}" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
@@ -1146,14 +1141,14 @@
 		<div>Thông tin sản phẩm</div><div>Đơn giá</div><div>Số lượng</div><div>Thành tiền</div>
 	</div>
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
@@ -1213,14 +1208,14 @@
 
 <form action="/cart" method="post" novalidate class="cart ajaxcart cart-mobile">
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 					</div>
@@ -1242,11 +1237,11 @@
 							<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
 						</div>
 					</div>
-					{{#if discountsApplied}}
+					
 					<div class="grid grid--table">
 						<div class="grid__item text-right">
 							<ul class="order-discount order-discount--list order-discount--title order-discount--cart order-discount--cart-title" aria-label="Giảm giá">
-								{{#each discounts}}
+								
 								<li class="order-discount__item">
 									<span class="icon icon-saletag" aria-hidden="true"></span>{{ this.discount_application.title }} (-{{{ this.formattedAmount }}})
 								</li>
@@ -1264,9 +1259,9 @@
 	</div>
 	<div class="ajaxcart__footer ajaxcart__footer--fixed cart-footer">
 		<div class="ajaxcart__subtotal">
-			{{#if cartDiscountsApplied}}
+			
 			<div class="grid grid--table ajaxcart__discounts">
-				{{#each cartDiscounts}}
+				
 				<div class="grid__item two-thirds">
 					<span class="order-discount order-discount--title order-discount--cart-title">
 						<span class="icon icon-saletag" aria-hidden="true"></span><span class="visually-hidden">%:</span>{{ this.title }}
