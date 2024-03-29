@@ -1,8 +1,6 @@
 <?php
 
-function userDetail($id)
+function userDetail()
 {
-    $user = getUserByID($id);
-
-    require_once PATH_VIEW . 'users/detail.php';
+    
 }
