@@ -11,6 +11,7 @@
 		
 
 		
+
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Bean Perfume">
 	<meta property="og:image" content="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725">
