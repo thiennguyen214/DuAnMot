@@ -14,8 +14,12 @@ require_file(PATH_MODEL);
 //
 $act = $_GET['act'] ?? '/';
 match ($act) {
-    '/' => userListAll(),
-    'gioithieu' => gioithieuListAll(),
+    '/' => index(),
+    'gioithieu' => gioithieu(),
+    'user-detail' => userDetail()
+
+    
+    
 };
 
 
