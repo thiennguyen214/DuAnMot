@@ -16,6 +16,12 @@ $act = $_GET['act'] ?? '/';
 match ($act) {
     '/' => index(),
     'gioithieu' => gioithieu(),
+    'tintuc' => tintuc(),
+    'lienhe' => lienhe(),
+    'trangchu' => trangchu(),
+    'thuonghieu' => thuonghieu(),
+    'sanpham' => sanpham(),
+    'giohang' => giohang(),
     'user-detail' => userDetail()
 
     

@@ -56,7 +56,7 @@
 					</svg>
 				</div>
 				<div class="col-lg-2 col-12 logo-war">
-					<a href="index.html" class="logo" title="Logo">
+					<a href="?act=trangchu" class="logo" title="Logo">
 						<img width="240" height="109"
 							src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725"
 							alt="Bean Perfume">
@@ -73,7 +73,7 @@
 
 
 									<li class="nav-item active  ">
-										<a class="a-img a-index" href="index.html" title="Trang chủ">
+										<a class="a-img a-index" href="?act=trangchu" title="Trang chủ">
 											Trang chủ
 										</a>
 									</li>
@@ -90,7 +90,7 @@
 
 
 									<li class="nav-item   has-mega">
-										<a class="a-img caret-down a-index" href="thuong-hieu.html" title="Thương hiệu">
+										<a class="a-img caret-down a-index" href="?act=thuonghieu" title="Thương hiệu">
 											Thương hiệu
 										</a>
 										<i class="fa fa-caret-down"></i>
@@ -317,7 +317,7 @@
 
 
 									<li class="nav-item  ">
-										<a class="a-img caret-down a-index" href="collections/all.html"
+										<a class="a-img caret-down a-index" href="?act=sanpham"
 											title="Sản phẩm">
 											Sản phẩm
 										</a>
@@ -343,13 +343,13 @@
 									</li>
 
 									<li class="nav-item  ">
-										<a class="a-img a-index" href="tin-tuc.html" title="Tin tức">
+										<a class="a-img a-index" href="?act=tintuc" title="Tin tức">
 											Tin tức
 										</a>
 									</li>
 
 									<li class="nav-item  ">
-										<a class="a-img a-index" href="lien-he.html" title="Liên hệ">
+										<a class="a-img a-index" href="?act=lienhe" title="Liên hệ">
 											Liên hệ
 										</a>
 									</li>
@@ -411,7 +411,7 @@
 								</a>
 							</li>
 							<li class="header-cart block-cart">
-								<a href="cart.html" class="icon">
+								<a href="?act=giohang" class="icon">
 									<svg viewBox="-61 0 512 512">
 										<path
 											d="m195 0c-57.898438 0-105 47.101562-105 105v15h-90v392h390v-392h-90v-15c0-57.898438-47.101562-105-105-105zm-75 105c0-41.355469 33.644531-75 75-75s75 33.644531 75 75v15h-150zm240 45v332h-330v-332h60v60h30v-60h150v60h30v-60zm0 0" />

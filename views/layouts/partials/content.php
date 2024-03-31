@@ -256,7 +256,7 @@
 							<p class="conent_about">Bean Perfume ra đời năm 2019, xuất phát từ sự đam mê vô tận với nước
 								hoa. <br> Chúng tôi mong muốn mang đến cho những người yêu nước hoa sản phẩm chính hãng
 								từ Pháp với mức giá tốt nhất</p>
-							<a class="view_more" href="gioi-thieu.html" title="Xem thêm">Xem thêm</a>
+							<a class="view_more" href="?act=gioithieu" title="Xem thêm">Xem thêm</a>
 						</div>
 					</div>
 					<div class="item_about">
@@ -705,7 +705,7 @@
 					<div class="swiper-button-next"></div>
 				</div>
 				<div class="view-more clearfix">
-					<a href="san-pham-khuyen-mai.html" title="Xem tất cả" class="btn">
+					<a href="?act=sanpham" title="Xem tất cả" class="btn">
 						Xem tất cả
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 							stroke="currentColor" class="w-6 h-6">

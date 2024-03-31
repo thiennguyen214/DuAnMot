@@ -1,187 +1,915 @@
-<footer class="footer" style="background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_foo02fb.jpg?1709175143725);">
-	<div class="mid-footer">
-		<div class="container">
+<!DOCTYPE html>
+<html lang="vi">
+	
+<!-- Mirrored from bean-perfume.mysapo.net/cart by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Mar 2024 01:10:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8" />
+		<meta name="theme-color" content="#ce0082" />
+		<link rel="canonical" href="cart.html"/>
+		<meta name='revisit-after' content='2 days' />
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">	
+		<meta name="robots" content="follow, noindex">
+		<meta name="description" content="">
+		<title>Giỏ hàng		</title>
+		<meta name="keywords" content="Giỏ hàng, Bean Perfume, bean-perfume.mysapo.net"/>		
+		
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Giỏ hàng">
+	<meta property="og:image" content="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725">
+	<meta property="og:image:secure_url" content="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725">
+
+<meta property="og:description" content="">
+<meta property="og:url" content="cart.html">
+<meta property="og:site_name" content="Bean Perfume">	
+		<link rel="icon" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/favicon02fb.png?1709175143725" type="image/x-icon" />
+		<link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/jquery02fb.js?1709175143725" />
+		<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/jquery02fb.js?1709175143725" type="text/javascript"></script>
+		<link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/swiper02fb.js?1709175143725" />
+		<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/swiper02fb.js?1709175143725" type="text/javascript"></script>
+		<link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.js?1709175143725" />
+		<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.js?1709175143725" type="text/javascript"></script>
+		<script>
+//notify js
+!function(t){"function"==typeof define&&define.amd?define(["jquery"],t):t("object"==typeof exports?require("jquery"):jQuery)}(function(t){function s(s){var e=!1;return t('[data-notify="container"]').each(function(i,n){var a=t(n),o=a.find('[data-notify="title"]').text().trim(),r=a.find('[data-notify="message"]').html().trim(),l=o===t("<div>"+s.settings.content.title+"</div>").html().trim(),d=r===t("<div>"+s.settings.content.message+"</div>").html().trim(),g=a.hasClass("alert-"+s.settings.type);return l&&d&&g&&(e=!0),!e}),e}function e(e,n,a){var o={content:{message:"object"==typeof n?n.message:n,title:n.title?n.title:"",icon:n.icon?n.icon:"",url:n.url?n.url:"#",target:n.target?n.target:"-"}};a=t.extend(!0,{},o,a),this.settings=t.extend(!0,{},i,a),this._defaults=i,"-"===this.settings.content.target&&(this.settings.content.target=this.settings.url_target),this.animations={start:"webkitAnimationStart oanimationstart MSAnimationStart animationstart",end:"webkitAnimationEnd oanimationend MSAnimationEnd animationend"},"number"==typeof this.settings.offset&&(this.settings.offset={x:this.settings.offset,y:this.settings.offset}),(this.settings.allow_duplicates||!this.settings.allow_duplicates&&!s(this))&&this.init()}var i={element:"body",position:null,type:"info",allow_dismiss:!0,allow_duplicates:!0,newest_on_top:!1,showProgressbar:!1,placement:{from:"top",align:"right"},offset:20,spacing:10,z_index:1031,delay:5e3,timer:1e3,url_target:"_blank",mouse_over:null,animate:{enter:"animated fadeInDown",exit:"animated fadeOutUp"},onShow:null,onShown:null,onClose:null,onClosed:null,icon_type:"class",template:'<div data-notify="container" class="col-xs-11 col-sm-4 alert alert-{0}" role="alert"><button type="button" aria-hidden="true" class="close" data-notify="dismiss">&times;</button><span data-notify="icon"></span> <span data-notify="title">{1}</span> <span data-notify="message">{2}</span><div class="progress" data-notify="progressbar"><div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div><a href="{3}" target="{4}" data-notify="url"></a></div>'};String.format=function(){for(var t=arguments[0],s=1;s<arguments.length;s++)t=t.replace(RegExp("\\{"+(s-1)+"\\}","gm"),arguments[s]);return t},t.extend(e.prototype,{init:function(){var t=this;this.buildNotify(),this.settings.content.icon&&this.setIcon(),"#"!=this.settings.content.url&&this.styleURL(),this.styleDismiss(),this.placement(),this.bind(),this.notify={$ele:this.$ele,update:function(s,e){var i={};"string"==typeof s?i[s]=e:i=s;for(var n in i)switch(n){case"type":this.$ele.removeClass("alert-"+t.settings.type),this.$ele.find('[data-notify="progressbar"] > .progress-bar').removeClass("progress-bar-"+t.settings.type),t.settings.type=i[n],this.$ele.addClass("alert-"+i[n]).find('[data-notify="progressbar"] > .progress-bar').addClass("progress-bar-"+i[n]);break;case"icon":var a=this.$ele.find('[data-notify="icon"]');"class"===t.settings.icon_type.toLowerCase()?a.removeClass(t.settings.content.icon).addClass(i[n]):(a.is("img")||a.find("img"),a.attr("src",i[n]));break;case"progress":var o=t.settings.delay-t.settings.delay*(i[n]/100);this.$ele.data("notify-delay",o),this.$ele.find('[data-notify="progressbar"] > div').attr("aria-valuenow",i[n]).css("width",i[n]+"%");break;case"url":this.$ele.find('[data-notify="url"]').attr("href",i[n]);break;case"target":this.$ele.find('[data-notify="url"]').attr("target",i[n]);break;default:this.$ele.find('[data-notify="'+n+'"]').html(i[n])}var r=this.$ele.outerHeight()+parseInt(t.settings.spacing)+parseInt(t.settings.offset.y);t.reposition(r)},close:function(){t.close()}}},buildNotify:function(){var s=this.settings.content;this.$ele=t(String.format(this.settings.template,this.settings.type,s.title,s.message,s.url,s.target)),this.$ele.attr("data-notify-position",this.settings.placement.from+"-"+this.settings.placement.align),this.settings.allow_dismiss||this.$ele.find('[data-notify="dismiss"]').css("display","none"),(this.settings.delay>0||this.settings.showProgressbar)&&this.settings.showProgressbar||this.$ele.find('[data-notify="progressbar"]').remove()},setIcon:function(){"class"===this.settings.icon_type.toLowerCase()?this.$ele.find('[data-notify="icon"]').addClass(this.settings.content.icon):this.$ele.find('[data-notify="icon"]').is("img")?this.$ele.find('[data-notify="icon"]').attr("src",this.settings.content.icon):this.$ele.find('[data-notify="icon"]').append('<img src="'+this.settings.content.icon+'" alt="Notify Icon" />')},styleDismiss:function(){this.$ele.find('[data-notify="dismiss"]').css({position:"absolute",right:"10px",top:"5px",zIndex:this.settings.z_index+2})},styleURL:function(){this.$ele.find('[data-notify="url"]').css({backgroundImage:"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)",height:"100%",left:0,position:"absolute",top:0,width:"100%",zIndex:this.settings.z_index+1})},placement:function(){var s=this,e=this.settings.offset.y,i={display:"inline-block",margin:"0px auto",position:this.settings.position?this.settings.position:"body"===this.settings.element?"fixed":"absolute",transition:"all .5s ease-in-out",zIndex:this.settings.z_index},n=!1,a=this.settings;switch(t('[data-notify-position="'+this.settings.placement.from+"-"+this.settings.placement.align+'"]:not([data-closing="true"])').each(function(){e=Math.max(e,parseInt(t(this).css(a.placement.from))+parseInt(t(this).outerHeight())+parseInt(a.spacing))}),this.settings.newest_on_top===!0&&(e=this.settings.offset.y),i[this.settings.placement.from]=e+"px",this.settings.placement.align){case"left":case"right":i[this.settings.placement.align]=this.settings.offset.x+"px";break;case"center":i.left=0,i.right=0}this.$ele.css(i).addClass(this.settings.animate.enter),t.each(["webkit-","moz-","o-","ms-",""],function(t,e){s.$ele[0].style[e+"AnimationIterationCount"]=1}),t(this.settings.element).append(this.$ele),this.settings.newest_on_top===!0&&(e=parseInt(e)+parseInt(this.settings.spacing)+this.$ele.outerHeight(),this.reposition(e)),t.isFunction(s.settings.onShow)&&s.settings.onShow.call(this.$ele),this.$ele.one(this.animations.start,function(){n=!0}).one(this.animations.end,function(){t.isFunction(s.settings.onShown)&&s.settings.onShown.call(this)}),setTimeout(function(){n||t.isFunction(s.settings.onShown)&&s.settings.onShown.call(this)},600)},bind:function(){var s=this;if(this.$ele.find('[data-notify="dismiss"]').on("click",function(){s.close()}),this.$ele.mouseover(function(){t(this).data("data-hover","true")}).mouseout(function(){t(this).data("data-hover","false")}),this.$ele.data("data-hover","false"),this.settings.delay>0){s.$ele.data("notify-delay",s.settings.delay);var e=setInterval(function(){var t=parseInt(s.$ele.data("notify-delay"))-s.settings.timer;if("false"===s.$ele.data("data-hover")&&"pause"===s.settings.mouse_over||"pause"!=s.settings.mouse_over){var i=(s.settings.delay-t)/s.settings.delay*100;s.$ele.data("notify-delay",t),s.$ele.find('[data-notify="progressbar"] > div').attr("aria-valuenow",i).css("width",i+"%")}t>-s.settings.timer||(clearInterval(e),s.close())},s.settings.timer)}},close:function(){var s=this,e=parseInt(this.$ele.css(this.settings.placement.from)),i=!1;this.$ele.data("closing","true").addClass(this.settings.animate.exit),s.reposition(e),t.isFunction(s.settings.onClose)&&s.settings.onClose.call(this.$ele),this.$ele.one(this.animations.start,function(){i=!0}).one(this.animations.end,function(){t(this).remove(),t.isFunction(s.settings.onClosed)&&s.settings.onClosed.call(this)}),setTimeout(function(){i||(s.$ele.remove(),s.settings.onClosed&&s.settings.onClosed(s.$ele))},600)},reposition:function(s){var e=this,i='[data-notify-position="'+this.settings.placement.from+"-"+this.settings.placement.align+'"]:not([data-closing="true"])',n=this.$ele.nextAll(i);this.settings.newest_on_top===!0&&(n=this.$ele.prevAll(i)),n.each(function(){t(this).css(e.settings.placement.from,s),s=parseInt(s)+parseInt(e.settings.spacing)+t(this).outerHeight()})}}),t.notify=function(t,s){var i=new e(this,t,s);return i.notify},t.notifyDefaults=function(s){return i=t.extend(!0,{},i,s)},t.notifyClose=function(s){void 0===s||"all"===s?t("[data-notify]").find('[data-notify="dismiss"]').trigger("click"):t('[data-notify-position="'+s+'"]').find('[data-notify="dismiss"]').trigger("click")}});
+//cookie
+!function(e){var n;if("function"==typeof define&&define.amd&&(define(e),n=!0),"object"==typeof exports&&(module.exports=e(),n=!0),!n){var t=window.Cookies,o=window.Cookies=e();o.noConflict=function(){return window.Cookies=t,o}}}(function(){function e(){for(var e=0,n={};e<arguments.length;e++){var t=arguments[e];for(var o in t)n[o]=t[o]}return n}function n(e){return e.replace(/(%[0-9A-Z]{2})+/g,decodeURIComponent)}return function t(o){function r(){}function i(n,t,i){if("undefined"!=typeof document){"number"==typeof(i=e({path:"/"},r.defaults,i)).expires&&(i.expires=new Date(1*new Date+864e5*i.expires)),i.expires=i.expires?i.expires.toUTCString():"";try{var c=JSON.stringify(t);/^[\{\[]/.test(c)&&(t=c)}catch(e){}t=o.write?o.write(t,n):encodeURIComponent(String(t)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),n=encodeURIComponent(String(n)).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent).replace(/[\(\)]/g,escape);var f="";for(var u in i)i[u]&&(f+="; "+u,!0!==i[u]&&(f+="="+i[u].split(";")[0]));return document.cookie=n+"="+t+f}}function c(e,t){if("undefined"!=typeof document){for(var r={},i=document.cookie?document.cookie.split("; "):[],c=0;c<i.length;c++){var f=i[c].split("="),u=f.slice(1).join("=");t||'"'!==u.charAt(0)||(u=u.slice(1,-1));try{var a=n(f[0]);if(u=(o.read||o)(u,a)||n(u),t)try{u=JSON.parse(u)}catch(e){}if(r[a]=u,e===a)break}catch(e){}}return e?r[e]:r}}return r.set=i,r.get=function(e){return c(e,!1)},r.getJSON=function(e){return c(e,!0)},r.remove=function(n,t){i(n,"",e(t,{expires:-1}))},r.defaults={},r.withConverter=t,r}(function(){})});
+
+</script>
+		<link rel="preload" as='style' type="text/css" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main.scss02fb.css?1709175143725">
+<link rel="preload" as='style'  type="text/css" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/index.scss02fb.css?1709175143725">
+<link rel="preload" as='style'  type="text/css" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bootstrap-4-3-min02fb.css?1709175143725">
+<link rel="preload" as='style'  type="text/css" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/swiper.scss02fb.css?1709175143725">
+<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bootstrap-4-3-min02fb.css?1709175143725">
+<link href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main.scss02fb.css?1709175143725" rel="stylesheet" type="text/css" media="all" />
+
+<link href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/swiper.scss02fb.css?1709175143725" rel="stylesheet" type="text/css" media="all" />	
+
+
+<link href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/breadcrumb_style.scss02fb.css?1709175143725" rel="stylesheet" type="text/css" media="all" />
+
+<link href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/paginate.scss02fb.css?1709175143725" rel="stylesheet" type="text/css" media="all" />
+
+
+
+
+<link href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/cartpage.scss02fb.css?1709175143725" rel="stylesheet" type="text/css" media="all" />	
+
+
+
+
+
+
+
+
+		<script>
+	var Bizweb = Bizweb || {};
+	Bizweb.store = 'bean-perfume.mysapo.net';
+	Bizweb.id = 503826;
+	Bizweb.theme = {"id":932476,"name":"Bean Perfume","role":"main"};
+	Bizweb.template = 'cart';
+	if(!Bizweb.fbEventId)  Bizweb.fbEventId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+	var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+				return v.toString(16);
+			});		
+</script>
+<script>
+	(function () {
+		function asyncLoad() {
+			var urls = ["//newproductreviews.sapoapps.vn/assets/js/productreviews.min.js?store=bean-perfume.mysapo.net"];
+			for (var i = 0; i < urls.length; i++) {
+				var s = document.createElement('script');
+				s.type = 'text/javascript';
+				s.async = true;
+				s.src = urls[i];
+				var x = document.getElementsByTagName('script')[0];
+				x.parentNode.insertBefore(s, x);
+			}
+		};
+		window.attachEvent ? window.attachEvent('onload', asyncLoad) : window.addEventListener('load', asyncLoad, false);
+	})();
+</script>
+
+
+<script>
+	window.BizwebAnalytics = window.BizwebAnalytics || {};
+	window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
+	window.BizwebAnalytics.meta.currency = 'VND';
+	window.BizwebAnalytics.tracking_url = 's.html';
+
+	var meta = {};
+	
+	
+	for (var attr in meta) {
+	window.BizwebAnalytics.meta[attr] = meta[attr];
+	}
+</script>
+
+	
+		<script src="dist/js/stats.min8612.js?v=f021d1e"></script>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+<script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": 
+        [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": 
+                {
+                  "@id": "https://bean-perfume.mysapo.net",
+                  "name": "Trang chủ"
+                }
+            },
+      
+        
+      
+      
+      
+      
+      {
+                "@type": "ListItem",
+                "position": 2,
+                "item": 
+                {
+                  "@id": "https://bean-perfume.mysapo.net/cart",
+                  "name": "Giỏ hàng"
+                }
+            }
+      
+    
+        ]
+        }
+</script>
+
+		<script>
+			$(document).ready(function ($) {
+				awe_lazyloadImage();
+			});
+			function awe_lazyloadImage() {
+				var ll = new LazyLoad({
+					elements_selector: ".lazyload",
+					load_delay: 100,
+					threshold: 0
+				});
+			} window.awe_lazyloadImage=awe_lazyloadImage;
+		</script>
+	</head>
+	<body >
+		<div class="opacity_menu"></div>
+
+<div class="popup-search">
+	<div class="title_search">Tìm kiếm sản phẩm</div>
+	<div class="search-header">
+		<div class="search-smart">
+			<form action="https://bean-perfume.mysapo.net/search" method="get" class="header-search-form input-group search-bar" role="search">
+				<input type="text" name="query" required class="input-group-field auto-search search-auto form-control" placeholder="Nhập tên sản phẩm..." autocomplete="off">
+				<input type="hidden" name="type" value="product">
+				<button type="submit" class="btn icon-fallback-text" aria-label="Tìm kiếm" title="Tìm kiếm">
+					<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="#000" xmlns="http://www.w3.org/2000/svg"> <path fill="#000" d="M14.1404 13.4673L19.852 19.1789C20.3008 19.6276 19.6276 20.3008 19.1789 19.852L13.4673 14.1404C12.0381 15.4114 10.1552 16.1835 8.09176 16.1835C3.6225 16.1835 0 12.5613 0 8.09176C0 3.6225 3.62219 0 8.09176 0C12.561 0 16.1835 3.62219 16.1835 8.09176C16.1835 10.1551 15.4115 12.038 14.1404 13.4673ZM0.951972 8.09176C0.951972 12.0356 4.14824 15.2316 8.09176 15.2316C12.0356 15.2316 15.2316 12.0353 15.2316 8.09176C15.2316 4.14797 12.0353 0.951972 8.09176 0.951972C4.14797 0.951972 0.951972 4.14824 0.951972 8.09176Z"></path> </svg>
+				</button>
+				
+				<div class="search-suggest">
+					<div class="list-search list-search-style">
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+	<a href="javascript:void(0)" class="close-popup-search">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve"> <g> <g> <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z"></path> </g> </g> </svg>
+	</a>
+	<div class="product-search">
+		<div class="title-search">
+			<span>Đừng bỏ lỡ</span>
+		</div>
+
+		
+
+
+
+<div class="item">
+	<div class="image">
+		<a class="image_thumb" href="unisex-creed-millesime-imperial.html" title="Unisex Creed Millesime Imperial">
+			<img  width="100" height="100" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"  data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-creed-millesime-imperial-edp-100ml.png?v=1701251789210" alt="Unisex Creed Millesime Imperial">
+		</a>
+	</div>
+	<div class="content">
+		<h3 class="product-name"><a class="line-clamp line-clamp-1" href="unisex-creed-millesime-imperial.html" title="Unisex Creed Millesime Imperial">Unisex Creed Millesime Imperial</a></h3>
+		<div class="price-box">
+			5.680.000₫
+			<span class="compare-price">6.500.000₫</span>
+
+		</div>
+	</div>
+</div>
+
+
+		
+
+
+
+<div class="item">
+	<div class="image">
+		<a class="image_thumb" href="nuoc-hoa-unisex-gucci-the-virgin-violet.html" title="Nước Hoa Unisex Gucci The Virgin Violet">
+			<img  width="100" height="100" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"  data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-gucci-the-virgin-violet-edp-100ml.png?v=1701251056543" alt="Nước Hoa Unisex Gucci The Virgin Violet">
+		</a>
+	</div>
+	<div class="content">
+		<h3 class="product-name"><a class="line-clamp line-clamp-1" href="nuoc-hoa-unisex-gucci-the-virgin-violet.html" title="Nước Hoa Unisex Gucci The Virgin Violet">Nước Hoa Unisex Gucci The Virgin Violet</a></h3>
+		<div class="price-box">
+			5.800.000₫
+			<span class="compare-price">7.900.000₫</span>
+
+		</div>
+	</div>
+</div>
+
+
+		
+
+
+
+<div class="item">
+	<div class="image">
+		<a class="image_thumb" href="gucci-bloom-ambrosia-di-fiori.html" title="Gucci Bloom Ambrosia di Fiori">
+			<img  width="100" height="100" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"  data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413" alt="Gucci Bloom Ambrosia di Fiori">
+		</a>
+	</div>
+	<div class="content">
+		<h3 class="product-name"><a class="line-clamp line-clamp-1" href="gucci-bloom-ambrosia-di-fiori.html" title="Gucci Bloom Ambrosia di Fiori">Gucci Bloom Ambrosia di Fiori</a></h3>
+		<div class="price-box">
+			2.560.000₫
+			<span class="compare-price">3.150.000₫</span>
+
+		</div>
+	</div>
+</div>
+
+
+		
+
+
+
+<div class="item">
+	<div class="image">
+		<a class="image_thumb" href="calvin-klein-ck-one-gold.html" title="Calvin Klein CK One Gold">
+			<img  width="100" height="100" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"  data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417" alt="Calvin Klein CK One Gold">
+		</a>
+	</div>
+	<div class="content">
+		<h3 class="product-name"><a class="line-clamp line-clamp-1" href="calvin-klein-ck-one-gold.html" title="Calvin Klein CK One Gold">Calvin Klein CK One Gold</a></h3>
+		<div class="price-box">
+			1.050.000₫
+			<span class="compare-price">1.580.000₫</span>
+
+		</div>
+	</div>
+</div>
+
+
+		
+
+
+
+<div class="item">
+	<div class="image">
+		<a class="image_thumb" href="nuoc-hoa-le-labo-santal-33.html" title="Nước hoa Le Labo Santal 33">
+			<img  width="100" height="100" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"  data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/le-labo-santal-33-fa66901a85514b-removebg-preview.png?v=1701249584653" alt="Nước hoa Le Labo Santal 33">
+		</a>
+	</div>
+	<div class="content">
+		<h3 class="product-name"><a class="line-clamp line-clamp-1" href="nuoc-hoa-le-labo-santal-33.html" title="Nước hoa Le Labo Santal 33">Nước hoa Le Labo Santal 33</a></h3>
+		<div class="price-box">
+			3.500.000₫
+			<span class="compare-price">3.850.000₫</span>
+
+		</div>
+	</div>
+</div>
+
+	</div>
+</div>		<div class="bodywrap">
+			<section class="bread-crumb">
+	<div class="container">
+		<ul class="breadcrumb" >					
+			<li class="home">
+				<a  href="index.html" ><span >Trang chủ</span></a>						
+				<span class="mr_lr">&nbsp;<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-chevron-right fa-w-10"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" class=""></path></svg>&nbsp;</span>
+			</li>
+			
+			<li><strong ><span>Giỏ hàng</span></strong></li>
+			
+		</ul>
+	</div>
+</section> 
+
+
+
+
+
+<section class="main-cart-page main-container col1-layout">
+	<div class="main container cartpcstyle">
+		<div class="wrap_background_aside margin-bottom-40" style="display: inline-block;   width: 100%;">
+			<div class="header-cart d-none">
+				<div class="title-block-page">
+					<h1 class="title_cart">
+						<span>Giỏ hàng của bạn</span>
+					</h1>
+				</div>
+			</div>
 			<div class="row">
-				<div class="col-12 col-lg-4 ft-info"> 
-					<h4 class="title-menu">
-						Thông tin chung
-					</h4>
+				<div class="col-xl-8 col-lg-8 col-12 col-cart-left">
 					
-					
-
-
-					<div class="des_foo">
-						Với sứ mệnh "Khách hàng là ưu tiên số 1" chúng tôi luôn mạng lại giá trị tốt nhất 
-					</div>
-					
-					<div class="list-menu toggle-mn">
-						<div class="content-contact clearfix">
-							<span class="list_footer">
-								<b>Địa chỉ: </b>
-								
-								70 Lữ Gia, Phường 15, Quận 11, TP.HCM
-								
-							</span>
+					<div class="cart-tinhtrang">
+						<div class="title_voucher">
+							<span>Nhận quà tặng !!!</span>
 						</div>
-						<div class="content-contact clearfix">
-							<span class="list_footer">
-								<b>Điện thoại: </b>
-								<a title="1900 6750" href="tel:19006750">
-									1900 6750
-								</a>
-							</span>
-						</div>
-						<div class="content-contact clearfix">
-							<span class="list_footer">
-								<b>Email: </b>
-								<a title="support@sapo.vn" href="mailto:support@sapo.vn">
-									support@sapo.vn
-								</a>
-							</span>
+						
+						
+						<div class="js-gift gift mb-4 p-3">
+							<div class="align-items-lg-center align-items-start d-flex">
+								<div class="image overflow-hidden">
+									<img  width="520" height="520" class="lazyload image1" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"  data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/h24-abf884ca034241b894f24c31c1d2-removebg-preview-min.png?v=1701315334450" alt="">
+								</div>
+								<div class="d-flex flex-column pl-2 pl-lg-3 coupon-1">
+									<div class="mb-2 title_gift"> 
+										<div class="coupon-content"></div>
+									</div>
+									<form action="https://bean-perfume.mysapo.net/cart/add" method="post" class="variants" data-cart-form data-id="product-actions-33640207" enctype="multipart/form-data">
+										<input type="hidden" name="variantId" value="104047192" />
+										<a title="Nhận ngay" class="mr-auto btn js-gift-item text-center rounded-10 text-white font-weight-bold py-2 px-3" href="javascript:;" data-id="" data-alias="hermes-h24-travel-spray-qua-tang">
+											<svg width="18" height="18">
+												<path d="M18 5.55475H16.791C16.922 5.14375 17 4.65075 17 4.05475C17 2.12475 15.43 0.554749 13.5 0.554749C11.878 0.554749 10.795 2.03675 10.096 3.63975C9.407 2.12475 8.269 0.554749 6.5 0.554749C4.57 0.554749 3 2.12475 3 4.05475C3 4.65075 3.079 5.14375 3.209 5.55475H2C0.897 5.55475 0 6.45175 0 7.55475V9.55475C0 10.6577 0.897 11.5547 2 11.5547V18.5547C2 19.6577 2.897 20.5547 4 20.5547H9H11H16C17.103 20.5547 18 19.6577 18 18.5547V11.5547C19.103 11.5547 20 10.6577 20 9.55475V7.55475C20 6.45175 19.103 5.55475 18 5.55475ZM13.5 2.55475C14.327 2.55475 15 3.22775 15 4.05475C15 5.55475 14.374 5.55475 14 5.55475H11.522C12.033 3.97875 12.775 2.55475 13.5 2.55475ZM5 4.05475C5 3.22775 5.673 2.55475 6.5 2.55475C7.388 2.55475 8.214 4.07975 8.698 5.55475H6C5.626 5.55475 5 5.55475 5 4.05475ZM2 7.55475H9V9.55475H2V7.55475ZM4 18.5547V11.5547H9V18.5547H4ZM16 18.5547H11V11.5547H16V18.5547ZM11 9.55475V7.63975C11.005 7.61175 11.011 7.58275 11.017 7.55475H18L18.001 9.55475H11Z"/>
+											</svg>
+											<span class="cnt">Nhận ngay</span>
+										</a>
+									</form>
+
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="social-footer">
-						<div class="social toggle-mn">
-							<a class="fb" href="https://www.facebook.com/sapowebvietnam/" target="_blank" aria-label="Facebook" title="Theo dõi Bean Perfume trên Facebook">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;" xml:space="preserve">
-									<path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803   c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654   c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246   c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#EBE7E7"/>
-								</svg>
-							</a>
-							<a class="tt" href="https://twitter.com/" target="_blank" aria-label="Twitter" title="Theo dõi Bean Perfume trên Twitter">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="25px" height="25px">
-									<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016    c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992    c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056    c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152    c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792    c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44    C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568    C480.224,136.96,497.728,118.496,512,97.248z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#EBE7E7"/>
-								</svg>
-							</a>
-							<a class="yt" href="https://www.youtube.com/" target="_blank" aria-label="Youtube" title="Theo dõi Bean Perfume trên Youtube">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-									<path d="M490.24,113.92c-13.888-24.704-28.96-29.248-59.648-30.976C399.936,80.864,322.848,80,256.064,80
-											 c-66.912,0-144.032,0.864-174.656,2.912c-30.624,1.76-45.728,6.272-59.744,31.008C7.36,138.592,0,181.088,0,255.904
-											 C0,255.968,0,256,0,256c0,0.064,0,0.096,0,0.096v0.064c0,74.496,7.36,117.312,21.664,141.728
-											 c14.016,24.704,29.088,29.184,59.712,31.264C112.032,430.944,189.152,432,256.064,432c66.784,0,143.872-1.056,174.56-2.816
-											 c30.688-2.08,45.76-6.56,59.648-31.264C504.704,373.504,512,330.688,512,256.192c0,0,0-0.096,0-0.16c0,0,0-0.064,0-0.096
-											 C512,181.088,504.704,138.592,490.24,113.92z M192,352V160l160,96L192,352z"/>
-								</svg>
-							</a>
-							<a class="ins" href="https://www.instagram.com/" target="_blank" aria-label="Instagram" title="Theo dõi Bean Perfume trên Instagram">
-								<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m75 512h362c41.355469 0 75-33.644531 75-75v-362c0-41.355469-33.644531-75-75-75h-362c-41.355469 0-75 33.644531-75 75v362c0 41.355469 33.644531 75 75 75zm-45-437c0-24.8125 20.1875-45 45-45h362c24.8125 0 45 20.1875 45 45v362c0 24.8125-20.1875 45-45 45h-362c-24.8125 0-45-20.1875-45-45zm0 0"/><path d="m256 391c74.4375 0 135-60.5625 135-135s-60.5625-135-135-135-135 60.5625-135 135 60.5625 135 135 135zm0-240c57.898438 0 105 47.101562 105 105s-47.101562 105-105 105-105-47.101562-105-105 47.101562-105 105-105zm0 0"/><path d="m406 151c24.8125 0 45-20.1875 45-45s-20.1875-45-45-45-45 20.1875-45 45 20.1875 45 45 45zm0-60c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/></svg>
-							</a>
+					<div class="cart-page d-xl-block d-none">
+						<div class="drawer__inner">
+							<div class="CartPageContainer">
+							</div>
+
+						</div>
+					</div>
+					<div class="cart-mobile-page d-block d-xl-none">
+						<div class="CartMobileContainer">
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-5 ft-menu"> 
-					<div class="row">
-						<div class="col-12 col-sm-6 link-list col-footer footer-click">
-							<h4 class="title-menu title-menu2">
-								Chính sách
-							</h4>
-							<ul class="list-menu hidden-mobile">
-								
-								<li><a href="chinh-sach-thanh-vien.html" title="Chính sách thành viên">Chính sách thành viên</a></li>
-								
-								<li><a href="chinh-sach-thanh-toan.html" title="Chính sách thanh toán">Chính sách thanh toán</a></li>
-								
-								<li><a href="chinh-sach-doi-san-pham.html" title="Chính sách đổi sản phẩm">Chính sách đổi sản phẩm</a></li>
-								
-								<li><a href="chinh-sach-bao-mat.html" title="Chính sách bảo mật">Chính sách bảo mật</a></li>
-								
-								<li><a href="chinh-sach-cong-tac-vien.html" title="Chính sách cộng tác viên">Chính sách cộng tác viên</a></li>
-								
-							</ul>
+				<div class="col-xl-4 col-lg-4 col-12 col-cart-right">
+					<form method="post" novalidate="" class="formVAT">
+						<h4>
+							Thời gian giao hàng
+						</h4>
+						<div class="timedeli-modal">
+							<fieldset class="input_group date_pick">
+								<input type="text" placeholder="Chọn ngày" readonly id="date" name="attributes[shipdate]" class="date_picker" required>
+							</fieldset>
+							<fieldset class="input_group date_time">
+								<select name="time" class="timeer timedeli-cta" >
+									<option selected>Chọn thời gian</option>
+									
+									
+									<option value="08h00 - 12h00">08h00 - 12h00</option>
+									
+									<option value=" 14h00 - 18h00"> 14h00 - 18h00</option>
+									
+									<option value=" 19h00 - 21h00"> 19h00 - 21h00</option>
+									
+								</select>
+							</fieldset>
 						</div>
-						<div class="col-12 col-sm-6 link-list col-footer footer-click">
-							<h4 class="title-menu title-menu2">
-								Hướng dẫn
-							</h4>
-							<ul class="list-menu hidden-mobile">
-								
-								<li><a href="huong-dan-mua-hang.html" title="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a></li>
-								
-								<li><a href="huong-dan-doi-tra.html" title="Hướng dẫn đổi trả">Hướng dẫn đổi trả</a></li>
-								
-								<li><a href="huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán">Hướng dẫn thanh toán</a></li>
-								
-								<li><a href="chuong-trinh-cong-tac-vien.html" title="Chương trình cộng tác viên">Chương trình cộng tác viên</a></li>
-								
-								<li><a href="giai-dap-thac-mac.html" title="Giải đáp thắc mắc">Giải đáp thắc mắc</a></li>
-								
-							</ul>
+						
+						<div class="r-bill">
+							<div class="checkbox">
+								<input type="hidden" name="attributes[invoice]" id="re-checkbox-bill"
+									   value='không'>
+								<input type="checkbox" id="checkbox-bill" name="attributes[invoice]" value="có"  
+									   class="regular-checkbox" />
+								<label for="checkbox-bill" class="box"></label>
+								<label for="checkbox-bill" class="title">Xuất hóa đơn công ty</label>
+							</div>
+							<div class="bill-field">
+								<div class="form-group">
+									<label>Tên công ty</label>
+									<input type="text" class="form-control val-f" 
+										   name="attributes[company_name]" 
+										   value=""
+										   placeholder="Tên công ty" >
+								</div>	
+								<div class="form-group">
+									<label>Mã số thuế</label>
+									<input type="number" 
+										   class="form-control val-f val-n" 
+										   name="attributes[tax_code]" 
+										   value="" 
+										   placeholder="Mã số thuế">
+								</div>
+								<div class="form-group">
+									<label>Địa chỉ công ty</label>
+									<textarea class="form-control val-f" 
+											  name="attributes[company_address]"
+											  placeholder="Nhập địa chỉ công ty (bao gồm Phường/Xã, Quận/Huyện, Tỉnh/Thành phố nếu có)"></textarea>
+								</div>
+								<div class="form-group">
+									<label>Email nhận hoá đơn</label>
+									<input type="email" class="form-control val-f val-email" 
+										   name="attributes[invoice_email]" 
+										   value="" 
+										   placeholder="Email nhận hoá đơn">
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-12 col-lg-3"> 
-					<h4 class="title-menu">
-						Đăng ký nhận tin
-					</h4>
-					<span class="content-mailchimp">Đăng ký để nhận thật nhiều ưu đãi!</span>
-					<form id="mc-form" class="newsletter-form" data-toggle="validator">
-						<input aria-label="Địa chỉ Email" type="email" class="form-control" placeholder="Nhập địa chỉ email" name="EMAIL" required autocomplete="off" />
-						<button class="btn btn-default" type="submit" aria-label="Đăng ký nhận tin" name="subscribe">ĐĂNG KÝ</button>
+						
 					</form>
-					<div class="mailchimp-alerts ">
-						<div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-						<div class="mailchimp-success"></div><!-- mailchimp-success end -->
-						<div class="mailchimp-error"></div><!-- mailchimp-error end -->
+					
+<div class="clearfix"></div>
+<div class="product-coupon__wrapper my-3">
+	<strong class="d-block mb-2">Các mã giảm giá có thể áp dụng: </strong>
+	<div class="product-coupons coupon-toggle-btn">
+		<div class="coupon_item lite">
+			<div class="coupon_content">
+				BEA50
+			</div>
+		</div>
+		<div class="coupon_item lite">
+			<div class="coupon_content">
+				BEA15
+			</div>
+		</div>
+		<div class="coupon_item lite">
+			<div class="coupon_content">
+				BEAN99K
+			</div>
+		</div>
+		<div class="coupon_item lite">
+			<div class="coupon_content">
+				FREESHIP
+			</div>
+		</div>
+		<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-chevron-right fa-w-10"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" class=""></path></svg>
+	</div>
+</div>
+<div id="modal-coupon-product" class="modalcoupon-product" style="display:none;">
+	<div class="modalcoupon-overlay fancybox-overlay fancybox-overlay-fixed"></div>
+	<div class="modal-coupon-product">
+		<div class="row">
+			<div class="col-md-12 col-12">
+				<div class="chosee_size">
+					<p class="title-size">MÃ KHUYẾN MÃI</p>
+				</div>
+				<div class="box-cpou-dk ">
+					<div class="item_list_coupon">
+						<div class="money_coupon">
+							50K
+						</div>
+						<div class="content_coupon">
+							<div class="boz-left">
+								<div class="zip_coupon">
+									Mã giảm giá <b>BEA50</b>
+								</div>
+								<div class="noidung_coupon">
+									Nhập mã BEA50 giảm 50K đơn từ 750K
+								</div>
+							</div>
+							<div class="boz-right">
+								<button class="btn dis_copy" data-copy="BEA50">
+									<span>Sao chép</span>
+								</button>
+								<div class="dk_btn dk_btn_1">
+									<span>Điều kiện</span>
+								</div>
+							</div>
+						</div>
 					</div>
-					<script>
-						$('#mc-form').ajaxChimp({
-							language: 'en',
-							callback: mailChimpResponse,
-							url: 'https://facebook.us7.list-manage.com/subscribe/post?u=97ba6d3ba28239250923925a8&id=4ef3a755a8'
-						});
-						function mailChimpResponse(resp) {
-							if (resp.result === 'success') {
-								if(resp.msg == 'Thank you for subscribing!'){
-									$('.mailchimp-success').html('Cảm ơn bạn đã đăng ký!').fadeIn(900);
-								}else{
-									$('.mailchimp-success').html('' + resp.msg).fadeIn(900);
-								}
-								$('.mailchimp-error').fadeOut(100);
-							} else if (resp.result === 'error') {
-								if(resp.msg == '0 - Please enter a value'){
-									$('.mailchimp-error').html('Vui lòng nhập các trường thông tin').fadeIn(900);
-								}else if(resp.msg == '0 - An email address must contain a single @.'){
-									$('.mailchimp-error').html('Địa chỉ email phải chứa ký tự @').fadeIn(900);
-								}else if(resp.msg == 'This email cannot be added to this list. Please enter a different email address.'){
-									$('.mailchimp-error').html('Email này không thể được thêm vào danh sách này. Vui lòng nhập một địa chỉ email khác.').fadeIn(900);
-								}else if(resp.msg.includes('0 - The domain portion of the email address is invalid')){
-									$('.mailchimp-error').html('Phần tên miền của địa chỉ email không hợp lệ').fadeIn(900);
-								}else if(resp.msg.includes('0 - The username portion of the email address is empty')){
-									$('.mailchimp-error').html('Phần tên người dùng của địa chỉ email trống').fadeIn(900);
-								}else if(resp.msg == 'Thank you for subscribing!'){
-									$('.mailchimp-error').html('Cảm ơn bạn đã đăng ký!').fadeIn(900);
-								}else{
-									$('.mailchimp-error').html('' + resp.msg).fadeIn(900);
-								}
-							}
-						}
-					</script>
+					<div class="contet_dk contet_dk_1">
+						Giảm 50.000đ cho đơn hàng từ 750.000đ. Sử dụng khi khách hàng mua lần đầu
+					</div>
+				</div>
+				<div class="box-cpou-dk ">
+					<div class="item_list_coupon">
+						<div class="money_coupon">
+							15%
+						</div>
+						<div class="content_coupon">
+							<div class="boz-left">
+								<div class="zip_coupon">
+									Mã giảm giá <b>BEA15</b>
+								</div>
+								<div class="noidung_coupon">
+									Nhập mã BEA15 giảm 15% đơn từ 1.500.000đ
+								</div>
+							</div>
+							<div class="boz-right">
+								<button class="btn dis_copy" data-copy="BEA15">
+									<span>Sao chép</span>
+								</button>
+								<div class="dk_btn dk_btn_2">
+									<span>Điều kiện</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="contet_dk contet_dk_2">
+						Áp dụng cho các đơn hàng có tổng giá trị lớn hơn 1.500.000đ
+					</div>
+				</div>
+				<div class="box-cpou-dk ">
+					<div class="item_list_coupon">
+						<div class="money_coupon">
+							99K
+						</div>
+						<div class="content_coupon">
+							<div class="boz-left">
+								<div class="zip_coupon">
+									Mã giảm giá <b>BEAN99K</b>
+								</div>
+								<div class="noidung_coupon">
+									Nhập mã BEAN99K giảm ngay 99K
+								</div>
+							</div>
+							<div class="boz-right">
+								<button class="btn dis_copy" data-copy="BEAN99K">
+									<span>Sao chép</span>
+								</button>
+								<div class="dk_btn dk_btn_3">
+									<span>Điều kiện</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="contet_dk contet_dk_3">
+						Đơn hàng từ 950.000đ. Chỉ áp dụng 1 mã giảm giá cho một đơn hàng.
+					</div>
+				</div>
+				<div class="box-cpou-dk last-cpou">
+					<div class="item_list_coupon">
+						<div class="money_coupon">
+							0K
+						</div>
+						<div class="content_coupon">
+							<div class="boz-left">
+								<div class="zip_coupon">
+									Mã giảm giá <b>FREESHIP</b>
+								</div>
+								<div class="noidung_coupon">
+									Nhập mã FREESHIP miễn phí vận chuyển
+								</div>
+							</div>
+							<div class="boz-right">
+								<button class="btn dis_copy" data-copy="FREESHIP">
+									<span>Sao chép</span>
+								</button>
+								<div class="dk_btn dk_btn_4">
+									<span>Điều kiện</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="contet_dk contet_dk_4">
+						Đơn hàng từ 500.000đ. Áp dụng cho tất cả các đơn vị vận chuyển
+					</div>
+				</div>
 
-					<h4 class="title-menu">
-						Hình thức thanh toán
-					</h4>
-					<ul class="thanhtoan">
-						<li><img width="108" height="66" alt="Payment 1" data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/payment_1.png?1709175143725" class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"></li>
-						<li><img width="108" height="66" alt="Payment 2" data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/payment_2.png?1709175143725" class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"></li>
-						<li><img width="108" height="66" alt="Payment 3" data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/payment_3.png?1709175143725" class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"></li>
-						<li><img width="108" height="66" alt="Payment 4" data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/payment_4.png?1709175143725" class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"></li>
-					</ul>
+			</div>
+		</div>
+		<a title="Close" class="modalcoupon-close close-window" href="javascript:;">
+			<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10"><path fill="currentColor" d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z" class=""></path></svg>
+		</a>
+	</div>
+</div>
+<script>
+	$(document).on('click', '.modalcoupon-close, #modal-coupon-product .modalcoupon-overlay, .fancybox-overlay', function(e){
+		$("#modal-coupon-product").fadeOut(0);
+		awe_hidePopup();
+	});
+	$(document).ready(function ($){
+		var modal = $('.modalcoupon-product');
+		var btn = $('.coupon-toggle-btn');
+		var span = $('.modalcoupon-close');
+		btn.click(function () {
+			modal.show();
+		});
+		span.click(function () {
+			modal.hide();
+		});
+		$(window).on('click', function (e) {
+			if ($(e.target).is('.modal')) {
+				modal.hide();
+			}
+		});
+	});
+	$('.dk_btn_1').click(function () {
+		$('.contet_dk_1').slideToggle();
+		return false;
+	});
+	$('.dk_btn_2').click(function () {
+		$('.contet_dk_2').slideToggle();
+		return false;
+	});
+	$('.dk_btn_3').click(function () {
+		$('.contet_dk_3').slideToggle();
+		return false;
+	});
+	$('.dk_btn_4').click(function () {
+		$('.contet_dk_4').slideToggle();
+		return false;
+	});
+	$(document).on('click', '.dis_copy',function(e){
+		e.preventDefault();
+		var copyText = $(this).attr('data-copy');
+		var copyTextarea = document.createElement("textarea");
+		copyTextarea.textContent = copyText;
+		document.body.appendChild(copyTextarea);
+		copyTextarea.select();
+		document.execCommand("copy"); 
+		document.body.removeChild(copyTextarea);
+		var cur_text = $(this).text();
+		var $cur_btn = $(this);
+		$(this).addClass("disabled");
+		$(this).text("Đã lưu");
+		$(this).parent().addClass('active');
+		setTimeout(function(){
+			$cur_btn.removeClass("disabled");
+			$cur_btn.parent().removeClass('active');
+			$cur_btn.text(cur_text);
+		},2500)
+	})
+</script>					
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="copyright" class="copyright ">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-12">
-					<span class="copy-right">© Bản quyền thuộc về <b>Mr. Bean</b></span>
-					<span class="opacity1"> <span class="dash hidden-xs">|</span> Cung cấp bởi 
-						 <a href="https://www.sapo.vn/?utm_campaign=cpn:kho_theme-plm:footer&amp;utm_source=Tu_nhien&amp;utm_medium=referral&amp;utm_content=fm:text_link-km:-sz:&amp;utm_term=&amp;campaign=kho_theme-sapo" rel="noopener" title="Sapo" target="_blank">Sapo</a> 
-					</span>
-				</div>
-			</div>
+</section>
+
+
+<script src='<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/sweetalert-min02fb.js?1709175143725'></script>
+<link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bootstrap-datepicker02fb.js?1709175143725" />
+<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bootstrap-datepicker02fb.js?1709175143725" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		var date = new Date();
+		date.setDate(date.getDate());
+
+		$('.input_group #date').datepicker ({
+			format: "dd/mm/yyyy",
+			orientation: "top right",
+			todayHightinght: true,
+			startDate: date
+		});
+		setTimeout(function(){$('.colrightvat').removeClass('d-none')},300)
+	})
+</script>
+<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/cookie02fb.js?1709175143725" type="text/javascript"></script>
+<script>
+	
+	function setCookie(cname, cvalue, exdays) {
+
+			var date = new Date();
+			var minutes = 1;
+			date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
+			var expires = "; expires=" + date.toGMTString();
+			document.cookie = cname + "=" + cvalue + expires + ";path=/";
+
+		}
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		function delete_cookie( cname, path, domain ) {
+			if( getCookie( cname ) ) {
+				document.cookie = cname;
+			}
+		}
+
+		$('.timedeli-cta, .date_picker').on('change touchstart', function(){
+			let date = $('.date_picker').val().split('index.html')
+			var timex = $(this).find(":selected").val();
+			if (date != undefined && timex != undefined) {
+				setCookie('ego-delivery-value', '' , 1);
+				setCookie('ego-delivery-value', ''+date + '-' +timex+'' , 1);
+			}
+		})
+	function updateVAT() { 
+		$('.btn-checkout').addClass('disabled');
+		var invoice = $('input[name="attributes[invoice]"]').val();
+		var company = $('input[name="attributes[company_name]"]').val();
+		var address = $('[name="attributes[company_address]"]').val();
+		var tax = $('input[name="attributes[tax_code]"]').val();
+		var email_company = $('input[name="attributes[invoice_email]"]').val();
+		var cart_info = {
+			'Xuất hóa đơn': invoice,
+			'Tên công ty': '',
+			'Địa chỉ công ty': '',
+			'Mã số thuế': '',
+			'Email nhận hóa đơn': ''
+		};
+		
+		if (invoice === 'có') {
+		  cart_info = {
+			'Xuất hóa đơn': invoice,
+			'Tên công ty': company,
+			'Địa chỉ công ty': address,
+			'Mã số thuế': tax,
+			'Email nhận hóa đơn': email_company
+		  };
+		}
+		
+
+		Cookies.set('cart_info', {
+			'company': company,
+			'address': address,
+			'tax': tax,
+			'email_company': email_company,
+			'email': email_company
+		});
+		var attributes = Object.keys(cart_info).reduce(function(result, info) {
+			if (cart_info[info] !== "") {
+				return {
+					...result,
+					...{
+						[info]: cart_info[info]
+					}
+				}
+			}
+			return result;
+		}, {})
+		const deliveryAttr = getCookie('ego-delivery-value');
+		//alert(deliveryAttr);
+		if (deliveryAttr !== '') {
+			attributes['Thời gian giao hàng'] = deliveryAttr;
+		}
+		var data = {};
+		
+			data.attributes = attributes;
+
+			var params = {
+				type: 'POST',
+				url: '/cart/update.js',
+				data: data,
+				dataType: 'json',
+				success: function(cart) {
+					window.location.href = 'cart.html'
+				},
+				complete: function() {
+					setTimeout(function() {
+						$('.btn-checkout').removeClass('disabled');
+					}, 1000);
+				},
+				error: function(XMLHttpRequest, textStatus) {
+					Bizweb.onError(XMLHttpRequest, textStatus);
+				}
+			};
+			jQuery.ajax(params);
+			setCookie('ego-delivery-value', '' , 1);
+	}
+
+  		$(document).on('keyup', '.val-f', function () {
+			if ($(this).val() === '') {
+				if ($(this).next('span.text-danger').length == 0) {
+					$(this).after('<span class="text-danger">Bạn không được để trống trường này</span>');
+				}
+			} else {
+				$(this).next('span.text-danger').remove();
+				if($(this).hasClass('val-n')
+				   && $(this).val().trim().length < Number('10')) {
+				  $(this).after('<span class="text-danger">Mã số thuế phải tối thiểu 10 ký tự</span>');
+				}
+				if ($(this).hasClass('val-email')
+				   && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($(this).val().trim()))) {
+				  $(this).after('<span class="text-danger">Định dạng email không đúng</span>');
+				}
+			}
+		})
+					   
+	  if($('.r-bill .regular-checkbox').is(':checked')) {
+	    $('.bill-field').show();
+      }
+
+	  $(document).on('click', '.r-bill .regular-checkbox', 'click', function() {
+		 console.log($(this).is(':checked'));
+		if($(this).is(':checked')){
+		  $('#re-checkbox-bill').val('có');
+		} else {
+		  $('#re-checkbox-bill').val('không');
+		}
+		$('.bill-field').stop(true, true).slideToggle(400);
+	 })
+	 /** PHan hoa don **/
+
+     function goToCheckout(e) {
+		 e.preventDefault();
+		 
+		 if ($('#checkbox-bill').is(':checked')) {
+			 var a = $(this);
+			 let isValidated = true;
+			 $('.val-f').each(function() {
+				 if ($(this).val() === '') {
+					 isValidated = false;
+				 } else {
+					 if($(this).hasClass('val-n') && $(this).val().trim().length < Number('10')) {
+						 isValidated = false;
+					 }
+					 if ($(this).hasClass('val-email') && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($(this).val().trim()))) {
+							 isValidated = false;
+					 }
+				 }
+			 })
+				
+			 if (isValidated) {
+				 swal({
+					 title: `Bạn có chắc không xuất hóa đơn?`,
+					 text: `Chọn đóng và chọn vào xuất hóa đơn công ty sau đó nhập thông tin công ty để xuất hóa đơn!`,
+					 type: "warning",
+				   	 className: 'vat-checked-modal',
+					 buttons: ["Đóng", "Xác nhận"],
+				 }).then(function() {
+					 $('body').on('click', '.swal-button--confirm', function() {
+						 updateVAT();
+					 })
+				 });
+			 } else {
+			   $('.val-f').each(function() {
+			     if ($(this).val() === '') {
+				   if ($(this).next('span.text-danger').length == 0) {
+				     $(this).after('<span class="text-danger">Bạn không được để trống trường này</span>');
+				   }
+				 } else {
+				   $(this).next('span.text-danger').remove();
+				   if($(this).hasClass('val-n')
+					   && $(this).val().trim().length < Number('10')) {
+					  $(this).after('<span class="text-danger">Mã số thuế phải tối thiểu 10 ký tự nè</span>');
+					}
+					if ($(this).hasClass('val-email')
+					   && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($(this).val().trim()))) {
+					  $(this).after('<span class="text-danger">Định dạng email không đúng</span>');
+					}
+				  }
+			    })
+			 }
+		 } else {
+			 updateVAT();
+			 $('body').off('click', '.swal-button--confirm');
+		 	location.href = 'cart.html'
+		 }
+		 return;
+		
+		 
+	 }
+
+	 /** end hoa don **/  
+	
+	
+	
+</script>
 		</div>
-	</div>
-</footer>
+<script>
+	(function($){"use strict";$.ajaxChimp={responses:{"We have sent you a confirmation email":0,"Please enter a valueggg":1,"An email address must contain a single @":2,"The domain portion of the email address is invalid (the portion after the @: )":3,"The username portion of the email address is invalid (the portion before the @: )":4,"This email address looks fake or invalid. Please enter a real email address":5},translations:{en:null},init:function(selector,options){$(selector).ajaxChimp(options)}};$.fn.ajaxChimp=function(options){$(this).each(function(i,elem){var form=$(elem);var email=form.find("input[type=email]");var label=form.find("label[for="+email.attr("id")+"]");var settings=$.extend({url:form.attr("action"),language:"en"},options);var url=settings.url.replace("/post?","/post-json?").concat("&c=?");form.attr("novalidate","true");email.attr("name","EMAIL");form.submit(function(){var msg;function successCallback(resp){if(resp.result==="success"){msg="We have sent you a confirmation email";label.removeClass("error").addClass("valid");email.removeClass("error").addClass("valid")}else{email.removeClass("valid").addClass("error");label.removeClass("valid").addClass("error");var index=-1;try{var parts=resp.msg.split(" - ",2);if(parts[1]===undefined){msg=resp.msg}else{var i=parseInt(parts[0],10);if(i.toString()===parts[0]){index=parts[0];msg=parts[1]}else{index=-1;msg=resp.msg}}}catch(e){index=-1;msg=resp.msg}}if(settings.language!=="en"&&$.ajaxChimp.responses[msg]!==undefined&&$.ajaxChimp.translations&&$.ajaxChimp.translations[settings.language]&&$.ajaxChimp.translations[settings.language][$.ajaxChimp.responses[msg]]){msg=$.ajaxChimp.translations[settings.language][$.ajaxChimp.responses[msg]]}label.html(msg);label.show(2e3);if(settings.callback){settings.callback(resp)}}var data={};var dataArray=form.serializeArray();$.each(dataArray,function(index,item){data[item.name]=item.value});$.ajax({url:url,data:data,success:successCallback,dataType:"jsonp",error:function(resp,text){console.log("mailchimp ajax submit error: "+text)}});var submitMsg="Submitting...";if(settings.language!=="en"&&$.ajaxChimp.translations&&$.ajaxChimp.translations[settings.language]&&$.ajaxChimp.translations[settings.language]["submit"]){submitMsg=$.ajaxChimp.translations[settings.language]["submit"]}label.html(submitMsg).show(2e3);return false})});return this}})(jQuery);
+</script>
+
+
+
+
+
+
+
 
 
 <a href="#"  class="backtop"  title="Lên đầu trang">
@@ -253,7 +981,7 @@ function AddCartMobile(line_item) {
 	$('.bodycart-mobile').html('');
 	var imagepop = Bizweb.resizeImage(line_item.image, 'compact');
 	if(imagepop=="null" || imagepop =='' || imagepop ==null){
-		imagepop = '../bizweb.dktcdn.net/thumb/compact/assets/themes_support/noimage.gif';
+		imagepop = '<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/compact/assets/themes_support/noimage.gif';
 	}
 	var variant_title = line_item.variant_title;
 	if (variant_title === 'Default Title')
@@ -547,7 +1275,7 @@ var ajaxCart = (function(module, $) {
 			// lấy ảnh check xem có ảnh không
 			var prodImg = Bizweb.resizeImage(cartItem.image, 'compact');
 			if(prodImg=="null" || prodImg =='' || prodImg ==null){
-				prodImg = '../bizweb.dktcdn.net/thumb/compact/assets/themes_support/noimage.gif';
+				prodImg = '<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/compact/assets/themes_support/noimage.gif';
 			}
 
 			// lấy properties cart
@@ -657,7 +1385,38 @@ var ajaxCart = (function(module, $) {
 	$('.CartSideContainer .ajaxcart__inner').scrollTop(itemSideCartScrollTop);
 	cartCallback(cart);
 	
-		
+	
+	var priceCheck = cart.total_price,
+		check_price = 3000000,
+		price_check1 = 3000000,
+			money1 =price_check1  - priceCheck;
+	if (priceCheck > price_check1){
+		$('.coupon-1').addClass('active');
+	} else {
+		$('.coupon-1').removeClass('active');
+		var idquat = $('.itemquatang').attr('data-line');
+		var qty = 0;
+		///////////////////XÓA KHI < SỐ TIỀN
+		if(idquat != undefined) {
+			isUpdating = true;
+			var $product = $('.ajaxcart__product[data-line="' + idquat + '"]').addClass('is-loading');
+			if (qty === 0) {
+				$product.parent().addClass('is-removed');
+			}
+			setTimeout(function() {
+				Bizweb.changeItem(idquat, qty, adjustCartCallback);
+			}, 10);
+			$cartContainer.trigger('ajaxCart.updatingQty');
+		}
+
+	}
+	if (money1 > 0){
+		var meua = Bizweb.formatMoney(money1, settings.moneyFormat);
+		$('.coupon-content').html('Mua tối thiểu <b>' +meua+ '</b> để nhận <b>Hermès H24 Travel Spray - Quà tặng</b> miễn phí');
+								  } else{
+								  $('.coupon-content').html('Giỏ hàng đủ điều kiện để nhận <b>Hermès H24 Travel Spray - Quà tặng</b>');
+															}
+																
 																
 															};
 															cartCallback = function(cart) {
@@ -890,14 +1649,14 @@ var ajaxCart = (function(module, $) {
  
 <form action="/cart" method="post" novalidate class="cart ajaxcart">
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
@@ -920,11 +1679,11 @@ var ajaxCart = (function(module, $) {
 							
 						</div>
 					</div>
-					{{#if discountsApplied}}
+					
 					<div class="grid grid--table">
 						<div class="grid__item text-right">
 							<ul class="order-discount order-discount--list order-discount--title order-discount--cart order-discount--cart-title" aria-label="Giảm giá">
-								{{#each discounts}}
+								
 								<li class="order-discount__item">
 									<span class="icon icon-saletag" aria-hidden="true"></span>{{ this.discount_application.title }} (-{{{ this.formattedAmount }}})
 								</li>
@@ -942,9 +1701,9 @@ var ajaxCart = (function(module, $) {
 	</div>
 	<div class="ajaxcart__footer ajaxcart__footer--fixed cart-footer">
 		<div class="ajaxcart__subtotal">
-			{{#if cartDiscountsApplied}}
+			
 			<div class="grid grid--table ajaxcart__discounts">
-				{{#each cartDiscounts}}
+				
 				<div class="grid__item two-thirds">
 					<span class="order-discount order-discount--title order-discount--cart-title">
 						<span class="icon icon-saletag" aria-hidden="true"></span><span class="visually-hidden">%:</span>{{ this.title }}
@@ -977,14 +1736,14 @@ var ajaxCart = (function(module, $) {
 		<div>Thông tin sản phẩm</div><div>Đơn giá</div><div>Số lượng</div><div>Thành tiền</div>
 	</div>
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product {{itemquatang}}" data-line="{{line}}" dataidgift="{{idpro}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
@@ -1026,9 +1785,9 @@ var ajaxCart = (function(module, $) {
 		<div class="row">
 			<div class="col-lg-4 col-12 offset-md-8 offset-lg-8 offset-xl-8">
 				<div class="ajaxcart__subtotal">
-					{{#if cartDiscountsApplied}}
+					
 					<div class="grid grid--table ajaxcart__discounts">
-						{{#each cartDiscounts}}
+						
 						<div class="grid__item two-thirds">
 							<span class="order-discount order-discount--title order-discount--cart-title">
 								<span class="icon icon-saletag" aria-hidden="true"></span><span class="visually-hidden">%:</span>{{ this.title }}
@@ -1059,14 +1818,14 @@ var ajaxCart = (function(module, $) {
  
 <form action="/cart" method="post" novalidate class="cart ajaxcart cartheader">
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product {{itemquatang}}" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
@@ -1116,14 +1875,14 @@ var ajaxCart = (function(module, $) {
 		<div>Thông tin sản phẩm</div><div>Đơn giá</div><div>Số lượng</div><div>Thành tiền</div>
 	</div>
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 						<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
@@ -1183,14 +1942,14 @@ var ajaxCart = (function(module, $) {
  
 <form action="/cart" method="post" novalidate class="cart ajaxcart cart-mobile">
 	<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body">
-		{{#items}}
+		
 		<div class="ajaxcart__row">
 			<div class="ajaxcart__product cart_product" data-line="{{line}}">
 				<a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
 				<div class="grid__item cart_info">
 					<div class="ajaxcart__product-name-wrapper cart_name">
 						<a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-						{{#if variation}}
+						
 						<span class="ajaxcart__product-meta variant-title">{{variation}}</span>
 						{{/if}}
 					</div>
@@ -1212,11 +1971,11 @@ var ajaxCart = (function(module, $) {
 							<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
 						</div>
 					</div>
-					{{#if discountsApplied}}
+					
 					<div class="grid grid--table">
 						<div class="grid__item text-right">
 							<ul class="order-discount order-discount--list order-discount--title order-discount--cart order-discount--cart-title" aria-label="Giảm giá">
-								{{#each discounts}}
+								
 								<li class="order-discount__item">
 									<span class="icon icon-saletag" aria-hidden="true"></span>{{ this.discount_application.title }} (-{{{ this.formattedAmount }}})
 								</li>
@@ -1234,9 +1993,9 @@ var ajaxCart = (function(module, $) {
 	</div>
 	<div class="ajaxcart__footer ajaxcart__footer--fixed cart-footer">
 		<div class="ajaxcart__subtotal">
-			{{#if cartDiscountsApplied}}
+			
 			<div class="grid grid--table ajaxcart__discounts">
-				{{#each cartDiscounts}}
+				
 				<div class="grid__item two-thirds">
 					<span class="order-discount order-discount--title order-discount--cart-title">
 						<span class="icon icon-saletag" aria-hidden="true"></span><span class="visually-hidden">%:</span>{{ this.title }}
@@ -1551,13 +2310,11 @@ var ajaxCart = (function(module, $) {
 <link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quickview02fb.js?1709175143725" />
 <script type="text/javascript" defer src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quickview02fb.js?1709175143725"></script>
 <link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main02fb.js?1709175143725" />
-<link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/index02fb.js?1709175143725" />
 
 <link rel="preload" as="script" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/placeholdertypewriter02fb.js?1709175143725" />
 <script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/placeholdertypewriter02fb.js?1709175143725" type="text/javascript"></script>
 
 <script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main02fb.js?1709175143725" type="text/javascript"></script>
-<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/index02fb.js?1709175143725" type="text/javascript"></script>
 
 <div id="list-favorite" class="d-none">
 	<div class="list-favorite-right container" data-type="wishlist">
@@ -1943,7 +2700,7 @@ var ajaxCart = (function(module, $) {
 	})
 </script>
 		
-<div class="popup-sapo active">
+<div class="popup-sapo ">
 	<div class="icon">
 		<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
 	</div>
@@ -2022,5 +2779,5 @@ var ajaxCart = (function(module, $) {
 
 	</body>
 
-<!-- Mirrored from bean-perfume.mysapo.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Mar 2024 01:08:18 GMT -->
+<!-- Mirrored from bean-perfume.mysapo.net/cart by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Mar 2024 01:10:40 GMT -->
 </html>
