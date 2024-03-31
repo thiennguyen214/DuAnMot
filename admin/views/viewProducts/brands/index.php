@@ -33,9 +33,9 @@
                         <tr>
                             <th width="10"><input type="checkbox" id="all"></th>
                             <th width="200">ID thương hiệu</th>
+                            <th>Logo</th>
                             <th width="350">Tên thương hiệu</th>
-                            <!-- <th>Ngày sinh</th> -->
-                            <!-- <th>Giới tính</th> -->
+                            <th>Hình ảnh</th>
                             <th width="100">Tính năng</th>
                         </tr>
                     </thead>
@@ -50,7 +50,13 @@
                                     <?= $brand['id'] ?>
                                 </td>
                                 <td>
+                                    <img class="img-card-person" src="<?= BASE_URL . $brand['logo'] ?>" alt="">
+                                </td>
+                                <td>
                                     <?= $brand['name'] ?>
+                                </td>
+                                <td>
+                                    <img class="img-card-person" src="<?= BASE_URL . $brand['img'] ?>" alt="">
                                 </td>
 
                                 <td class="table-td-center">

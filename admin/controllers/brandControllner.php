@@ -43,6 +43,7 @@ function brandCreate()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $script2 = 'create';
 
     if (!empty($_POST)) {
 
@@ -51,6 +52,10 @@ function brandCreate()
         ];
 
         validatebrandCreate($data);
+        $ImageUpload = $_FILES['ImageUpload'] ?? null;
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
+            $data['img'] = upload_file($ImageUpload, 'uploads/products/');
+        }
 
         insert('brands', $data);
 

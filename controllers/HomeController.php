@@ -1,19 +1,15 @@
 <?php
-function index()
+function showHome()
 {
-    $view = "/partials/content";
+    $view = "home";
     // $dataUser = getAllUser();
     // debug($dataUser);
+    $users = listAll('users');
+
     require_once PATH_VIEW . '/layouts/master.php';
 
 }
-function gioithieu()
-{
-    $view =  "/viewtt/gioithieu";
-    
-    require_once PATH_VIEW . 'layouts/master.php';
 
-}
 
 
 // function dashboard()
