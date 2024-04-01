@@ -18,7 +18,7 @@
                 <div class="row element-button">
                     <div class="col-sm-2">
 
-                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=brands-create" title="Thêm"><i
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=brand-create" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Tạo mới thương hiệu</a>
                     </div>

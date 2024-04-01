@@ -5,5 +5,8 @@
     href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/paginate.scss02fb.css?1709175143725"
     rel="stylesheet" type="text/css" media="all" />
 <link
-    href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/account_oder_style.scss02fb.css?1709175143725"
+    href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/blog_article_style.scss02fb.css?1709175143725"
+    rel="stylesheet" type="text/css" media="all" />
+<link
+    href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/sidebar_style.scss02fb.css?1709175143725"
     rel="stylesheet" type="text/css" media="all" />

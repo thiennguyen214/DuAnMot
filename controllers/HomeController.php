@@ -2,9 +2,12 @@
 function showHome()
 {
     $view = "home";
+    $active1 = 'active';
+    $style = 'styles/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
     $users = listAll('users');
+
 
     require_once PATH_VIEW . '/layouts/master.php';
 

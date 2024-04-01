@@ -70,19 +70,19 @@
 								<span class="title_">Danh mục sản phẩm</span>
 							</div>
 							<ul class="item_big">
-								<li class="nav-item active">
-									<a class="a-img a-index" href="index.html" title="Trang chủ">
+								<li class="nav-item <?= (isset($active1)) ? $active1 : null ?>">
+									<a class="a-img a-index" href="<?= BASE_URL ?>" title="Trang chủ">
 										Trang chủ
 									</a>
 								</li>
 
-								<li class="nav-item">
+								<li class="nav-item <?= (isset($active2)) ? $active2 : null ?>">
 									<a class="a-img a-index" href="gioi-thieu.html" title="Giới thiệu">
 										Giới thiệu
 									</a>
 								</li>
 
-								<li class="nav-item has-mega">
+								<li class="nav-item <?= (isset($active3)) ? $active3 : null ?> has-mega">
 									<a class="a-img caret-down a-index" href="thuong-hieu.html" title="Thương hiệu">
 										Thương hiệu
 									</a>
@@ -233,7 +233,7 @@
 									</ul>
 								</li>
 
-								<li class="nav-item">
+								<li class="nav-item <?= (isset($active4)) ? $active4 : null ?>">
 									<a class="a-img caret-down a-index" href="collections/all.html" title="Sản phẩm">
 										Sản phẩm
 									</a>
@@ -257,8 +257,8 @@
 									</ul>
 								</li>
 
-								<li class="nav-item">
-									<a class="a-img a-index" href="tin-tuc.html" title="Tin tức">
+								<li class="nav-item <?= (isset($active5)) ? $active5 : null ?>">
+									<a class="a-img a-index" href="<?= BASE_URL ?>?act=posts" title="Tin tức">
 										Tin tức
 									</a>
 								</li>

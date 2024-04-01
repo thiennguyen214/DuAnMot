@@ -15,9 +15,13 @@ require_file(PATH_MODEL);
 $act = $_GET['act'] ?? '/';
 match ($act) {
     '/' => showHome(),
+
     // 'gioithieu' => gioithieu(),
     // 'user-detail' => userDetail()
     'login' => showLog(),
+
+
+    'posts' => showPost(),
 
 
 

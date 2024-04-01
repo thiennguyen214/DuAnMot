@@ -10,7 +10,7 @@
 	<meta name="theme-color" content="#ce0082" />
 	//
 	<link rel="canonical" href="index.html" />
-	//
+
 	<meta name='revisit-after' content='2 days' />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="robots" content="noodp,index,follow" />
@@ -20,7 +20,7 @@
 	<meta name="keywords" content="Cập nhật sau" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Bean Perfume" />
-	//
+
 	<meta property="og:image"
 		content="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725" />
 	<meta property="og:image:secure_url"
@@ -28,7 +28,7 @@
 	<meta property="og:description" content="" />
 	//
 	<meta property="og:url" content="index.html" />
-	//
+
 	<meta property="og:site_name" content="Bean Perfume" />
 	<link rel="icon"
 		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/favicon02fb.png?1709175143725"
@@ -68,32 +68,16 @@
 	<link
 		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main.scss02fb.css?1709175143725"
 		rel="stylesheet" type="text/css" media="all" />
-
-	<link
-		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/index.scss02fb.css?1709175143725"
-		rel="stylesheet" type="text/css" media="all" />
-
 	<link
 		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/swiper.scss02fb.css?1709175143725"
 		rel="stylesheet" type="text/css" media="all" />
 
-	<link rel="preload" as='style' type="text/css"
-		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quickviews_popup_cart.scss02fb.css?1709175143725" />
-	<link
-		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quickviews_popup_cart.scss02fb.css?1709175143725"
-		rel="stylesheet" type="text/css" media="all" />
+
+	<?php if (!empty($style) && $style) {
+		require_once PATH_VIEW . $style . '.php';
+	} ?>
 
 
-
-	<link
-		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/breadcrumb_style.scss02fb.css?1709175143725"
-		rel="stylesheet" type="text/css" media="all" />
-	<link
-		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/paginate.scss02fb.css?1709175143725"
-		rel="stylesheet" type="text/css" media="all" />
-	<link
-		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/account_oder_style.scss02fb.css?1709175143725"
-		rel="stylesheet" type="text/css" media="all" />
 	<script>
 		var Bizweb = Bizweb || {};
 		Bizweb.store = 'bean-perfume.mysapo.net';

@@ -7803,19 +7803,16 @@ Ajax Bizweb Add To Cart
 	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quickview02fb.js?1709175143725"></script>
 <link rel="preload" as="script"
 	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main02fb.js?1709175143725" />
-<link rel="preload" as="script"
-	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/index02fb.js?1709175143725" />
-
+<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main02fb.js?1709175143725"
+	type="text/javascript"></script>
 <link rel="preload" as="script"
 	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/placeholdertypewriter02fb.js?1709175143725" />
 <script
 	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/placeholdertypewriter02fb.js?1709175143725"
 	type="text/javascript"></script>
 
-<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/main02fb.js?1709175143725"
-	type="text/javascript"></script>
-<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/index02fb.js?1709175143725"
-	type="text/javascript"></script>
+//khac
+
 
 <div id="list-favorite" class="d-none">
 	<div class="list-favorite-right container" data-type="wishlist">
@@ -8347,7 +8344,6 @@ Ajax Bizweb Add To Cart
 		$(".addThis_listSharing").fadeOut(150);
 	});
 </script>
-
 <div class="popup-sapo active">
 	<div class="icon">
 		<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
@@ -8424,7 +8420,6 @@ Ajax Bizweb Add To Cart
 		$(".popup-sapo").toggleClass("active");
 	});
 </script>
-
 <div class="popup-ngonngu">
 	<div class="icon">
 		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2"
@@ -8450,7 +8445,6 @@ Ajax Bizweb Add To Cart
 		</li>
 	</ul>
 </div>
-
 <a target="_blank" class="livechat-mes" href="https://m.me/sapo.vn">
 	<img width="60" height="60"
 		src="http://bizweb.dktcdn.net/100/503/826/themes/932476/assets/messenger.svg?1709175143725" alt="Messenger" />

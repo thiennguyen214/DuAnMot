@@ -93,8 +93,8 @@
                     <div class="item_brand swiper-slide">
                         <a href="collections/all.html" class="a_brand" title="Chanel">
                             <img width="180" height="180" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
                                 alt="Chanel" />
                         </a>
                         <span class="name_brand">Chanel</span>
@@ -178,8 +178,8 @@
             <div class="item_about">
                 <div class="img_about">
                     <img width="481" height="600" class="lazyload"
-                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
-                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
+                        src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
+                        data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
                         alt="Giới thiệu" />
                 </div>
             </div>
@@ -198,8 +198,8 @@
             <div class="item_about">
                 <div class="img_about">
                     <img width="481" height="600" class="lazyload"
-                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_2.jpg?1709175143725"
+                        src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                        data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_2.jpg?1709175143725"
                         alt="Giới thiệu" />
                 </div>
                 <div class="item_posi">

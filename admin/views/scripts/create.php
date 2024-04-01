@@ -11,15 +11,28 @@
             thumbBox = document.getElementById('thumbbox');
         }
 
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+        // Xóa bỏ tất cả các phần tử con trong thumbBox trước khi thêm mới
+        while (thumbBox.firstChild) {
+            thumbBox.removeChild(thumbBox.firstChild);
+        }
 
-            reader.onload = function (e) {
-                thumbImage.setAttribute('src', e.target.result);
-                thumbImage.style.display = 'block';
-            };
+        if (input.files && input.files.length > 0) {
+            for (var i = 0; i < input.files.length; i++) {
+                var reader = new FileReader();
 
-            reader.readAsDataURL(input.files[0]);
+                reader.onload = function (e) {
+                    // Tạo một thẻ img mới cho mỗi ảnh được chọn
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.height = 300; // Thiết lập kích thước cho ảnh
+                    img.width = 300;
+
+                    // Thêm ảnh vào thumbBox
+                    thumbBox.appendChild(img);
+                };
+
+                reader.readAsDataURL(input.files[i]);
+            }
         }
     }
 

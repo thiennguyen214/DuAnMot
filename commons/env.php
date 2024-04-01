@@ -13,6 +13,7 @@ define('PATH_VIEW_USER', __DIR__ . '/../views/layouts');
 define('PATH_UPLOAD', __DIR__ . '/../');
 
 define('BASE_URL', 'http://localhost/DuAnMot/');
+define('BASE_URLS', 'https://');
 define('BASE_URL_ADMIN', 'http://localhost/DuAnMot/admin/');
 // echo PATH_CONTROLLER;
 // die;
