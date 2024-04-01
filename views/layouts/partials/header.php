@@ -382,7 +382,7 @@
 		<div class="title-search">
 			<span>Đừng bỏ lỡ</span>
 		</div>
-		// foreach
+
 		<div class="item">
 			<div class="image">
 				<a class="image_thumb" href="unisex-creed-millesime-imperial.html"
@@ -491,5 +491,3 @@
 		</div>
 	</div>
 </div>
-<div class="bodywrap">
-	<h1 class="d-none">Bean Perfume -</h1>

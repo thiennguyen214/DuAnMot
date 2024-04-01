@@ -143,6 +143,14 @@
 
 	<?php require_once PATH_VIEW . 'layouts/partials/footer.php'; ?>
 
+
+	//
+
+
+	<?php if (!empty($script) && $script) {
+		require_once PATH_VIEW . $script . '.php';
+	} ?>
+
 </body>
 <!-- Mirrored from bean-perfume.mysapo.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Mar 2024 01:08:18 GMT -->
 
