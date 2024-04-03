@@ -7,6 +7,7 @@ function showLog()
     // $dataUser = getAllUser();
     // debug($dataUser);
     $users = listAll('users');
+    $tittle ='Đăng nhập';
 
     require_once PATH_VIEW . '/layouts/master.php';
 

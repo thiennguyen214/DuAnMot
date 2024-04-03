@@ -49,10 +49,13 @@ function floralCreate()
 
         $data = [
             "name" => $_POST['floral_name'] ?? null,
-            "img" => get_file_upload('ImageUpload'),
+           
         ];
 
-
+        $ImageUpload = $_FILES['ImageUpload'] ?? null;
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
+            $data['img'] = upload_file($ImageUpload, 'uploads/products/');
+        }
         insert('florals', $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
@@ -67,7 +70,7 @@ function floralCreate()
 //validate floral-create
 function validatefloralCreate($data)
 {
-    // name - bắt buộc, độ dài tối đa 50 ký tự, Không được trùng
+    // name - bắt buộc, độ dài tối đa 50 ký tự, Không được trùng.
 
     $errors = [];
 
