@@ -33,7 +33,10 @@
                                 <th width="20">ID</th>
                                 <th width="250">Trường dữ liệu</th>
                                 <th width="550">Dữ liệu</th>
+                                <th width="200">Hình ảnh</th>
                                 <th width="100">Tính năng</th>
+                                
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -49,9 +52,14 @@
                                     <td>
                                         <?= $setting['key'] ?>
                                     </td>
+                                    
                                     <td>
                                         <?= $setting['value'] ?>
                                     </td>
+                                    <td>
+                                    <img class="img-card-person" src="<?= BASE_URL .$setting['img'] ?? null ?>" alt="">
+                                    </td>
+                                    
                                     <td class="table-td-center">
                                         <a href="<?= BASE_URL_ADMIN ?>?act=setting-delete&id=<?= $setting['id'] ?>"
                                             class="btn btn-primary btn-sm trash" title="Xóa"

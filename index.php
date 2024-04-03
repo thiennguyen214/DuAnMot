@@ -19,11 +19,24 @@ match ($act) {
     // 'gioithieu' => gioithieu(),
     // 'user-detail' => userDetail()
     'login' => showLog(),
-    'showone' => showne($_GET['id']),
+    // 'showone' => showne($_GET['id']),
 
     'posts' => showPost(),
 
     'cart' => showCart(),
+
+    'products' => showProduct(),
+    'posts' => showPost(),
+
+    'productDetail' => showProduct(),
+
+
+    'introduce' => showIntroduction(),
+
+    'brand' => showBrand(),
+
+    'thanhtoan' => showThanhtoan(),
+
 
 
 

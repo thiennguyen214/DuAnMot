@@ -39,8 +39,20 @@
                         </div>
 
                         <div class="form-group col-md-12">
-
+                            <label class="control-label">Ảnh sản phẩm</label>
+                            <div id="myfileupload">
+                                <input type="file" id="uploadfile" name="ImageUpload" style="display: none;"
+                                    onchange="previewImage(this);" multiple />
+                            </div>
+                            <div id="thumbbox">
+                            <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none" />
+                            <a class="removeimg" href="javascript:"></a>
                         </div>
+                        <div id="boxchoice">
+                            <label for="uploadfile" class="Choicefile"><i class='bx bx-upload'></i> Chọn ảnh</label>
+                            <p style="clear:both"></p>
+                        </div>
+                    </div>
 
                         <button class="btn btn-save" type="submit" name="add">Cập nhật</button>
                         <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=settings' ?>">Hủy bỏ</a>

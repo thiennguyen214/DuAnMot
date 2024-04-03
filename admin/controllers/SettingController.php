@@ -35,7 +35,8 @@ function settingCreate()
     $view = 'settings/create';
     $script = 'datetime';
     $active6 = 'active';
-
+    $style2 = 'form';
+    $script2 = 'create';
 
 
     if (!empty($_POST)) {
@@ -46,6 +47,12 @@ function settingCreate()
         ];
 
         validatesettingCreate($data);
+
+        $ImageUpload = $_FILES['ImageUpload'] ?? null;
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
+            $data['img'] = upload_file($ImageUpload, 'uploads/settings/');
+        }
+
         insert('settings', $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
@@ -74,6 +81,17 @@ function validatesettingCreate($data)
     if (empty($data['value'])) {
         $errors[] = 'Trường value là bắt buộc';
     }
+
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+        $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
+
+        if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
+            $errors[] = 'Trường ImageUpload có dung lượng nhỏ hơn 2M';
+        } else if (!in_array($data['ImageUpload']['type'], $typeImage)) {
+            $errors[] = 'Trường ImageUpload chỉ chấp nhận định dạng file: png, jpg, jpeg';
+        }
+    }
+
     if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
@@ -86,6 +104,9 @@ function validatesettingCreate($data)
 function settingUpdate($id)
 {
     $setting = showOne('settings', $id);
+    $style2 = 'form';
+    $script2 = 'create';
+
 
     if (empty($setting)) {
         e404();
@@ -96,13 +117,35 @@ function settingUpdate($id)
     $script = 'datetime';
     $active6 = 'active';
 
+
     if (!empty($_POST)) {
         $data = [
             "key" => $_POST['key'] ?? $setting['key'],
             "value" => $_POST['value'] ?? $setting['value'],
         ];
+
+
+        $ImageUpload = $_FILES['ImageUpload'] ?? null;
+
+        // Kiểm tra xem có tệp tin được tải lên hay không
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
+            // Nếu có, thực hiện việc tải lên và cập nhật dữ liệu
+            $data['img'] = upload_file($ImageUpload, 'uploads/settings/');
+        }
+        
         update('settings', $id, $data);
+
         validatesettingUpdate($id, $data);
+
+        if (
+            !empty($ImageUpload) && // Có tệp tin được tải lên
+            !empty($setting['img']) && // Có giá trị hình ảnh cũ
+            !empty($data['img']) && // Tệp tin mới được tải lên thành công
+            file_exists(PATH_UPLOAD . $setting['img']) // Tệp tin cũ tồn tại trên hệ thống
+        ) {
+            unlink(PATH_UPLOAD . $setting['img']);
+        }
+
         // $_SESSION['success'] = 'Thao tác thành công!';
         header('Location: ' . BASE_URL_ADMIN . '?act=settings');
         exit();
@@ -122,6 +165,16 @@ function validatesettingUpdate($id, $data)
     }
     if (empty($data['value'])) {
         $errors[] = 'Trường value là bắt buộc';
+    }
+
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+        $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
+
+        if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
+            $errors[] = 'Trường ImageUpload có dung lượng nhỏ hơn 2M';
+        } else if (!in_array($data['ImageUpload']['type'], $typeImage)) {
+            $errors[] = 'Trường ImageUpload chỉ chấp nhận định dạng file: png, jpg, jpeg';
+        }
     }
     if (!empty($errors)) {
         $_SESSION['errors'] = $errors;

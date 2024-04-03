@@ -91,12 +91,12 @@
             <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="swi_brand swiper-container">
                     <div class="swiper-wrapper">
-                        //foreach thuong-hieu
+                        <!-- thuong-hieu -->
                         <div class="item_brand swiper-slide">
                             <a href="collections/all.html" class="a_brand" title="Chanel">
                                 <img width="180" height="180" class="lazyload"
-                                    src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
-                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
+                                    src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
+                                    data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
                                     alt="Chanel" />
                             </a>
                             <span class="name_brand">Chanel</span>
@@ -180,8 +180,8 @@
                 <div class="item_about">
                     <div class="img_about">
                         <img width="481" height="600" class="lazyload"
-                            src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
-                            data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
+                            src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
+                            data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_1.jpg?1709175143725"
                             alt="Giới thiệu" />
                     </div>
                 </div>
@@ -200,8 +200,8 @@
                 <div class="item_about">
                     <div class="img_about">
                         <img width="481" height="600" class="lazyload"
-                            src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                            data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_2.jpg?1709175143725"
+                            src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                            data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_about_2.jpg?1709175143725"
                             alt="Giới thiệu" />
                     </div>
                     <div class="item_posi">
@@ -253,70 +253,69 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 swiper-slide item_null">
                         <div class="item_product_main"></div>
                     </div>
-
-
-
                     <script type="text/x-custom-template" data-template="section_flashsale">
                         <?php foreach ($products as $product) { ?>
-                                                                                <div class="swiper-slide">
-                                                                                    <div class="item_product_main">
-                                                                                        <form action="/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33658271" enctype="multipart/form-data">
-                                                                                            <div class="product-thumbnail">
-                                                                                                <a class="image_thumb scale_hover" href="/tommy-hilfiger-tommy-girl" title="<?= $product['name'] ?>">
-                                                                                                    <img  width="480" height="480" class="lazyload image1" src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
-                                                                                                </a>
-                                                                                                <div class="action">
-                                                                                                    <input class="hidden" type="hidden" name="variantId" value="<?= $product['id'] ?>" />
-                                                                                                    <button class="btn-cart btn-views" title="Xem chi tiết" type="button" onclick="window.location.href='/tommy-hilfiger-tommy-girl'" >
-                                                                                                        <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-detail"></use> </svg>
-                                                                                                    </button>
-                                                                                                    <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
-                                                                                                        <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use> </svg>
-                                                                                                    </button>
-                                                                                                    <a title="Xem nhanh" href="/tommy-hilfiger-tommy-girl" data-handle="tommy-hilfiger-tommy-girl" class="quick-view btn-views">
-                                                                                                        <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="smart"><span>-
-                                                                                            <?= ceil((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
-                                                                                        </span></div>	<a href="javascript:void(0)" class="setWishlist btn-wishlist" data-wish="tommy-hilfiger-tommy-girl" tabindex="0" title="Thêm vào yêu thích">
-                                                                                            <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
-                                                                                            </a>
-                                                                                            <div class="product-info">
-                                                                                                <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/tommy-hilfiger-tommy-girl" title="<?= $product['name'] ?>"><?= $product['name'] ?></a></h3>
-                                                                                                <div class="price-box">
-                                                                                                <?= $product['price_sale'] ?>₫
-                                                                                                    <span class="compare-price"><?= $product['price'] ?></span>
-                                                                                                </div>
-                                                                                                <div class="productcount">
-                                                                                                    <div class="countitem visible">
-                                                                                                        <span class="a-center">Đã bán <?= $product['so_luong_ban'] ?> sp</span>
-                                                                                                        <div class="countdown" style="width: <?= ($product['so_luong_ban'] * 100) / $product['so_luong_kho'] ?>% ;"><span></span></div>
-                                                                                                    </div>
-                                                                                                    <div class="sale-bar"></div>
-                                                                                                </div>
-                                                                                                <div class="gift_pro ">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <ul class="fragrant_product">
-                                                                                                <li class="text-center">
-                                                                                                    <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725" alt="Hoa đào">
-                                                                                                    <span>Hoa đào</span>
-                                                                                                </li>
-                                                                                                <li class="text-center">
-                                                                                                    <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725" alt="Cam">
-                                                                                                    <span>Cam</span>
-                                                                                                </li>
-                                                                                                <li class="text-center">
-                                                                                                    <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725" alt="Hoa nhài">
-                                                                                                    <span>Hoa nhài</span>
-                                                                                                </li>
-                                                                                            </ul>
-                                                                                        </form>					
-                                                                                    </div>
-                                                                                </div>
+                            <div class="swiper-slide">
+                                <div class="item_product_main">
+                                    <form action="/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33658271" enctype="multipart/form-data">
+                                        <div class="product-thumbnail">
+                                            <a class="image_thumb scale_hover" href="/tommy-hilfiger-tommy-girl" title="<?= $product['name'] ?>">
+                                                <img  width="480" height="480" class="lazyload image1" src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
+                                            </a>
+                                            <div class="action">
+                                                <input class="hidden" type="hidden" name="variantId" value="<?= $product['id'] ?>" />
+                                                <button class="btn-cart btn-views" title="Xem chi tiết" type="button" onclick="window.location.href='/tommy-hilfiger-tommy-girl'" >
+                                                    <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-detail"></use> </svg>
+                                                </button>
+                                                <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
+                                                    <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use> </svg>
+                                                </button>
+                                                <a title="Xem nhanh" href="/tommy-hilfiger-tommy-girl" data-handle="tommy-hilfiger-tommy-girl" class="quick-view btn-views">
+                                                    <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="smart"><span>-
+                                        <?= ceil((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                                    </span></div>	<a href="javascript:void(0)" class="setWishlist btn-wishlist" data-wish="tommy-hilfiger-tommy-girl" tabindex="0" title="Thêm vào yêu thích">
+                                        <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
+                                        </a>
+                                        <div class="product-info">
+                                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/tommy-hilfiger-tommy-girl" title="<?= $product['name'] ?>"><?= $product['name'] ?></a></h3>
+                                            <div class="price-box">
+                                            <?= $product['price_sale'] ?>₫
+                                                <span class="compare-price"><?= $product['price'] ?></span>
+                                            </div>
+                                            <div class="productcount">
+                                                <div class="countitem visible">
+                                                    <span class="a-center">Đã bán <?= $product['so_luong_ban'] ?> sp</span>
+                                                    <div class="countdown" style="width: <?= ($product['so_luong_ban'] * 100) / $product['so_luong_kho'] ?>% ;"><span></span></div>
+                                                </div>
+                                                <div class="sale-bar"></div>
+                                            </div>
+                                            <div class="gift_pro ">
+                                            </div>
+                                        </div>
+                                        <ul class="fragrant_product">
+                                            <li class="text-center">
+                                                <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725" alt="Hoa đào">
+                                                <span>Hoa đào</span>
+                                            </li>
+                                            <li class="text-center">
+                                                <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725" alt="Cam">
+                                                <span>Cam</span>
+                                            </li>
+                                            <li class="text-center">
+                                                <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725" alt="Hoa nhài">
+                                                <span>Hoa nhài</span>
+                                            </li>
+                                        </ul>
+                                    </form>					
+                                </div>
+                            </div>
                         <?php } ?>        
+
+                                                
               </script>
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -325,8 +324,8 @@
             <div class="view-more clearfix">
                 <a href="san-pham-khuyen-mai.html" title="Xem tất cả" class="btn">
                     Xem tất cả
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
+                    <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                 </a>
@@ -455,15 +454,15 @@
                 <form action="/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33657819" enctype="multipart/form-data">
                     <div class="product-thumbnail">
                         <a class="image_thumb scale_hover" href="/mancera-cedrat-boise" title="Mancera Cedrat Boise">
-                            <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/mancera-cedrat-boise-6698ab0d070-min-removebg-preview.png?v=1701246971380" alt="Mancera Cedrat Boise">
+                            <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/mancera-cedrat-boise-6698ab0d070-min-removebg-preview.png?v=1701246971380" alt="Mancera Cedrat Boise">
                         </a>
                         <div class="action">
                             <input type="hidden" name="variantId" value="104170223" />
                             <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
-                                <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use> </svg>
+                                <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-cart"></use> </svg>
                             </button>
                             <a title="Xem nhanh" href="/mancera-cedrat-boise" data-handle="mancera-cedrat-boise" class="quick-view btn-views">
-                                <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
+                                <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
                             </a>
                         </div>
 
@@ -471,7 +470,7 @@
                 <div class="smart"><span>-
                 8%
                 </span></div>	<a href="javascript:void(0)" class="setWishlist btn-wishlist" data-wish="mancera-cedrat-boise" tabindex="0" title="Thêm vào yêu thích">
-                    <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
+                    <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
                     </a>
                     <div class="product-info">
                         <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/mancera-cedrat-boise" title="Mancera Cedrat Boise">Mancera Cedrat Boise</a></h3>
@@ -483,15 +482,15 @@
                     </div>
                     <ul class="fragrant_product">
                         <li class="text-center">
-                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725" alt="Cam">
+                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725" alt="Cam">
                             <span>Cam</span>
                         </li>
                         <li class="text-center">
-                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725" alt="Trái cây">
+                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725" alt="Trái cây">
                             <span>Trái cây</span>
                         </li>
                         <li class="text-center">
-                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725" alt="Gỗ">
+                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725" alt="Gỗ">
                             <span>Gỗ</span>
                         </li>
                     </ul></form>				</div>
@@ -500,8 +499,8 @@
                 <div class="view-more clearfix">
                     <a href="nuoc-hoa-nam.html" title="Xem tất cả" class="btn">
                         Xem tất cả
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
+                        <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </a>
@@ -534,15 +533,15 @@
                     </div>
                     <div class="content_banner">
                         <img width="208" height="300" class="lazyload"
-                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                            data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/3_banner_1.png?1709175143725"
+                            src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                            data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/3_banner_1.png?1709175143725"
                             alt="Nước Hoa Nam" />
                         <p class="title_banner">Nước Hoa Nam</p>
                         <p class="des_banner">Mùi hương mạnh mẽ đậm chất nam tính</p>
                         <div class="view-more clearfix">
                             <a href="collections/all.html" title="Xem thêm" class="btn">
                                 Xem thêm
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -561,8 +560,8 @@
                     </div>
                     <div class="content_banner">
                         <img width="208" height="300" class="lazyload"
-                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                            data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/3_banner_2.png?1709175143725"
+                            src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                            data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/3_banner_2.png?1709175143725"
                             alt="Nước Hoa Nữ" />
                         <p class="title_banner">Nước Hoa Nữ</p>
                         <p class="des_banner">
@@ -571,7 +570,7 @@
                         <div class="view-more clearfix">
                             <a href="collections/all.html" title="Xem thêm" class="btn">
                                 Xem thêm
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -590,8 +589,8 @@
                     </div>
                     <div class="content_banner">
                         <img width="208" height="300" class="lazyload"
-                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                            data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/3_banner_3.png?1709175143725"
+                            src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                            data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/3_banner_3.png?1709175143725"
                             alt="Nước Hoa Unisex" />
                         <p class="title_banner">Nước Hoa Unisex</p>
                         <p class="des_banner">
@@ -600,7 +599,7 @@
                         <div class="view-more clearfix">
                             <a href="collections/all.html" title="Xem thêm" class="btn">
                                 Xem thêm
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -625,8 +624,8 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 order-md-2">
                     <div class="banner_tren">
                         <img width="570" height="430" class="lazyload"
-                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                            data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_pro_1.jpg?1709175143725"
+                            src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                            data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_pro_1.jpg?1709175143725"
                             alt="BST MÙA XUÂN" />
                         <div class="content_bst">
                             <p class="content">BST MÙA XUÂN</p>
@@ -639,15 +638,15 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 item_pro_tren order-md-1">
                     <div class="item_pro_top">
-                        <form action="https:<?= BASE_URL ?>assets/client/bean-perfume.mysapo.net/cart/add" method="post"
+                        <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
                             class="variants product-action" data-cart-form data-id="product-actions-33659220"
                             enctype="multipart/form-data">
                             <div class="product-thumbnail">
                                 <a class="image_thumb scale_hover" href="gucci-bloom-ambrosia-di-fiori.html"
                                     title="Gucci Bloom Ambrosia di Fiori">
                                     <img width="480" height="480" class="lazyload image1"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
                                         alt="Gucci Bloom Ambrosia di Fiori" />
                                 </a>
                                 <div class="action">
@@ -655,14 +654,15 @@
                                     <button class="btn-cart btn-views" title="Xem chi tiết" type="button"
                                         onclick="window.location.href='gucci-bloom-ambrosia-di-fiori.html'">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-detail">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-detail">
                                             </use>
                                         </svg>
                                     </button>
                                     <a title="Xem nhanh" href="gucci-bloom-ambrosia-di-fiori.html"
                                         data-handle="gucci-bloom-ambrosia-di-fiori" class="quick-view btn-views">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
                                                 xlink:href="#icon-quickview">
                                             </use>
                                         </svg>
@@ -673,7 +673,8 @@
                             <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                                 data-wish="gucci-bloom-ambrosia-di-fiori" tabindex="0" title="Thêm vào yêu thích">
                                 <svg class="icon">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
                                     </use>
                                 </svg>
                             </a>
@@ -691,22 +692,22 @@
                             <ul class="fragrant_product">
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
                                         alt="Hoa nhài" />
                                     <span>Hoa nhài</span>
                                 </li>
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
                                         alt="Hoa đào" />
                                     <span>Hoa đào</span>
                                 </li>
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_4.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_4.jpg?1709175143725"
                                         alt="Hoa hồng" />
                                     <span>Hoa hồng</span>
                                 </li>
@@ -714,29 +715,30 @@
                         </form>
                     </div>
                     <div class="item_pro_top">
-                        <form action="https:<?= BASE_URL ?>assets/client/bean-perfume.mysapo.net/cart/add" method="post"
+                        <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
                             class="variants product-action" data-cart-form data-id="product-actions-33659039"
                             enctype="multipart/form-data">
                             <div class="product-thumbnail">
                                 <a class="image_thumb scale_hover" href="calvin-klein-ck-one-gold.html"
                                     title="Calvin Klein CK One Gold">
                                     <img width="480" height="480" class="lazyload image1"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
                                         alt="Calvin Klein CK One Gold" />
                                 </a>
                                 <div class="action">
                                     <input type="hidden" name="variantId" value="104172328" />
                                     <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-cart">
                                             </use>
                                         </svg>
                                     </button>
                                     <a title="Xem nhanh" href="calvin-klein-ck-one-gold.html"
                                         data-handle="calvin-klein-ck-one-gold" class="quick-view btn-views">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
                                                 xlink:href="#icon-quickview">
                                             </use>
                                         </svg>
@@ -747,7 +749,8 @@
                             <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                                 data-wish="calvin-klein-ck-one-gold" tabindex="0" title="Thêm vào yêu thích">
                                 <svg class="icon">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
                                     </use>
                                 </svg>
                             </a>
@@ -820,14 +823,15 @@
                                     <input type="hidden" name="variantId" value="104173585" />
                                     <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-cart">
                                             </use>
                                         </svg>
                                     </button>
                                     <a title="Xem nhanh" href="unisex-creed-millesime-imperial.html"
                                         data-handle="unisex-creed-millesime-imperial" class="quick-view btn-views">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
                                                 xlink:href="#icon-quickview">
                                             </use>
                                         </svg>
@@ -838,7 +842,8 @@
                             <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                                 data-wish="unisex-creed-millesime-imperial" tabindex="0" title="Thêm vào yêu thích">
                                 <svg class="icon">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
                                     </use>
                                 </svg>
                             </a>
@@ -894,7 +899,8 @@
                                     <input type="hidden" name="variantId" value="104173002" />
                                     <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-cart">
                                             </use>
                                         </svg>
                                     </button>
@@ -902,7 +908,7 @@
                                         data-handle="nuoc-hoa-unisex-gucci-the-virgin-violet"
                                         class="quick-view btn-views">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
                                                 xlink:href="#icon-quickview">
                                             </use>
                                         </svg>
@@ -914,7 +920,8 @@
                                 data-wish="nuoc-hoa-unisex-gucci-the-virgin-violet" tabindex="0"
                                 title="Thêm vào yêu thích">
                                 <svg class="icon">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
                                     </use>
                                 </svg>
                             </a>
@@ -1498,8 +1505,8 @@
             <div class="view-more clearfix">
                 <a href="tin-tuc.html" title="Xem tất cả" class="btn">
                     Xem tất cả
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
+                    <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                 </a>
@@ -1583,7 +1590,7 @@
                                 data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_1.jpg?1709175143725"
                                 alt="Instagram 1" />
                             <a href="#" title="Instagram 1">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                                 </svg>
@@ -1597,7 +1604,7 @@
                                 data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_2.jpg?1709175143725"
                                 alt="Instagram 2" />
                             <a href="#" title="Instagram 2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                                 </svg>
@@ -1611,7 +1618,7 @@
                                 data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_3.jpg?1709175143725"
                                 alt="Instagram 3" />
                             <a href="#" title="Instagram 3">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                                 </svg>
@@ -1625,7 +1632,7 @@
                                 data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_4.jpg?1709175143725"
                                 alt="Instagram 4" />
                             <a href="#" title="Instagram 4">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                                 </svg>
@@ -1639,7 +1646,7 @@
                                 data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_5.jpg?1709175143725"
                                 alt="Instagram 5" />
                             <a href="#" title="Instagram 5">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                                 </svg>

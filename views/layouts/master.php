@@ -16,7 +16,7 @@
 	<meta name="robots" content="noodp,index,follow" />
 	<meta name="description" content="" />
 	//
-	<title>trang chủ</title>
+	<title><?= $tittle  ?></title>
 	<meta name="keywords" content="Cập nhật sau" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Bean Perfume" />

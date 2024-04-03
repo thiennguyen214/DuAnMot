@@ -4,12 +4,16 @@ function showHome()
     $view = "home";
     $active1 = 'active';
     $style = 'styles/home';
+    $tittle = 'Trang chủ';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
     // $users = listAll('users');
     $brand = listAll('brands');
     $products = listAll('products');
+
+
+    // $proTop10 = getTop10product('products');
 
 
     require_once PATH_VIEW . '/layouts/master.php';
