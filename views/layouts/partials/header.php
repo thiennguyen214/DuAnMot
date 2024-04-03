@@ -234,7 +234,7 @@
 								</li>
 
 								<li class="nav-item <?= (isset($active4)) ? $active4 : null ?>">
-									<a class="a-img caret-down a-index" href="collections/all.html" title="Sản phẩm">
+									<a class="a-img caret-down a-index" href="<?= BASE_URL ?>?act=products" title="Sản phẩm">
 										Sản phẩm
 									</a>
 									<i class="fa fa-caret-down"></i>

@@ -19,8 +19,7 @@ match ($act) {
     // 'gioithieu' => gioithieu(),
     // 'user-detail' => userDetail()
     'login' => showLog(),
-
-
+    'products' => showProduct(),
     'posts' => showPost(),
 
 

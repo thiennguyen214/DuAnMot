@@ -4,6 +4,7 @@ function showHome()
     $view = "home";
     $active1 = 'active';
     $style = 'styles/home';
+    $tittle = 'Trang chủ';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

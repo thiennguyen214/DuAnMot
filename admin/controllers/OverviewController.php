@@ -17,10 +17,35 @@ function overListAll()
     // echo $ThuNhap;
     $products = listAll('products');
     $countpro = count($products);
-  
 
-   
-   
+    //count client
+
+    $cli = array_filter($users, function ($client) {
+        return $client['role'] == 0;
+    });
+
+    $countCli = count($cli);
+
+//count admin
+    $ad = array_filter($users, function ($admin) {
+        return $admin['role'] == 1;
+    });
+
+    $countAd = count($ad);
+
+    //count sp het
+    $sp_het = array_filter($products, function ($product) {
+        return $product['so_luong_kho'] == 0;
+    });
+    $countSp_het = count($sp_het);
+
+    // san pham ban chay
+    $sp_ban_chay = topBanchay('products');
+    
+
+
+
+
 
 
 

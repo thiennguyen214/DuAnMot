@@ -16,7 +16,7 @@
 	<meta name="robots" content="noodp,index,follow" />
 	<meta name="description" content="" />
 	//
-	<title>trang chủ</title>
+	<title><?= $tittle  ?></title>
 	<meta name="keywords" content="Cập nhật sau" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Bean Perfume" />
@@ -118,7 +118,7 @@
 			window.BizwebAnalytics.meta[attr] = meta[attr];
 		}
 	</script>
-	<script src="<?= BASE_URL ?>assets/client/dist/js/stats.min8612.js?v=f021d1e"></script>
+	<script src="<?= BASE_URL ?>assets/client/bean-perfume.mysapo.net/dist/js/stats.min8612.js?v=f021d1e"></script>
 	<script>
 		$(document).ready(function ($) {
 			awe_lazyloadImage();
