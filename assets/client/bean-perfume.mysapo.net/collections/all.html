@@ -276,28 +276,24 @@
                     );
             },
             styleDismiss: function () {
-              this.$ele
-                .find('[data-notify="dismiss"]')
-                .css({
-                  position: "absolute",
-                  right: "10px",
-                  top: "5px",
-                  zIndex: this.settings.z_index + 2,
-                });
+              this.$ele.find('[data-notify="dismiss"]').css({
+                position: "absolute",
+                right: "10px",
+                top: "5px",
+                zIndex: this.settings.z_index + 2,
+              });
             },
             styleURL: function () {
-              this.$ele
-                .find('[data-notify="url"]')
-                .css({
-                  backgroundImage:
-                    "url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)",
-                  height: "100%",
-                  left: 0,
-                  position: "absolute",
-                  top: 0,
-                  width: "100%",
-                  zIndex: this.settings.z_index + 1,
-                });
+              this.$ele.find('[data-notify="url"]').css({
+                backgroundImage:
+                  "url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)",
+                height: "100%",
+                left: 0,
+                position: "absolute",
+                top: 0,
+                width: "100%",
+                zIndex: this.settings.z_index + 1,
+              });
             },
             placement: function () {
               var s = this,
@@ -12168,7 +12164,7 @@ Popup cart mobile
                       <div class="sssssscustom input_number_product">
                         <button
                           class="btn_num num_1 button button_qty"
-                          onClick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv ) &amp;&amp; qtyqv &gt; 1 ) result.value--;return false;"
+                          onClick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if (!isNaN(qtyqv) && qtyqv > 1) { result.value--; } return false;"
                         >
                           -
                         </button>
@@ -12474,7 +12470,7 @@ Popup cart mobile
       src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/main02fb.js?1709175143725"
       type="text/javascript"
     ></script>
-	 
+
     <link
       rel="preload"
       as="style"

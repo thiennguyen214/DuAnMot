@@ -7484,10 +7484,10 @@ Ajax Bizweb Add To Cart
 	</div>
 </div>
 
-<div id="quick-view-product" class="quickview-product" style="display: none">
+<div id="quick-view-product" class="quickview-product" style="display: none;">
 	<div class="quickview-overlay fancybox-overlay fancybox-overlay-fixed"></div>
 	<div class="quick-view-product"></div>
-	<div id="quickview-modal" style="display: none">
+	<div id="quickview-modal" style="display: none;">
 		<div class="block-quickview primary_block details-product">
 			<div class="row">
 				<div class="product-left-column product-images col-xs-12 col-sm-4 col-md-4 col-lg-5 col-xl-6">
@@ -7601,6 +7601,7 @@ Ajax Bizweb Add To Cart
 			if (theEvent.preventDefault) theEvent.preventDefault();
 		}
 	}
+
 	var selectCallbackQuickView = function (variant, selector) {
 		$("#quick-view-product form").show();
 		var productItem = jQuery(".quick-view-product .product-item"),
@@ -7613,7 +7614,7 @@ Ajax Bizweb Add To Cart
 			totalPrice = productItem.find(".total-price span");
 
 		if (variant && variant.sku) {
-			sku.text(variant.sku);
+			sku.text('variant.sku');
 		} else {
 			sku.text("Đang cập nhật");
 		}

@@ -19,9 +19,11 @@ match ($act) {
     // 'gioithieu' => gioithieu(),
     // 'user-detail' => userDetail()
     'login' => showLog(),
-
+    'showone' => showne($_GET['id']),
 
     'posts' => showPost(),
+
+    'cart' => showCart(),
 
 
 
