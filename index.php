@@ -23,6 +23,15 @@ match ($act) {
 
     'posts' => showPost(),
 
+    'productDetail' => showProduct(),
+
+
+    'introduce' => showIntroduction(),
+
+    'brand' => showBrand(),
+
+    'thanhtoan' => showThanhtoan(),
+
 
 
 };

@@ -77,13 +77,13 @@
 								</li>
 
 								<li class="nav-item <?= (isset($active2)) ? $active2 : null ?>">
-									<a class="a-img a-index" href="gioi-thieu.html" title="Giới thiệu">
+									<a class="a-img a-index" href="<?= BASE_URL ?>?act=introduce" title="Giới thiệu">
 										Giới thiệu
 									</a>
 								</li>
 
 								<li class="nav-item <?= (isset($active3)) ? $active3 : null ?> has-mega">
-									<a class="a-img caret-down a-index" href="thuong-hieu.html" title="Thương hiệu">
+									<a class="a-img caret-down a-index" href="<?= BASE_URL ?>?act=brand" title="Thương hiệu">
 										Thương hiệu
 									</a>
 									<i class="fa fa-caret-down"></i>
@@ -264,7 +264,7 @@
 								</li>
 
 								<li class="nav-item">
-									<a class="a-img a-index" href="lien-he.html" title="Liên hệ">
+									<a class="a-img a-index" href="<?= BASE_URL ?>?act=thanhtoan" title="Liên hệ">
 										Liên hệ
 									</a>
 								</li>

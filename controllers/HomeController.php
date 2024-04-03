@@ -7,8 +7,7 @@ function showHome()
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
-    // $users = listAll('users');
-
+    // $proTop10 = getTop10product('products');
 
     require_once PATH_VIEW . '/layouts/master.php';
 

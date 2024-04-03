@@ -1,8 +1,8 @@
 <?php
-function showProduct()
+function showBrand()
 {
-    $view = "viewAll/productAll";
-    $style = 'styles/productDetail';
+    $view = "viewAll/brand";
+    $style = 'styles/brand';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

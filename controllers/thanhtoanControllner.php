@@ -1,8 +1,8 @@
 <?php
-function showProduct()
+function showThanhtoan()
 {
-    $view = "viewAll/productAll";
-    $style = 'styles/productDetail';
+    $view = "viewAll/thanhtoan";
+    // $style = 'styles/brand';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
