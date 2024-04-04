@@ -134,7 +134,7 @@ function validateProductCreate($data)
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
-        header('Location: ' . BASE_URL_ADMIN . '?act=user-create');
+        header('Location: ' . BASE_URL_ADMIN . '?act=product-create');
         exit();
     }
 }
@@ -252,13 +252,8 @@ function validateProductUpdate($id, $data)
     } else if ($data['price_sale'] >= $data['price']) {
         $errors[] = 'Giá sale không được lớn hơn giá thường';
     }
-    // if ($data['created'] === null) {
-    //     $errors[] = 'Trường ngày tạo là bắt buộc';
-    // }
 
-    if ($data['updeatd'] === null) {
-        $errors[] = 'Trường ngày sửa là bắt buộc';
-    }
+
 
     if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
 
@@ -274,7 +269,7 @@ function validateProductUpdate($id, $data)
     if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
 
-        header('Location: ' . BASE_URL_ADMIN . '?act=user-update&id=' . $id);
+        header('Location: ' . BASE_URL_ADMIN . '?act=product-update&id=' . $id);
         exit();
     }
 

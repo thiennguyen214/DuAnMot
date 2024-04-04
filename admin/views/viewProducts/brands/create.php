@@ -18,14 +18,56 @@
             <h3 class="tile-title">Tạo mới thương hiệu</h3>
             <div class="tile-body">
             </div>
-            <form class="row" method="post">
+            <?php if (isset($_SESSION['errors'])): ?>
+                <div class="alert alert-danger">
+                    <ul>
+                        <?php foreach ($_SESSION['errors'] as $error): ?>
+                            <li>
+                                <?= $error ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php unset($_SESSION['errors']); ?>
+            <?php endif; ?>
+            <form action="" class="row" method="POST" enctype="multipart/form-data">
                 <div class="form-group col-md-4">
                     <label class="control-label">Tên thương hiệu</label>
-                    <input name="brand_name" class="form-control" type="text" required>
+                    <input name="brand_name" class="form-control" type="text">
                 </div>
-                <div class="form-group col-md-12"></div>
+                <div class="form-group col-md-12" st>
+                    <label class="control-label">Ảnh Logo</label>
+                    <div id="myfileuploadLogo">
+                        <input type="file" id="uploadfileLogo" name="ImageUploadLogo" style="display: none;"
+                            onchange="previewImage(this);" />
+                    </div>
+                    <div id="thumbboxLogo">
+                        <img height="300" width="300" alt="Thumb image" id="thumbimageLogo" style="display: none" />
+                        <a class="removeimg" href="javascript:"></a>
+                    </div>
+                    <div id="boxchoice">
+                        <label for="uploadfileLogo" class="Choicefile"><i class='bx bx-upload'></i> Chọn ảnh</label>
+                        <p style="clear:both"></p>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="control-label">Hình ảnh</label>
+                    <div id="myfileupload">
+                        <input type="file" id="uploadfile" name="ImageUpload" style="display: none;"
+                            onchange="previewImage(this);" />
+                    </div>
+                    <div id="thumbbox">
+                        <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none" />
+                        <a class="removeimg" href="javascript:"></a>
+                    </div>
+                    <div id="boxchoice">
+                        <label for="uploadfile" class="Choicefile"><i class='bx bx-upload'></i> Chọn ảnh</label>
+                        <p style="clear:both"></p>
+                    </div>
+                </div>
+                <!-- <div class="form-group col-md-12"></div> -->
                 <button class="btn btn-save" type="submit">Lưu lại</button>
-                <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=florals' ?>">Hủy bỏ</a>
+                <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=brands' ?>">Hủy bỏ</a>
             </form>
         </div>
 

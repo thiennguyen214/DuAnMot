@@ -41,7 +41,7 @@ match ($act) {
     'brands' => brandListAll(),
     //     'brand-detail' => brandShowOne($_GET['id']),
     'brand-update' => brandUpdate($_GET['id']),
-    'brands-create' => brandCreate(),
+    'brand-create' => brandCreate(),
     'brand-delete' => brandDelete($_GET['id']),
 
 
