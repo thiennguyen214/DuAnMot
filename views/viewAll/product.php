@@ -500,6 +500,49 @@
 
               <!-- End lọc tag 2 -->
             </div>
+
+          </aside>
+          <div class="block-collection">
+            <div class="section-box-bg">
+              <h1
+                class="title-page"
+                style="
+                  background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_collections02fb.jpg?1709175143725);
+                "
+              >
+                <span>Tất cả sản phẩm</span>
+              </h1>
+              <div
+                class="category-products products-view products-view-grid list_hover_pro"
+              >
+                <div class="products-view products-view-grid list_hover_pro">
+                  <div class="row row-fix">
+                    <?php foreach ($products as $product) : ?>
+                    <div class="col-6 col-md-4 col-xl-3 col-fix">
+                      <div class="item_product_main">
+                        <form
+                          action="https://bean-perfume.mysapo.net/cart/add"
+                          method="post"
+                          class="variants product-action"
+                          data-cart-form
+                          data-id="product-actions-33659593"
+                          enctype="multipart/form-data"
+                        >
+                          <div class="product-thumbnail">
+                            <a
+                              class="image_thumb scale_hover"
+                              href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>"
+                              title="Unisex Creed Millesime Imperial"
+                            >
+                              <img
+                                width="480"
+                                height="480"
+                                class="lazyload image1"
+                                src="<?= BASE_URL.$product['pr_img'] ?>"
+                                data-src="<?= BASE_URL.$product['pr_img'] ?>"
+                                alt="Unisex Creed Millesime Imperial"
+                              />
+
           </div>
         </div>
       </aside>
@@ -537,10 +580,81 @@
                               <svg class="icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use>
                               </svg>
+
                             </a>
                           </div>
                         </div>
                         <div class="smart"><span>
+
+                          <?= ceil((1 - ($product['pr_price_sale'] / $product['pr_price'])) * 100) ?>%
+                          
+                         </span></div>
+                          <a
+                            href="javascript:void(0)"
+                            class="setWishlist btn-wishlist"
+                            data-wish="unisex-creed-millesime-imperial"
+                            tabindex="0"
+                            title="Thêm vào yêu thích"
+                          >
+                            <svg class="icon">
+                              <use
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xlink:href="#icon-wishlist"
+                              ></use>
+                            </svg>
+                          </a>
+                          <div class="product-info">
+                            <h3 class="product-name">
+                              <a
+                                class="line-clamp line-clamp-1 text-center"
+                                href="../unisex-creed-millesime-imperial.html"
+                                title="<?= $product['pr_name'] ?>"
+                                ><?= $product['pr_name'] ?></a
+                               
+                              >
+                            </h3>
+                            <div class="price-box">
+                            <?= $product['pr_price_sale'] ?>₫
+                              <span class="compare-price"><?= $product['pr_price'] ?>₫</span>
+                            </div>
+                          </div>
+                          <ul class="fragrant_product">
+                            <li class="text-center">
+                              <img
+                                width="90"
+                                height="90"
+                                class="lazyload"
+                                src="<?= BASE_URL.$product['pr_img'] ?>"
+                                data-src="<?= BASE_URL.$product['pr_img'] ?>"
+                                alt="Cam"
+                              />
+                              <span>Cam</span>
+                            </li>
+                            <li class="text-center">
+                              <img
+                                width="90"
+                                height="90"
+                                class="lazyload"
+                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
+                                alt="Gỗ"
+                              />
+                              <span>Gỗ</span>
+                            </li>
+                            <li class="text-center">
+                              <img
+                                width="90"
+                                height="90"
+                                class="lazyload"
+                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
+                                alt="Trái cây"
+                              />
+                              <span>Trái cây</span>
+                            </li>
+                          </ul>
+                        </form>
+                      </div>
 
                             <?= ceil((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
 
@@ -587,6 +701,7 @@
                           </li>
                         </ul>
                       </form>
+
                     </div>
                   </div>
                 <?php endforeach; ?>

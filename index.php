@@ -31,15 +31,39 @@ middleware_auth_check_cl($act, $arrRouteNeedAuth);
 
 //
 match ($act) {
+
+    '/' => index(),
+    'gioithieu' => gioithieu(),
+    'tintuc' => tintuc(),
+    'lienhe' => lienhe(),
+    'trangchu' => trangchu(),
+    'thuonghieu' => thuonghieu(),
+    'sanpham' => sanpham(),
+    'giohang' => giohang(),
+    'user-detail' => userDetail(),
+
     '/' => showHome(),
     'log' => showLog(),
     'posts' => showPost(),
+<<<<<<< HEAD
     // 'cart' => showCart(),
     'productDetail' => showProduct($_GET['id']),
+=======
+
+    'cart' => showCart(),
+
+    'products' => showProduct(),
+    'posts' => showPost(),
+
+    'productDetail' => showProductDetail(),
+
+
+>>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
     'introduce' => showIntroduction(),
     'brand' => showBrand(),
     'thanhtoan' => showThanhtoan(),
 
+<<<<<<< HEAD
     'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),
     'cart' => cartList(),
     'cart-inc' => cartInc($_GET['productID']),
@@ -48,6 +72,12 @@ match ($act) {
 
     // 'login' => authenShowFormLogin(),
     'logoutc' => authenCliLogout(),
+=======
+    'Male' => showProduct(),
+    'Female' => showProduct(),
+
+
+>>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
 
 
 
