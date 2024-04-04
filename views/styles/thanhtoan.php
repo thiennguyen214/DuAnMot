@@ -2,19 +2,19 @@
 		href="<?= BASE_URL ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_favicon.ico"
 		type="image/x-icon" />
 	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/flag-icons.min.css" />
-	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.css">
-	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css">
+	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.css?v=4fcd86c">
+	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css?v=96e877f">
     <script
-		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min.js"></script>
+		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min.js?1711356971279"></script>
 
-	<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.js"></script>
+	<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.js?v=11006c9"></script>
+
+    
+
+	<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.js?v=a0ee933"></script>
 
 
-
-	<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.js"></script>
-
-
-    <script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js"></script>
+    <script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js?v=f021d1e"></script>
 	<script>
 		var Bizweb = Bizweb || {};
 		Bizweb.id = '503826';

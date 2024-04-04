@@ -59,6 +59,7 @@ match ($act) {
     'brand' => showBrand(),
     'thanhtoan' => showThanhtoan(),
     'bills' => showBills(),
+    'thongtintk' => showThongtintk(),
 
     // <<<<<<< HEAD
     'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),

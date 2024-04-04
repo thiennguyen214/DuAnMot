@@ -59,8 +59,8 @@
 	}
 </script>
 
-	
-		<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js"></script>\
+
+		<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js?v=f021d1e"></script>\
         <style>
     .field__input:focus,
     .select2-selection:focus,

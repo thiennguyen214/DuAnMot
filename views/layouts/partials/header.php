@@ -318,7 +318,7 @@
 									</li>
 								<?php } else { ?>
 									<li>
-										<a href="<?= BASE_URL ?>?act=cart-list">Tài khoản</a>
+										<a href="<?= BASE_URL ?>?act=thongtintk">Tài khoản</a>
 									</li>
 									<li>
 										<a href="<?= BASE_URL ?>?act=">Đăng xuất</a>
