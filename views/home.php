@@ -63,7 +63,7 @@
         </div>
     </div>
     <script>
-            var swiper = new Swiper(".home-slider"                    , {
+        var swiper = new Swiper(".home-slider", {
             loop: true,
             autoplay: {
                 delay: 4500,
@@ -92,15 +92,19 @@
                 <div class="swi_brand swiper-container">
                     <div class="swiper-wrapper">
                         <!-- thuong-hieu -->
+                        <?php foreach ($brands as $brand) :?>
+                 
                         <div class="item_brand swiper-slide">
                             <a href="collections/all.html" class="a_brand" title="Chanel">
                                 <img width="180" height="180" class="lazyload"
-                                    src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
-                                    data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/brand_1.jpg?1709175143725"
-                                    alt="Chanel" />
+                                    src="<?= BASE_URL.$brand['img'] ?>"
+                                    data-src="<?= BASE_URL.$brand['img'] ?>"
+                                    alt="Thương hiệu" />
                             </a>
-                            <span class="name_brand">Chanel</span>
+                            <span class="name_brand"><?= $brand['name'] ?></span>
                         </div>
+
+                        <?php endforeach; ?>
                     </div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
@@ -239,9 +243,10 @@
                     </div>
                 </div>
             </div>
-            <div class="product-flash-swiper swiper-container">
-                <div class="swiper-wrapper load-after" data-section="section_flashsale">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 swiper-slide item_null">
+            
+                <div class="product-flash-swiper swiper-container">
+                    <div class="swiper-wrapper load-after" data-section="section_flashsale">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 swiper-slide item_null">
                         <div class="item_product_main"></div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 swiper-slide item_null">
@@ -253,74 +258,78 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 swiper-slide item_null">
                         <div class="item_product_main"></div>
                     </div>
-                    <script type="text/x-custom-template" data-template="section_flashsale">
-                                                <div class="swiper-slide">
-                                    <div class="item_product_main">
-                <form action="/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33658271" enctype="multipart/form-data">
-                    <div class="product-thumbnail">
-                        <a class="image_thumb scale_hover" href="<?= BASE_URL ?>?act=productDetail" title="Tommy Hilfiger Tommy Girl">
-                            <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" alt="Tommy Hilfiger Tommy Girl">
-                        </a>
-                        <div class="action">
-                            <input class="hidden" type="hidden" name="variantId" value="104170999" />
-                            <button class="btn-cart btn-views" title="Xem chi tiết" type="button" onclick="window.location.href='<?= BASE_URL ?>?act=productDetail'" >
-                                <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-detail"></use> </svg>
-                            </button>
-                            <a title="Xem nhanh" href="<?= BASE_URL ?>?act=productDetail" data-handle="tommy-hilfiger-tommy-girl" class="quick-view btn-views">
-                                <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
+                    <!-- TOP BÁN CHẠY SP -->
+                        <script type="text/x-custom-template" data-template="section_flashsale">
+                    <?php foreach ($top10Pro as $item): ?>
+                                                    <div class="swiper-slide">
+                                        <div class="item_product_main">
+                    <form action="/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33658271" enctype="multipart/form-data">
+                        <div class="product-thumbnail">
+                            <a class="image_thumb scale_hover" href="<?= BASE_URL ?>?act=productDetail&&id=<?= $item['id'] ?>" title="<?= $item['name']  ?>">  
+                                <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL. $item['img'] ?>"  data-src="<?= BASE_URL. $item['img'] ?>" alt="<?= $item['name']  ?>">
                             </a>
-                        </div>
-
-                    </div>
-                    <div class="smart"><span>-
-                15%
-                </span></div>	<a href="javascript:void(0)" class="setWishlist btn-wishlist" data-wish="tommy-hilfiger-tommy-girl" tabindex="0" title="Thêm vào yêu thích">
-                    <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
-                    </a>
-                    <div class="product-info">
-                        <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/tommy-hilfiger-tommy-girl" title="Tommy Hilfiger Tommy Girl">Tommy Hilfiger Tommy Girl</a></h3>
-                        <div class="price-box">
-                            705.000₫
-                            <span class="compare-price">830.000₫</span>
-
-                        </div>
-                        <div class="productcount">
-                            <div class="countitem visible">
-                                <span class="a-center">Đã bán 170 sp</span>
-                                <div class="countdown" style="width: 77% ;"><span></span></div>
+                            <div class="action">
+                                <input class="hidden" type="hidden" name="variantId" value="104170999" />
+                                <button class="btn-cart btn-views" title="Xem chi tiết" type="button" onclick="window.location.href='<?= BASE_URL ?>?act=productDetail'" >
+                                    <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-detail"></use> </svg>
+                                </button>
+                                <a title="Xem nhanh" href="<?= BASE_URL ?>?act=productDetail" data-handle="tommy-hilfiger-tommy-girl" class="quick-view btn-views">
+                                    <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
+                                </a>
                             </div>
-                            <div class="sale-bar"></div>
-                        </div>
-                        <div class="gift_pro ">
 
                         </div>
-                    </div>
-                    <ul class="fragrant_product">
-                        <li class="text-center">
-                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725" alt="Hoa đào">
-                            <span>Hoa đào</span>
-                        </li>
-                        <li class="text-center">
-                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725" alt="Cam">
-                            <span>Cam</span>
-                        </li>
-                        <li class="text-center">
-                            <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725" alt="Hoa nhài">
-                            <span>Hoa nhài</span>
-                        </li>
-                    </ul>
-                </form>					</div>
+                        <div class="smart"><span>-
+                        <?= ceil((1 - ($item['price_sale'] / $item['price'])) * 100) ?>%
+                    </span></div>	<a href="javascript:void(0)" class="setWishlist btn-wishlist" data-wish="tommy-hilfiger-tommy-girl" tabindex="0" title="Thêm vào yêu thích">
+                        <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
+                        </a>
+                        <div class="product-info">
+                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/tommy-hilfiger-tommy-girl" title="<?= $item['name']  ?>"><?= $item['name']  ?></a></h3>
+                            <div class="price-box">
+                            <?= $item['price_sale']  ?>₫
+                                <span class="compare-price"><?= $item['price']  ?>₫</span>
+
+                            </div>
+                            <div class="productcount">
+                                <div class="countitem visible">
+                                    <span class="a-center">Đã bán <?= $item['so_luong_ban']  ?> sp</span>
+                                    <div class="countdown" style="width: 77% ;"><span></span></div>
                                 </div>
-              </script>
+                                <div class="sale-bar"></div>
+                            </div>
+                            <div class="gift_pro ">
+
+                            </div>
+                        </div>
+                        <ul class="fragrant_product">
+                            <li class="text-center">
+                                <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725" alt="Hoa đào">
+                                <span>Hoa đào</span>
+                            </li>
+                            <li class="text-center">
+                                <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725" alt="Cam">
+                                <span>Cam</span>
+                            </li>
+                            <li class="text-center">
+                                <img  width="90" height="90" class="lazyload" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725" alt="Hoa nhài">
+                                <span>Hoa nhài</span>
+                            </li>
+                        </ul>
+                    </form>					</div>
+                                    </div>
+                                    <?php endforeach; ?>
+                  </script>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
+            
             <div class="view-more clearfix">
-                <a href="san-pham-khuyen-mai.html" title="Xem tất cả" class="btn">
+                <a href="<?= BASE_URL ?>?act=products" title="Xem tất cả" class="btn">
                     Xem tất cả
-                    <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
+                    <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                 </a>
@@ -446,33 +455,34 @@
                         <div class="item_product_main"></div>
                     </div>
                     <script type="text/x-custom-template" data-template="section_product_noibat">
+                        <?php foreach($products as $product) : ?>
                                                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 col-fix">
                 <form action="/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33657819" enctype="multipart/form-data">
                     <div class="product-thumbnail">
-                        <a class="image_thumb scale_hover" href="/mancera-cedrat-boise" title="Mancera Cedrat Boise">
-                            <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/mancera-cedrat-boise-6698ab0d070-min-removebg-preview.png?v=1701246971380" alt="Mancera Cedrat Boise">
+                        <a class="image_thumb scale_hover" href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>" title="<?= $product['name'] ?>">
+                            <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL.$product['img'] ?>"  data-src="<?= BASE_URL.$product['img'] ?>" alt="Sản phẩm">
                         </a>
                         <div class="action">
                             <input type="hidden" name="variantId" value="104170223" />
                             <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
                                 <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-cart"></use> </svg>
                             </button>
-                            <a title="Xem nhanh" href="/mancera-cedrat-boise" data-handle="mancera-cedrat-boise" class="quick-view btn-views">
+                            <a title="Xem chi tiết" href="/mancera-cedrat-boise" data-handle="mancera-cedrat-boise" class="quick-view btn-views">
                                 <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
                             </a>
                         </div>
 
                     </div>
                 <div class="smart"><span>-
-                8%
+                <?= ceil((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
                 </span></div>	<a href="javascript:void(0)" class="setWishlist btn-wishlist" data-wish="mancera-cedrat-boise" tabindex="0" title="Thêm vào yêu thích">
                     <svg class="icon"> <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
                     </a>
                     <div class="product-info">
-                        <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/mancera-cedrat-boise" title="Mancera Cedrat Boise">Mancera Cedrat Boise</a></h3>
+                        <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="<?= $product['name'] ?>" title="<?= $product['name'] ?>"><?= $product['name'] ?></a></h3>
                         <div class="price-box">
-                            1.800.000₫
-                            <span class="compare-price">1.950.000₫</span>
+                        <?= $product['price_sale'] ?>₫
+                            <span class="compare-price"> <?= $product['price'] ?>₫</span>
 
                         </div>
                     </div>
@@ -490,20 +500,23 @@
                             <span>Gỗ</span>
                         </li>
                     </ul></form>				</div>
+                    <?php endforeach; ?>
               </script>
                 </div>
                 <div class="view-more clearfix">
-                    <a href="nuoc-hoa-nam.html" title="Xem tất cả" class="btn">
+                    <a href="<?= BASE_URL ?>?act=products" title="Xem tất cả" class="btn">
                         Xem tất cả
-                        <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
+                        <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </a>
                 </div>
             </div>
 
-            <div class="tab-2 tab-content"></div>
+            <div class="tab-2 tab-content"> 
+                
+            </div>
 
             <div class="tab-3 tab-content"></div>
 
@@ -535,7 +548,7 @@
                         <p class="title_banner">Nước Hoa Nam</p>
                         <p class="des_banner">Mùi hương mạnh mẽ đậm chất nam tính</p>
                         <div class="view-more clearfix">
-                            <a href="collections/all.html" title="Xem thêm" class="btn">
+                            <a href="<?=BASE_URL ?>?act=Male" title="Xem thêm" class="btn">
                                 Xem thêm
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -564,7 +577,7 @@
                             Mùi hương ngọt nữ tính quyến rũ nhẹ nhàng
                         </p>
                         <div class="view-more clearfix">
-                            <a href="collections/all.html" title="Xem thêm" class="btn">
+                            <a href="<?=BASE_URL ?>?act=Female" title="Xem thêm" class="btn">
                                 Xem thêm
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -628,21 +641,22 @@
                             <p class="content2">
                                 <span>Giảm đến 10%</span>
                             </p>
-                            <a class="button" href="collections/all.html" title="Xem ngay">Xem ngay</a>
+                            <a class="button" href="<?= BASE_URL?>?act=products" title="Xem ngay">Xem ngay</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 item_pro_tren order-md-1">
+                    <?php foreach ($xuHuong as $trend) :?>
                     <div class="item_pro_top">
                         <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
                             class="variants product-action" data-cart-form data-id="product-actions-33659220"
                             enctype="multipart/form-data">
                             <div class="product-thumbnail">
-                                <a class="image_thumb scale_hover" href="gucci-bloom-ambrosia-di-fiori.html"
+                                <a class="image_thumb scale_hover" href="<?= BASE_URL?>?act=productDetail&id=<?= $trend['id'] ?>"
                                     title="Gucci Bloom Ambrosia di Fiori">
                                     <img width="480" height="480" class="lazyload image1"
-                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
+                                        src="<?= BASE_URL.$trend['img'] ?>"
+                                        data-src="<?= BASE_URL.$trend['img'] ?>"
                                         alt="Gucci Bloom Ambrosia di Fiori" />
                                 </a>
                                 <div class="action">
@@ -650,7 +664,8 @@
                                     <button class="btn-cart btn-views" title="Xem chi tiết" type="button"
                                         onclick="window.location.href='gucci-bloom-ambrosia-di-fiori.html'">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-detail">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-detail">
                                             </use>
                                         </svg>
                                     </button>
@@ -668,7 +683,8 @@
                             <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                                 data-wish="gucci-bloom-ambrosia-di-fiori" tabindex="0" title="Thêm vào yêu thích">
                                 <svg class="icon">
-                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
                                     </use>
                                 </svg>
                             </a>
@@ -676,11 +692,11 @@
                                 <h3 class="product-name">
                                     <a class="line-clamp line-clamp-1 text-center"
                                         href="gucci-bloom-ambrosia-di-fiori.html"
-                                        title="Gucci Bloom Ambrosia di Fiori">Gucci Bloom Ambrosia di Fiori</a>
+                                        title="Gucci Bloom Ambrosia di Fiori"><?= $trend['name'] ?></a>
                                 </h3>
                                 <div class="price-box">
-                                    2.560.000₫
-                                    <span class="compare-price">3.150.000₫</span>
+                                <?= $trend['price_sale'] ?>₫
+                                    <span class="compare-price"><?= $trend['price'] ?>₫</span>
                                 </div>
                             </div>
                             <ul class="fragrant_product">
@@ -708,80 +724,7 @@
                             </ul>
                         </form>
                     </div>
-                    <div class="item_pro_top">
-                        <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
-                            class="variants product-action" data-cart-form data-id="product-actions-33659039"
-                            enctype="multipart/form-data">
-                            <div class="product-thumbnail">
-                                <a class="image_thumb scale_hover" href="calvin-klein-ck-one-gold.html"
-                                    title="Calvin Klein CK One Gold">
-                                    <img width="480" height="480" class="lazyload image1"
-                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
-                                        alt="Calvin Klein CK One Gold" />
-                                </a>
-                                <div class="action">
-                                    <input type="hidden" name="variantId" value="104172328" />
-                                    <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
-                                        <svg class="icon">
-                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-cart">
-                                            </use>
-                                        </svg>
-                                    </button>
-                                    <a title="Xem nhanh" href="calvin-klein-ck-one-gold.html"
-                                        data-handle="calvin-klein-ck-one-gold" class="quick-view btn-views">
-                                        <svg class="icon">
-                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
-                                                xlink:href="#icon-quickview">
-                                            </use>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="smart"><span>- 34% </span></div>
-                            <a href="javascript:void(0)" class="setWishlist btn-wishlist"
-                                data-wish="calvin-klein-ck-one-gold" tabindex="0" title="Thêm vào yêu thích">
-                                <svg class="icon">
-                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
-                                    </use>
-                                </svg>
-                            </a>
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a class="line-clamp line-clamp-1 text-center" href="calvin-klein-ck-one-gold.html"
-                                        title="Calvin Klein CK One Gold">Calvin
-                                        Klein CK One Gold</a>
-                                </h3>
-                                <div class="price-box">
-                                    1.050.000₫
-                                    <span class="compare-price">1.580.000₫</span>
-                                </div>
-                            </div>
-                            <ul class="fragrant_product">
-                                <li class="text-center">
-                                    <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
-                                        alt="Cam" />
-                                    <span>Cam</span>
-                                </li>
-                                <li class="text-center">
-                                    <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                        alt="Trái cây" />
-                                    <span>Trái cây</span>
-                                </li>
-                                <li class="text-center">
-                                    <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                        alt="Hoa nhài" />
-                                    <span>Hoa nhài</span>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+                   <?php endforeach; ?>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 order-md-3">
                     <div class="banner_tren banner_tren_2">
@@ -815,7 +758,8 @@
                                     <input type="hidden" name="variantId" value="104173585" />
                                     <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-cart">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-cart">
                                             </use>
                                         </svg>
                                     </button>
@@ -833,7 +777,8 @@
                             <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                                 data-wish="unisex-creed-millesime-imperial" tabindex="0" title="Thêm vào yêu thích">
                                 <svg class="icon">
-                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
                                     </use>
                                 </svg>
                             </a>
@@ -889,7 +834,8 @@
                                     <input type="hidden" name="variantId" value="104173002" />
                                     <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
                                         <svg class="icon">
-                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-cart">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-cart">
                                             </use>
                                         </svg>
                                     </button>
@@ -909,7 +855,8 @@
                                 data-wish="nuoc-hoa-unisex-gucci-the-virgin-violet" tabindex="0"
                                 title="Thêm vào yêu thích">
                                 <svg class="icon">
-                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink" xlink:href="#icon-wishlist">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
                                     </use>
                                 </svg>
                             </a>
@@ -968,16 +915,17 @@
             </p>
             <div class="swiper_feedback swiper-container control-top">
                 <div class="swiper-wrapper">
+                    <?php  foreach ($users as $client) :?>
                     <div class="swiper-slide">
                         <div class="review_box">
                             <div class="review_img">
                                 <img width="200" height="200" class="lazyload"
-                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                    data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_danh_gia_1.jpg?1709175143725"
-                                    alt="Đặng Chinh Đức" />
+                                    src="<?= BASE_URL.$client['img']?>"
+                                    data-src="<?= BASE_URL.$client['img']?>"
+                                    alt="users" />
                             </div>
                             <div class="info_review">
-                                <p class="name_review">Đặng Chinh Đức</p>
+                                <p class="name_review"><?=$client['name']?></p>
                                 <p class="job_review">Developer</p>
                                 <p class="content_review">
                                     Mẫu mã đa dạng, hương thơm quyến rũ, ngọt ngào mang lại
@@ -985,63 +933,17 @@
                                 </p>
                                 <div class="elementor-widget-container">
                                     <img width="45" height="45" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quote-free-img.png?1709175143725"
-                                        alt="Đặng Chinh Đức" />
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/quote-free-img.png?1709175143725"
+                                        alt="user" />
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
 
-                    <div class="swiper-slide">
-                        <div class="review_box">
-                            <div class="review_img">
-                                <img width="200" height="200" class="lazyload"
-                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                    data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_danh_gia_2.jpg?1709175143725"
-                                    alt="Nguyễn Ngọc Sơn" />
-                            </div>
-                            <div class="info_review">
-                                <p class="name_review">Nguyễn Ngọc Sơn</p>
-                                <p class="job_review">Đầu bếp</p>
-                                <p class="content_review">
-                                    Là một người làm bếp tôi luôn chọn cho mình những mẫu nước
-                                    hoa phù hợp. Tôi rất hài lòng với trải nghiệm tại đây!
-                                </p>
-                                <div class="elementor-widget-container">
-                                    <img width="45" height="45" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quote-free-img.png?1709175143725"
-                                        alt="Đặng Chinh Đức" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="swiper-slide">
-                        <div class="review_box">
-                            <div class="review_img">
-                                <img width="200" height="200" class="lazyload"
-                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                    data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_danh_gia_3.jpg?1709175143725"
-                                    alt="Lê Quang Hải" />
-                            </div>
-                            <div class="info_review">
-                                <p class="name_review">Lê Quang Hải</p>
-                                <p class="job_review">Giáo viên</p>
-                                <p class="content_review">
-                                    Hương thơm mang lại cho tôi sự tự tin khi đứng trên giảng
-                                    đường và giao tiếp. Nhân viên nhiệt tình và chuyên nghiệp!
-                                </p>
-                                <div class="elementor-widget-container">
-                                    <img width="45" height="45" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/quote-free-img.png?1709175143725"
-                                        alt="Đặng Chinh Đức" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -1116,68 +1018,30 @@
                     <h2 class="title-module">
                         <a href="nuoc-hoa-nu.html" title="Hàng bán chạy">Hàng bán chạy</a>
                     </h2>
-
+                    <?php foreach($banChaytt as $banChay) : ?>
                     <div class="product-view">
                         <a class="image_thumb" href="gucci-bloom-ambrosia-di-fiori.html"
                             title="Gucci Bloom Ambrosia di Fiori">
                             <img width="480" height="480" class="lazyload"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
+                                src="<?= BASE_URL.$banChay['img'] ?>"
+                                data-src="<?= BASE_URL.$banChay['img'] ?>"
                                 alt="Gucci Bloom Ambrosia di Fiori" />
                         </a>
                         <div class="product-info">
                             <h3 class="product-name">
-                                <a href="gucci-bloom-ambrosia-di-fiori.html" title="Gucci Bloom Ambrosia di Fiori">Gucci
-                                    Bloom Ambrosia di Fiori</a>
+                                <a href="gucci-bloom-ambrosia-di-fiori.html" title="Gucci Bloom Ambrosia di Fiori"><?= $banChay['name'] ?></a>
                             </h3>
                             <div class="price-box">
-                                <span class="price">2.560.000₫</span>
+                                <span class="price"><?= $banChay['price_sale'] ?>₫</span>
 
-                                <span class="compare-price">3.150.000₫</span>
+                                <span class="compare-price"><?= $banChay['price'] ?>₫</span>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
 
-                    <div class="product-view">
-                        <a class="image_thumb" href="calvin-klein-ck-one-gold.html" title="Calvin Klein CK One Gold">
-                            <img width="480" height="480" class="lazyload"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
-                                alt="Calvin Klein CK One Gold" />
-                        </a>
-                        <div class="product-info">
-                            <h3 class="product-name">
-                                <a href="calvin-klein-ck-one-gold.html" title="Calvin Klein CK One Gold">Calvin
-                                    Klein CK One Gold</a>
-                            </h3>
-                            <div class="price-box">
-                                <span class="price">1.050.000₫</span>
 
-                                <span class="compare-price">1.580.000₫</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-view">
-                        <a class="image_thumb" href="nuoc-hoa-le-labo-santal-33.html"
-                            title="Nước hoa Le Labo Santal 33">
-                            <img width="480" height="480" class="lazyload"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/le-labo-santal-33-fa66901a85514b-removebg-preview.png?v=1701249584653"
-                                alt="Nước hoa Le Labo Santal 33" />
-                        </a>
-                        <div class="product-info">
-                            <h3 class="product-name">
-                                <a href="nuoc-hoa-le-labo-santal-33.html" title="Nước hoa Le Labo Santal 33">Nước
-                                    hoa Le Labo Santal 33</a>
-                            </h3>
-                            <div class="price-box">
-                                <span class="price">3.500.000₫</span>
-
-                                <span class="compare-price">3.850.000₫</span>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
                     <div class="box_tow_col">
@@ -1191,7 +1055,7 @@
                             <div class="detail-text">
                                 <span class="title_one">Khám phá</span>
                                 <span class="title_tow">Hương nước hoa</span>
-                                <a class="btn-link" href="collections/all.html" title="Mua ngay">MUA NGAY</a>
+                                <a class="btn-link" href="<?= BASE_URL ?>?act=products" title="Mua ngay">MUA NGAY</a>
                             </div>
                         </div>
                     </div>
@@ -1200,72 +1064,30 @@
                     <h2 class="title-module">
                         <a href="nuoc-hoa-nam.html" title="Hàng giảm giá">Hàng giảm giá</a>
                     </h2>
+                    <?php foreach($spSale as $sale) :?>
                     <div class="product-small-item">
                         <div class="product-view">
                             <a class="image_thumb" href="mancera-cedrat-boise.html" title="Mancera Cedrat Boise">
                                 <img width="480" height="480" class="lazyload"
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                    data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/mancera-cedrat-boise-6698ab0d070-min-removebg-preview.png?v=1701246971380"
+                                    src="<?= BASE_URL.$sale['img'] ?>"
+                                    data-src="<?= BASE_URL.$sale['img'] ?>"
                                     alt="Mancera Cedrat Boise" />
                             </a>
                             <div class="product-info">
                                 <h3 class="product-name">
-                                    <a href="mancera-cedrat-boise.html" title="Mancera Cedrat Boise">Mancera Cedrat
-                                        Boise</a>
+                                    <a href="mancera-cedrat-boise.html" title="Mancera Cedrat Boise"> <?=$sale['name'] ?></a>
                                 </h3>
                                 <div class="price-box">
-                                    <span class="price">1.800.000₫</span>
+                                    <span class="price"><?=$sale['price_sale'] ?>₫</span>
 
-                                    <span class="compare-price">1.950.000₫</span>
+                                    <span class="compare-price"><?=$sale['price'] ?>₫</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product-small-item">
-                        <div class="product-view">
-                            <a class="image_thumb" href="dior-sauvage-eau-de-toilette.html"
-                                title="Dior Sauvage Eau de Toilette">
-                                <img width="480" height="480" class="lazyload"
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                    data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/dior-sauvage-eau-de-toilette-100.png?v=1701246664160"
-                                    alt="Dior Sauvage Eau de Toilette" />
-                            </a>
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a href="dior-sauvage-eau-de-toilette.html"
-                                        title="Dior Sauvage Eau de Toilette">Dior
-                                        Sauvage Eau de Toilette</a>
-                                </h3>
-                                <div class="price-box">
-                                    <span class="price">2.800.000₫</span>
-
-                                    <span class="compare-price">3.200.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-small-item">
-                        <div class="product-view">
-                            <a class="image_thumb" href="acqua-di-gio-eau-de-parfum.html"
-                                title="Acqua di Gio Eau de Parfum">
-                                <img width="480" height="480" class="lazyload"
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
-                                    data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/acqua-di-gio-edp-ca93ce28e17.png?v=1701240793627"
-                                    alt="Acqua di Gio Eau de Parfum" />
-                            </a>
-                            <div class="product-info">
-                                <h3 class="product-name">
-                                    <a href="acqua-di-gio-eau-de-parfum.html" title="Acqua di Gio Eau de Parfum">Acqua
-                                        di Gio Eau de Parfum</a>
-                                </h3>
-                                <div class="price-box">
-                                    <span class="price">2.655.000₫</span>
-
-                                    <span class="compare-price">2.950.000₫</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
+                   
+                   
                 </div>
             </div>
         </div>
@@ -1287,8 +1109,8 @@
                                 <a class="thumb" href="5-huong-nuoc-hoa-ngot-ngao-day-tinh-te-ghi-dau-an-kho-phai.html"
                                     title="5 hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn khó phai">
                                     <img width="600" height="380" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="https:<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/articles/5-huong-nuoc-hoa-ngot-ngao-day-tinh-te.jpg?v=1701332538430"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/articles/5-huong-nuoc-hoa-ngot-ngao-day-tinh-te.jpg?v=1701332538430"
                                         alt="5 hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn khó phai" />
                                 </a>
                                 <p class="time-post">
@@ -1321,8 +1143,8 @@
                                 <a class="thumb" href="khong-phai-toc-hay-co-day-moi-la-noi-ban-nen-xit-nuoc-hoa.html"
                                     title="Không phải tóc hay cổ, đây mới là nơi bạn nên xịt nước hoa">
                                     <img width="600" height="380" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="https:<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/articles/khong-phai-toc-hay-co-day-moi-la-noi-ban-nen-xit-nuoc-hoa.jpg?v=1701654839137"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/articles/khong-phai-toc-hay-co-day-moi-la-noi-ban-nen-xit-nuoc-hoa.jpg?v=1701654839137"
                                         alt="Không phải tóc hay cổ, đây mới là nơi bạn nên xịt nước hoa" />
                                 </a>
                                 <p class="time-post">
@@ -1355,8 +1177,8 @@
                                 <a class="thumb" href="cach-chon-nuoc-hoa-mua-he-phu-hop-cong-so.html"
                                     title="Cách chọn nước hoa mùa hè phù hợp công sở">
                                     <img width="600" height="380" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="https:<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/articles/cach-chon-nuoc-hoa-mua-he-phu-hop-voi-phu-nu-cong-so.jpg?v=1701331847930"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/articles/cach-chon-nuoc-hoa-mua-he-phu-hop-voi-phu-nu-cong-so.jpg?v=1701331847930"
                                         alt="Cách chọn nước hoa mùa hè phù hợp công sở" />
                                 </a>
                                 <p class="time-post">
@@ -1389,8 +1211,8 @@
                                     href="louis-vuitton-ra-mat-nuoc-hoa-pacific-chill-lay-cam-hung-tu-california.html"
                                     title="Louis Vuitton ra mắt nước hoa Pacific Chill lấy cảm hứng từ California">
                                     <img width="600" height="380" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="https:<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/articles/louis-vuitton-ra-mat-nuoc-hoa-pacific-chill-lay-cam-hung-tu-california.jpg?v=1701657059360"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/articles/louis-vuitton-ra-mat-nuoc-hoa-pacific-chill-lay-cam-hung-tu-california.jpg?v=1701657059360"
                                         alt="Louis Vuitton ra mắt nước hoa Pacific Chill lấy cảm hứng từ California" />
                                 </a>
                                 <p class="time-post">
@@ -1424,8 +1246,8 @@
                                 <a class="thumb" href="thanh-pho-nam-giu-cac-bi-mat-ve-hoa-va-huong-nuoc-hoa.html"
                                     title="Thành phố nắm giữ các bí mật về hoa và hương nước hoa">
                                     <img width="600" height="380" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="https:<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/articles/thanh-pho-nam-giu-bi-mat-ve-nuoc-hoa.jpg?v=1701656505930"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/articles/thanh-pho-nam-giu-bi-mat-ve-nuoc-hoa.jpg?v=1701656505930"
                                         alt="Thành phố nắm giữ các bí mật về hoa và hương nước hoa" />
                                 </a>
                                 <p class="time-post">
@@ -1458,8 +1280,8 @@
                                 <a class="thumb" href="5-cach-dung-nuoc-hoa-giup-luu-giu-huong-lau-trong-mua-lanh.html"
                                     title="5 cách dùng nước hoa, giúp lưu giữ hương lâu trong mùa lạnh">
                                     <img width="600" height="380" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="https:<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/articles/5-cach-dung-nuoc-hoa-giup-luu-giu-huong.jpg?v=1701655904947"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/articles/5-cach-dung-nuoc-hoa-giup-luu-giu-huong.jpg?v=1701655904947"
                                         alt="5 cách dùng nước hoa, giúp lưu giữ hương lâu trong mùa lạnh" />
                                 </a>
                                 <p class="time-post">
@@ -1491,10 +1313,10 @@
                 <div class="swiper-button-next"></div>
             </div>
             <div class="view-more clearfix">
-                <a href="tin-tuc.html" title="Xem tất cả" class="btn">
+                <a href="<?= BASE_URL ?>?act=posts" title="Xem tất cả" class="btn">
                     Xem tất cả
-                    <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
+                    <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                 </a>
@@ -1574,10 +1396,10 @@
                     <div class="swiper-slide">
                         <div class="thumb-image">
                             <img width="260" height="260" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_1.jpg?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_1.jpg?1709175143725"
                                 alt="Instagram 1" />
-                            <a href="#" title="Instagram 1">
+                            <a href="https://www.instagram.com/truong.tu.5249349?igsh=ZGQxYnlyNDk2dDM%3D&utm_source=qr" title="Instagram 1">
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
@@ -1588,10 +1410,10 @@
                     <div class="swiper-slide">
                         <div class="thumb-image">
                             <img width="260" height="260" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_2.jpg?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_2.jpg?1709175143725"
                                 alt="Instagram 2" />
-                            <a href="#" title="Instagram 2">
+                            <a href="https://www.instagram.com/truong.tu.5249349?igsh=ZGQxYnlyNDk2dDM%3D&utm_source=qr" title="Instagram 2">
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
@@ -1602,10 +1424,10 @@
                     <div class="swiper-slide">
                         <div class="thumb-image">
                             <img width="260" height="260" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_3.jpg?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_3.jpg?1709175143725"
                                 alt="Instagram 3" />
-                            <a href="#" title="Instagram 3">
+                            <a href="https://www.instagram.com/truong.tu.5249349?igsh=ZGQxYnlyNDk2dDM%3D&utm_source=qr" title="Instagram 3">
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
@@ -1616,10 +1438,10 @@
                     <div class="swiper-slide">
                         <div class="thumb-image">
                             <img width="260" height="260" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_4.jpg?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_4.jpg?1709175143725"
                                 alt="Instagram 4" />
-                            <a href="#" title="Instagram 4">
+                            <a href="https://www.instagram.com/truong.tu.5249349?igsh=ZGQxYnlyNDk2dDM%3D&utm_source=qr" title="Instagram 4">
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
@@ -1630,10 +1452,10 @@
                     <div class="swiper-slide">
                         <div class="thumb-image">
                             <img width="260" height="260" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_5.jpg?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/image_ins_5.jpg?1709175143725"
                                 alt="Instagram 5" />
-                            <a href="#" title="Instagram 5">
+                            <a href="https://www.instagram.com/truong.tu.5249349?igsh=ZGQxYnlyNDk2dDM%3D&utm_source=qr" title="Instagram 5">
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
@@ -1711,8 +1533,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="item_chinh_sach">
                             <img width="64" height="64" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_1.png?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_1.png?1709175143725"
                                 alt="Miễn phí vận chuyển" />
                             <div class="box_content_cs">
                                 <p class="title_cs">Miễn phí vận chuyển</p>
@@ -1726,8 +1548,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="item_chinh_sach">
                             <img width="64" height="64" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_2.png?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_2.png?1709175143725"
                                 alt="Hỗ trợ đổi trả" />
                             <div class="box_content_cs">
                                 <p class="title_cs">Hỗ trợ đổi trả</p>
@@ -1741,8 +1563,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="item_chinh_sach">
                             <img width="64" height="64" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_3.png?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_3.png?1709175143725"
                                 alt="Thanh toán COD" />
                             <div class="box_content_cs">
                                 <p class="title_cs">Thanh toán COD</p>
@@ -1756,8 +1578,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="item_chinh_sach">
                             <img width="64" height="64" class="lazyload"
-                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_4.png?1709175143725"
+                                src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_cs_4.png?1709175143725"
                                 alt="Hỗ trợ 24/7" />
                             <div class="box_content_cs">
                                 <p class="title_cs">Hỗ trợ 24/7</p>

@@ -22,7 +22,7 @@ match ($act) {
     'products' => showProduct(),
     'posts' => showPost(),
 
-    'productDetail' => showProduct(),
+    'productDetail' => showProductDetail(),
 
 
     'introduce' => showIntroduction(),
@@ -30,6 +30,9 @@ match ($act) {
     'brand' => showBrand(),
 
     'thanhtoan' => showThanhtoan(),
+
+    'Male' => showProduct(),
+    'Female' => showProduct(),
 
 
 

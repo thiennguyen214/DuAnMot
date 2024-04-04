@@ -925,15 +925,15 @@
                           <div class="product-thumbnail">
                             <a
                               class="image_thumb scale_hover"
-                              href="../unisex-creed-millesime-imperial.html"
+                              href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>"
                               title="Unisex Creed Millesime Imperial"
                             >
                               <img
                                 width="480"
                                 height="480"
                                 class="lazyload image1"
-                                src="<?= BASE_URL.$product['img'] ?>"
-                                data-src="<?= BASE_URL.$product['img'] ?>"
+                                src="<?= BASE_URL.$product['pr_img'] ?>"
+                                data-src="<?= BASE_URL.$product['pr_img'] ?>"
                                 alt="Unisex Creed Millesime Imperial"
                               />
                             </a>
@@ -971,7 +971,7 @@
                           </div>
                           <div class="smart"><span>
 
-                          <?= ceil((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                          <?= ceil((1 - ($product['pr_price_sale'] / $product['pr_price'])) * 100) ?>%
                           
                          </span></div>
                           <a
@@ -993,13 +993,14 @@
                               <a
                                 class="line-clamp line-clamp-1 text-center"
                                 href="../unisex-creed-millesime-imperial.html"
-                                title="<?= $product['name'] ?>"
-                                ><?= $product['name'] ?></a
+                                title="<?= $product['pr_name'] ?>"
+                                ><?= $product['pr_name'] ?></a
+                               
                               >
                             </h3>
                             <div class="price-box">
-                            <?= $product['price_sale'] ?>₫
-                              <span class="compare-price"><?= $product['price'] ?>₫</span>
+                            <?= $product['pr_price_sale'] ?>₫
+                              <span class="compare-price"><?= $product['pr_price'] ?>₫</span>
                             </div>
                           </div>
                           <ul class="fragrant_product">
@@ -1008,8 +1009,8 @@
                                 width="90"
                                 height="90"
                                 class="lazyload"
-                                src="<?= BASE_URL.$product['img'] ?>"
-                                data-src="<?= BASE_URL.$product['img'] ?>"
+                                src="<?= BASE_URL.$product['pr_img'] ?>"
+                                data-src="<?= BASE_URL.$product['pr_img'] ?>"
                                 alt="Cam"
                               />
                               <span>Cam</span>
