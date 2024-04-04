@@ -14,6 +14,17 @@ require_file(PATH_MODEL);
 //
 $act = $_GET['act'] ?? '/';
 match ($act) {
+
+    '/' => index(),
+    'gioithieu' => gioithieu(),
+    'tintuc' => tintuc(),
+    'lienhe' => lienhe(),
+    'trangchu' => trangchu(),
+    'thuonghieu' => thuonghieu(),
+    'sanpham' => sanpham(),
+    'giohang' => giohang(),
+    'user-detail' => userDetail(),
+
     '/' => showHome(),
 
     // 'gioithieu' => gioithieu(),
@@ -39,6 +50,7 @@ match ($act) {
 
     'Male' => showProduct(),
     'Female' => showProduct(),
+
 
 
 

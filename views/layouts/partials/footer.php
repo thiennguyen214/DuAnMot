@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+<footer class="footer" style="background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_foo02fb.jpg?1709175143725);">
+=======
 <footer class="footer"
 	style="
 		background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_foo02fb.jpg?1709175143725);">
+>>>>>>> d682c2cb1045f7fa316f180b2677810402100234
 	<div class="mid-footer">
 		<div class="container">
 			<div class="row">
