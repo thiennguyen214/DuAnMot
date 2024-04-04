@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-8 col-12 col-cart-left">
                     
-                    <div class="cart-tinhtrang">
+                    <!-- <div class="cart-tinhtrang">
                         <div class="title_voucher">
                             <span>Nhận quà tặng !!!</span>
                         </div>
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="cart-page d-xl-block d-none">
                         <div class="drawer__inner">
                             <div class="CartPageContainer">

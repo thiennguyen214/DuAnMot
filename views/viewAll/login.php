@@ -40,10 +40,9 @@
                                         <span>Đăng nhập</span>
                                     </h1>
                                     <div id="login" class="section">
-                                        <form method="post" action="https://bean-perfume.mysapo.net/account/login"
-                                            id="customer_login" accept-charset="UTF-8">
-                                            <input name="FormType" type="hidden" value="customer_login" /><input
-                                                name="utf8" type="hidden" value="true" />
+                                        <form method="post" action="" id="customer_login" accept-charset="UTF-8">
+                                            <!-- <input name="FormType" type="hidden" value="customer_login" /><input
+                                                name="utf8" type="hidden" value="true" /> -->
                                             <span class="form-signup" style="color: red"> </span>
                                             <div class="form-signup clearfix">
                                                 <fieldset class="form-group">

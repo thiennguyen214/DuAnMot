@@ -253,10 +253,9 @@ function validateProductUpdate($id, $data)
         $errors[] = 'Giá sale không được lớn hơn giá thường';
     }
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> d726361f343edf0e6c234cd30672b710f3b846ed
+
+
+
 
     if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
 

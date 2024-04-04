@@ -7,7 +7,7 @@ function showHome()
     $tittle = 'Trang chủ';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
-    // debug($dataUser);
+
     // $users = listAll('users');
     $brand = listAll('brands');
     $products = listAll('products');

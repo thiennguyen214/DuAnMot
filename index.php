@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once './commons/env.php';
 require_once './commons/helper.php';
 require_once './commons/connect_db.php';
@@ -10,33 +12,42 @@ require_once './commons/model.php';
 require_file(PATH_CONTROLLER);
 require_file(PATH_MODEL);
 
+$act = $_GET['act'] ?? '/';
+
+// Biến này cần khai báo được link cần đăng nhập mới vào được
+$arrRouteNeedAuth = [
+    'cart-add',
+    'cart-list',
+    'cart-inc',
+    'cart-dec',
+    'cart-del',
+    'order-checkout',
+    'order-purchase',
+    'order-success',
+];
+
+// Kiểm tra xem user đã đăng nhập chưa
+middleware_auth_check_cl($act, $arrRouteNeedAuth);
 
 //
-$act = $_GET['act'] ?? '/';
 match ($act) {
     '/' => showHome(),
-
-    // 'gioithieu' => gioithieu(),
-    // 'user-detail' => userDetail()
-    'login' => showLog(),
-    // 'showone' => showne($_GET['id']),
-
+    'log' => showLog(),
     'posts' => showPost(),
-
-    'cart' => showCart(),
-
-    'products' => showProduct(),
-    'posts' => showPost(),
-
-    'productDetail' => showProduct(),
-
-
+    // 'cart' => showCart(),
+    'productDetail' => showProduct($_GET['id']),
     'introduce' => showIntroduction(),
-
     'brand' => showBrand(),
-
     'thanhtoan' => showThanhtoan(),
 
+    'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),
+    'cart' => cartList(),
+    'cart-inc' => cartInc($_GET['productID']),
+    'cart-dec' => cartDec($_GET['productID']),
+    'cart-del' => cartDel($_GET['productID']),
+
+    // 'login' => authenShowFormLogin(),
+    'logoutc' => authenCliLogout(),
 
 
 

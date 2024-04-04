@@ -50,7 +50,7 @@ if (!function_exists('get_file_upload')) {
     function get_file_upload($field, $default = null)
     {
 
-        if (isset ($_FILES[$field]) && $_FILES[$field]['size'] > 0) {
+        if (isset($_FILES[$field]) && $_FILES[$field]['size'] > 0) {
 
             return $_FILES[$field];
         }
@@ -63,13 +63,45 @@ if (!function_exists('middleware_auth_check')) {
     function middleware_auth_check($act)
     {
         if ($act == 'login') {
-            if (!empty ($_SESSION['user'])) {
+            if (!empty($_SESSION['user'])) {
                 header('Location: ' . BASE_URL_ADMIN);
                 exit();
             }
-        } elseif (empty ($_SESSION['user'])) {
+        } elseif (empty($_SESSION['user'])) {
             header('Location: ' . BASE_URL_ADMIN . '?act=login');
             exit();
         }
+    }
+}
+
+if (!function_exists('middleware_auth_check_cl')) {
+    function middleware_auth_check_cl($act, $arrRouteNeedAuth)
+    {
+        if ($act == 'log') {
+            if (!empty($_SESSION['user'])) {
+                header('Location: ' . BASE_URL);
+                exit();
+            }
+        } elseif (empty($_SESSION['user']) && in_array($act, $arrRouteNeedAuth)) {
+            header('Location: ' . BASE_URL . '?act=log');
+            exit();
+        }
+    }
+}
+if (!function_exists('caculator_total_order')) {
+    function caculator_total_order($flag = true)
+    {
+        if (isset($_SESSION['cart'])) {
+            $total = 0;
+            foreach ($_SESSION['cart'] as $item) {
+                $price = $item['price_sale'] ?: $item['price_regular'];
+
+                $total += $price * $item['quantity'];
+            }
+
+            return $flag ? number_format($total) : $total;
+        }
+
+        return 0;
     }
 }
