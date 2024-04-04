@@ -1,5 +1,116 @@
 <!-- Begin checkout custom css -->
+<!DOCTYPE html>
+<html class="floating-labels">
 
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="Bean Perfume - Thanh toán đơn hàng" />
+	<title>Bean Perfume - Thanh toán đơn hàng</title>
+
+
+
+
+	<link rel="shortcut icon"
+		href="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_favicon.ico?1711356971279"
+		type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+
+	<link rel="stylesheet"
+		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.css?v=4fcd86c">
+
+
+	<link rel="stylesheet"
+		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css?v=ce7712f">
+
+	<!-- Begin checkout custom css -->
+	<style>
+		.field__input:focus,
+		.select2-selection:focus,
+		.select2-search__field:focus {
+			border-color: #ce0082;
+			box-shadow: 0 0 0 1px #ce0082;
+		}
+
+		.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+			background-color: #ce0082;
+		}
+
+		.btn {
+			background-color: #ce0082;
+			border-color: #ce0082;
+		}
+
+		.btn:focus {
+			outline-color: #ce0082;
+		}
+
+
+
+		.btn.disabled {
+			background-color: #DA3FA1;
+			border-color: #DA3FA1;
+		}
+
+
+
+		.btn:hover {
+			background-color: #9A0061;
+			border-color: #9A0061;
+		}
+
+
+
+		.btn,
+		.btn:hover,
+		.btn:focus {
+			color: #FFFFFF;
+		}
+	</style>
+	<!-- End checkout custom css -->
+
+	<script src="//bizweb.dktcdn.net/assets/themes_support/libphonenumber-v3.2.30.min.js?1711356971279"></script>
+
+	<script
+		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.js?v=11006c9"></script>
+
+
+
+	<script
+		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.js?v=a0ee933"></script>
+
+
+
+	<script>
+		var Bizweb = Bizweb || {};
+		Bizweb.id = '503826';
+		Bizweb.store = 'bean-perfume.mysapo.net';
+
+		Bizweb.template = 'checkout';
+		Bizweb.Checkout = Bizweb.Checkout || {};
+
+	</script>
+
+	<script>
+		window.BizwebAnalytics = window.BizwebAnalytics || {};
+		window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
+		window.BizwebAnalytics.meta.currency = 'VND';
+		window.BizwebAnalytics.tracking_url = '/s';
+		var meta = {};
+
+
+		for (var attr in meta) {
+			window.BizwebAnalytics.meta[attr] = meta[attr];
+		}
+	</script>
+
+
+	<script
+		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js?v=f021d1e"></script>
+
+
+</head>
 <!-- End checkout custom css -->
 
 
@@ -13,7 +124,7 @@
 
 				<a href="/">
 					<img class="logo__image  logo__image--medium " alt="Bean Perfume"
-						src="<?= BASE_URL ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png" />
+						src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png?1711356971279" />
 				</a>
 
 			</div>
@@ -25,7 +136,8 @@
 			<span class="wrap">
 				<span class="order-summary-toggle__inner">
 					<span class="order-summary-toggle__text expandable">
-						Đơn hàng (1 sản phẩm)
+						Đơn hàng (
+						sản phẩm)
 					</span>
 					<span class="order-summary-toggle__total-recap" data-bind="getTextTotalPrice()"></span>
 				</span>
@@ -37,25 +149,12 @@
 
 
 	<div data-tg-refresh="checkout" id="checkout" class="content">
-		<form id="checkoutForm" method="post" data-define="{
-				loadingShippingErrorMessage: 'Không thể load phí vận chuyển. Vui lòng thử lại',
-				loadingReductionCodeErrorMessage: 'Có lỗi xảy ra khi áp dụng khuyến mãi. Vui lòng thử lại',
-				submitingCheckoutErrorMessage: 'Có lỗi xảy ra khi xử lý. Vui lòng thử lại',
-				requireShipping: true,
-				requireDistrict: false,
-				requireWard: false,
-				shouldSaveCheckoutAbandon: true}" action="/checkout/13c61b815dab40a69e3c5e67214d34eb"
-			data-bind-event-submit="handleCheckoutSubmit(event)"
-			data-bind-event-keypress="handleCheckoutKeyPress(event)"
-			data-bind-event-change="handleCheckoutChange(event)">
-			<input type="hidden" name="_method" value="patch" />
+		<form action="<?= BASE_URL . '?act=order-purchase' ?>" method="post">
+			<!-- <input type="hidden" name="_method" value="patch" /> -->
 			<div class="wrap">
 				<main class="main">
 					<header class="main__header">
 						<div class="logo logo--center">
-
-
-
 						</div>
 					</header>
 					<div class="main__content">
@@ -73,8 +172,7 @@
 											</h2>
 
 
-											<a
-												href="<?= BASE_URLS ?>account/login?returnUrl=/checkout/13c61b815dab40a69e3c5e67214d34eb">
+											<a href="">
 												<i class="fa fa-user-circle-o fa-lg"></i>
 												<span>Đăng nhập </span>
 											</a>
@@ -86,27 +184,24 @@
 										<div class="fieldset">
 
 
-
-
-											<div class="field " data-bind-class="{'field--show-floating-label': email}">
+											<div class="field ">
 												<div class="field__input-wrapper">
-													<label for="email" class="field__label">
-														Email
-													</label>
+													<label for="email" class="field__label">Email</label>
 													<input name="email" id="email" type="email" class="field__input"
-														data-bind="email" value="">
+														data-bind="email" value="<?= $_SESSION['user']['email'] ?>">
 												</div>
 
 											</div>
 
 
 
-											<div class="field "
-												data-bind-class="{'field--show-floating-label': billing.name}">
+											<div class=" field "
+												data-bind-class=" {'field--show-floating-label': billing.name}">
 												<div class="field__input-wrapper">
 													<label for="billingName" class="field__label">Họ và tên</label>
-													<input name="billingName" id="billingName" type="text"
-														class="field__input" data-bind="billing.name" value="">
+													<input name="name" id="billingName" type="text" class="field__input"
+														data-bind="billing.name"
+														value="<?= $_SESSION['user']['name'] ?>">
 												</div>
 
 											</div>
@@ -118,12 +213,10 @@
 													<label for="billingPhone" class="field__label">
 														Số điện thoại (tùy chọn)
 													</label>
-													<input name="billingPhone" id="billingPhone" type="tel"
-														class="field__input" data-bind="billing.phone" value="">
-													<div class="field__input-phone-region-wrapper">
-														<select class="field__input select-phone-region"
-															name="billingPhoneRegion" data-init-value="VN"><?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/vn.png</select>
-													</div>
+													<input name="tell" id="billingPhone" type="tel" class="field__input"
+														data-bind="billing.phone"
+														value="<?= $_SESSION['user']['tell'] ?>">
+
 												</div>
 
 											</div>
@@ -135,8 +228,9 @@
 													<label for="billingAddress" class="field__label">
 														Địa chỉ (tùy chọn)
 													</label>
-													<input name="billingAddress" id="billingAddress" type="text"
-														class="field__input" data-bind="billing.address" value="">
+													<input name="address" id="billingAddress" type="text"
+														class="field__input" data-bind="billing.address"
+														value="<?= $_SESSION['user']['address'] ?>">
 												</div>
 
 											</div>
@@ -216,7 +310,7 @@
 
 
 
-								<section class="section" data-define="{shippingMethod: ''}">
+								<!-- <section class="section" data-define="{shippingMethod: ''}">
 									<div class="section__header">
 										<div class="layout-flex">
 											<h2 class="section__title layout-flex__item layout-flex__item--stretch">
@@ -255,9 +349,9 @@
 											Vui lòng nhập thông tin giao hàng
 										</div>
 									</div>
-								</section>
+								</section> -->
 
-								<section class="section">
+								<!-- <section class="section">
 									<div class="section__header">
 										<div class="layout-flex">
 											<h2 class="section__title layout-flex__item layout-flex__item--stretch">
@@ -314,14 +408,13 @@
 
 										</div>
 									</div>
-								</section>
+								</section> -->
 							</div>
 						</article>
 						<div class="field__input-btn-wrapper field__input-btn-wrapper--vertical hide-on-desktop">
 							<button type="submit" class="btn btn-checkout spinner"
 								data-bind-class="{'spinner--active': isSubmitingCheckout}"
-								data-bind-disabled="isSubmitingCheckout || isLoadingReductionCode"  
-								>
+								data-bind-disabled="isSubmitingCheckout || isLoadingReductionCode">
 								<span class="spinner-label">ĐẶT HÀNG</span>
 								<svg xmlns="http://www.w3.org/2000/svg" class="spinner-loader">
 									<use href="<?= BASE_URL ?>?act=bills"></use>
@@ -349,7 +442,15 @@
 				<aside class="sidebar">
 					<div class="sidebar__header">
 						<h2 class="sidebar__title">
-							Đơn hàng (1 sản phẩm)
+							Đơn hàng (
+							<?php
+							$sl = 0;
+							foreach ($_SESSION['cart'] as $items) {
+								$sl += $items['quantity'];
+							}
+							echo $sl;
+							?>
+							sản phẩm)
 						</h2>
 					</div>
 					<div class="sidebar__content">
@@ -376,36 +477,40 @@
 											</tr>
 										</thead>
 										<tbody>
+											<?php $tong = 0;
+											if (!empty($_SESSION['cart']))
+												foreach ($_SESSION['cart'] as $items) { ?>
+													<tr class="product">
+														<td class="product__image">
+															<div class="product-thumbnail">
+																<div class="product-thumbnail__wrapper" data-tg-static>
+																	<img src="<?= BASE_URL . $items['img'] ?>" alt=""
+																		class="product-thumbnail__image" />
+																</div>
+																<span class="product-thumbnail__quantity">
+																	<?= $items['quantity'] ?>
+																</span>
+															</div>
+														</td>
+														<th class="product__description">
+															<span class="product__description__name">
+																<?= $items['name'] ?>
+															</span>
 
-											<tr class="product">
-												<td class="product__image">
-													<div class="product-thumbnail">
-														<div class="product-thumbnail__wrapper" data-tg-static>
-															<img src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/thumb/100/503/826/products/mancera-cedrat-boise-6698ab0d070-min-removebg-preview.png?v=1701246971380"
-																alt="" class="product-thumbnail__image" />
-														</div>
-														<span class="product-thumbnail__quantity">1</span>
-													</div>
-												</td>
-												<th class="product__description">
-													<span class="product__description__name">
-														Mancera Cedrat Boise
-													</span>
 
+														</th>
+														<td class="product__quantity visually-hidden"><em>Số lượng:</em> </td>
+														<td class="product__price">
 
-												</th>
-												<td class="product__quantity visually-hidden"><em>Số lượng:</em> 1</td>
-												<td class="product__price">
-
-													1.800.000₫
-
-												</td>
-											</tr>
-
+															<?= number_format($tone = $items['price_sale'] * $items['quantity']) ?>₫
+															<?php $tong += $tone ?>
+														</td>
+													</tr>
+												<?php } ?>
 										</tbody>
 									</table>
 								</div>
-								<div class="order-summary__section order-summary__section--discount-code"
+								<!-- <div class="order-summary__section order-summary__section--discount-code"
 									data-tg-refresh="refreshDiscount" id="discountCode">
 									<h3 class="visually-hidden">Mã khuyến mại</h3>
 									<div class="edit_checkout animate-floating-labels">
@@ -441,7 +546,7 @@
 
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="order-summary__section order-summary__section--total-lines order-summary--collapse-element"
 									data-define="{subTotalPriceText: '1.800.000₫'}"
 									data-tg-refresh="refreshOrderTotalPrice" id="orderSummary">
@@ -458,14 +563,17 @@
 												<th class="total-line__name">
 													Tạm tính
 												</th>
-												<td class="total-line__price">1.800.000₫</td>
+												<td class="total-line__price">
+													<?= number_format($tong) ?>₫
+												</td>
 											</tr>
 
 											<tr class="total-line total-line--shipping-fee">
 												<th class="total-line__name">
 													Phí vận chuyển
 												</th>
-												<td class="total-line__price" data-bind="getTextShippingPrice()">
+												<td class="total-line__price">
+													<?= number_format($posss = 30000) ?>đ
 												</td>
 											</tr>
 
@@ -478,8 +586,9 @@
 													</span>
 												</th>
 												<td class="total-line__price">
-													<span class="payment-due__price"
-														data-bind="getTextTotalPrice()"></span>
+													<span class="payment-due__price">
+														<?= number_format($tong - $posss) ?>₫
+													</span>
 												</td>
 											</tr>
 										</tfoot>
@@ -487,17 +596,15 @@
 								</div>
 								<div
 									class="order-summary__nav field__input-btn-wrapper hide-on-mobile layout-flex--row-reverse">
-									<button type="submit" class="btn btn-checkout spinner"
-										data-bind-class="{'spinner--active': isSubmitingCheckout}"
-										data-bind-disabled="isSubmitingCheckout || isLoadingReductionCode">
+									<button type="submit" class="btn btn-checkout spinner">
 										<span class="spinner-label">ĐẶT HÀNG</span>
-										<svg xmlns="http://www.w3.org/2000/svg" class="spinner-loader">
+										<!-- <svg xmlns="http://www.w3.org/2000/svg" class="spinner-loader">
 											<use href="#spinner"></use>
-										</svg>
+										</svg> -->
 									</button>
 
 
-									<a href="<?= BASE_URL ?>?act=products" class="previous-link">
+									<a href="<?= BASE_URL ?>?act=cart" class="previous-link">
 										<i class="previous-link__arrow">❮</i>
 										<span class="previous-link__content">Quay về giỏ hàng</span>
 									</a>
@@ -531,4 +638,7 @@
 			</symbol>
 		</svg>
 	</div>
+
 </body>
+
+</html>

@@ -2,7 +2,7 @@ body {
     color: #737373;
     background: #fff;
     font-size: 14px;
-    font-family: Helvetica Neue,sans-serif;
+    font-family: Helvetica Neue, sans-serif;
     line-height: 1.42857143em;
     overflow-wrap: break-word;
     overflow-x: hidden;
@@ -14,11 +14,16 @@ body {
 
 @media(min-width: 1000px) {
     body {
-        height:100vh
+        height: 100vh
     }
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     font-weight: normal
 }
@@ -27,21 +32,28 @@ h2 {
     color: #333
 }
 
-h1,.heading-1 {
+h1,
+.heading-1 {
     font-size: 2em
 }
 
-a,.icon-print {
+a,
+.icon-print {
     color: #2a9dcc;
     text-decoration: none;
     cursor: pointer
 }
 
-a:hover,.icon-print:hover {
+a:hover,
+.icon-print:hover {
     color: #2a6395
 }
 
-.field__input,.input-checkbox,.input-radio,button,textarea {
+.field__input,
+.input-checkbox,
+.input-radio,
+button,
+textarea {
     color: inherit;
     font: inherit;
     margin: 0;
@@ -67,16 +79,19 @@ table {
     margin: 0
 }
 
-td,th {
+td,
+th {
     font-weight: normal
 }
 
-td:first-child,th:first-child {
+td:first-child,
+th:first-child {
     padding-left: 0;
     text-align: left
 }
 
-td:last-child,th:last-child {
+td:last-child,
+th:last-child {
     text-align: right
 }
 
@@ -135,7 +150,7 @@ form {
 
 @media(min-width: 1000px) {
     .btn-complete-order {
-        min-width:20em
+        min-width: 20em
     }
 }
 
@@ -143,11 +158,18 @@ form {
     display: none !important
 }
 
-html,body {
+html,
+body {
     width: 100%
 }
 
-body,.content,.content .wrap,.main,.main__content,.step,.content>form {
+body,
+.content,
+.content .wrap,
+.main,
+.main__content,
+.step,
+.content>form {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column
@@ -210,7 +232,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 }
 
 .main__content+.main__footer {
-    border-top: 1px solid rgba(175,175,175,.34)
+    border-top: 1px solid rgba(175, 175, 175, .34)
 }
 
 .main .logo {
@@ -239,7 +261,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 1000px) {
     .main {
-        width:52%;
+        width: 52%;
         padding: 2em 2em 0 2em
     }
 
@@ -303,7 +325,8 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
     margin: 0 auto
 }
 
-.wrap:after,.wrap:before {
+.wrap:after,
+.wrap:before {
     content: "";
     display: table
 }
@@ -324,13 +347,13 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 768px) {
     .wrap--mobile-fluid {
-        max-width:50em
+        max-width: 50em
     }
 }
 
 @media(min-width: 1000px) {
     .wrap {
-        padding:0 2em;
+        padding: 0 2em;
         max-width: 95em
     }
 
@@ -370,7 +393,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 768px) {
     .col--md-two {
-        padding-top:0;
+        padding-top: 0;
         width: 50%
     }
 }
@@ -387,7 +410,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 1000px) {
     .banner {
-        display:none
+        display: none
     }
 
     .order-summary-toggle {
@@ -454,7 +477,8 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
     transition: all .3s ease 0s
 }
 
-.toggled .expandable:after,.toggled.expandable:after {
+.toggled .expandable:after,
+.toggled.expandable:after {
     content: "ï„†"
 }
 
@@ -490,7 +514,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 1000px) {
     .step__btn-group {
-        flex-direction:row-reverse;
+        flex-direction: row-reverse;
         justify-content: space-between
     }
 }
@@ -528,7 +552,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 1000px) {
     .section--icon-heading {
-        text-align:inherit;
+        text-align: inherit;
         display: flex;
         align-items: center;
         padding-left: 0;
@@ -549,7 +573,10 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
     margin-bottom: 12px
 }
 
-.section__title,.modal__title,.sidebar__title,.order-summary-toggle__text {
+.section__title,
+.modal__title,
+.sidebar__title,
+.order-summary-toggle__text {
     color: #333;
     font-weight: 600;
     font-size: 1.15rem
@@ -566,7 +593,8 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
     margin: 1em
 }
 
-.section__content::after,.section__content::before {
+.section__content::after,
+.section__content::before {
     content: "";
     display: table
 }
@@ -582,7 +610,8 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
     padding: .4em
 }
 
-.main .field--disabled .field__input,.field--disabled .field__input {
+.main .field--disabled .field__input,
+.field--disabled .field__input {
     background: #ddd;
     cursor: not-allowed
 }
@@ -597,7 +626,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 1000px) {
     .field-group {
-        display:flex
+        display: flex
     }
 
     .field-group>.field {
@@ -609,7 +638,8 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
     margin: -.4em
 }
 
-.fieldset::before,.fieldset::after {
+.fieldset::before,
+.fieldset::after {
     content: "";
     display: table
 }
@@ -632,7 +662,7 @@ body,.content,.content .wrap,.main,.main__content,.step,.content>form {
 
 @media(min-width: 1000px) {
     .fieldset--inline {
-        flex-wrap:nowrap
+        flex-wrap: nowrap
     }
 
     .fieldset--inline .btn {
@@ -681,7 +711,9 @@ textarea.field__input {
     resize: vertical
 }
 
-.input-radio:focus,.input-checkbox:focus,.field__input:focus {
+.input-radio:focus,
+.input-checkbox:focus,
+.field__input:focus {
     outline: none;
     border-color: #66afe9;
     box-shadow: 0 0 0 1px #66afe9
@@ -702,15 +734,15 @@ textarea.field__input {
     pointer-events: none;
     width: 2em;
     height: 43%;
-    border-left: 1px rgba(179,179,179,.5) solid
+    border-left: 1px rgba(179, 179, 179, .5) solid
 }
 
 .field__caret .fa {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%)
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%)
 }
 
 .field--error .field__input {
@@ -794,7 +826,7 @@ textarea.field__input {
 
 @media(min-width: 1000px) {
     .field__input-btn-wrapper--floating {
-        justify-content:flex-end
+        justify-content: flex-end
     }
 }
 
@@ -834,7 +866,7 @@ textarea.field__input {
 
 .visually-hidden {
     border: 0;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     width: 2px;
     height: 2px;
     margin: -2px;
@@ -862,7 +894,7 @@ textarea.field__input {
 
 @media(min-width: 1000px) {
     .sidebar__header {
-        display:block
+        display: block
     }
 
     .sidebar {
@@ -873,11 +905,13 @@ textarea.field__input {
         width: 45%
     }
 
-    .sidebar__header,.sidebar__content {
+    .sidebar__header,
+    .sidebar__content {
         padding-left: 2em
     }
 
-    .multistep .sidebar__header,.multistep .sidebar__content {
+    .multistep .sidebar__header,
+    .multistep .sidebar__content {
         padding-left: 10%
     }
 
@@ -889,7 +923,8 @@ textarea.field__input {
     }
 }
 
-.product-table tbody th,.stock-table tbody th {
+.product-table tbody th,
+.stock-table tbody th {
     padding-left: 1em;
     font-weight: 500;
     color: #333;
@@ -897,19 +932,25 @@ textarea.field__input {
     padding-bottom: 0
 }
 
-.product-table thead th,.stock-table thead th {
+.product-table thead th,
+.stock-table thead th {
     white-space: nowrap
 }
 
-.product-table td,.stock-table td {
+.product-table td,
+.stock-table td {
     padding-left: 1em
 }
 
-.product-table td:first-child,.stock-table td:first-child {
+.product-table td:first-child,
+.stock-table td:first-child {
     padding-left: 0
 }
 
-.product-table td,.product-table th,.stock-table td,.stock-table th {
+.product-table td,
+.product-table th,
+.stock-table td,
+.stock-table th {
     padding-top: 0;
     padding-bottom: 0
 }
@@ -919,7 +960,8 @@ textarea.field__input {
     padding-bottom: 1em
 }
 
-.stock-table tbody td,.stock-table tbody th {
+.stock-table tbody td,
+.stock-table tbody th {
     padding-top: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid #e6e6e6
@@ -942,7 +984,7 @@ textarea.field__input {
     bottom: 0;
     right: 0;
     border-radius: 8px;
-    border: 1px rgba(0,0,0,.1) solid;
+    border: 1px rgba(0, 0, 0, .1) solid;
     z-index: 2
 }
 
@@ -985,13 +1027,13 @@ textarea.field__input {
 
 @media(min-width: 1000px) {
     .hide-on-desktop {
-        display:none !important
+        display: none !important
     }
 }
 
 @media(max-width: 999px) {
     .hide-on-mobile {
-        display:none !important
+        display: none !important
     }
 }
 
@@ -1004,7 +1046,8 @@ textarea.field__input {
     width: 100%
 }
 
-.product__price,.product__quantity {
+.product__price,
+.product__quantity {
     white-space: nowrap
 }
 
@@ -1013,7 +1056,8 @@ textarea.field__input {
     font-style: normal
 }
 
-.product__description__name,.product__description__property {
+.product__description__name,
+.product__description__property {
     display: block
 }
 
@@ -1022,7 +1066,8 @@ textarea.field__input {
     color: #969696
 }
 
-.total-line th,.total-line td {
+.total-line th,
+.total-line td {
     padding-top: .75em
 }
 
@@ -1032,13 +1077,15 @@ textarea.field__input {
     white-space: nowrap
 }
 
-.total-line-table__tbody+.total-line-table__footer .total-line:first-child th,.total-line-table__tbody+.total-line-table__footer .total-line:first-child td {
+.total-line-table__tbody+.total-line-table__footer .total-line:first-child th,
+.total-line-table__tbody+.total-line-table__footer .total-line:first-child td {
     padding-top: 2em;
     position: relative
 }
 
-.sidebar .total-line-table__tbody+.total-line-table__footer .total-line:first-child th:before,.sidebar .total-line-table__tbody+.total-line-table__footer .total-line:first-child td:before {
-    background-color: rgba(175,175,175,.34);
+.sidebar .total-line-table__tbody+.total-line-table__footer .total-line:first-child th:before,
+.sidebar .total-line-table__tbody+.total-line-table__footer .total-line:first-child td:before {
+    background-color: rgba(175, 175, 175, .34);
     content: '';
     position: absolute;
     top: 1em;
@@ -1080,13 +1127,15 @@ textarea.field__input {
     padding-bottom: 0
 }
 
-.order-summary--bordered .order-summary__section--product-list tbody td,.order-summary--bordered .order-summary__section--product-list tbody th {
+.order-summary--bordered .order-summary__section--product-list tbody td,
+.order-summary--bordered .order-summary__section--product-list tbody th {
     border-bottom: 1px solid #e6e6e6;
     padding-top: 1em;
     padding-bottom: 1em
 }
 
-.order-summary--bordered .order-summary__section--product-list tbody tr:last-child td,.order-summary--bordered .order-summary__section--product-list tbody tr:last-child th {
+.order-summary--bordered .order-summary__section--product-list tbody tr:last-child td,
+.order-summary--bordered .order-summary__section--product-list tbody tr:last-child th {
     border-bottom: none
 }
 
@@ -1108,12 +1157,12 @@ textarea.field__input {
 }
 
 .order-summary__section~.order-summary__section {
-    border-top: 1px solid rgba(175,175,175,.34)
+    border-top: 1px solid rgba(175, 175, 175, .34)
 }
 
 @media(max-width: 999px) {
     .order-summary--is-collapsed .order-summary--collapse-element {
-        height:0;
+        height: 0;
         visibility: hidden;
         overflow: hidden;
         padding-top: 0;
@@ -1130,7 +1179,7 @@ textarea.field__input {
 
 @media(min-width: 1000px) {
     .order-summary__sections {
-        display:flex;
+        display: flex;
         flex-direction: column
     }
 
@@ -1178,7 +1227,7 @@ nav {
 
 @media(min-width: 1000px) {
     nav {
-        margin-top:2em
+        margin-top: 2em
     }
 }
 
@@ -1211,7 +1260,7 @@ nav {
     background-color: #f8f8f8;
     padding: 1.14em;
     margin: 1.14em -1.14em -1.14em -1.14em;
-    border-color: rgba(175,175,175,.34);
+    border-color: rgba(175, 175, 175, .34);
     border-style: solid;
     border-width: 0 1px
 }
@@ -1242,7 +1291,8 @@ nav {
     color: #353535
 }
 
-.select-address td,.select-address th {
+.select-address td,
+.select-address th {
     text-align: left;
     padding: .4em .94em
 }
@@ -1297,27 +1347,34 @@ nav {
     margin-bottom: 0
 }
 
-.radio-wrapper:after,.radio-wrapper:before,.checkbox-wrapper:after,.checkbox-wrapper:before {
+.radio-wrapper:after,
+.radio-wrapper:before,
+.checkbox-wrapper:after,
+.checkbox-wrapper:before {
     content: "";
     display: table
 }
 
-.radio__input,.checkbox__input {
+.radio__input,
+.checkbox__input {
     white-space: nowrap;
     padding-right: .75em
 }
 
-.radio__input,.checkbox__input {
+.radio__input,
+.checkbox__input {
     display: table-cell
 }
 
-input[type="checkbox"],input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0
 }
 
-.input-checkbox,.input-radio {
+.input-checkbox,
+.input-radio {
     width: 18px;
     height: 18px;
     -webkit-box-shadow: 0 0 0 0 #197bbd inset;
@@ -1348,7 +1405,8 @@ input[type="checkbox"],input[type="radio"] {
     border-radius: 50%
 }
 
-.input-checkbox:after,.input-radio:after {
+.input-checkbox:after,
+.input-radio:after {
     content: "";
     display: block;
     position: absolute;
@@ -1361,7 +1419,8 @@ input[type="checkbox"],input[type="radio"] {
     opacity: 0
 }
 
-.input-checkbox:checked:after,.input-radio:checked:after {
+.input-checkbox:checked:after,
+.input-radio:checked:after {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1
@@ -1374,34 +1433,39 @@ input[type="checkbox"],input[type="radio"] {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transform: translate(0,0);
+    transform: translate(0, 0);
     top: 2px;
     left: 2px;
     position: absolute;
     color: #fff
 }
 
-.main .input-checkbox,.main .input-radio {
+.main .input-checkbox,
+.main .input-radio {
     border-color: #d9d9d9;
     background-color: #fff
 }
 
-.content-box .input-checkbox,.content-box .input-radio {
+.content-box .input-checkbox,
+.content-box .input-radio {
     border-color: #d9d9d9;
     background-color: #fff
 }
 
-.input-checkbox:checked,.input-radio:checked {
+.input-checkbox:checked,
+.input-radio:checked {
     border: none;
     -webkit-box-shadow: 0 0 0 10px #337ab7 inset;
     box-shadow: 0 0 0 10px #337ab7 inset
 }
 
-.input-checkbox:checked:focus,.input-radio:checked:focus {
+.input-checkbox:checked:focus,
+.input-radio:checked:focus {
     outline: none
 }
 
-.radio__label,.checkbox__label {
+.radio__label,
+.checkbox__label {
     cursor: pointer;
     vertical-align: middle;
     display: table-cell;
@@ -1469,15 +1533,16 @@ ul {
     align-content: center;
     width: 52px;
     height: 28px;
-    transition: opacity .5s cubic-bezier(.3,0,0,1);
+    transition: opacity .5s cubic-bezier(.3, 0, 0, 1);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
-    transform: translate(0,0)
+    transform: translate(0, 0)
 }
 
-.payment-icon--1,.payment-icon--2 {
+.payment-icon--1,
+.payment-icon--2 {
     background: url(//bizweb.dktcdn.net/assets/themes_support/payment_icon_onepay.png?v=1) no-repeat center center;
     background-size: contain
 }
@@ -1502,7 +1567,8 @@ ul {
     background: url(//bizweb.dktcdn.net/assets/themes_support/payment_icon_webmoney.png?18) no-repeat center center
 }
 
-.payment-icon--13,.payment-icon--14 {
+.payment-icon--13,
+.payment-icon--14 {
     background: url(//bizweb.dktcdn.net/assets/themes_support/payment_icon_napas.png) no-repeat center center
 }
 
@@ -1519,7 +1585,8 @@ ul {
     background: url(//bizweb.dktcdn.net/assets/images/payment_icon_zalopay_alt.png) no-repeat center center
 }
 
-.payment-icon--18,.payment-icon--21 {
+.payment-icon--18,
+.payment-icon--21 {
     background: url(//bizweb.dktcdn.net/assets/admin/images/logomm1.png?v=1) no-repeat center center;
     background-size: 28px 28px
 }
@@ -1538,7 +1605,9 @@ ul {
     background-size: 100%
 }
 
-.payment-icon--23,.payment-icon--24,.payment-icon--25 {
+.payment-icon--23,
+.payment-icon--24,
+.payment-icon--25 {
     background: url(//bizweb.dktcdn.net/assets/themes_support/payon.png) no-repeat center center;
     background-size: contain
 }
@@ -1558,7 +1627,10 @@ ul {
     background-size: contain
 }
 
-.payment-icon--8::before,.payment-icon--3::before,.payment-icon--5::before,.payment-icon--4::before {
+.payment-icon--8::before,
+.payment-icon--3::before,
+.payment-icon--5::before,
+.payment-icon--4::before {
     content: "ïƒ–"
 }
 
@@ -1692,7 +1764,7 @@ ul {
     z-index: 10;
     padding: 20px;
     box-sizing: border-box;
-    background-color: rgba(0,0,0,.75);
+    background-color: rgba(0, 0, 0, .75);
     text-align: center
 }
 
@@ -1729,7 +1801,9 @@ ul {
     font-weight: 700
 }
 
-.modal-header,.modal-body,.modal-footer {
+.modal-header,
+.modal-body,
+.modal-footer {
     padding: 1.12em
 }
 
@@ -1765,7 +1839,7 @@ ul {
 
 @media(min-width: 1000px) {
     .qr {
-        flex-wrap:nowrap
+        flex-wrap: nowrap
     }
 }
 
@@ -1827,7 +1901,8 @@ ul {
     color: #000
 }
 
-.select2-selection:focus,.select2-search__field:focus {
+.select2-selection:focus,
+.select2-search__field:focus {
     outline: none;
     border-color: #66afe9;
     box-shadow: 0 0 0 1px #66afe9
@@ -1847,7 +1922,7 @@ ul {
 }
 
 .field__input-wrapper--select2 .select2-container--default .select2-selection--single .select2-selection__arrow {
-    border-left: 1px rgba(179,179,179,.5) solid;
+    border-left: 1px rgba(179, 179, 179, .5) solid;
     width: 2em;
     top: .5em
 }
@@ -1904,7 +1979,7 @@ hr {
 
 @media(min-width: 1000px) {
     .icon-failure {
-        margin-top:1.3rem
+        margin-top: 1.3rem
     }
 }
 
@@ -1938,11 +2013,12 @@ hr {
 
 @media(max-width: 320px) {
     .checkout__choice--wrapper {
-        width:280px
+        width: 280px
     }
 }
 
-.checkout__choice-separator::after,.checkout__choice-separator::before {
+.checkout__choice-separator::after,
+.checkout__choice-separator::before {
     content: '';
     flex: 1 1 auto;
     border-bottom: solid 1px #e8eaeb
@@ -1969,13 +2045,14 @@ hr {
     color: #737373
 }
 
-.error-message,.thankyou-page .main__content .error-message {
+.error-message,
+.thankyou-page .main__content .error-message {
     color: #c23527
 }
 
 @media(min-width: 1000px) {
     .thankyou-message-container {
-        max-width:75%
+        max-width: 75%
     }
 }
 
@@ -2011,7 +2088,12 @@ td.printable-only {
         margin: 0
     }
 
-    a,.radio__label__icon,.payment-due__price,.spinner--active,.ui-tag__label,.ui-tag__close {
+    a,
+    .radio__label__icon,
+    .payment-due__price,
+    .spinner--active,
+    .ui-tag__label,
+    .ui-tag__close {
         color: #000 !important
     }
 }
@@ -2059,7 +2141,8 @@ td.printable-only {
     flex-wrap: wrap
 }
 
-.modal.payon_modal,.modal.vnpay_qr {
+.modal.payon_modal,
+.modal.vnpay_qr {
     max-width: 728px
 }
 
@@ -2067,7 +2150,8 @@ td.printable-only {
     max-width: 900px
 }
 
-.payon_modal .modal-title,.vnpay_qr .modal-title {
+.payon_modal .modal-title,
+.vnpay_qr .modal-title {
     gap: 14px;
     align-items: center
 }
@@ -2083,7 +2167,9 @@ td.printable-only {
     height: 14px
 }
 
-.ocb_modal .btn-change-method,.payon_modal .btn-change-method,.vnpay_qr .btn-change-method {
+.ocb_modal .btn-change-method,
+.payon_modal .btn-change-method,
+.vnpay_qr .btn-change-method {
     font-size: 14px;
     font-weight: normal;
     position: absolute;
@@ -2093,20 +2179,28 @@ td.printable-only {
     cursor: pointer
 }
 
-.ocb_modal .btn-change-method:hover,.payon_modal .btn-change-method:hover,.vnpay_qr .btn-change-method:hover {
+.ocb_modal .btn-change-method:hover,
+.payon_modal .btn-change-method:hover,
+.vnpay_qr .btn-change-method:hover {
     text-decoration: underline
 }
 
-.ocb_modal .btn-change-method:disabled,.payon_modal .btn-change-method:disabled,.vnpay_qr .btn-change-method:disabled {
+.ocb_modal .btn-change-method:disabled,
+.payon_modal .btn-change-method:disabled,
+.vnpay_qr .btn-change-method:disabled {
     opacity: .5;
     cursor: default
 }
 
-.ocb_modal a,.payon_modal a,.vnpay_qr a {
+.ocb_modal a,
+.payon_modal a,
+.vnpay_qr a {
     color: #08f
 }
 
-.ocb_modal .title-step,.payon_modal .title-step,.vnpay_qr .title-step {
+.ocb_modal .title-step,
+.payon_modal .title-step,
+.vnpay_qr .title-step {
     gap: 8px;
     align-items: flex-start;
     margin-bottom: 24px
@@ -2124,14 +2218,16 @@ td.printable-only {
     margin-top: 20px
 }
 
-.payon_modal .step-payon,.vnpay_qr .step-vnpay {
+.payon_modal .step-payon,
+.vnpay_qr .step-vnpay {
     background: #f2f9ff;
     color: #08f;
     padding: 6px 5px;
     white-space: nowrap
 }
 
-.payon_modal .step-payon-des,.vnpay_qr .step-vnpay-des {
+.payon_modal .step-payon-des,
+.vnpay_qr .step-vnpay-des {
     align-self: center;
     color: #212b35;
     line-height: 28px;
@@ -2145,14 +2241,16 @@ td.printable-only {
     gap: 10px
 }
 
-.payon_modal .bank-list,.payon_modal .card-list {
+.payon_modal .bank-list,
+.payon_modal .card-list {
     gap: 16px;
     max-height: 264px;
     overflow: auto;
     margin-bottom: 26px
 }
 
-.payon_modal.payon_inst .bank-list,.payon_modal.payon_inst .card-list {
+.payon_modal.payon_inst .bank-list,
+.payon_modal.payon_inst .card-list {
     margin-bottom: 20px
 }
 
@@ -2160,17 +2258,23 @@ td.printable-only {
     max-height: 125px
 }
 
-.payon_modal .bank-list::-webkit-scrollbar,.payon_modal .card-list::-webkit-scrollbar,.vnpay_qr .bank-list::-webkit-scrollbar {
+.payon_modal .bank-list::-webkit-scrollbar,
+.payon_modal .card-list::-webkit-scrollbar,
+.vnpay_qr .bank-list::-webkit-scrollbar {
     width: 6px;
     background-color: #e8eaeb
 }
 
-.payon_modal .bank-list::-webkit-scrollbar-track,.payon_modal .card-list::-webkit-scrollbar-track,.vnpay_qr .bank-list::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0,0,0,0);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0)
+.payon_modal .bank-list::-webkit-scrollbar-track,
+.payon_modal .card-list::-webkit-scrollbar-track,
+.vnpay_qr .bank-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0)
 }
 
-.payon_modal .bank-list::-webkit-scrollbar-thumb,.payon_modal .card-list::-webkit-scrollbar-thumb,.vnpay_qr .bank-list::-webkit-scrollbar-thumb {
+.payon_modal .bank-list::-webkit-scrollbar-thumb,
+.payon_modal .card-list::-webkit-scrollbar-thumb,
+.vnpay_qr .bank-list::-webkit-scrollbar-thumb {
     min-height: 24px;
     border-radius: 8px;
     background-color: #cbccce
@@ -2194,7 +2298,8 @@ td.printable-only {
     max-height: 136px
 }
 
-.payon_modal.payon_inst .bank-list .bank-payon,.payon_modal.payon_inst .card-list .bank-payon {
+.payon_modal.payon_inst .bank-list .bank-payon,
+.payon_modal.payon_inst .card-list .bank-payon {
     width: 158px;
     height: 60px;
     box-sizing: border-box;
@@ -2204,7 +2309,8 @@ td.printable-only {
     border-radius: 5px
 }
 
-.payon_modal .bank-list .bank-payon img,.payon_modal .card-list .bank-payon img {
+.payon_modal .bank-list .bank-payon img,
+.payon_modal .card-list .bank-payon img {
     max-width: calc(100% - 8px);
     max-height: 100%;
     width: auto;
@@ -2217,12 +2323,14 @@ td.printable-only {
     margin: auto
 }
 
-.payon_modal .bank-list .bank-payon.bank-payon-checked,.payon_modal .card-list .bank-payon.bank-payon-checked {
+.payon_modal .bank-list .bank-payon.bank-payon-checked,
+.payon_modal .card-list .bank-payon.bank-payon-checked {
     border: 1px solid #08f;
     position: relative
 }
 
-.payon_modal .bank-list .bank-payon svg,.payon_modal .card-list .bank-payon svg {
+.payon_modal .bank-list .bank-payon svg,
+.payon_modal .card-list .bank-payon svg {
     color: #08f;
     right: -3px;
     bottom: -1px;
@@ -2233,12 +2341,13 @@ td.printable-only {
     width: 20px;
     height: 20px;
     font-size: 1.5rem;
-    transition: fill 200ms cubic-bezier(.4,0,.2,1) 0ms;
+    transition: fill 200ms cubic-bezier(.4, 0, .2, 1) 0ms;
     flex-shrink: 0;
     user-select: none
 }
 
-.payon_modal .bank-list .bank-payon.bank-payon-checked svg,.payon_modal .card-list .bank-payon.bank-payon-checked svg {
+.payon_modal .bank-list .bank-payon.bank-payon-checked svg,
+.payon_modal .card-list .bank-payon.bank-payon-checked svg {
     display: block
 }
 
@@ -2289,13 +2398,17 @@ td.printable-only {
     opacity: .5
 }
 
-.payon_qr__image,.vnpay_qr .qr {
+.payon_qr__image,
+.vnpay_qr .qr {
     margin-top: 10px;
     padding-left: 0;
     padding-right: 0
 }
 
-.payon_modal .qr-code,.payon_modal .guide,.vnpay_qr .qrcode,.vnpay_qr .qr__guide {
+.payon_modal .qr-code,
+.payon_modal .guide,
+.vnpay_qr .qrcode,
+.vnpay_qr .qr__guide {
     width: 50%;
     flex-shrink: 0;
     box-sizing: border-box;
@@ -2310,12 +2423,14 @@ td.printable-only {
     display: none
 }
 
-.payon_modal .qr-code .qrcode__image,.vnpay_qr .qrcode .qrcode__image {
+.payon_modal .qr-code .qrcode__image,
+.vnpay_qr .qrcode .qrcode__image {
     max-width: 100%;
     height: auto
 }
 
-.payon_modal .qrcode__header,.vnpay_qr .qrcode__header {
+.payon_modal .qrcode__header,
+.vnpay_qr .qrcode__header {
     margin-top: 20px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -2328,13 +2443,15 @@ td.printable-only {
     display: none
 }
 
-.payon_modal .qrcode__header .qrcode__order-amount,.vnpay_qr .qrcode__header .qrcode__order-amount {
+.payon_modal .qrcode__header .qrcode__order-amount,
+.vnpay_qr .qrcode__header .qrcode__order-amount {
     font-size: 20px;
     color: #212b35;
     font-weight: 600
 }
 
-.payon_modal .qrcode__footer,.vnpay_qr .qrcode__footer {
+.payon_modal .qrcode__footer,
+.vnpay_qr .qrcode__footer {
     background: #fff3da;
     border-radius: 5px;
     height: 72px;
@@ -2356,12 +2473,16 @@ td.printable-only {
     margin-top: 20px
 }
 
-.payon_modal .qrcode__footer span,.vnpay_qr .qrcode__footer span {
+.payon_modal .qrcode__footer span,
+.vnpay_qr .qrcode__footer span {
     font-size: 14px;
     line-height: 28px
 }
 
-.payon_modal .qrcode__footer .pollMinutes,.payon_modal .qrcode__footer .pollSeconds,.vnpay_qr .qrcode__footer .pollMinutes,.vnpay_qr .qrcode__footer .pollSeconds {
+.payon_modal .qrcode__footer .pollMinutes,
+.payon_modal .qrcode__footer .pollSeconds,
+.vnpay_qr .qrcode__footer .pollMinutes,
+.vnpay_qr .qrcode__footer .pollSeconds {
     background: #ffae06;
     border-radius: 5px;
     width: auto;
@@ -2371,7 +2492,8 @@ td.printable-only {
     color: #fff
 }
 
-.payon_modal .qrcode__footer .poll-colon,.vnpay_qr .qrcode__footer .poll-colon {
+.payon_modal .qrcode__footer .poll-colon,
+.vnpay_qr .qrcode__footer .poll-colon {
     font-weight: bold;
     margin: 0 10px;
     line-height: 24px
@@ -2504,7 +2626,7 @@ td.printable-only {
 
 @media(max-width: 767px) {
     .payon_modal .payon-inst__bank .bank-list {
-        display:none
+        display: none
     }
 
     .payon_modal .payon-inst__fee .fee-desktop {
@@ -2604,24 +2726,30 @@ td.printable-only {
 }
 
 @media(max-width: 700px) {
-    .payon_modal,.vnpay_qr {
-        width:100%
+
+    .payon_modal,
+    .vnpay_qr {
+        width: 100%
     }
 
-    .payon_modal .modal-header,.vnpay_qr .modal-header {
+    .payon_modal .modal-header,
+    .vnpay_qr .modal-header {
         padding: 13px 8px
     }
 
-    .payon_modal .modal-title,.vnpay_qr .modal-title {
+    .payon_modal .modal-title,
+    .vnpay_qr .modal-title {
         font-size: 15px;
         font-weight: 600
     }
 
-    .payon_modal .modal-title .btn-change-method,.vnpay_qr .btn-change-method {
+    .payon_modal .modal-title .btn-change-method,
+    .vnpay_qr .btn-change-method {
         display: none
     }
 
-    .payon_modal .modal-body,.vnpay_qr .modal-body {
+    .payon_modal .modal-body,
+    .vnpay_qr .modal-body {
         padding: 10px 0
     }
 
@@ -2629,18 +2757,21 @@ td.printable-only {
         padding: 0 8px
     }
 
-    .payon_modal .step-payon-des,.vnpay_qr .step-vnpay-des {
+    .payon_modal .step-payon-des,
+    .vnpay_qr .step-vnpay-des {
         font-size: 14px;
         line-height: 20px
     }
 
-    .payon_modal .bank-list,.payon_modal .card-list {
+    .payon_modal .bank-list,
+    .payon_modal .card-list {
         gap: 6px;
         margin-bottom: 10px;
         max-height: initial
     }
 
-    .payon_modal .bank-list .bank-payon,.payon_modal .card-list .bank-payon {
+    .payon_modal .bank-list .bank-payon,
+    .payon_modal .card-list .bank-payon {
         width: calc(33.3333333333% - 4px)
     }
 
@@ -2658,7 +2789,10 @@ td.printable-only {
         margin-top: 0
     }
 
-    .payon_modal .qr-code,.payon_modal .guide,.vnpay_qr .qrcode,.vnpay_qr .qr__guide {
+    .payon_modal .qr-code,
+    .payon_modal .guide,
+    .vnpay_qr .qrcode,
+    .vnpay_qr .qr__guide {
         width: 100%
     }
 
@@ -2812,7 +2946,7 @@ td.printable-only {
 
 @media only screen and (max-width: 414px) {
     .ocb_modal .modal-title span {
-        width:50%
+        width: 50%
     }
 
     .ocb_modal .qrcode {

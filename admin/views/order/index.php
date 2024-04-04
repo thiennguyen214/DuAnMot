@@ -59,7 +59,7 @@
                                         <?= $oder['bi_quantity'] ?>
                                     </td>
                                     <td>
-                                        <?= $oder['bi_price'] ?>
+                                        <?= $oder['b_tong'] ?>
                                     </td>
                                     <td>
                                         <?= $oder['b_created'] ?>

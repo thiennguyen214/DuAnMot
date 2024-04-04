@@ -67,43 +67,43 @@
           <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
               <?php $tong = 0;
               foreach ($carts as $cart) { ?>
-                                          <div class="ajaxcart__row">
-                                              <div class="ajaxcart__product cart_product" >
-                                                  <a href="{{url}}" class="ajaxcart__product-image cart_image" title="<?= $cart['p_name'] ?>"><img width="80" height="80" src="<?= $cart['p_img'] ?>" alt="<?= $cart['p_name'] ?>"></a>
-                                                  <div class="grid__item cart_info">
-                                                      <div class="ajaxcart__product-name-wrapper cart_name">
-                                                          <a href="{{url}}" class="ajaxcart__product-name h4" title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
-                                                          <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="<?= BASE_URL . '?act=cart-del&productID=' . $item['id'] ?>" onclick="return confirm('có chắc xóa không')" >Xóa</a>
+                                                                      <div class="ajaxcart__row">
+                                                                          <div class="ajaxcart__product cart_product" >
+                                                                              <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['pro_id'] ?>" class="ajaxcart__product-image cart_image" title="<?= $cart['p_name'] ?>"><img width="80" height="80" src="<?= $cart['p_img'] ?>" alt="<?= $cart['p_name'] ?>"></a>
+                                                                              <div class="grid__item cart_info">
+                                                                                  <div class="ajaxcart__product-name-wrapper cart_name">
+                                                                                      <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['pro_id'] ?>" class="ajaxcart__product-name h4" title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
+                                                                                      <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="<?= BASE_URL . '?act=cart-del&productID=' . $item['id'] ?>" onclick="return confirm('có chắc xóa không')" >Xóa</a>
 
-                                                      </div>
-                                                      <div class="grid">
-                                                          <div class="grid__item one-half text-right cart_prices">
-                                                              <span class="cart-price"><?= $cart['p_price_sale'] ?></span>
+                                                                                  </div>
+                                                                                  <div class="grid">
+                                                                                      <div class="grid__item one-half text-right cart_prices">
+                                                                                          <span class="cart-price"><?= $cart['p_price_sale'] ?></span>
 
-                                                          </div>
-                                                      </div>
-                                                      <div class="grid">
-                                                          <div class="grid__item one-half cart_select">
-                                                              <div class="ajaxcart__qty input-group-btn">
-                                                                  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count"  aria-label="-">
-                                                                     <a href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
-                                                                  </button>
-                                                                  <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="<?= $cart['quantity'] ?>" min="0" >
-                                                                  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count"  aria-label="+">
-                                                                     <a href="<?= BASE_URL . '?act=cart-inc&productID=' . $item['id'] ?>">+</a>
-                                                                  </button>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                      <div class="grid">
-                                                          <div class="grid__item one-half text-right cart_prices">
-                                                              <span class="cart-price"><?= $tone = $cart['p_price_sale'] * $cart['quantity'] ?></span>
-                                                                    <?php $tong += $tone ?>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
+                                                                                      </div>
+                                                                                  </div>
+                                                                                  <div class="grid">
+                                                                                      <div class="grid__item one-half cart_select">
+                                                                                          <div class="ajaxcart__qty input-group-btn">
+                                                                                              <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count"  aria-label="-">
+                                                                                                 <a href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
+                                                                                              </button>
+                                                                                              <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="<?= $cart['quantity'] ?>" min="0" >
+                                                                                              <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count"  aria-label="+">
+                                                                                                 <a href="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
+                                                                                              </button>
+                                                                                          </div>
+                                                                                      </div>
+                                                                                  </div>
+                                                                                  <div class="grid">
+                                                                                      <div class="grid__item one-half text-right cart_prices">
+                                                                                          <span class="cart-price"><?= $tone = $cart['p_price_sale'] * $cart['quantity'] ?></span>
+                                                                                                <?php $tong += $tone ?>
+                                                                                      </div>
+                                                                                  </div>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
               <?php } ?>
               
           </div>
@@ -117,7 +117,8 @@
                           </div>
                       </div>
                       <div class="cart__btn-proceed-checkout-dt">
-                          <button onclick="location.href='/checkout'" type="button" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout" title="Thanh toán">Thanh toán</button>
+                          <button  type="button" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout" title="Thanh toán">
+                            <a href="<?= BASE_URL ?>?act=thanhtoan">Thanh toán</a></button>
                       </div>
                   </div>
               </div>

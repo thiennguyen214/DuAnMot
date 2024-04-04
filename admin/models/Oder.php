@@ -5,6 +5,7 @@ if (!function_exists('listOder')) {
         try {
             $sql = "SELECT 
                 bi.id AS bi_id,
+                b.tong AS b_tong,
                 b.name AS b_name,
                 p.name AS p_name,
                 bi.price AS bi_price,

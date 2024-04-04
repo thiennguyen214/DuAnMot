@@ -14,11 +14,13 @@ function cartAdd($productID, $quantity = 0)
 
     $_SESSION['cartID'] = $cartID;
 
+
     // Add sản phẩm vào session cart: $_SESSION['cart'][$productID] = $product
     // Add tiếp sản phẩm vào thằng cart_items
     if (!isset($_SESSION['cart'][$productID])) {
         $_SESSION['cart'][$productID] = $product;
         $_SESSION['cart'][$productID]['quantity'] = $quantity;
+
 
         insert('cart_item', [
             'cart_id' => $cartID,

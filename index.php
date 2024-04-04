@@ -68,6 +68,10 @@ match ($act) {
     'cart-dec' => cartDec($_GET['productID']),
     'cart-del' => cartDel($_GET['productID']),
 
+
+    'order-purchase' => orderPurchase(),
+    'order-success' => orderSuccess(),
+
     'log' => showLog(),
     'logoutc' => authenCliLogout(),
 // =======

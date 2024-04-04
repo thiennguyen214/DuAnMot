@@ -195,7 +195,8 @@
                                 </section>
                                 <section class="section unprintable">
                                     <div class="field__input-btn-wrapper field__input-btn-wrapper--floating">
-                                        <a href="<?= BASE_URL ?>?act=products" class="btn btn--large">Tiếp tục mua hàng</a>
+                                        <a href="<?= BASE_URL ?>/" class="btn btn--large">Tiếp tục mua
+                                            hàng</a>
                                         <span class="text-icon-group text-icon-group--large icon-print"
                                             onclick="window.print()">
                                             <i class="fa fa-print"></i>

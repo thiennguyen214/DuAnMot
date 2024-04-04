@@ -44,7 +44,7 @@ function deleteCartItemByCartID($cartID)
 {
     try {
         $sql = "
-            DELETE FROM cart_items 
+            DELETE FROM cart_item 
             WHERE cart_id = :cart_id;
         ";
 

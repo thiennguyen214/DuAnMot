@@ -363,7 +363,7 @@
                                         <span class="soluong_h">Số lượng:</span>
                                         <div class="sssssscustom input_number_product">
                                             <button class="btn_num num_1 button button_qty"
-                                                onClick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv ) &amp;&amp; qtyqv &gt; 1 ) result.value--;return false;">-</button>
+                                                onClick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv ) && qtyqv > 1 ) {result.value--;}return false;">-</button>
                                             <input type="text" id="quantity-detail" name="quantity" value="1"
                                                 maxlength="2" class="form-control prd_quantity"
                                                 onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"
