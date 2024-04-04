@@ -26,7 +26,7 @@ match ($act) {
     'cart' => showCart(),
 
     'products' => showProduct(),
-    'posts' => showPost(),
+    
 
     'productDetail' => showProductDetail(),
 
