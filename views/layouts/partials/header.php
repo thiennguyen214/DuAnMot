@@ -136,7 +136,7 @@
 											<div class="col-lg-3 col-12">
 												<a href="collections/all.html" title="Banner">
 													<img width="316" height="196" class="lazyload"
-														src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+														src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
 														data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/megamenu_banner.jpg?1709175143725"
 														alt="Banner" />
 												</a>
@@ -325,7 +325,7 @@
 							</a>
 						</li>
 						<li class="header-cart block-cart">
-							<a href="cart.html" class="icon">
+							<a href="<?= BASE_URL ?>?act=cart" class="icon">
 								<svg viewBox="-61 0 512 512">
 									<path
 										d="m195 0c-57.898438 0-105 47.101562-105 105v15h-90v392h390v-392h-90v-15c0-57.898438-47.101562-105-105-105zm-75 105c0-41.355469 33.644531-75 75-75s75 33.644531 75 75v15h-150zm240 45v332h-330v-332h60v60h30v-60h150v60h30v-60zm0 0" />
@@ -410,7 +410,7 @@
 				<a class="image_thumb" href="nuoc-hoa-unisex-gucci-the-virgin-violet.html"
 					title="Nước Hoa Unisex Gucci The Virgin Violet">
 					<img width="100" height="100" class="lazyload"
-						src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
 						data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-gucci-the-virgin-violet-edp-100ml.png?v=1701251056543"
 						alt="Nước Hoa Unisex Gucci The Virgin Violet" />
 				</a>
@@ -431,7 +431,7 @@
 			<div class="image">
 				<a class="image_thumb" href="gucci-bloom-ambrosia-di-fiori.html" title="Gucci Bloom Ambrosia di Fiori">
 					<img width="100" height="100" class="lazyload"
-						src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
 						data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
 						alt="Gucci Bloom Ambrosia di Fiori" />
 				</a>
@@ -452,7 +452,7 @@
 			<div class="image">
 				<a class="image_thumb" href="calvin-klein-ck-one-gold.html" title="Calvin Klein CK One Gold">
 					<img width="100" height="100" class="lazyload"
-						src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
 						data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
 						alt="Calvin Klein CK One Gold" />
 				</a>
@@ -473,7 +473,7 @@
 			<div class="image">
 				<a class="image_thumb" href="nuoc-hoa-le-labo-santal-33.html" title="Nước hoa Le Labo Santal 33">
 					<img width="100" height="100" class="lazyload"
-						src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
 						data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/le-labo-santal-33-fa66901a85514b-removebg-preview.png?v=1701249584653"
 						alt="Nước hoa Le Labo Santal 33" />
 				</a>

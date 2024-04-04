@@ -19,6 +19,12 @@ match ($act) {
     // 'gioithieu' => gioithieu(),
     // 'user-detail' => userDetail()
     'login' => showLog(),
+    // 'showone' => showne($_GET['id']),
+
+    'posts' => showPost(),
+
+    'cart' => showCart(),
+
     'products' => showProduct(),
     'posts' => showPost(),
 
@@ -33,6 +39,7 @@ match ($act) {
 
     'Male' => showProduct(),
     'Female' => showProduct(),
+
 
 
 

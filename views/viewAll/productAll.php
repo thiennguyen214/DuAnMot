@@ -598,7 +598,7 @@
                                             <div class="custom custom-btn-number show">
                                                 <div class="input_number_product">
                                                     <button class="btn_num num_1 button button_qty"
-                                                        onClick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) &amp;&amp; qtypro &gt; 1 ) result.value--;return false;"
+                                                        onClick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) && qtypro > 1 ) {result.value--;}return false;"
                                                         type="button">&minus;</button>
                                                     <input type="text" id="qtym" name="quantity" value="1" maxlength="3"
                                                         class="form-control prd_quantity"
