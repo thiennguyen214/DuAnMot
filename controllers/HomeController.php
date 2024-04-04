@@ -14,6 +14,15 @@ function showHome()
 
 
     // $proTop10 = getTop10product('products');
+    $top10Pro = top1OPro();
+
+    $brands = listAll('brands');
+    $products = listAll('products');
+    $xuHuong = xuHuong();
+    $users = listAll('users');
+    $banChaytt = spBanChay();
+    $spSale = spSale();
+
 
 
     require_once PATH_VIEW . '/layouts/master.php';
@@ -42,6 +51,8 @@ function showne($id)
         echo "0 results";
     }
 }
+
+
 
 
 
