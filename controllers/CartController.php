@@ -38,6 +38,9 @@ function cartList()
 {
     $view = "viewAll/cart";
     $style = 'styles/cart';
+    $carts = cartItemAll($_SESSION['user']['id']);
+
+
     require_once PATH_VIEW . '/layouts/master.php';
 
 }

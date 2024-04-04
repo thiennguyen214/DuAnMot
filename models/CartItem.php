@@ -57,3 +57,26 @@ function deleteCartItemByCartID($cartID)
         debug($e);
     }
 }
+
+if (!function_exists('cartItemAll')) {
+    function cartItemAll($userID)
+    {
+        try {
+            $sql = "SELECT ci.*, p.name as p_name, p.price_sale as p_price_sale, p.img as p_img
+            FROM cart_item AS ci
+            INNER JOIN products AS p ON p.id = ci.pro_id
+            INNER JOIN carts AS c ON c.id = ci.cart_id 
+            WHERE c.user_id = :user_id;";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->bindParam(":user_id", $userID);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}

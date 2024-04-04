@@ -7413,7 +7413,7 @@ Ajax Bizweb Add To Cart
 			  <div>Thông tin sản phẩm</div><div>Đơn giá</div><div>Số lượng</div><div>Thành tiền</div>
 		  </div>
 		  <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-			  {{#items}}
+			 
 			  <div class="ajaxcart__row">
 				  <div class="ajaxcart__product cart_product" data-line="{{line}}">
 					  <a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>

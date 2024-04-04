@@ -66,7 +66,7 @@ match ($act) {
     'cart-dec' => cartDec($_GET['productID']),
     'cart-del' => cartDel($_GET['productID']),
 
-    'login' => authenShowFormLogin(),
+    'log' => showLog(),
     'logoutc' => authenCliLogout(),
 // =======
 // 'Male' => showProduct(),
