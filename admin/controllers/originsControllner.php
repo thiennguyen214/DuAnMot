@@ -23,6 +23,8 @@ function originListAll()
 //Delete origin
 function originDelete($id)
 {
+    DeleteTheoImgProID('img_products',$id);
+    DeleteTheoOriginID('products',$id);
     delete2('origins', $id);
 
     $_SESSION['success'] = 'Thao tác thành công!';
