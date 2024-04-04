@@ -1,9 +1,9 @@
 <?php
-function showThanhtoan()
+function showthongtintk()
 {
-    $tittle = "Thanh toán";
-    $view = "viewAll/thanhtoan";
-    $style = 'styles/thanhtoan';
+    $tittle = "thông tin tài khoản";
+    $view = "viewAll/thongtintk";
+    $style = 'styles/thongtintk';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
