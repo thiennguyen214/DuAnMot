@@ -252,11 +252,11 @@ function validateProductUpdate($id, $data)
     } else if ($data['price_sale'] >= $data['price']) {
         $errors[] = 'Giá sale không được lớn hơn giá thường';
     }
-    // if ($data['created'] === null) {
-    //     $errors[] = 'Trường ngày tạo là bắt buộc';
-    // }
 
+<<<<<<< HEAD
+=======
     
+>>>>>>> d726361f343edf0e6c234cd30672b710f3b846ed
 
     if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
 

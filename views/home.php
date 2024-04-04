@@ -258,6 +258,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 swiper-slide item_null">
                         <div class="item_product_main"></div>
                     </div>
+
                     <!-- TOP BÁN CHẠY SP -->
                         <script type="text/x-custom-template" data-template="section_flashsale">
                     <?php foreach ($top10Pro as $item): ?>
@@ -323,6 +324,72 @@
                     </div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
+
+                    <script type="text/x-custom-template" data-template="section_flashsale">
+                        <?php foreach ($products as $product) { ?>
+                            <div class="swiper-slide">
+                                <div class="item_product_main">
+                                    <form action="/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33658271" enctype="multipart/form-data">
+                                        <div class="product-thumbnail">
+                                            <a class="image_thumb scale_hover" href="/tommy-hilfiger-tommy-girl" title="<?= $product['name'] ?>">
+                                                <img  width="480" height="480" class="lazyload image1" src="<?= $product['img'] ?>" alt="<?= $product['name'] ?>">
+                                            </a>
+                                            <div class="action">
+                                                <input class="hidden" type="hidden" name="variantId" value="<?= $product['id'] ?>" />
+                                                <button class="btn-cart btn-views" title="Xem chi tiết" type="button" onclick="window.location.href='/tommy-hilfiger-tommy-girl'" >
+                                                    <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-detail"></use> </svg>
+                                                </button>
+                                                <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
+                                                    <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use> </svg>
+                                                </button>
+                                                <a title="Xem nhanh" href="/tommy-hilfiger-tommy-girl" data-handle="tommy-hilfiger-tommy-girl" class="quick-view btn-views">
+                                                    <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use> </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="smart"><span>-
+                                        <?= ceil((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                                    </span></div>	<a href="javascript:void(0)" class="setWishlist btn-wishlist" data-wish="tommy-hilfiger-tommy-girl" tabindex="0" title="Thêm vào yêu thích">
+                                        <svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
+                                        </a>
+                                        <div class="product-info">
+                                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/tommy-hilfiger-tommy-girl" title="<?= $product['name'] ?>"><?= $product['name'] ?></a></h3>
+                                            <div class="price-box">
+                                            <?= $product['price_sale'] ?>₫
+                                                <span class="compare-price"><?= $product['price'] ?></span>
+                                            </div>
+                                            <div class="productcount">
+                                                <div class="countitem visible">
+                                                    <span class="a-center">Đã bán <?= $product['so_luong_ban'] ?> sp</span>
+                                                    <div class="countdown" style="width: <?= ($product['so_luong_ban'] * 100) / $product['so_luong_kho'] ?>% ;"><span></span></div>
+                                                </div>
+                                                <div class="sale-bar"></div>
+                                            </div>
+                                            <div class="gift_pro ">
+                                            </div>
+                                        </div>
+                                        <ul class="fragrant_product">
+                                            <li class="text-center">
+                                                <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725" alt="Hoa đào">
+                                                <span>Hoa đào</span>
+                                            </li>
+                                            <li class="text-center">
+                                                <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725" alt="Cam">
+                                                <span>Cam</span>
+                                            </li>
+                                            <li class="text-center">
+                                                <img  width="90" height="90" class="lazyload" src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy.png?1709175143725"  data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725" alt="Hoa nhài">
+                                                <span>Hoa nhài</span>
+                                            </li>
+                                        </ul>
+                                    </form>					
+                                </div>
+                            </div>
+                        <?php } ?>        
+
+                                                
+              </script>
+
                 </div>
             
             <div class="view-more clearfix">
@@ -404,7 +471,6 @@
             );
         });
     </script>
-
     <section class="section_product_noibat e-tabs not-dqtab ajax-tab-1" data-section="ajax-tab-1" data-view="grid_4">
         <div class="container">
             <h2 class="title-module">
@@ -724,7 +790,86 @@
                             </ul>
                         </form>
                     </div>
+
                    <?php endforeach; ?>
+
+                    <div class="item_pro_top">
+                        <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
+                            class="variants product-action" data-cart-form data-id="product-actions-33659039"
+                            enctype="multipart/form-data">
+                            <div class="product-thumbnail">
+                                <a class="image_thumb scale_hover" href="calvin-klein-ck-one-gold.html"
+                                    title="Calvin Klein CK One Gold">
+                                    <img width="480" height="480" class="lazyload image1"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
+                                        alt="Calvin Klein CK One Gold" />
+                                </a>
+                                <div class="action">
+                                    <input type="hidden" name="variantId" value="104172328" />
+                                    <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
+                                        <svg class="icon">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-cart">
+                                            </use>
+                                        </svg>
+                                    </button>
+                                    <a title="Xem nhanh" href="calvin-klein-ck-one-gold.html"
+                                        data-handle="calvin-klein-ck-one-gold" class="quick-view btn-views">
+                                        <svg class="icon">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-quickview">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="smart"><span>- 34% </span></div>
+                            <a href="javascript:void(0)" class="setWishlist btn-wishlist"
+                                data-wish="calvin-klein-ck-one-gold" tabindex="0" title="Thêm vào yêu thích">
+                                <svg class="icon">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
+                                    </use>
+                                </svg>
+                            </a>
+                            <div class="product-info">
+                                <h3 class="product-name">
+                                    <a class="line-clamp line-clamp-1 text-center" href="calvin-klein-ck-one-gold.html"
+                                        title="Calvin Klein CK One Gold">Calvin
+                                        Klein CK One Gold</a>
+                                </h3>
+                                <div class="price-box">
+                                    1.050.000₫
+                                    <span class="compare-price">1.580.000₫</span>
+                                </div>
+                            </div>
+                            <ul class="fragrant_product">
+                                <li class="text-center">
+                                    <img width="90" height="90" class="lazyload"
+                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
+                                        alt="Cam" />
+                                    <span>Cam</span>
+                                </li>
+                                <li class="text-center">
+                                    <img width="90" height="90" class="lazyload"
+                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
+                                        alt="Trái cây" />
+                                    <span>Trái cây</span>
+                                </li>
+                                <li class="text-center">
+                                    <img width="90" height="90" class="lazyload"
+                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
+                                        alt="Hoa nhài" />
+                                    <span>Hoa nhài</span>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 order-md-3">
                     <div class="banner_tren banner_tren_2">
