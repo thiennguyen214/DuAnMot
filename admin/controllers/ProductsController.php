@@ -11,8 +11,10 @@ function viewProductListAll()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $checkbox = 'create2';
 
     $products = listAll('products');
+    $count = count($products);
 
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
@@ -48,7 +50,7 @@ function productCreate()
     $script2 = 'create';
 
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['name'] ?? null,
@@ -67,7 +69,7 @@ function productCreate()
         validateProductCreate($data);
 
         $ImageUpload = $_FILES['ImageUpload'] ?? null;
-        if (!empty ($ImageUpload) && $ImageUpload['size'] > 0) {
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
             $data['img'] = upload_file($ImageUpload, 'uploads/products/');
         }
 
@@ -93,32 +95,32 @@ function validateProductCreate($data)
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     }
 
-    if (empty ($data['so_luong_ban'])) {
+    if (empty($data['so_luong_ban'])) {
         $errors[] = 'Trường hàng đã bán là bắt buộc';
     }
 
-    if (empty ($data['so_luong_kho'])) {
+    if (empty($data['so_luong_kho'])) {
         $errors[] = 'Trường hàng trong kho là bắt buộc';
     }
 
-    if (empty ($data['price'])) {
+    if (empty($data['price'])) {
         $errors[] = 'Trường giá là bắt buộc';
     }
 
-    if (empty ($data['price_sale'])) {
+    if (empty($data['price_sale'])) {
         $errors[] = 'Trường giá sale là bắt buộc';
     } else if ($data['price_sale'] >= $data['price']) {
         $errors[] = 'Giá sale không được lớn hơn giá thường';
 
     }
 
-    if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
 
         if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
@@ -128,11 +130,11 @@ function validateProductCreate($data)
         }
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
-        header('Location: ' . BASE_URL_ADMIN . '?act=user-create');
+        header('Location: ' . BASE_URL_ADMIN . '?act=product-create');
         exit();
     }
 }
@@ -152,11 +154,11 @@ function productDelete($id)
 
 function productUpdate($id)
 {
-    
-    $products = showOne('products', $id);
-    
 
-    if (empty ($products)) {
+    $products = showOne('products', $id);
+
+
+    if (empty($products)) {
         e404();
     }
 
@@ -168,30 +170,30 @@ function productUpdate($id)
     $style = 'datatable';
     $script2 = 'create';
     $script3 = 'create2';
-    $active2 = 'active';
+    $active3 = 'active';
     $brands = listAll('brands');
     $origins = listAll('origins');
     $categories = listAll('type_pro');
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         $data = [
-            "name" => $_POST['name'] ?? null,
-            "price" => $_POST['price'] ?? null,
-            "price_sale" => $_POST['price-sale'] ?? null,
-            "brand_id" => $_POST['brand'] ?? null,
-            "mota" => $_POST['mota'] ?? null,
-            "so_luong_ban" => $_POST['pro_db'] ?? null,
-            "so_luong_kho" => $_POST['pro_kho'] ?? null,
-            // "created" => $_POST['create-day'] ?? null,
-            "type_id" => $_POST['category'] ?? null,
-            "origin_id" => $_POST['origin'] ?? null,
+            "name" => $_POST['name'] ?? $products['name'],
+            "price" => $_POST['price'] ?? $products['price'],
+            "price_sale" => $_POST['price-sale'] ?? $products['price_sale'],
+            "brand_id" => $_POST['brand'] ?? $products['brand_id'],
+            "mota" => $_POST['mota'] ?? $products['mota'],
+            "so_luong_ban" => $_POST['pro_db'] ?? $products['so_luong_ban'],
+            "so_luong_kho" => $_POST['pro_kho'] ?? $products['so_luong_kho'],
+            // "created" => $_POST['create-day'] ?? $products[''],
+            "type_id" => $_POST['category'] ?? $products['type_id'],
+            "origin_id" => $_POST['origin'] ?? $products['origin_id'],
         ];
 
         validateProductUpdate($id, $data);
         $ImageUpload = $_FILES['ImageUpload'] ?? null;
 
         // Kiểm tra xem có tệp tin được tải lên hay không
-        if (!empty ($ImageUpload) && $ImageUpload['size'] > 0) {
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
             // Nếu có, thực hiện việc tải lên và cập nhật dữ liệu
             $data['img'] = upload_file($ImageUpload, 'uploads/user/');
         }
@@ -199,9 +201,9 @@ function productUpdate($id)
         update('products', $id, $data);
         // Kiểm tra điều kiện để xóa tệp tin cũ (nếu cần)
         if (
-            !empty ($ImageUpload) && // Có tệp tin được tải lên
-            !empty ($products['img']) && // Có giá trị hình ảnh cũ
-            !empty ($data['img']) && // Tệp tin mới được tải lên thành công
+            !empty($ImageUpload) && // Có tệp tin được tải lên
+            !empty($products['img']) && // Có giá trị hình ảnh cũ
+            !empty($data['img']) && // Tệp tin mới được tải lên thành công
             file_exists(PATH_UPLOAD . $products['img']) // Tệp tin cũ tồn tại trên hệ thống
         ) {
             unlink(PATH_UPLOAD . $products['img']);
@@ -224,37 +226,37 @@ function validateProductUpdate($id, $data)
     // password - bắt buộc, đồ dài nhỏ nhất là 8, lớn nhất là 20
     // type - bắt buộc, nó phải là 0 or 1
 
-   
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     }
 
-    if (empty ($data['so_luong_ban'])) {
+    if (empty($data['so_luong_ban'])) {
         $errors[] = 'Trường hàng đã bán là bắt buộc';
     }
 
-    if (empty ($data['so_luong_kho'])) {
+    if (empty($data['so_luong_kho'])) {
         $errors[] = 'Trường hàng trong kho là bắt buộc';
     }
 
-    if (empty ($data['price'])) {
+    if (empty($data['price'])) {
         $errors[] = 'Trường giá là bắt buộc';
     }
 
-    if (empty ($data['price_sale'])) {
+    if (empty($data['price_sale'])) {
         $errors[] = 'Trường giá sale là bắt buộc';
     } else if ($data['price_sale'] >= $data['price']) {
         $errors[] = 'Giá sale không được lớn hơn giá thường';
-
     }
 
 
-    if (!empty ($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+
         $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
 
         if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
@@ -264,10 +266,10 @@ function validateProductUpdate($id, $data)
         }
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
 
-        header('Location: ' . BASE_URL_ADMIN . '?act=user-update&id=' . $id);
+        header('Location: ' . BASE_URL_ADMIN . '?act=product-update&id=' . $id);
         exit();
     }
 
@@ -278,7 +280,7 @@ function productShowOne($id)
 {
     $products = showOne('products', $id);
 
-    if (empty ($products)) {
+    if (empty($products)) {
         e404();
     }
     $brands = listAll('brands');
@@ -287,6 +289,12 @@ function productShowOne($id)
     $title = 'Chi tiết User: ' . $products['name'];
     $view = 'viewProducts/index';
     $viewtable = "products/show";
+    $script = 'datetime';
+    // $script3 = 'table';
+    $style = 'datatable';
+    $style2 = 'form';
+    $active3 = 'active';
+    // $checkbox = 'create2';
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }

@@ -1,5 +1,4 @@
 <?php
-
 function oderListAll()
 {
     $title = 'Danh sách Oder';
@@ -9,136 +8,87 @@ function oderListAll()
     // $style2 = 'form';
     $script3 = 'table';
     $active4 = 'active';
+    $checkbox = 'create2';
 
-    $oders = listAll('cart_item');
-    $oderuser = listAll('carts');
-    $products = listAll('products');
+
+    $oders = listOder();
+
+
+
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
+
 function oderShowOne($id)
 {
-    $oder = showOne('oders', $id);
+    $oder = showOne('cart_item', $id);
 
-    if (empty ($oder)) {
+    if (empty($oder)) {
         e404();
     }
 
     $title = 'Chi tiết oder: ' . $oder['name'];
-    $view = 'oders/show';
+    $view = 'oders/index';
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
-
-function oderCreate()
-{
-    $title = 'Thêm mới oder';
-    $view = 'oders/create';
-    $script = 'datetime';
-    $active6 = 'active';
-
-
-
-    if (!empty ($_POST)) {
-
-        $data = [
-            "key" => $_POST['key'] ?? null,
-            "value" => $_POST['value'] ?? null,
-        ];
-
-        validateoderCreate($data);
-        insert('oders', $data);
-
-        $_SESSION['success'] = 'Thao tác thành công!';
-
-        header('Location: ' . BASE_URL_ADMIN . '?act=oders');
-        exit();
-    }
-
-    require_once PATH_VIEW_ADMIN . 'layout/master.php';
-}
-
-function validateoderCreate($data)
-{
-    // name - bắt buộc, độ dài tối đa 50 ký tự
-    // email - bắt buộc, phải là email, không được trùng
-    // password - bắt buộc, đồ dài nhỏ nhất là 8, lớn nhất là 20
-    // type - bắt buộc, nó phải là 0 or 1
-
-    $errors = [];
-
-    if (empty ($data['key'])) {
-        $errors[] = 'Trường key là bắt buộc';
-    } else if (strlen($data['key']) > 50) {
-        $errors[] = 'Trường key độ dài tối đa 50 ký tự';
-    }
-    if (empty ($data['value'])) {
-        $errors[] = 'Trường value là bắt buộc';
-    }
-    if (!empty ($errors)) {
-        $_SESSION['errors'] = $errors;
-        $_SESSION['data'] = $data;
-
-        header('Location: ' . BASE_URL_ADMIN . '?act=oder-create');
-        exit();
-    }
-}
-
-function oderUpdate($id)
-{
-    $oder = showOne('oders', $id);
-
-    if (empty ($oder)) {
-        e404();
-    }
-
-    $title = 'Cập nhật oder: ' . $oder['key'];
-    $view = 'oders/update';
-    $script = 'datetime';
-    $active6 = 'active';
-
-    if (!empty ($_POST)) {
-        $data = [
-            "key" => $_POST['key'] ?? null,
-            "value" => $_POST['value'] ?? null,
-        ];
-        update('oders', $id, $data);
-        validateoderUpdate($id, $data);
-        // $_SESSION['success'] = 'Thao tác thành công!';
-        header('Location: ' . BASE_URL_ADMIN . '?act=oders');
-        exit();
-    }
-
-    require_once PATH_VIEW_ADMIN . 'layout/master.php';
-}
-
-function validateoderUpdate($id, $data)
-{
-    $errors = [];
-
-    if (empty ($data['key'])) {
-        $errors[] = 'Trường key là bắt buộc';
-    } else if (strlen($data['key']) > 50) {
-        $errors[] = 'Trường key độ dài tối đa 50 ký tự';
-    }
-    if (empty ($data['value'])) {
-        $errors[] = 'Trường value là bắt buộc';
-    }
-    if (!empty ($errors)) {
-        $_SESSION['errors'] = $errors;
-
-        header('Location: ' . BASE_URL_ADMIN . '?act=oder-update&id=' . $id);
-        exit();
-    }
-
-}
-
 function oderDelete($id)
 {
-    delete2('oders', $id);
+    delete2('bills', $id);
+    delete2('bills_item', $id);
+    $script3 = 'table';
+
 
     $_SESSION['success'] = 'Thao tác thành công!';
 
     header('Location: ' . BASE_URL_ADMIN . '?act=oders');
+    exit();
+}
+
+function orderUpdate($id)
+{
+    $oder = listOneOder($id);
+
+    if (empty($oder)) {
+        e404();
+    }
+
+    $title = 'Cập nhật User: ' . $oder['b_name'];
+    $view = 'order/update';
+    $style2 = 'form';
+    $script = 'datetime';
+    $style = 'datatable';
+    $script2 = 'create';
+    $script3 = 'create2';
+    $active4 = 'active';
+
+    if (!empty($_POST)) {
+        $data = [
+            "name" => $_POST['name'] ?? null,
+            "email" => $_POST['email'] ?? null,
+        ];
+
+        update('users', $id, $data);
+        header('Location: ' . BASE_URL_ADMIN . '?act=users');
+        exit();
+    }
+
+    require_once PATH_VIEW_ADMIN . 'layout/master.php';
+}
+
+function upStatus($id)
+{
+
+    $oder = showOne('bills', $id);
+    $status = $oder['status'] + 1;
+    if ($oder['status'] == 1) {
+        updateOrder($id, $status);
+    } else if ($oder['status'] == 2) {
+        updateOrder($id, $status);
+    } else if ($oder['status'] == 3) {
+        updateOrder($id, $status);
+    }
+
+    header('Location: ' . BASE_URL_ADMIN . '?act=oder-update&id=' . $oder['id']);
     exit();
 }

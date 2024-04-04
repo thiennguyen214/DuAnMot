@@ -24,7 +24,7 @@
 
     <?php
 
-    if (isset ($script2) && $script2) {
+    if (isset($script2) && $script2) {
         require_once PATH_VIEW_ADMIN . 'scripts/' . $script2 . '.php';
     }
 
@@ -33,7 +33,7 @@
 
 <body onload="time()" class="app sidebar-mini rtl">
     <?php
-    if (isset ($style2) && $style2) {
+    if (isset($style2) && $style2) {
         require_once PATH_VIEW_ADMIN . 'styles/' . $style2 . '.php';
     }
     ?>
@@ -100,12 +100,15 @@
     </script> -->
     <?php
     //datetime.php
-    if (isset ($script) && $script) {
+    if (isset($script) && $script) {
         require_once PATH_VIEW_ADMIN . 'scripts/' . $script . '.php';
     }
-    
+    if (isset($checkbox) && $checkbox) {
+        require_once PATH_VIEW_ADMIN . 'scripts/' . $checkbox . '.php';
+    }
+
     //create2
-    if (isset ($script3) && $script3) {
+    if (isset($script3) && $script3) {
         require_once PATH_VIEW_ADMIN . 'scripts/' . $script3 . '.php';
     }
     ?>

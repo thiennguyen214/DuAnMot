@@ -12,6 +12,7 @@ function floralListAll()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $checkbox = 'create2';
 
     $florals = listAll('florals');
 
@@ -42,15 +43,19 @@ function floralCreate()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $script2 = 'create';
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['floral_name'] ?? null,
+           
         ];
 
-        validatefloralCreate($data);
-
+        $ImageUpload = $_FILES['ImageUpload'] ?? null;
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
+            $data['img'] = upload_file($ImageUpload, 'uploads/products/');
+        }
         insert('florals', $data);
 
         $_SESSION['success'] = 'Thao tác thành công!';
@@ -65,11 +70,11 @@ function floralCreate()
 //validate floral-create
 function validatefloralCreate($data)
 {
-    // name - bắt buộc, độ dài tối đa 50 ký tự, Không được trùng
+    // name - bắt buộc, độ dài tối đa 50 ký tự, Không được trùng.
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
@@ -77,7 +82,7 @@ function validatefloralCreate($data)
         $errors[] = 'Name đã được sử dụng';
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
@@ -91,7 +96,7 @@ function floralShowOne($id)
 {
     $floral = showOne('florals', $id);
 
-    if (empty ($floral)) {
+    if (empty($floral)) {
         e404();
     }
 
@@ -105,7 +110,7 @@ function floralUpdate($id)
 {
     $floral = showOne('florals', $id);
 
-    if (empty ($floral)) {
+    if (empty($floral)) {
         e404();
     }
 
@@ -114,9 +119,9 @@ function floralUpdate($id)
     $viewtable = 'florals/update';
 
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         $data = [
-            "name" => $_POST['floral_name'] ?? null,
+            "name" => $_POST['floral_name'] ?? $floral['name'],
         ];
 
         validatefloralCreate($data);

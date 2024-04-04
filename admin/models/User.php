@@ -16,7 +16,7 @@ if (!function_exists('checkUniqueEmail')) {
 
             $data = $stmt->fetch();
 
-            return empty ($data) ? true : false;
+            return empty($data) ? true : false;
         } catch (\Exception $e) {
             debug($e);
         }
@@ -40,7 +40,7 @@ if (!function_exists('checkUniqueEmailForUpdate')) {
 
             $data = $stmt->fetch();
 
-            return empty ($data) ? true : false;
+            return empty($data) ? true : false;
         } catch (\Exception $e) {
             debug($e);
         }
@@ -51,12 +51,12 @@ if (!function_exists('getUserAdminByEmailAndPassword')) {
     function getUserAdminByEmailAndPassword($email, $password)
     {
         try {
-            $sql = "SELECT * FROM users WHERE email = :email AND password = :password AND type = 1 LIMIT 1";
+            $sql = "SELECT * FROM users WHERE email = :email AND pass = :pass AND role = 1 LIMIT 1";
 
             $stmt = $GLOBALS['conn']->prepare($sql);
 
             $stmt->bindParam(":email", $email);
-            $stmt->bindParam(":password", $password);
+            $stmt->bindParam(":pass", $password);
 
             $stmt->execute();
 

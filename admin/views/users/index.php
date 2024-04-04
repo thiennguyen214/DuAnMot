@@ -46,7 +46,8 @@
                             foreach ($users as $user) {
                                 ?>
                                 <tr>
-                                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                    <td width="10"><input type="checkbox" name="check<?= $user['id'] ?>"
+                                            value="<?= $user['id'] ?>"></td>
                                     <td>
                                         <?= $user['id'] ?>
                                     </td>
@@ -96,7 +97,7 @@
 -->
 <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
     data-keyboard="false">
-<!-- <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+    <!-- <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
     data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -152,6 +153,6 @@
         </div>
     </div>
 </div> -->
-<!--
+    <!--
   MODAL
 -->

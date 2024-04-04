@@ -12,6 +12,7 @@ function brandListAll()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $checkbox = 'create2';
 
     $brands = listAll('brands');
 
@@ -42,14 +43,27 @@ function brandCreate()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $script2 = 'create';
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['brand_name'] ?? null,
+            'logo' => get_file_upload('ImageUploadLogo'),
+            'img' => get_file_upload('ImageUpload'),
         ];
 
-        validatebrandCreate($data);
+        // validatebrandCreate($data);
+        $logo = $data['logo'];
+        if (is_array($logo)) {
+            $data['logo'] = upload_file($logo, 'uploads/brands/');
+        }
+
+        $img = $data['img'];
+        if (is_array($img)) {
+            $data['img'] = upload_file($img, 'uploads/brands/');
+        }
+
 
         insert('brands', $data);
 
@@ -69,15 +83,37 @@ function validatebrandCreate($data)
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
     } else if (!checkUniqueName('brands', $data['name'])) {
         $errors[] = 'Name đã được sử dụng';
     }
+    if (empty($data['logo'])) {
+        $errors[] = 'Trường logo là bắt buộc';
+    } elseif (is_array($data['logo'])) {
+        $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
 
-    if (!empty ($errors)) {
+        if ($data['logo']['size'] > 2 * 1024 * 1024) {
+            $errors[] = 'Trường logo có dung lượng nhỏ hơn 2M';
+        } else if (!in_array($data['logo']['type'], $typeImage)) {
+            $errors[] = 'Trường img_thumnail chỉ chấp nhận định dạng file: png, jpg, jpeg';
+        }
+    }
+    if (empty($data['img'])) {
+        $errors[] = 'Trường img là bắt buộc';
+    } elseif (is_array($data['img'])) {
+        $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
+
+        if ($data['img']['size'] > 2 * 1024 * 1024) {
+            $errors[] = 'Trường img có dung lượng nhỏ hơn 2M';
+        } else if (!in_array($data['img']['type'], $typeImage)) {
+            $errors[] = 'Trường img_thumnail chỉ chấp nhận định dạng file: png, jpg, jpeg';
+        }
+    }
+
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
@@ -91,7 +127,7 @@ function brandShowOne($id)
 {
     $brand = showOne('brands', $id);
 
-    if (empty ($brand)) {
+    if (empty($brand)) {
         e404();
     }
 
@@ -105,7 +141,7 @@ function brandUpdate($id)
 {
     $brand = showOne('brands', $id);
 
-    if (empty ($brand)) {
+    if (empty($brand)) {
         e404();
     }
 
@@ -114,9 +150,9 @@ function brandUpdate($id)
     $viewtable = 'brands/update';
 
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         $data = [
-            "name" => $_POST['brand_name'] ?? null,
+            "name" => $_POST['brand_name'] ?? $brand['name'],
         ];
 
         validatebrandCreate($data);

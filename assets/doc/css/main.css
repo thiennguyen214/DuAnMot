@@ -43,6 +43,35 @@
   box-sizing: border-box;
 }
 
+/* CSS cho icon xóa */
+.delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  background-color: red;
+  /* Màu nền đỏ */
+  color: white;
+  /* Màu chữ trắng */
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 50%;
+  /* Bo tròn */
+  z-index: 10;
+  /* Đặt lớp z-index để icon xóa hiển thị trên ảnh */
+}
+
+/* CSS cho container của mỗi ảnh */
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  /* Khoảng cách giữa các ảnh */
+  margin-bottom: 10px;
+  /* Khoảng cách giữa các dòng */
+}
+
+
 html {
   font-family: var(--font-family-sarabun);
   line-height: 1.15;

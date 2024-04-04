@@ -23,7 +23,24 @@
                     <label class="control-label">Tên hương nước hoa</label>
                     <input name="floral_name" class="form-control" type="text" required>
                 </div>
+                <div class="form-group col-md-12">
+                    <label class="control-label">Ảnh sản phẩm</label>
+                    <div id="myfileupload">
+                        <input type="file" id="uploadfile" name="ImageUpload[]" style="display: none;"
+                            onchange="previewImage(this);" multiple />
+                    </div>
+                    <div id="thumbbox">
+                        <img alt="Thumb image" id="thumbimage" style="display: none" />
+                        <a class="removeimg" href="javascript:"></a>
+                    </div>
+                    <div id="boxchoice">
+                        <label for="uploadfile" class="Choicefile"><i class='bx bx-upload'></i> Chọn ảnh</label>
+                        <p style="clear:both"></p>
+                    </div>
+                </div>
+                <button class="btn btn-save" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=florals' ?>">Hủy bỏ</a>
+            </form>
         </div>
-        <button class="btn btn-save" type="submit">Lưu lại</button>
-        <a class="btn btn-cancel" href="/doc/table-data-table.html">Hủy bỏ</a>
+
     </div>

@@ -9,35 +9,41 @@
         <div class="tile">
             <div class="tile-body">
                 <div class="row element-button">
-                    <div class="col-sm-2">
 
+                    <div class="col-sm-2">
                         <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=product-create" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Tạo mới sản phẩm</a>
                     </div>
-                    <div class="col-sm-2">
 
+                    <div class="col-sm-2">
                         <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=categories" title="Thêm"><i
                                 class="fas fa-plus"></i>
-                            Tạo mới loại</a>
+                            Danh mục loại SP</a>
                     </div>
-                    <div class="col-sm-2">
 
+                    <div class="col-sm-2">
                         <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=origins" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Xuất xứ</a>
                     </div>
-                    <div class="col-sm-2">
 
+                    <div class="col-sm-2">
                         <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=brands" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Thương hiệu</a>
                     </div>
-                    <div class="col-sm-2">
 
+                    <div class="col-sm-2">
                         <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=florals" title="Thêm"><i
                                 class="fas fa-plus"></i>
                             Loại hương (mùi hương)</a>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=imgs" title="Thêm"><i
+                                class="fas fa-plus"></i>
+                            Quản lý ảnh SP</a>
                     </div>
                     <div class="col-sm-2">
                         <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
@@ -45,8 +51,7 @@
                     </div>
                 </div>
                 <table class="table table-hover table-bordered" id="sampleTable">
-                    <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" id="sampleTable"
-                        cellspacing="0" border="0">
+                    <table class="table table-hover table-bordered" id="sampleTable">
                         <thead>
                             <tr>
                                 <th width="10"><input type="checkbox" id="all"></th>
@@ -69,7 +74,8 @@
 
                                 <?php foreach ($products as $product): ?>
 
-                                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                    <td width="10"><input type="checkbox" name="check<?= $product['id'] ?>"
+                                            value="<?= $product['id'] ?>"></td>
                                     <td>
                                         <?= $product['id'] ?>
                                     </td>
@@ -99,7 +105,7 @@
 
                                         <a href=" <?= BASE_URL_ADMIN ?>?act=showProduct&id=<?= $product['id'] ?>"
                                             class="btn btn-primary btn-sm circle" type="button" title="Show">
-                                            
+
                                             <i class="fas fa-circle"></i>
                                         </a>
 
@@ -119,8 +125,7 @@
     </div>
 </div>
 
+
 <!--
   MODAL
 -->
-
-

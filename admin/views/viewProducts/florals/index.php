@@ -45,14 +45,18 @@
                         foreach ($florals as $floral) {
                             ?>
                             <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td width="10"><input type="checkbox" name="check<?= $floral['id'] ?>"
+                                        value="<?= $floral['id'] ?>"></td>
                                 <td>
                                     <?= $floral['id'] ?>
                                 </td>
                                 <td>
                                     <?= $floral['name'] ?>
                                 </td>
-                                <td><img class="img-card-person" src="<?= BASE_URL . $user['img'] ?>" alt=""></td>
+                                <td>
+                                    <img class="img-card-person" src="<?= BASE_URL . $product['img'] ?>" alt="">
+                                </td>
+                                <td><img class="img-card-person" src="<?= BASE_URL . $floral['img'] ?>" alt=""></td>
                                 <td class="table-td-center">
                                     <a href="<?= BASE_URL_ADMIN ?>?act=floral-delete&id=<?= $floral['id'] ?>"
                                         class="btn btn-primary btn-sm trash" title="Xóa"

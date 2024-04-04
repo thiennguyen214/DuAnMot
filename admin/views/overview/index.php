@@ -15,7 +15,7 @@
                 <div class="info">
                     <h4>Tổng Khách Hàng</h4>
                     <p><b>
-                            <?= $count ?> khách hàng
+                            <?= $countCli ?> khách hàng
                         </b></p>
                 </div>
             </div>
@@ -24,7 +24,9 @@
             <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x'></i>
                 <div class="info">
                     <h4>Tổng sản phẩm</h4>
-                    <p><b>8580 sản phẩm</b></p>
+                     <p><b> <!--8580 sản phẩm -->
+                        <?= $countpro ?> sản phẩm
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -32,7 +34,9 @@
             <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-shopping-bag-alt'></i>
                 <div class="info">
                     <h4>Tổng đơn hàng</h4>
-                    <p><b>457 đơn hàng</b></p>
+                     <p><b>   <!-- 457 đơn hàng -->
+                        <?= $count ?> đơn hàng
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -40,7 +44,9 @@
             <div class="widget-small primary coloured-icon"><i class='icon fa-3x bx bxs-chart'></i>
                 <div class="info">
                     <h4>Tổng thu nhập</h4>
-                    <p><b>104.890.000 đ</b></p>
+                    <p><b>104.890.000 đ
+                        
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -49,8 +55,10 @@
         <div class="col-md-6 col-lg-3">
             <div class="widget-small info coloured-icon"><i class='icon fa-3x bx bxs-user-badge'></i>
                 <div class="info">
-                    <h4>Khách hàng mới</h4>
-                    <p><b>3 nhân viên</b></p>
+                    <h4>Nhân viên mới</h4>
+                    <p><b>
+                        <?= $countAd ?> nhân viên
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -58,7 +66,9 @@
             <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-tag-x'></i>
                 <div class="info">
                     <h4>Hết hàng</h4>
-                    <p><b>1 sản phẩm</b></p>
+                    <p><b>
+                        <?= $countSp_het ?> sản phẩm
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -88,11 +98,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($sp_ban_chay as $item) :?>
                             <tr>
-                                <td>71309005</td>
-                                <td>Bàn ăn gỗ Theresa</td>
-                                <td>5.600.000 đ</td>
-                                <td>Bàn ăn</td>
+                                <td><?= $item['id'] ?></td>
+                                <td><?= $item['name'] ?></td>
+                                <td><?= $item['price'] ?></td>
+                                <td><?= $item['type_id'] ?></td>
+                            </tr>
+                            <?php endforeach;  ?>    
                         </tbody>
                     </table>
                 </div>

@@ -17,18 +17,18 @@
             <h3 class="tile-title">Sửa loại hàng</h3>
             <div class="tile-body">
             </div>
-            <?php if (isset ($_SESSION['errors'])): ?>
-                        <div class="alert alert-danger">
-                            <ul>
-                                <?php foreach ($_SESSION['errors'] as $error): ?>
-                                    <li>
-                                        <?= $error ?>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                        <?php unset($_SESSION['errors']); ?>
-                    <?php endif; ?>
+            <?php if (isset($_SESSION['errors'])): ?>
+                <div class="alert alert-danger">
+                    <ul>
+                        <?php foreach ($_SESSION['errors'] as $error): ?>
+                            <li>
+                                <?= $error ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php unset($_SESSION['errors']); ?>
+            <?php endif; ?>
             <form class="row" method="post">
                 <!-- <div class="form-group col-md-4">
                             <label hidden class="control-label">ID loại hàng</label>
@@ -39,7 +39,10 @@
                     <input name="category_name" class="form-control" type="text" value="<?= $category['name'] ?>"
                         required placeholder="Nhập tên loại nước hoa">
                 </div>
+                <div class="form-group col-md-12"></div>
+                <button class="btn btn-save" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=categories' ?>">Hủy bỏ</a>
+            </form>
         </div>
-        <button class="btn btn-save" type="submit">Lưu lại</button>
-        <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=categories' ?>">Hủy bỏ</a>
+
     </div>

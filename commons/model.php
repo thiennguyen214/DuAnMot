@@ -92,7 +92,7 @@ if (!function_exists('listAll')) {
     function listAll($tableName)
     {
         try {
-            $sql = "SELECT * FROM $tableName ORDER BY id DESC";
+            $sql = "SELECT * FROM $tableName ORDER BY id ASC";
 
             $stmt = $GLOBALS['conn']->prepare($sql);
 
@@ -104,6 +104,7 @@ if (!function_exists('listAll')) {
         }
     }
 }
+
 
 if (!function_exists('showOne')) {
     function showOne($tableName, $id)
@@ -180,7 +181,7 @@ if (!function_exists('checkUniqueName')) {
 
             $data = $stmt->fetch();
 
-            return empty ($data) ? true : false;
+            return empty($data) ? true : false;
         } catch (\Exception $e) {
             debug($e);
         }
@@ -204,7 +205,7 @@ if (!function_exists('checkUniqueNameForUpdate')) {
 
             $data = $stmt->fetch();
 
-            return empty ($data) ? true : false;
+            return empty($data) ? true : false;
         } catch (\Exception $e) {
             debug($e);
         }

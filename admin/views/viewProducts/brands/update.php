@@ -24,10 +24,13 @@
                         </div> -->
                 <div class="form-group col-md-4">
                     <label class="control-label">Tên thương hiệu</label>
-                    <input name="brand_name" class="form-control" type="text" value="<?= $brand['name'] ?>"
-                        required placeholder="Nhập tên thương hiệu">
+                    <input name="brand_name" class="form-control" type="text" value="<?= $brand['name'] ?>" required
+                        placeholder="Nhập tên thương hiệu">
                 </div>
+                <div class="form-group col-md-12"></div>
+                <button class="btn btn-save" type="submit">Lưu lại</button>
+                <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=florals' ?>">Hủy bỏ</a>
+            </form>
         </div>
-        <button class="btn btn-save" type="submit">Lưu lại</button>
-        <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=brands' ?>">Hủy bỏ</a>
+
     </div>

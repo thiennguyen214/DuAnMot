@@ -12,6 +12,7 @@ function originListAll()
     $style = 'datatable';
     $style2 = 'form';
     $active3 = 'active';
+    $checkbox = 'create2';
 
     $origins = listAll('origins');
 
@@ -43,7 +44,7 @@ function originCreate()
     $style2 = 'form';
     $active3 = 'active';
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
 
         $data = [
             "name" => $_POST['origin_name'] ?? null,
@@ -69,7 +70,7 @@ function validateoriginCreate($data)
 
     $errors = [];
 
-    if (empty ($data['name'])) {
+    if (empty($data['name'])) {
         $errors[] = 'Trường name là bắt buộc';
     } else if (strlen($data['name']) > 50) {
         $errors[] = 'Trường name độ dài tối đa 50 ký tự';
@@ -77,7 +78,7 @@ function validateoriginCreate($data)
         $errors[] = 'Name đã được sử dụng';
     }
 
-    if (!empty ($errors)) {
+    if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
         $_SESSION['data'] = $data;
 
@@ -91,7 +92,7 @@ function originShowOne($id)
 {
     $origin = showOne('origins', $id);
 
-    if (empty ($origin)) {
+    if (empty($origin)) {
         e404();
     }
 
@@ -105,7 +106,7 @@ function originUpdate($id)
 {
     $origin = showOne('origins', $id);
 
-    if (empty ($origin)) {
+    if (empty($origin)) {
         e404();
     }
 
@@ -114,9 +115,9 @@ function originUpdate($id)
     $viewtable = 'origins/update';
 
 
-    if (!empty ($_POST)) {
+    if (!empty($_POST)) {
         $data = [
-            "name" => $_POST['origin_name'] ?? null,
+            "name" => $_POST['origin_name'] ?? $origin['name'],
         ];
 
         validateoriginCreate($data);

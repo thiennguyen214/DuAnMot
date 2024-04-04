@@ -1,8 +1,12 @@
 <main class="app-content">
     <div class="app-title">
         <ul class="app-breadcrumb breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= BASE_URL_ADMIN . '?act=users' ?>">Danh sách khách hàng</a></li>
-            <li class="breadcrumb-item"><a href="#">Thêm khách hàng</a></li>
+            <li class="breadcrumb-item"><a href="<?= BASE_URL_ADMIN . '?act=users' ?>"><b>
+                        Danh sách khách hàng
+                    </b></a></li>
+            <li class="breadcrumb-item"><a href="#">
+                    <?= $title ?>
+                </a></li>
         </ul>
         <div id="clock"></div>
     </div>
@@ -11,7 +15,7 @@
 
             <div class="tile">
 
-                <h3 class="tile-title">Tạo mới người dùng</h3>
+                <h3 class="tile-title">Chỉnh sửa người dùng</h3>
                 <div class="tile-body">
                     <!-- <div class="row element-button">
                         <div class="col-sm-2">
@@ -20,7 +24,7 @@
                         </div>
 
                     </div> -->
-                    <?php if (isset ($_SESSION['errors'])): ?>
+                    <?php if (isset($_SESSION['errors'])): ?>
                         <div class="alert alert-danger">
                             <ul>
                                 <?php foreach ($_SESSION['errors'] as $error): ?>

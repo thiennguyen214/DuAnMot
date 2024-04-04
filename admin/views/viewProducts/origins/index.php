@@ -44,7 +44,8 @@
                         foreach ($origins as $origin) {
                             ?>
                             <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td width="10"><input type="checkbox" name="check<?= $origin['id'] ?>"
+                                        value="<?= $origin['id'] ?>"></td>
                                 <td>
                                     <?= $origin['id'] ?>
                                 </td>

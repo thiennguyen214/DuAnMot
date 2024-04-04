@@ -15,10 +15,10 @@ require_file(PATH_MODEL_ADMIN);
 $act = $_GET['act'] ?? '/';
 
 // Kiểm tra xem user đã đăng nhập chưa
-// middleware_auth_check($act);
+middleware_auth_check($act);
 
 match ($act) {
-    '/' => dashboard(),
+    '/' => userListAll(),
 
     // CRUD User 
     'users' => userListAll(),
@@ -41,7 +41,7 @@ match ($act) {
     'brands' => brandListAll(),
     //     'brand-detail' => brandShowOne($_GET['id']),
     'brand-update' => brandUpdate($_GET['id']),
-    'brands-create' => brandCreate(),
+    'brand-create' => brandCreate(),
     'brand-delete' => brandDelete($_GET['id']),
 
 
@@ -72,8 +72,9 @@ match ($act) {
 
 
     //     // CRUD Category
-//     'categories' => categoryListAll(),
-//     'category-detail' => categoryShowOne($_GET['id']),
+    'imgs' => imgProListAll(),
+    'imgs_create' => imgProCreate(),
+    //     'category-detail' => categoryShowOne($_GET['id']),
 //     'category-create' => categoryCreate(),
 //     'category-update' => categoryUpdate($_GET['id']),
 //     'category-delete' => categoryDelete($_GET['id']),
@@ -81,9 +82,10 @@ match ($act) {
 
     // CRUD oder
     'oders' => oderListAll(),
-    'oder-detail' => oderShowOne($_GET['id']),
-    'oder-create' => oderCreate(),
-    'oder-update' => oderUpdate($_GET['id']),
+    // 'oder-detail' => oderShowOne($_GET['id']),
+    'oder_status' => upStatus($_GET['id']),
+    // 'oder-create' => oderCreate(),
+    'oder-update' => orderUpdate($_GET['id']),
     'oder-delete' => oderDelete($_GET['id']),
 
     // CRUD products
@@ -93,17 +95,21 @@ match ($act) {
     'product-update' => productUpdate($_GET['id']),
     'product-delete' => productDelete($_GET['id']),
 
-//     // CRUD post
+    //     // CRUD post
 //     'posts' => postListAll(),
 //     'post-detail' => postShowOne($_GET['id']),
 //     'post-create' => postCreate(),
 //     'post-update' => postUpdate($_GET['id']),
 //     'post-delete' => postDelete($_GET['id']),
 
-//     // Setting
+    //     // Setting
 //     'setting-form' => settingShowForm(),
 //     'setting-save' => settingSave(),
-'showProduct' => productShowOne($_GET['id']),
+    'showProduct' => productShowOne($_GET['id']),
+
+    'login' => authenShowFormLogin(),
+    'logout' => authenLogout(),
+// 'forgot' => authenShowFormForgot(),
 
 };
 
