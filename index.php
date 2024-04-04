@@ -32,52 +32,48 @@ middleware_auth_check_cl($act, $arrRouteNeedAuth);
 //
 match ($act) {
 
-    '/' => index(),
-    'gioithieu' => gioithieu(),
-    'tintuc' => tintuc(),
-    'lienhe' => lienhe(),
-    'trangchu' => trangchu(),
-    'thuonghieu' => thuonghieu(),
-    'sanpham' => sanpham(),
-    'giohang' => giohang(),
-    'user-detail' => userDetail(),
+    // '/' => index(),
+    // 'gioithieu' => gioithieu(),
+    // 'tintuc' => tintuc(),
+    // 'trangchu' => trangchu(),
+    // 'thuonghieu' => thuonghieu(),
+    // 'sanpham' => sanpham(),
+    // 'giohang' => giohang(),
+    // 'user-detail' => userDetail(),
 
     '/' => showHome(),
-    'log' => showLog(),
+    // 'log' => showLog(),
     'posts' => showPost(),
-<<<<<<< HEAD
+    // <<<<<<< HEAD
     // 'cart' => showCart(),
-    'productDetail' => showProduct($_GET['id']),
-=======
-
-    'cart' => showCart(),
-
     'products' => showProduct(),
-    'posts' => showPost(),
+    // =======
+    'productDetail' => showProductDetail($_GET['id']),
+    // 'posts' => showPost(),
 
-    'productDetail' => showProductDetail(),
+    // 'productDetail' => showProductDetail(),
 
 
->>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
+    // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
     'introduce' => showIntroduction(),
     'brand' => showBrand(),
     'thanhtoan' => showThanhtoan(),
 
-<<<<<<< HEAD
+    // <<<<<<< HEAD
     'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),
     'cart' => cartList(),
     'cart-inc' => cartInc($_GET['productID']),
     'cart-dec' => cartDec($_GET['productID']),
     'cart-del' => cartDel($_GET['productID']),
 
-    // 'login' => authenShowFormLogin(),
+    'login' => authenShowFormLogin(),
     'logoutc' => authenCliLogout(),
-=======
-    'Male' => showProduct(),
-    'Female' => showProduct(),
+// =======
+// 'Male' => showProduct(),
+// 'Female' => showProduct(),
 
 
->>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
+// >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
 
 
 

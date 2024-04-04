@@ -254,11 +254,11 @@ function validateProductUpdate($id, $data)
     }
 
 
-<<<<<<< HEAD
+    // <<<<<<< HEAD
 
 
-=======
->>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
+    // =======
+// >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
 
     if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
 
