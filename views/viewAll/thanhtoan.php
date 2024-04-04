@@ -1,104 +1,9 @@
-<!DOCTYPE html>
-<html class="floating-labels">
+<!-- Begin checkout custom css -->
 
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-	<meta name="description" content="Bean Perfume - Thanh toán đơn hàng" />
-	<title>Bean Perfume - Thanh toán đơn hàng</title>
-	<link rel="shortcut icon"
-		href="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_favicon.ico?1711356971279"
-		type="image/x-icon" />
-	<link rel="stylesheet" href="<?= BASE_URLS ?>cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
-	<link rel="stylesheet" href="<?= BASE_URLS ?>dist/css/checkout.vendor.min.css?v=4fcd86c">
-	<link rel="stylesheet" href="<?= BASE_URLS ?>dist/css/checkout.min.css?v=ce7712f">
-
-	<!-- Begin checkout custom css -->
-	<style>
-		.field__input:focus,
-		.select2-selection:focus,
-		.select2-search__field:focus {
-			border-color: #ce0082;
-			box-shadow: 0 0 0 1px #ce0082;
-		}
-
-		.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-			background-color: #ce0082;
-		}
-
-		.btn {
-			background-color: #ce0082;
-			border-color: #ce0082;
-		}
-
-		.btn:focus {
-			outline-color: #ce0082;
-		}
+<!-- End checkout custom css -->
 
 
 
-		.btn.disabled {
-			background-color: #DA3FA1;
-			border-color: #DA3FA1;
-		}
-
-
-
-		.btn:hover {
-			background-color: #9A0061;
-			border-color: #9A0061;
-		}
-
-
-
-		.btn,
-		.btn:hover,
-		.btn:focus {
-			color: #FFFFFF;
-		}
-	</style>
-	<!-- End checkout custom css -->
-
-	<script
-		src="<?= BASE_URLS ?>bizweb.dktcdn.net/assets/themes_support/libphonenumber-v3.2.30.min.js?1711356971279"></script>
-
-	<script src="<?= BASE_URLS ?>dist/js/checkout.vendor.min.js?v=11006c9"></script>
-
-
-
-	<script src="<?= BASE_URLS ?>dist/js/checkout.min.js?v=a0ee933"></script>
-
-
-
-	<script>
-		var Bizweb = Bizweb || {};
-		Bizweb.id = '503826';
-		Bizweb.store = 'bean-perfume.mysapo.net';
-
-		Bizweb.template = 'checkout';
-		Bizweb.Checkout = Bizweb.Checkout || {};
-
-	</script>
-
-	<script>
-		window.BizwebAnalytics = window.BizwebAnalytics || {};
-		window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
-		window.BizwebAnalytics.meta.currency = 'VND';
-		window.BizwebAnalytics.tracking_url = '/s';
-		var meta = {};
-
-
-		for (var attr in meta) {
-			window.BizwebAnalytics.meta[attr] = meta[attr];
-		}
-	</script>
-
-
-	<script src="<?= BASE_URLS ?>dist/js/stats.min.js?v=f021d1e"></script>
-
-
-</head>
 
 <body data-no-turbolink>
 
@@ -108,7 +13,7 @@
 
 				<a href="/">
 					<img class="logo__image  logo__image--medium " alt="Bean Perfume"
-						src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png?1711356971279" />
+						src="<?= BASE_URL ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png" />
 				</a>
 
 			</div>
@@ -149,10 +54,7 @@
 					<header class="main__header">
 						<div class="logo logo--center">
 
-							<a href="/">
-								<img class="logo__image  logo__image--medium " alt="Bean Perfume"
-									src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png?1711356971279" />
-							</a>
+
 
 						</div>
 					</header>
@@ -220,7 +122,7 @@
 														class="field__input" data-bind="billing.phone" value="">
 													<div class="field__input-phone-region-wrapper">
 														<select class="field__input select-phone-region"
-															name="billingPhoneRegion" data-init-value="VN"></select>
+															name="billingPhoneRegion" data-init-value="VN"><?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/vn.png</select>
 													</div>
 												</div>
 
@@ -240,7 +142,7 @@
 											</div>
 
 
-											<div class="field field--show-floating-label ">
+											<!-- <div class="field field--show-floating-label ">
 												<div class="field__input-wrapper field__input-wrapper--select2">
 													<label for="billingProvince" class="field__label">Tỉnh thành</label>
 													<select name="billingProvince" id="billingProvince" size="1"
@@ -251,9 +153,9 @@
 													</select>
 												</div>
 
-											</div>
+											</div> -->
 
-											<div class="field field--show-floating-label ">
+											<!-- <div class="field field--show-floating-label ">
 												<div class="field__input-wrapper field__input-wrapper--select2">
 													<label for="billingDistrict" class="field__label">
 														Quận huyện (tùy chọn)
@@ -266,9 +168,9 @@
 													</select>
 												</div>
 
-											</div>
+											</div> -->
 
-											<div class="field field--show-floating-label ">
+											<!-- <div class="field field--show-floating-label ">
 												<div class="field__input-wrapper field__input-wrapper--select2">
 													<label for="billingWard" class="field__label">
 														Phường xã (tùy chọn)
@@ -281,7 +183,7 @@
 													</select>
 												</div>
 
-											</div>
+											</div> -->
 
 
 
@@ -381,7 +283,7 @@
 														<span class="radio__label__primary">Thu hộ (COD)</span>
 														<span class="radio__label__accessory">
 															<span class="radio__label__icon">
-																<i class="payment-icon payment-icon--4"></i>
+																<i class="fa fa-user-circle-o fa-lg"></i>
 															</span>
 														</span>
 
@@ -401,7 +303,7 @@
 														<span class="radio__label__primary">Chuyển khoản</span>
 														<span class="radio__label__accessory">
 															<span class="radio__label__icon">
-																<i class="payment-icon payment-icon--3"></i>
+																<i class="fa fa-user-circle-o fa-lg"></i>
 															</span>
 														</span>
 
@@ -418,14 +320,15 @@
 						<div class="field__input-btn-wrapper field__input-btn-wrapper--vertical hide-on-desktop">
 							<button type="submit" class="btn btn-checkout spinner"
 								data-bind-class="{'spinner--active': isSubmitingCheckout}"
-								data-bind-disabled="isSubmitingCheckout || isLoadingReductionCode">
+								data-bind-disabled="isSubmitingCheckout || isLoadingReductionCode"  
+								>
 								<span class="spinner-label">ĐẶT HÀNG</span>
 								<svg xmlns="http://www.w3.org/2000/svg" class="spinner-loader">
-									<use href="#spinner"></use>
+									<use href="<?= BASE_URL ?>?act=bills"></use>
 								</svg>
 							</button>
 
-							<a href="/cart" class="previous-link">
+							<a href="<?= BASE_URL ?>?act=products" class="previous-link">
 								<i class="previous-link__arrow">❮</i>
 								<span class="previous-link__content">Quay về giỏ hàng</span>
 							</a>
@@ -594,7 +497,7 @@
 									</button>
 
 
-									<a href="/cart" class="previous-link">
+									<a href="<?= BASE_URL ?>?act=products" class="previous-link">
 										<i class="previous-link__arrow">❮</i>
 										<span class="previous-link__content">Quay về giỏ hàng</span>
 									</a>
@@ -629,5 +532,3 @@
 		</svg>
 	</div>
 </body>
-
-</html>

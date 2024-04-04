@@ -537,7 +537,7 @@
                                                     <a href="<?= BASE_URL . '?act=cart-add&productID=' . $product['id'] . '&quantity=1' ?>"
                                                         class="txt-main text_1">Thêm vào giỏ hàng</a>
                                                 </button>
-                                                <a href="javascript:void(0)" class="buynow" title="">
+                                                <a href="<?= BASE_URL ?>?act=thanhtoan" class="buynow" title="">
                                                     Mua ngay
                                                 </a>
                                             </div>
