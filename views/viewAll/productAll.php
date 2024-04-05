@@ -124,7 +124,8 @@
                                                 class="swiper-lazy" />
                                         </div>
                                     </div>
-                                    <?php foreach ($imgs as $img) { ?>
+                                    <?php
+                                    foreach ($imgs as $img) { ?>
                                         <div class="swiper-slide" data-hash="0">
                                             <div class="p-100">
                                                 <img height="100" width="100" src="<?= $img['img'] ?>"

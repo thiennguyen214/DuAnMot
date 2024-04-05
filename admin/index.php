@@ -81,12 +81,11 @@ match ($act) {
 
 
     // CRUD oder
-    'oders' => oderListAll(),
+    'oders' => oderListAll1($_GET['status']),
     // 'oder-detail' => oderShowOne($_GET['id']),
-    'oder_status' => upStatus($_GET['id']),
+    'oder_status' => upStatus($_GET['id'], $_GET['status']),
     // 'oder-create' => oderCreate(),
-    'oder-update' => orderUpdate($_GET['id']),
-    'oder-delete' => oderDelete($_GET['id']),
+
 
     // CRUD products
     'products' => viewProductListAll(),

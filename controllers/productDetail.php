@@ -12,7 +12,7 @@ function showProductDetail($id)
     // $users = listAll('users');
     $product = listOnePro($id);
     $products = showGh('products', 3);
-    // $imgs = showImgs('img_products', $id);
+    $imgs = showImgs('img_products', $id);
     // debug($arry);
     $data = showOne('products', $id);
     $cartm = json_encode($data);

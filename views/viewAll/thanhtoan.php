@@ -150,7 +150,7 @@
 
 	<div data-tg-refresh="checkout" id="checkout" class="content">
 		<form action="<?= BASE_URL . '?act=order-purchase' ?>" method="post">
-			<!-- <input type="hidden" name="_method" value="patch" /> -->
+
 			<div class="wrap">
 				<main class="main">
 					<header class="main__header">
@@ -186,7 +186,7 @@
 
 											<div class="field ">
 												<div class="field__input-wrapper">
-													<label for="email" class="field__label">Email</label>
+													<label for="email" class="field__label"></label>
 													<input name="email" id="email" type="email" class="field__input"
 														data-bind="email" value="<?= $_SESSION['user']['email'] ?>">
 												</div>
@@ -430,7 +430,6 @@
 
 						<div id="common-alert" data-tg-refresh="refreshError">
 
-
 							<div class="alert alert--danger hide-on-desktop"
 								data-bind-show="!isSubmitingCheckout && isSubmitingCheckoutError"
 								data-bind="submitingCheckoutErrorMessage">
@@ -587,13 +586,14 @@
 												</th>
 												<td class="total-line__price">
 													<span class="payment-due__price">
-														<?= number_format($tong - $posss) ?>₫
+														<?= number_format($tong + $posss) ?>₫
 													</span>
 												</td>
 											</tr>
 										</tfoot>
 									</table>
 								</div>
+								<input type="hidden" name="tong" value="<?= $sl ?>" />
 								<div
 									class="order-summary__nav field__input-btn-wrapper hide-on-mobile layout-flex--row-reverse">
 									<button type="submit" class="btn btn-checkout spinner">

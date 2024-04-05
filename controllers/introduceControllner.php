@@ -3,6 +3,7 @@ function showIntroduction()
 {
     $view = "viewAll/introduce";
     $style = 'styles/gioithieu';
+    $active2 = 'active';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
@@ -21,7 +22,7 @@ function showIntroduction()
 
     $product = listAll('products');
     $countProduct = count($product);
-    
+
 
     require_once PATH_VIEW . '/layouts/master.php';
 
