@@ -891,1546 +891,102 @@
 
                   <!-- Lọc tag 2 -->
 
-                  <!-- End lọc tag 2 -->
-                </div>
+              <!-- End lọc tag 2 -->
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="block-collection">
+        <div class="section-box-bg">
+          <h1 class="title-page"
+            style="
+                  background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_collections02fb.jpg?1709175143725);">
+            <span>Tất cả sản phẩm</span>
+          </h1>
+          <div class="category-products products-view products-view-grid list_hover_pro">
+            <div class="products-view products-view-grid list_hover_pro">
+              <div class="row row-fix">
+                <?php foreach ($products as $product): ?>
+                  <div class="col-6 col-md-4 col-xl-3 col-fix">
+                    <div class="item_product_main">
+                      <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
+                        class="variants product-action" data-cart-form data-id="product-actions-33659593"
+                        enctype="multipart/form-data">
+                        <div class="product-thumbnail">
+                          <a class="image_thumb scale_hover"
+                            href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>"
+                            title="Unisex Creed Millesime Imperial">
+                            <img width="480" height="480" class="lazyload image1"
+                              src="<?= BASE_URL . $product['pr_img'] ?>" data-src="<?= BASE_URL . $product['pr_img'] ?>"
+                              alt="Unisex Creed Millesime Imperial" />
+                          </a>
+                          <div class="action">
+                            <input type="hidden" name="variantId" value="104173585" />
+                            <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
+                              <svg class="icon">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
+                              </svg>
+                            </button>
+                            <a title="Xem nhanh" href="../unisex-creed-millesime-imperial.html"
+                              data-handle="unisex-creed-millesime-imperial" class="quick-view btn-views">
+                              <svg class="icon">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quickview"></use>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="smart"><span>
+
+                            <?= ceil((1 - ($product['pr_price_sale'] / $product['pr_price'])) * 100) ?>%
+
+                          </span></div>
+                        <a href="javascript:void(0)" class="setWishlist btn-wishlist"
+                          data-wish="unisex-creed-millesime-imperial" tabindex="0" title="Thêm vào yêu thích">
+                          <svg class="icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use>
+                          </svg>
+                        </a>
+                        <div class="product-info">
+                          <h3 class="product-name">
+                            <a class="line-clamp line-clamp-1 text-center" href="../unisex-creed-millesime-imperial.html"
+                              title="<?= $product['pr_name'] ?>">
+                              <?= $product['pr_name'] ?>
+                            </a>
+                          </h3>
+                          <div class="price-box">
+                            <?= $product['pr_price_sale'] ?>₫
+                            <span class="compare-price">
+                              <?= $product['pr_price'] ?>₫
+                            </span>
+                          </div>
+                        </div>
+                        <ul class="fragrant_product">
+                          <li class="text-center">
+                            <img width="90" height="90" class="lazyload" src="<?= BASE_URL . $product['pr_img'] ?>"
+                              data-src="<?= BASE_URL . $product['pr_img'] ?>" alt="Cam" />
+                            <span>Cam</span>
+                          </li>
+                          <li class="text-center">
+                            <img width="90" height="90" class="lazyload"
+                              src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                              data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
+                              alt="Gỗ" />
+                            <span>Gỗ</span>
+                          </li>
+                          <li class="text-center">
+                            <img width="90" height="90" class="lazyload"
+                              src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                              data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
+                              alt="Trái cây" />
+                            <span>Trái cây</span>
+                          </li>
+                        </ul>
+                      </form>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
               </div>
             </div>
-          </aside>
-          <div class="block-collection">
-            <div class="section-box-bg">
-              <h1
-                class="title-page"
-                style="
-                  background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_collections02fb.jpg?1709175143725);
-                "
-              >
-                <span>Tất cả sản phẩm</span>
-              </h1>
-              <div
-                class="category-products products-view products-view-grid list_hover_pro"
-              >
-                <div class="products-view products-view-grid list_hover_pro">
-                  <div class="row row-fix">
-                    <?php foreach ($products as $product) : ?>
-                    <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33659593"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>"
-                              title="Unisex Creed Millesime Imperial"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="<?= BASE_URL.$product['pr_img'] ?>"
-                                data-src="<?= BASE_URL.$product['pr_img'] ?>"
-                                alt="Unisex Creed Millesime Imperial"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104173585"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../unisex-creed-millesime-imperial.html"
-                                data-handle="unisex-creed-millesime-imperial"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>
-
-                          <?= ceil((1 - ($product['pr_price_sale'] / $product['pr_price'])) * 100) ?>%
-                          
-                         </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="unisex-creed-millesime-imperial"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../unisex-creed-millesime-imperial.html"
-                                title="<?= $product['pr_name'] ?>"
-                                ><?= $product['pr_name'] ?></a
-                               
-                              >
-                            </h3>
-                            <div class="price-box">
-                            <?= $product['pr_price_sale'] ?>₫
-                              <span class="compare-price"><?= $product['pr_price'] ?>₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="<?= BASE_URL.$product['pr_img'] ?>"
-                                data-src="<?= BASE_URL.$product['pr_img'] ?>"
-                                alt="Cam"
-                              />
-                              <span>Cam</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                alt="Gỗ"
-                              />
-                              <span>Gỗ</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                alt="Trái cây"
-                              />
-                              <span>Trái cây</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div>
-                    <?php endforeach; ?>
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33659343"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../nuoc-hoa-unisex-gucci-the-virgin-violet.html"
-                              title="Nước Hoa Unisex Gucci The Virgin Violet"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-gucci-the-virgin-violet-edp-100ml.png?v=1701251056543"
-                                alt="Nước Hoa Unisex Gucci The Virgin Violet"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104173002"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../nuoc-hoa-unisex-gucci-the-virgin-violet.html"
-                                data-handle="nuoc-hoa-unisex-gucci-the-virgin-violet"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 27% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="nuoc-hoa-unisex-gucci-the-virgin-violet"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../nuoc-hoa-unisex-gucci-the-virgin-violet.html"
-                                title="Nước Hoa Unisex Gucci The Virgin Violet"
-                                >Nước Hoa Unisex Gucci The Virgin Violet</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              5.800.000₫
-                              <span class="compare-price">7.900.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_3.jpg?1709175143725"
-                                alt="Xạ hương"
-                              />
-                              <span>Xạ hương</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
-                                alt="Cỏ"
-                              />
-                              <span>Cỏ</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                alt="Hoa nhài"
-                              />
-                              <span>Hoa nhài</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33659220"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../gucci-bloom-ambrosia-di-fiori.html"
-                              title="Gucci Bloom Ambrosia di Fiori"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
-                                alt="Gucci Bloom Ambrosia di Fiori"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                class="hidden"
-                                type="hidden"
-                                name="variantId"
-                                value="104172759"
-                              />
-                              <button
-                                class="btn-cart btn-views"
-                                title="Xem chi tiết"
-                                type="button"
-                                onclick="window.location.href='../gucci-bloom-ambrosia-di-fiori.html'"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-detail"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../gucci-bloom-ambrosia-di-fiori.html"
-                                data-handle="gucci-bloom-ambrosia-di-fiori"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 19% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="gucci-bloom-ambrosia-di-fiori"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../gucci-bloom-ambrosia-di-fiori.html"
-                                title="Gucci Bloom Ambrosia di Fiori"
-                                >Gucci Bloom Ambrosia di Fiori</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              2.560.000₫
-                              <span class="compare-price">3.150.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                alt="Hoa nhài"
-                              />
-                              <span>Hoa nhài</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
-                                alt="Hoa đào"
-                              />
-                              <span>Hoa đào</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_4.jpg?1709175143725"
-                                alt="Hoa hồng"
-                              />
-                              <span>Hoa hồng</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33659039"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../calvin-klein-ck-one-gold.html"
-                              title="Calvin Klein CK One Gold"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
-                                alt="Calvin Klein CK One Gold"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104172328"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../calvin-klein-ck-one-gold.html"
-                                data-handle="calvin-klein-ck-one-gold"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 34% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="calvin-klein-ck-one-gold"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../calvin-klein-ck-one-gold.html"
-                                title="Calvin Klein CK One Gold"
-                                >Calvin Klein CK One Gold</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              1.050.000₫
-                              <span class="compare-price">1.580.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
-                                alt="Cam"
-                              />
-                              <span>Cam</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                alt="Trái cây"
-                              />
-                              <span>Trái cây</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                alt="Hoa nhài"
-                              />
-                              <span>Hoa nhài</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33658880"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../nuoc-hoa-le-labo-santal-33.html"
-                              title="Nước hoa Le Labo Santal 33"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/le-labo-santal-33-fa66901a85514b-removebg-preview.png?v=1701249584653"
-                                alt="Nước hoa Le Labo Santal 33"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104171872"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../nuoc-hoa-le-labo-santal-33.html"
-                                data-handle="nuoc-hoa-le-labo-santal-33"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 9% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="nuoc-hoa-le-labo-santal-33"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../nuoc-hoa-le-labo-santal-33.html"
-                                title="Nước hoa Le Labo Santal 33"
-                                >Nước hoa Le Labo Santal 33</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              3.500.000₫
-                              <span class="compare-price">3.850.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                alt="Gỗ"
-                              />
-                              <span>Gỗ</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
-                                alt="Cỏ"
-                              />
-                              <span>Cỏ</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                alt="Hoa nhài"
-                              />
-                              <span>Hoa nhài</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33658783"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../gucci-bloom-for-her-mini-size.html"
-                              title="Gucci Bloom For Her Mini Size"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-02f6ff28224143c6a358.png?v=1701248994263"
-                                alt="Gucci Bloom For Her Mini Size"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104171603"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../gucci-bloom-for-her-mini-size.html"
-                                data-handle="gucci-bloom-for-her-mini-size"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 9% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="gucci-bloom-for-her-mini-size"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../gucci-bloom-for-her-mini-size.html"
-                                title="Gucci Bloom For Her Mini Size"
-                                >Gucci Bloom For Her Mini Size</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              480.000₫
-                              <span class="compare-price">530.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
-                                alt="Cỏ"
-                              />
-                              <span>Cỏ</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                alt="Hoa nhài"
-                              />
-                              <span>Hoa nhài</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                alt="Gỗ"
-                              />
-                              <span>Gỗ</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33658271"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../tommy-hilfiger-tommy-girl.html"
-                              title="Tommy Hilfiger Tommy Girl"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
-                                alt="Tommy Hilfiger Tommy Girl"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                class="hidden"
-                                type="hidden"
-                                name="variantId"
-                                value="104170999"
-                              />
-                              <button
-                                class="btn-cart btn-views"
-                                title="Xem chi tiết"
-                                type="button"
-                                onclick="window.location.href='../tommy-hilfiger-tommy-girl.html'"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-detail"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../tommy-hilfiger-tommy-girl.html"
-                                data-handle="tommy-hilfiger-tommy-girl"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 15% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="tommy-hilfiger-tommy-girl"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../tommy-hilfiger-tommy-girl.html"
-                                title="Tommy Hilfiger Tommy Girl"
-                                >Tommy Hilfiger Tommy Girl</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              705.000₫
-                              <span class="compare-price">830.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
-                                alt="Hoa đào"
-                              />
-                              <span>Hoa đào</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
-                                alt="Cam"
-                              />
-                              <span>Cam</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                alt="Hoa nhài"
-                              />
-                              <span>Hoa nhài</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33658079"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../gucci-flora-gorgeous-gardenia.html"
-                              title="Gucci Flora Gorgeous Gardenia"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/flora-gorgeous-preview.png?v=1701247923653"
-                                alt="Gucci Flora Gorgeous Gardenia"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                class="hidden"
-                                type="hidden"
-                                name="variantId"
-                                value="104170628"
-                              />
-                              <button
-                                class="btn-cart btn-views"
-                                title="Xem chi tiết"
-                                type="button"
-                                onclick="window.location.href='../gucci-flora-gorgeous-gardenia.html'"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-detail"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../gucci-flora-gorgeous-gardenia.html"
-                                data-handle="gucci-flora-gorgeous-gardenia"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 8% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="gucci-flora-gorgeous-gardenia"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../gucci-flora-gorgeous-gardenia.html"
-                                title="Gucci Flora Gorgeous Gardenia"
-                                >Gucci Flora Gorgeous Gardenia</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              1.830.000₫
-                              <span class="compare-price">2.000.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
-                                alt="Cam"
-                              />
-                              <span>Cam</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                alt="Trái cây"
-                              />
-                              <span>Trái cây</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                alt="Gỗ"
-                              />
-                              <span>Gỗ</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33657819"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../mancera-cedrat-boise.html"
-                              title="Mancera Cedrat Boise"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/mancera-cedrat-boise-6698ab0d070-min-removebg-preview.png?v=1701246971380"
-                                alt="Mancera Cedrat Boise"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104170223"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../mancera-cedrat-boise.html"
-                                data-handle="mancera-cedrat-boise"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 8% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="mancera-cedrat-boise"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../mancera-cedrat-boise.html"
-                                title="Mancera Cedrat Boise"
-                                >Mancera Cedrat Boise</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              1.800.000₫
-                              <span class="compare-price">1.950.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
-                                alt="Cam"
-                              />
-                              <span>Cam</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                alt="Trái cây"
-                              />
-                              <span>Trái cây</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                alt="Gỗ"
-                              />
-                              <span>Gỗ</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33657572"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../dior-sauvage-eau-de-toilette.html"
-                              title="Dior Sauvage Eau de Toilette"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/dior-sauvage-eau-de-toilette-100.png?v=1701246664160"
-                                alt="Dior Sauvage Eau de Toilette"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104169428"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../dior-sauvage-eau-de-toilette.html"
-                                data-handle="dior-sauvage-eau-de-toilette"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 12% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="dior-sauvage-eau-de-toilette"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../dior-sauvage-eau-de-toilette.html"
-                                title="Dior Sauvage Eau de Toilette"
-                                >Dior Sauvage Eau de Toilette</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              2.800.000₫
-                              <span class="compare-price">3.200.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                alt="Hoa nhài"
-                              />
-                              <span>Hoa nhài</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
-                                alt="Cỏ"
-                              />
-                              <span>Cỏ</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                alt="Gỗ"
-                              />
-                              <span>Gỗ</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33655857"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../marc-jacobs-daisy-dream.html"
-                              title="Marc Jacobs Daisy Dream"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/full-17bcae326b9040c383627b14f7e-removebg-preview.png?v=1701240531743"
-                                alt="Marc Jacobs Daisy Dream"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                type="hidden"
-                                name="variantId"
-                                value="104122231"
-                              />
-                              <button
-                                class="btn-cart btn-views add_to_cart"
-                                title="Thêm vào giỏ"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-cart"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../marc-jacobs-daisy-dream.html"
-                                data-handle="marc-jacobs-daisy-dream"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 7% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="marc-jacobs-daisy-dream"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../marc-jacobs-daisy-dream.html"
-                                title="Marc Jacobs Daisy Dream"
-                                >Marc Jacobs Daisy Dream</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              1.850.000₫
-                              <span class="compare-price">1.990.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                alt="Trái cây"
-                              />
-                              <span>Trái cây</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
-                                alt="Hoa đào"
-                              />
-                              <span>Hoa đào</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_3.jpg?1709175143725"
-                                alt="Xạ hương"
-                              />
-                              <span>Xạ hương</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-
-                    <!-- <div class="col-6 col-md-4 col-xl-3 col-fix">
-                      <div class="item_product_main">
-                        <form
-                          action="https://bean-perfume.mysapo.net/cart/add"
-                          method="post"
-                          class="variants product-action"
-                          data-cart-form
-                          data-id="product-actions-33655736"
-                          enctype="multipart/form-data"
-                        >
-                          <div class="product-thumbnail">
-                            <a
-                              class="image_thumb scale_hover"
-                              href="../acqua-di-gio-eau-de-parfum.html"
-                              title="Acqua di Gio Eau de Parfum"
-                            >
-                              <img
-                                width="480"
-                                height="480"
-                                class="lazyload image1"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/acqua-di-gio-edp-ca93ce28e17.png?v=1701240793627"
-                                alt="Acqua di Gio Eau de Parfum"
-                              />
-                            </a>
-                            <div class="action">
-                              <input
-                                class="hidden"
-                                type="hidden"
-                                name="variantId"
-                                value="104122038"
-                              />
-                              <button
-                                class="btn-cart btn-views"
-                                title="Xem chi tiết"
-                                type="button"
-                                onclick="window.location.href='../acqua-di-gio-eau-de-parfum.html'"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-detail"
-                                  ></use>
-                                </svg>
-                              </button>
-                              <a
-                                title="Xem nhanh"
-                                href="../acqua-di-gio-eau-de-parfum.html"
-                                data-handle="acqua-di-gio-eau-de-parfum"
-                                class="quick-view btn-views"
-                              >
-                                <svg class="icon">
-                                  <use
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xlink:href="#icon-quickview"
-                                  ></use>
-                                </svg>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="smart"><span>- 10% </span></div>
-                          <a
-                            href="javascript:void(0)"
-                            class="setWishlist btn-wishlist"
-                            data-wish="acqua-di-gio-eau-de-parfum"
-                            tabindex="0"
-                            title="Thêm vào yêu thích"
-                          >
-                            <svg class="icon">
-                              <use
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xlink:href="#icon-wishlist"
-                              ></use>
-                            </svg>
-                          </a>
-                          <div class="product-info">
-                            <h3 class="product-name">
-                              <a
-                                class="line-clamp line-clamp-1 text-center"
-                                href="../acqua-di-gio-eau-de-parfum.html"
-                                title="Acqua di Gio Eau de Parfum"
-                                >Acqua di Gio Eau de Parfum</a
-                              >
-                            </h3>
-                            <div class="price-box">
-                              2.655.000₫
-                              <span class="compare-price">2.950.000₫</span>
-                            </div>
-                          </div>
-                          <ul class="fragrant_product">
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_9.jpg?1709175143725"
-                                alt="Biển"
-                              />
-                              <span>Biển</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
-                                alt="Hoa đào"
-                              />
-                              <span>Hoa đào</span>
-                            </li>
-                            <li class="text-center">
-                              <img
-                                width="90"
-                                height="90"
-                                class="lazyload"
-                                src="../../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
-                                alt="Cỏ"
-                              />
-                              <span>Cỏ</span>
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div> -->
-                  </div>
-                </div>
 
                 <div class="pagenav">
                   <nav
@@ -2499,190 +1055,186 @@
               </div>
             </div>
 
-            <div class="descrip_coll content_coll add_apper">
-              <p>
-                Bạn đang tìm cách nâng cao phong cách cá nhân của mình và để lại
-                ấn tượng lâu dài?&nbsp;Bean Perfume là điểm đến lý tưởng để bạn
-                mua nước hoa trực tuyến tại Hồ Chí Minh, Việt Nam.&nbsp;Chúng
-                tôi hiểu tầm quan trọng của một hương thơm quyến rũ.&nbsp;Nước
-                hoa của chúng tôi được tạo ra theo cách phản ánh cá tính, Nó bổ
-                sung cho cá tính của bạn.
-              </p>
-              <p>
-                Với nhiều loại nước hoa dành cho nam, nữ và&nbsp;unisex, chúng
-                tôi cung cấp một bộ sưu tập mùi hương tinh tế.&nbsp;Nó phục vụ
-                cho mọi sở thích và sở thích.&nbsp;Phạm vi đa dạng của chúng tôi
-                bao gồm một loạt các hương thơm quyến rũ.&nbsp;Khám phá hương
-                thơm hoàn hảo phù hợp với bạn và khẳng định phong cách ở bất cứ
-                nơi đâu bạn đến.
-              </p>
-              <p>
-                <img
-                  height="385"
-                  width="630"
-                  alt="Banner"
-                  src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/files/nong-do-va-mui-huong-nuoc-hoae9d8.jpg?v=1701252641795"
-                />
-              </p>
-              <p><strong>Nước Hoa Nam:</strong></p>
-              <p>
-                Tại Bean Perfume, chúng tôi nhận ra rằng mỗi người đàn ông đều
-                là duy nhất và có phong cách riêng biệt.&nbsp;Bộ sưu tập nước
-                hoa dành cho nam giới của chúng tôi thể hiện sự tinh tế, lôi
-                cuốn và tự tin.
-              </p>
-              <p>
-                Chúng tôi có loại nước hoa thích hợp cho bạn, bất kể bạn muốn
-                hương cam quýt tươi mát hay hương gỗ và xạ hương để có bầu không
-                khí mạnh mẽ và nam tính.&nbsp;Khám phá bộ sưu tập nước hoa nam
-                của chúng tôi ở Dubai để để lại ấn tượng lâu dài.
-              </p>
-              <p><strong>Nước Hoa Dành Cho Nữ:</strong></p>
-              <p>
-                Với bộ sưu tập nước hoa dành cho phụ nữ hấp dẫn của chúng tôi,
-                bạn có thể khơi dậy sự nữ tính và tôn lên vẻ quyến rũ bên trong
-                của mình.&nbsp;Chúng tôi có nhiều loại nước hoa phù hợp với sở
-                thích của bất kỳ người phụ nữ nào.
-              </p>
-              <p>
-                Nó bao gồm hương hoa và bột mang lại cảm giác sang trọng và
-                duyên dáng.&nbsp;Bạn có thể nắm bắt được bản chất của sự nhiệt
-                tình của tuổi trẻ.&nbsp;Hãy tìm mùi hương lý tưởng để tôn lên cá
-                tính của bạn và để lại dấu vết mùi hương lôi cuốn ở mọi nơi bạn
-                đến.&nbsp;Mua trực tuyến nước hoa nữ của chúng tôi ở Dubai, Các
-                Tiểu vương quốc Ả Rập Thống nhất.
-              </p>
-              <p><strong>Nước Hoa Unisex:</strong></p>
-              <p>
-                Cửa hàng nước hoa Unisex của chúng tôi ở Hồ Chí Minh, vượt qua
-                các ranh giới truyền thống và mang đến trải nghiệm khứu giác độc
-                đáo mà mọi người đều có thể tận hưởng.&nbsp;Những loại nước hoa
-                này thể hiện sự pha trộn hài hòa giữa các nốt hương quyến rũ thu
-                hút cả nam và nữ.
-              </p>
-              <p>
-                Bạn thích hương thơm và vị cay hay hương tươi mát và thủy
-                sinh?&nbsp;Nước hoa unisex của chúng tôi cho phép bạn thể hiện
-                bản thân một cách tự do và thể hiện cá tính của mình mà không bị
-                giới hạn.
-              </p>
-              <p><strong>Khám Phá Các Danh Mục Hương Thơm Quyến Rũ:</strong></p>
-              <p>
-                Ngoài các dòng sản phẩm toàn diện dành cho nam, nữ
-                và&nbsp;unisex, nước hoa của chúng tôi còn được phân loại dựa
-                trên đặc tính mùi hương riêng biệt của từng loại.&nbsp;Khám phá
-                các danh mục nước hoa sau để tìm ra loại nước hoa phù hợp với
-                bạn:
-              </p>
-              <p>
-                <strong>Tươi mát:</strong>&nbsp;Trải nghiệm những mùi hương tiếp
-                thêm sinh lực thể hiện bầu không khí sắc nét và sạch sẽ.
-              </p>
-              <p>
-                <strong>Aquatic:</strong>&nbsp;Đắm mình vào thế giới của hương
-                thơm tươi mát và đại dương đưa bạn đến bờ biển.
-              </p>
-              <p>
-                <strong>Màu xanh lá cây:</strong>&nbsp;Ôm trọn vẻ đẹp của thiên
-                nhiên với hương thơm lấy cảm hứng từ cảnh quan xanh tươi.
-              </p>
-              <p>
-                <strong>Musky:</strong>&nbsp;Giải phóng sự gợi cảm của bạn bằng
-                tông màu xạ hương quyến rũ để lại ấn tượng lâu dài.
-              </p>
-              <p>
-                <strong>Hương trái cây:</strong>&nbsp;Thưởng thức hương thơm
-                trái cây gợi lên cảm giác tươi mát và sức sống.
-              </p>
-              <p>
-                <strong>Leathery:</strong>&nbsp;Khám phá sự quyến rũ của mùi
-                hương da thuộc toát lên sự tinh tế và tinh tế.
-              </p>
-              <p>
-                <strong>Ngọt ngào:</strong>&nbsp;Đắm mình trong sự ngọt ngào thú
-                vị với hương thơm đánh thức các giác quan.
-              </p>
-              <p>
-                <strong>Hương hoa:</strong>&nbsp;Ôm trọn sự sang trọng và duyên
-                dáng của những nốt hương hoa thể hiện vẻ đẹp vượt thời gian.
-              </p>
-              <p>
-                <strong>Oudhy:</strong>&nbsp;Trải nghiệm hương thơm phong phú và
-                sang trọng của oud, một thành phần đặc trưng trong nước hoa
-                Trung Đông.
-              </p>
-              <p>
-                <strong>Cam quýt:</strong>&nbsp;Tận hưởng hương thơm rực rỡ và
-                nồng nàn đánh thức các giác quan.
-              </p>
-              <p>
-                <strong>Aromatic:</strong>&nbsp;Khám phá sức quyến rũ quyến rũ
-                của mùi hương thơm tỏa ra sự ấm áp và thoải mái.
-              </p>
-              <p>
-                <strong>Cay:</strong>&nbsp;Thêm một chút gia vị vào bộ sưu tập
-                nước hoa của bạn với những mùi hương khơi dậy niềm đam mê và sự
-                tò mò.
-              </p>
-              <p>
-                <strong>Oriental:</strong>&nbsp;Bắt đầu cuộc hành trình xuyên
-                qua sự kỳ lạ với hương thơm phương Đông quyến rũ trí tưởng
-                tượng.
-              </p>
-              <p>
-                <strong>Gourmand:</strong>&nbsp;Thưởng thức hương thơm thơm ngon
-                gợi lên hương thơm hấp dẫn của ẩm thực.
-              </p>
-              <p>
-                <strong>Woody:</strong>&nbsp;Đắm mình trong vòng tay trần tục và
-                dễ chịu của hương thơm gỗ.
-              </p>
-              <p>
-                <strong>Phấn:</strong>&nbsp;Trải nghiệm những nốt hương tinh tế
-                và dễ chịu của mùi hương phấn gợi lên cảm giác hoài cổ.
-              </p>
-              <p>
-                <strong>Ambery:</strong>&nbsp;Khám phá sự ấm áp và tinh tế của
-                nước hoa có mùi hổ phách.
-              </p>
-              <p>
-                Bean Perfume Thể hiện sự thanh lịch vượt thời gian của nước hoa
-                chypre, được biết đến với sự pha trộn hài hòa giữa hương cam
-                quýt, hoa và gỗ.
-              </p>
-              <p>
-                <strong>Mossy:</strong>&nbsp;Đắm chìm trong hương thơm xanh và
-                đất của những mùi hương rêu.
-              </p>
-              <p><strong>Tại Sao Chọn Nước Hoa Bean Perfume?</strong></p>
-              <ul>
-                <li>
-                  Bộ sưu tập nước hoa phong phú dành cho nam, nữ&nbsp;và
-                  &nbsp;unisex.
-                </li>
-                <li>
-                  Đa dạng mùi hương quyến rũ phù hợp với mọi sở thích và sở
-                  thích.
-                </li>
-                <li>Nguyên liệu chất lượng cao và tay nghề tỉ mỉ.</li>
-                <li>Mùi hương đích thực và lâu dài tạo nên sự khẳng định.</li>
-                <li>
-                  Trải nghiệm mua sắm trực tuyến thuận tiện với các tùy chọn
-                  thanh toán an toàn.
-                </li>
-                <li>Giao hàng nhanh chóng và đáng tin cậy.</li>
-                <li>
-                  Hỗ trợ khách hàng chuyên dụng để hỗ trợ bạn với bất kỳ thắc
-                  mắc hoặc mối quan tâm nào.
-                </li>
-              </ul>
-              <p>
-                Khám phá cửa hàng trực tuyến của chúng tôi và bắt đầu hành trình
-                hương thơm phù hợp với phong cách và cá tính độc đáo của
-                bạn.&nbsp;Mua nước hoa trực tuyến tại Bean Perfume.&nbsp;Hãy
-                trải nghiệm sức hấp dẫn quyến rũ của Nước hoa Bean Perfume ngay
-                hôm nay.
-              </p>
+        <div class="descrip_coll content_coll add_apper">
+          <p>
+            Bạn đang tìm cách nâng cao phong cách cá nhân của mình và để lại
+            ấn tượng lâu dài?&nbsp;Bean Perfume là điểm đến lý tưởng để bạn
+            mua nước hoa trực tuyến tại Hồ Chí Minh, Việt Nam.&nbsp;Chúng
+            tôi hiểu tầm quan trọng của một hương thơm quyến rũ.&nbsp;Nước
+            hoa của chúng tôi được tạo ra theo cách phản ánh cá tính, Nó bổ
+            sung cho cá tính của bạn.
+          </p>
+          <p>
+            Với nhiều loại nước hoa dành cho nam, nữ và&nbsp;unisex, chúng
+            tôi cung cấp một bộ sưu tập mùi hương tinh tế.&nbsp;Nó phục vụ
+            cho mọi sở thích và sở thích.&nbsp;Phạm vi đa dạng của chúng tôi
+            bao gồm một loạt các hương thơm quyến rũ.&nbsp;Khám phá hương
+            thơm hoàn hảo phù hợp với bạn và khẳng định phong cách ở bất cứ
+            nơi đâu bạn đến.
+          </p>
+          <p>
+            <img height="385" width="630" alt="Banner"
+              src="../../bizweb.dktcdn.net/100/503/826/files/nong-do-va-mui-huong-nuoc-hoae9d8.jpg?v=1701252641795" />
+          </p>
+          <p><strong>Nước Hoa Nam:</strong></p>
+          <p>
+            Tại Bean Perfume, chúng tôi nhận ra rằng mỗi người đàn ông đều
+            là duy nhất và có phong cách riêng biệt.&nbsp;Bộ sưu tập nước
+            hoa dành cho nam giới của chúng tôi thể hiện sự tinh tế, lôi
+            cuốn và tự tin.
+          </p>
+          <p>
+            Chúng tôi có loại nước hoa thích hợp cho bạn, bất kể bạn muốn
+            hương cam quýt tươi mát hay hương gỗ và xạ hương để có bầu không
+            khí mạnh mẽ và nam tính.&nbsp;Khám phá bộ sưu tập nước hoa nam
+            của chúng tôi ở Dubai để để lại ấn tượng lâu dài.
+          </p>
+          <p><strong>Nước Hoa Dành Cho Nữ:</strong></p>
+          <p>
+            Với bộ sưu tập nước hoa dành cho phụ nữ hấp dẫn của chúng tôi,
+            bạn có thể khơi dậy sự nữ tính và tôn lên vẻ quyến rũ bên trong
+            của mình.&nbsp;Chúng tôi có nhiều loại nước hoa phù hợp với sở
+            thích của bất kỳ người phụ nữ nào.
+          </p>
+          <p>
+            Nó bao gồm hương hoa và bột mang lại cảm giác sang trọng và
+            duyên dáng.&nbsp;Bạn có thể nắm bắt được bản chất của sự nhiệt
+            tình của tuổi trẻ.&nbsp;Hãy tìm mùi hương lý tưởng để tôn lên cá
+            tính của bạn và để lại dấu vết mùi hương lôi cuốn ở mọi nơi bạn
+            đến.&nbsp;Mua trực tuyến nước hoa nữ của chúng tôi ở Dubai, Các
+            Tiểu vương quốc Ả Rập Thống nhất.
+          </p>
+          <p><strong>Nước Hoa Unisex:</strong></p>
+          <p>
+            Cửa hàng nước hoa Unisex của chúng tôi ở Hồ Chí Minh, vượt qua
+            các ranh giới truyền thống và mang đến trải nghiệm khứu giác độc
+            đáo mà mọi người đều có thể tận hưởng.&nbsp;Những loại nước hoa
+            này thể hiện sự pha trộn hài hòa giữa các nốt hương quyến rũ thu
+            hút cả nam và nữ.
+          </p>
+          <p>
+            Bạn thích hương thơm và vị cay hay hương tươi mát và thủy
+            sinh?&nbsp;Nước hoa unisex của chúng tôi cho phép bạn thể hiện
+            bản thân một cách tự do và thể hiện cá tính của mình mà không bị
+            giới hạn.
+          </p>
+          <p><strong>Khám Phá Các Danh Mục Hương Thơm Quyến Rũ:</strong></p>
+          <p>
+            Ngoài các dòng sản phẩm toàn diện dành cho nam, nữ
+            và&nbsp;unisex, nước hoa của chúng tôi còn được phân loại dựa
+            trên đặc tính mùi hương riêng biệt của từng loại.&nbsp;Khám phá
+            các danh mục nước hoa sau để tìm ra loại nước hoa phù hợp với
+            bạn:
+          </p>
+          <p>
+            <strong>Tươi mát:</strong>&nbsp;Trải nghiệm những mùi hương tiếp
+            thêm sinh lực thể hiện bầu không khí sắc nét và sạch sẽ.
+          </p>
+          <p>
+            <strong>Aquatic:</strong>&nbsp;Đắm mình vào thế giới của hương
+            thơm tươi mát và đại dương đưa bạn đến bờ biển.
+          </p>
+          <p>
+            <strong>Màu xanh lá cây:</strong>&nbsp;Ôm trọn vẻ đẹp của thiên
+            nhiên với hương thơm lấy cảm hứng từ cảnh quan xanh tươi.
+          </p>
+          <p>
+            <strong>Musky:</strong>&nbsp;Giải phóng sự gợi cảm của bạn bằng
+            tông màu xạ hương quyến rũ để lại ấn tượng lâu dài.
+          </p>
+          <p>
+            <strong>Hương trái cây:</strong>&nbsp;Thưởng thức hương thơm
+            trái cây gợi lên cảm giác tươi mát và sức sống.
+          </p>
+          <p>
+            <strong>Leathery:</strong>&nbsp;Khám phá sự quyến rũ của mùi
+            hương da thuộc toát lên sự tinh tế và tinh tế.
+          </p>
+          <p>
+            <strong>Ngọt ngào:</strong>&nbsp;Đắm mình trong sự ngọt ngào thú
+            vị với hương thơm đánh thức các giác quan.
+          </p>
+          <p>
+            <strong>Hương hoa:</strong>&nbsp;Ôm trọn sự sang trọng và duyên
+            dáng của những nốt hương hoa thể hiện vẻ đẹp vượt thời gian.
+          </p>
+          <p>
+            <strong>Oudhy:</strong>&nbsp;Trải nghiệm hương thơm phong phú và
+            sang trọng của oud, một thành phần đặc trưng trong nước hoa
+            Trung Đông.
+          </p>
+          <p>
+            <strong>Cam quýt:</strong>&nbsp;Tận hưởng hương thơm rực rỡ và
+            nồng nàn đánh thức các giác quan.
+          </p>
+          <p>
+            <strong>Aromatic:</strong>&nbsp;Khám phá sức quyến rũ quyến rũ
+            của mùi hương thơm tỏa ra sự ấm áp và thoải mái.
+          </p>
+          <p>
+            <strong>Cay:</strong>&nbsp;Thêm một chút gia vị vào bộ sưu tập
+            nước hoa của bạn với những mùi hương khơi dậy niềm đam mê và sự
+            tò mò.
+          </p>
+          <p>
+            <strong>Oriental:</strong>&nbsp;Bắt đầu cuộc hành trình xuyên
+            qua sự kỳ lạ với hương thơm phương Đông quyến rũ trí tưởng
+            tượng.
+          </p>
+          <p>
+            <strong>Gourmand:</strong>&nbsp;Thưởng thức hương thơm thơm ngon
+            gợi lên hương thơm hấp dẫn của ẩm thực.
+          </p>
+          <p>
+            <strong>Woody:</strong>&nbsp;Đắm mình trong vòng tay trần tục và
+            dễ chịu của hương thơm gỗ.
+          </p>
+          <p>
+            <strong>Phấn:</strong>&nbsp;Trải nghiệm những nốt hương tinh tế
+            và dễ chịu của mùi hương phấn gợi lên cảm giác hoài cổ.
+          </p>
+          <p>
+            <strong>Ambery:</strong>&nbsp;Khám phá sự ấm áp và tinh tế của
+            nước hoa có mùi hổ phách.
+          </p>
+          <p>
+            Bean Perfume Thể hiện sự thanh lịch vượt thời gian của nước hoa
+            chypre, được biết đến với sự pha trộn hài hòa giữa hương cam
+            quýt, hoa và gỗ.
+          </p>
+          <p>
+            <strong>Mossy:</strong>&nbsp;Đắm chìm trong hương thơm xanh và
+            đất của những mùi hương rêu.
+          </p>
+          <p><strong>Tại Sao Chọn Nước Hoa Bean Perfume?</strong></p>
+          <ul>
+            <li>
+              Bộ sưu tập nước hoa phong phú dành cho nam, nữ&nbsp;và
+              &nbsp;unisex.
+            </li>
+            <li>
+              Đa dạng mùi hương quyến rũ phù hợp với mọi sở thích và sở
+              thích.
+            </li>
+            <li>Nguyên liệu chất lượng cao và tay nghề tỉ mỉ.</li>
+            <li>Mùi hương đích thực và lâu dài tạo nên sự khẳng định.</li>
+            <li>
+              Trải nghiệm mua sắm trực tuyến thuận tiện với các tùy chọn
+              thanh toán an toàn.
+            </li>
+            <li>Giao hàng nhanh chóng và đáng tin cậy.</li>
+            <li>
+              Hỗ trợ khách hàng chuyên dụng để hỗ trợ bạn với bất kỳ thắc
+              mắc hoặc mối quan tâm nào.
+            </li>
+          </ul>
+          <p>
+            Khám phá cửa hàng trực tuyến của chúng tôi và bắt đầu hành trình
+            hương thơm phù hợp với phong cách và cá tính độc đáo của
+            bạn.&nbsp;Mua nước hoa trực tuyến tại Bean Perfume.&nbsp;Hãy
+            trải nghiệm sức hấp dẫn quyến rũ của Nước hoa Bean Perfume ngay
+            hôm nay.
+          </p>
 
               <div class="bg_cl"></div>
             </div>
@@ -2734,6 +1286,41 @@
           $(".content_coll").removeClass("active");
           $(".bg_cl").removeClass("active");
         });
+        <div class="view_mores">
+          <a class="one">Xem thêm
+            <img width="90" height="90"
+              src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/sortdown02fb.png?1709175143725"
+              alt="Bean Perfume" /></a>
+          <a class="two active">Thu gọn
+            <img width="90" height="90"
+              src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/sortdown02fb.png?1709175143725"
+              alt="Bean Perfume" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="collection_scrolltabs">
+      <div class="toolbar-inner">
+        <a class="tab-item tab-filter" title="Lọc"><i class="evo-icon icon-filter"></i><span
+            class="tabbar-label">Lọc</span></a>
+        <a class="tab-item tab-sort" title="Sắp xếp"><i class="evo-icon icon-sort"></i><span class="tabbar-label">Sắp
+            xếp</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="opacity_sidebar"></div>
+  <script>
+    $(".view_mores a.one").click(function () {
+      $(this).addClass("active");
+      $(".view_mores a.two").removeClass("active");
+      $(".content_coll").addClass("active");
+      $(".bg_cl").addClass("active");
+    });
+    $(".view_mores a.two").click(function () {
+      $(this).addClass("active");
+      $(".view_mores a.one").removeClass("active");
+      $(".content_coll").removeClass("active");
+      $(".bg_cl").removeClass("active");
+    });
 
         var colName = "Tất cả sản phẩm";
 

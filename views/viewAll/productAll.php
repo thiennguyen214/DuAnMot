@@ -15,7 +15,9 @@
 
 
                 <li>
-                    <a class="changeurl" href="nuoc-hoa-nu.html"><span>Nước hoa Nữ</span></a>
+                    <a class="changeurl" href="nuoc-hoa-nu.html"><span>
+                            <?= $product['t_name'] ?>
+                        </span></a>
                     <span class="mr_lr">&nbsp;<svg aria-hidden="true" focusable="false" data-prefix="fas"
                             data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512" class="svg-inline--fa fa-chevron-right fa-w-10">
@@ -25,20 +27,22 @@
                         </svg>&nbsp;</span>
                 </li>
 
-                <li><strong><span>Tommy Hilfiger Tommy Girl</span></strong>
+                <li><strong><span>
+                            <?= $product['name'] ?>
+                        </span></strong>
                 <li>
 
             </ul>
         </div>
     </section>
     <section class="product layout-product" itemscope itemtype="https://schema.org/Product">
-        <meta itemprop="category" content="Nước hoa Nữ">
+        <meta itemprop="category" content="<?= $product['t_name'] ?>">
         <meta itemprop="url" content="//bean-perfume.mysapo.net/tommy-hilfiger-tommy-girl">
-        <meta itemprop="name" content="Tommy Hilfiger Tommy Girl">
+        <meta itemprop="name" content="<?= $product['name'] ?>">
         <meta itemprop="image"
             content="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/grande/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview3eae.png?v=1701248377597">
-        <meta itemprop="description" content="Giới tính: Nữ
-        Xuất xứ: Anh, Đức, Pháp
+        <meta itemprop="description" content="Giới tính: <?= $sex ?>
+        Xuất xứ: <?= $product['o_name'] ?>
         Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt
 
         Hương đặc trưng
@@ -57,13 +61,13 @@
             </div>
             <link itemprop="availability" href="http://schema.org/InStock">
             <meta itemprop="priceCurrency" content="VND">
-            <meta itemprop="price" content="705000">
+            <meta itemprop="price" content="<?= $product['price_sale'] ?>">
             <meta itemprop="url" content="tommy-hilfiger-tommy-girl.html">
             <span itemprop="UnitPriceSpecification" itemscope itemtype="https://schema.org/Downpayment">
-                <meta itemprop="priceType" content="705000">
+                <meta itemprop="priceType" content="<?= $product['price_sale'] ?>">
             </span>
             <span itemprop="UnitPriceSpecification" itemscope itemtype="https://schema.org/Downpayment">
-                <meta itemprop="priceSpecification" content="830000">
+                <meta itemprop="priceSpecification" content="<?= $product['price'] ?>">
             </span>
             <meta itemprop="priceValidUntil" content="2099-01-01">
         </div>
@@ -82,36 +86,15 @@
 
                             <div class="swiper-container gallery-top">
                                 <div class="swiper-wrapper" id="lightgallery">
-
-                                    <a class="swiper-slide" data-hash="0"
-                                        href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/1024x1024/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview3eae.png?v=1701248377597"
-                                        title="Click để xem">
-                                        <img height="480" width="480"
-                                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview3eae.png?v=1701248377597"
-                                            alt="Tommy Hilfiger Tommy Girl"
-                                            data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
-                                            class="img-responsive mx-auto d-block swiper-lazy" />
-                                    </a>
-
-                                    <a class="swiper-slide" data-hash="1"
-                                        href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/1024x1024/100/503/826/products/tommy-hilfiger-tommy-girl-edt-3006f5.jpg?v=1701248378547"
-                                        title="Click để xem">
-                                        <img height="480" width="480"
-                                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-3006f5.jpg?v=1701248378547"
-                                            alt="Tommy Hilfiger Tommy Girl"
-                                            data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547"
-                                            class="img-responsive mx-auto d-block swiper-lazy" />
-                                    </a>
-
-                                    <a class="swiper-slide" data-hash="2"
-                                        href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/1024x1024/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f4a40.jpg?v=1701248379513"
-                                        title="Click để xem">
-                                        <img height="480" width="480"
-                                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f4a40.jpg?v=1701248379513"
-                                            alt="Tommy Hilfiger Tommy Girl"
-                                            data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513"
-                                            class="img-responsive mx-auto d-block swiper-lazy" />
-                                    </a>
+                                    <?php //foreach ($imgs as $img) { ?>
+                                        <a class="swiper-slide" data-hash="0" href="<?= $img['img'] ?>"
+                                            title="Click để xem">
+                                            <img height="480" width="480" src="<?= $data['img'] ?>"
+                                                alt="<?= $product['name'] ?>"
+                                                data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
+                                                class="img-responsive mx-auto d-block swiper-lazy" />
+                                        </a>
+                                    <?php //} ?>
 
                                 </div>
 
@@ -126,36 +109,17 @@
                             </div>
                             <div class="swiper-container gallery-thumbs">
                                 <div class="swiper-wrapper">
-
-                                    <div class="swiper-slide" data-hash="0">
-                                        <div class="p-100">
-                                            <img height="100" width="100"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview3eae.png?v=1701248377597"
-                                                alt="Tommy Hilfiger Tommy Girl"
-                                                data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
-                                                class="swiper-lazy" />
+                                    <?php //foreach ($imgs as $img) { ?>
+                                        <div class="swiper-slide" data-hash="0">
+                                            <div class="p-100">
+                                                <img height="100" width="100" src="<?= $data['img'] ?>"
+                                                    alt="<?= $product['name'] ?>"
+                                                    data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
+                                                    class="swiper-lazy" />
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php //} ?>
 
-                                    <div class="swiper-slide" data-hash="1">
-                                        <div class="p-100">
-                                            <img height="100" width="100"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-edt-3006f5.jpg?v=1701248378547"
-                                                alt="Tommy Hilfiger Tommy Girl"
-                                                data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547"
-                                                class="swiper-lazy" />
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide" data-hash="2">
-                                        <div class="p-100">
-                                            <img height="100" width="100"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f4a40.jpg?v=1701248379513"
-                                                alt="Tommy Hilfiger Tommy Girl"
-                                                data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513"
-                                                class="swiper-lazy" />
-                                        </div>
-                                    </div>
 
                                 </div>
                                 <div class="swiper-button-next">
@@ -169,18 +133,21 @@
                     </div>
                     <div class=" col-12 col-md-12 col-lg-7">
                         <div class="details-pro">
-                            <h1 class="title-product">Tommy Hilfiger Tommy Girl</h1>
+                            <h1 class="title-product">
+                                <?= $product['name'] ?>
+                            </h1>
 
                             <div class="reviews_details_product ">
                                 <div class="sapo-product-reviews-badge sapo-product-reviews-badge-detail"
-                                    data-id="33658271"></div>
+                                    data-id="<?= $product['id'] ?>"></div>
                             </div>
 
                             <div class="inventory_quantity">
                                 <div class="thump-break">
                                     <span class="mb-break">
                                         <span class="stock-brand-title">Thương hiệu:</span>
-                                        <span class="a-vendor">Tommy Hilfiger
+                                        <span class="a-vendor">
+                                            <?= $product['b_name'] ?>
                                         </span>
                                     </span>
                                     <span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
@@ -189,7 +156,7 @@
 
 
                                         <span class="a-stock">
-                                            Còn hàng
+                                            <?= ($product['so_luong_ban'] == $product['so_luong_kho']) ? 'Hết hàng' : 'Còn hàng' ?>
                                         </span>
 
 
@@ -200,16 +167,18 @@
                             <div class="price-box clearfix">
 
                                 <span class="special-price">
-                                    <span class="price product-price">705.000₫</span>
-                                    <meta itemprop="price" content="705000">
+                                    <span class="price product-price">
+                                        <?= $product['price_sale'] ?>₫
+                                    </span>
+                                    <meta itemprop="price" content="<?= $product['price_sale'] ?>">
                                     <meta itemprop="priceCurrency" content="VND">
                                 </span> <!-- Giá Khuyến mại -->
                                 <span class="old-price" itemprop="priceSpecification" itemscope=""
                                     itemtype="http://schema.org/priceSpecification">
                                     <del class="price product-price-old">
-                                        830.000₫
+                                        <?= $product['price'] ?>₫
                                     </del>
-                                    <meta itemprop="price" content="830000">
+                                    <meta itemprop="price" content="<?= $product['price'] ?>">
                                     <meta itemprop="priceCurrency" content="VND">
                                 </span> <!-- Giá gốca -->
 
@@ -224,8 +193,12 @@
 
                             <div class="motangan">
                                 <div class="rte">
-                                    <p>Giới tính: Nữ</p>
-                                    <p>Xuất xứ: Anh, Đức, Pháp</p>
+                                    <p>Giới tính:
+                                        <?= $sex ?>
+                                    </p>
+                                    <p>Xuất xứ:
+                                        <?= $product['o_name'] ?>
+                                    </p>
                                     <p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />
                                         <br />
                                         <strong>Hương đặc trưng</strong>
@@ -269,7 +242,7 @@
                             </div>
 
                             <div class="clearfix"></div>
-                            <div class="product-coupon__wrapper my-3">
+                            <!-- <div class="product-coupon__wrapper my-3">
                                 <strong class="d-block mb-2">Các mã giảm giá có thể áp dụng: </strong>
                                 <div class="product-coupons coupon-toggle-btn">
                                     <div class="coupon_item lite">
@@ -300,7 +273,7 @@
                                             class=""></path>
                                     </svg>
                                 </div>
-                            </div>
+                            </div> -->
                             <div id="modal-coupon-product" class="modalcoupon-product" style="display:none;">
                                 <div class="modalcoupon-overlay fancybox-overlay fancybox-overlay-fixed"></div>
                                 <div class="modal-coupon-product">
@@ -495,67 +468,25 @@
                                 })
                             </script>
 
-                            <form enctype="multipart/form-data" data-cart-form id="add-to-cart-form"
-                                action="https://bean-perfume.mysapo.net/cart/add" method="post" class="form-inline">
+                            <form enctype="multipart/form-data" data-cart-form id="add-to-cart-form" action=""
+                                method="post" class="form-inline">
 
                                 <div class="form-product">
-
-                                    <div class="select-swatch">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <!-- <div class="select-swatch">
                                         <script>$(window).load(function () { $('.selector-wrapper:eq(0)').hide(); });</script>
-
-
-
-
-
-
                                         <div class="swatch clearfix" data-option-index="0">
                                             <div class="header">Dung tích: <span class="value-roperties"></span></div>
                                             <div class="thump-swatch">
-
-
-
-
-
-
-
                                                 <div data-value="30ml" class="swatch-element 30ml available">
-
                                                     <input id="swatch-0-30ml" type="radio" name="option-0" value="30ml"
                                                         checked />
-
                                                     <label for="swatch-0-30ml">
                                                         30ml
                                                     </label>
-
                                                 </div>
-
-
                                                 <script>
                                                     jQuery('.swatch[data-option-index="0"] .30ml').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
                                                 </script>
-
-
-
-
-
-
-
                                                 <div data-value="100ml" class="swatch-element 100ml available">
 
                                                     <input id="swatch-0-100ml" type="radio" name="option-0"
@@ -566,33 +497,24 @@
                                                     </label>
 
                                                 </div>
-
-
                                                 <script>
                                                     jQuery('.swatch[data-option-index="0"] .100ml').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
                                                 </script>
-
-
                                             </div>
                                         </div>
-
-
-
                                     </div>
-
                                     <div class="box-variant clearfix  d-none ">
 
                                         <select id="product-selectors" class="form-control form-control-lg"
                                             name="variantId" style="display:none">
 
-                                            <option selected="selected" value="104170999">30ml - 705.000₫</option>
+                                            <option selected="selected" value="<?= $product['id'] ?>">30ml - 705.000₫</option>
 
-                                            <option value="104171001">100ml - 1.230.000₫</option>
+                                             <option value="104171001">100ml - 1.230.000₫</option>
 
-                                        </select>
+                                    </select>
 
-                                    </div>
-
+                                </div> -->
                                     <div class="clearfix form-group ">
                                         <div class="flex-quantity">
                                             <div class="custom custom-btn-number show">
@@ -610,15 +532,14 @@
                                                 </div>
                                             </div>
                                             <div class="btn-mua button_actions clearfix">
-
-                                                <button type="submit"
+                                                <button
                                                     class="btn btn_base normal_button btn_add_cart add_to_cart btn-cart">
-                                                    <span class="txt-main text_1">Thêm vào giỏ hàng</span>
+                                                    <a href="<?= BASE_URL . '?act=cart-add&productID=' . $product['id'] . '&quantity=1' ?>"
+                                                        class="txt-main text_1">Thêm vào giỏ hàng</a>
                                                 </button>
-                                                <a href="javascript:void(0)" class="buynow" title="">
+                                                <a href="<?= BASE_URL ?>?act=thanhtoan" class="buynow" title="">
                                                     Mua ngay
                                                 </a>
-
                                             </div>
                                         </div>
                                     </div>
@@ -693,7 +614,7 @@
                 <div class="row row-mb3">
                     <div class="col-12 col-lg-4 col-col-md-4 col-sm-12 col-xs-12  order-lg-2">
                         <div class="product_info">
-                            <div class="cart-tinhtrang">
+                            <!-- <div class="cart-tinhtrang">
                                 <div class="title_voucher">
                                     <span>Nhận quà tặng !!!</span>
                                 </div>
@@ -703,7 +624,7 @@
                                             <img width="480" height="480" class="lazyload image1"
                                                 src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
                                                 data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/h24-abf884ca034241b894f24c31c1d2-removebg-preview-min.png?v=1701315334450"
-                                                alt="Tommy Hilfiger Tommy Girl">
+                                                alt="<?= $product['name'] ?>">
                                         </div>
                                         <div class="d-flex flex-column pl-2 pl-lg-3 coupon-1">
                                             <div class="mb-2 title_gift">
@@ -716,7 +637,7 @@
                                                 enctype="multipart/form-data">
                                                 <input type="hidden" name="variantId" value="104047192" />
                                                 <a class="mr-auto btn js-gift-item text-center rounded-10 text-white font-weight-bold py-2 px-3"
-                                                    href="javascript:;" data-id="104170999"
+                                                    href="javascript:;" data-id="<?= $product['id'] ?>"
                                                     data-alias="hermes-h24-travel-spray-qua-tang" title="Nhận ngay">
                                                     <svg width="18" height="18">
                                                         <path
@@ -729,102 +650,41 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="product-favi">
                                 <a href="san-pham-noi-bat.html" title="Có thể bạn thích">
                                     <div class="title-head">
                                         Có thể bạn thích
                                     </div>
                                 </a>
+
                                 <div class="product-favi-content">
+                                    <?php foreach ($products as $pro) { ?>
+                                        <div class="product-view">
+                                            <a class="image_thumb"
+                                                href="<?= BASE_URL ?>?act=productDetail&id=<?= $pro['id'] ?>"
+                                                title="<?= $pro['name'] ?>">
+                                                <img width="480" height="480" class="lazyload" src="<?= $pro['img'] ?>"
+                                                    data-src="<?= $pro['img'] ?>" alt="<?= $pro['name'] ?>">
+                                            </a>
+                                            <div class="product-info">
+                                                <h3 class="product-name"><a
+                                                        href="<?= BASE_URL ?>?act=productDetail&id=<?= $pro['id'] ?>"
+                                                        title="Unisex Creed Millesime Imperial">
+                                                        <?= $pro['name'] ?>
+                                                    </a></h3>
+                                                <div class="price-box">
+                                                    <span class="price">
+                                                        <?= $pro['price_sale'] ?>₫
+                                                    </span>
+                                                    <span class="compare-price">
+                                                        <?= $pro['price'] ?>₫
+                                                    </span>
 
-
-
-
-                                    <div class="product-view">
-                                        <a class="image_thumb" href="unisex-creed-millesime-imperial.html"
-                                            title="Unisex Creed Millesime Imperial">
-                                            <img width="480" height="480" class="lazyload"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-creed-millesime-imperial-edp-100ml.png?v=1701251789210"
-                                                alt="Unisex Creed Millesime Imperial">
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a href="unisex-creed-millesime-imperial.html"
-                                                    title="Unisex Creed Millesime Imperial">Unisex Creed Millesime
-                                                    Imperial</a></h3>
-                                            <div class="price-box">
-                                                <span class="price">5.680.000₫</span>
-                                                <span class="compare-price">6.500.000₫</span>
-
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-
-
-                                    <div class="product-view">
-                                        <a class="image_thumb" href="nuoc-hoa-unisex-gucci-the-virgin-violet.html"
-                                            title="Nước Hoa Unisex Gucci The Virgin Violet">
-                                            <img width="480" height="480" class="lazyload"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-gucci-the-virgin-violet-edp-100ml.png?v=1701251056543"
-                                                alt="Nước Hoa Unisex Gucci The Virgin Violet">
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a
-                                                    href="nuoc-hoa-unisex-gucci-the-virgin-violet.html"
-                                                    title="Nước Hoa Unisex Gucci The Virgin Violet">Nước Hoa Unisex
-                                                    Gucci The Virgin Violet</a></h3>
-                                            <div class="price-box">
-                                                <span class="price">5.800.000₫</span>
-                                                <span class="compare-price">7.900.000₫</span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-view">
-                                        <a class="image_thumb" href="gucci-bloom-ambrosia-di-fiori.html"
-                                            title="Gucci Bloom Ambrosia di Fiori">
-                                            <img width="480" height="480" class="lazyload"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
-                                                alt="Gucci Bloom Ambrosia di Fiori">
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a href="gucci-bloom-ambrosia-di-fiori.html"
-                                                    title="Gucci Bloom Ambrosia di Fiori">Gucci Bloom Ambrosia di
-                                                    Fiori</a></h3>
-                                            <div class="price-box">
-                                                <span class="price">2.560.000₫</span>
-                                                <span class="compare-price">3.150.000₫</span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product-view">
-                                        <a class="image_thumb" href="calvin-klein-ck-one-gold.html"
-                                            title="Calvin Klein CK One Gold">
-                                            <img width="480" height="480" class="lazyload"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
-                                                alt="Calvin Klein CK One Gold">
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a href="calvin-klein-ck-one-gold.html"
-                                                    title="Calvin Klein CK One Gold">Calvin Klein CK One Gold</a></h3>
-                                            <div class="price-box">
-                                                <span class="price">1.050.000₫</span>
-                                                <span class="compare-price">1.580.000₫</span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
+                                    <?php } ?>
                                 </div>
 
                             </div>
@@ -854,65 +714,9 @@
 
                                 <div id="tab-1" class="tab-content active content_extab">
                                     <div class="rte product_getcontent content_coll">
-
-                                        <p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương
-                                            miêu tả như thế nào? Nếu chưa thì hãy mở nắp Tommy Hilfiger Tommy Girl, cô
-                                            gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>
-                                        <p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang
-                                            cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới
-                                            của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính
-                                            của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ
-                                            là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa
-                                            và Gỗ."</p>
-                                        <p>Tommy Hilfiger Tommy Girl đích thị là chai nước hoa dành cho những cô nàng
-                                            yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng
-                                            của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>
-                                        <p><img alt="Banner" height="480"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f4a40.jpg?v=1701248379513"
-                                                width="480" /></p>
-                                        <p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>
-                                        <ul>
-                                            <li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên
-                                                da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với
-                                                các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị
-                                                trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và
-                                                thuận lợi trong việc tỏa mùi hương.</li>
-                                            <li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc
-                                                làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương
-                                                trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh
-                                                hơn.</li>
-                                            <li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và
-                                                xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ
-                                                bám tỏa trên da của bạn.</li>
-                                            <li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay,
-                                                đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử
-                                                dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>
-                                            <li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không
-                                                gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại
-                                                nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện
-                                                tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc
-                                                trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc
-                                                mọi nơi.</li>
-                                        </ul>
-                                        <p>&nbsp;</p>
-                                        <p><strong>Bảo quản nước hoa:</strong></p>
-                                        <ul>
-                                            <li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc
-                                                gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra
-                                                trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24
-                                                đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.
-                                            </li>
-                                            <li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng
-                                                hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng,
-                                                nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có
-                                                nhiệt độ nóng lạnh thất thường...</li>
-                                        </ul>
-
-
+                                        <?= $product['mota'] ?>
                                         <div class="bg_cl"></div>
-
                                     </div>
-
                                     <div class="view_mores">
                                         <a class="one">Xem thêm <img width="90" height="90"
                                                 src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/sortdown02fb.png?1709175143725"
@@ -958,7 +762,8 @@
 
                                 <div id="tab-3" class="tab-content content_extab">
                                     <div class="rte">
-                                        <div id="sapo-product-reviews" class="sapo-product-reviews" data-id="33658271">
+                                        <div id="sapo-product-reviews" class="sapo-product-reviews"
+                                            data-id="<?= $product['id'] ?>">
                                             <div id="sapo-product-reviews-noitem" style="display: none;">
                                                 <div class="content">
                                                     <p data-content-text="language.suggest_noitem"></p>
@@ -1037,15 +842,17 @@
 
                                 <div class="product-view">
                                     <a class="image_thumb" href="gucci-bloom-ambrosia-di-fiori.html"
-                                        title="Gucci Bloom Ambrosia di Fiori">
+                                        title="<?= $pro['name'] ?>">
                                         <img width="480" height="480" class="lazyload"
                                             src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
                                             data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
-                                            alt="Gucci Bloom Ambrosia di Fiori">
+                                            alt="<?= $pro['name'] ?>">
                                     </a>
                                     <div class="product-info">
                                         <h3 class="product-name"><a href="gucci-bloom-ambrosia-di-fiori.html"
-                                                title="Gucci Bloom Ambrosia di Fiori">Gucci Bloom Ambrosia di Fiori</a>
+                                                title="<?= $pro['name'] ?>">
+                                                <?= $pro['name'] ?>
+                                            </a>
                                         </h3>
                                         <div class="price-box">
                                             <span class="price">2.560.000₫</span>
@@ -1092,474 +899,98 @@
                     </h3>
                     <div class="product-relate-swiper swiper-container">
                         <div class="swiper-wrapper">
+                            <?php foreach ($products as $pro) { ?>
+                                <div class="swiper-slide">
+                                    <div class=" item_product_main">
 
-
-                            <div class="swiper-slide">
-                                <div class=" item_product_main">
-
-
-
-
-
-
-
-
-
-
-                                    <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
-                                        class="variants product-action" data-cart-form
-                                        data-id="product-actions-33659220" enctype="multipart/form-data">
-                                        <div class="product-thumbnail">
-                                            <a class="image_thumb scale_hover" href="gucci-bloom-ambrosia-di-fiori.html"
-                                                title="Gucci Bloom Ambrosia di Fiori">
-                                                <img width="480" height="480" class="lazyload image1"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
-                                                    alt="Gucci Bloom Ambrosia di Fiori">
-                                            </a>
-                                            <div class="action">
-                                                <input class="hidden" type="hidden" name="variantId"
-                                                    value="104172759" />
-                                                <button class="btn-cart btn-views" title="Xem chi tiết" type="button"
-                                                    onclick="window.location.href='gucci-bloom-ambrosia-di-fiori.html'">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-detail"></use>
-                                                    </svg>
-                                                </button>
-                                                <a title="Xem nhanh" href="gucci-bloom-ambrosia-di-fiori.html"
-                                                    data-handle="gucci-bloom-ambrosia-di-fiori"
-                                                    class="quick-view btn-views">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-quickview"></use>
-                                                    </svg>
+                                        <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
+                                            class="variants product-action" data-cart-form
+                                            data-id="product-actions-<?= $pro['id'] ?>" enctype="multipart/form-data">
+                                            <div class="product-thumbnail">
+                                                <a class="image_thumb scale_hover"
+                                                    href="<?= BASE_URL ?>?act=productDetail&id=<?= $pro['id'] ?>"
+                                                    title="<?= $pro['name'] ?>">
+                                                    <img width="480" height="480" class="lazyload image1"
+                                                        src="<?= $pro['img'] ?>" data-src="<?= $pro['img'] ?>"
+                                                        alt="<?= $pro['name'] ?>">
                                                 </a>
+                                                <div class="action">
+                                                    <input class="hidden" type="hidden" name="variantId"
+                                                        value="<?= $pro['id'] ?>" />
+                                                    <button class="btn-cart btn-views" title="Xem chi tiết" type="button"
+                                                        onclick="window.location.href='<?= BASE_URL ?>?act=productDetail&id=<?= $pro['id'] ?>'">
+                                                        <svg class="icon">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                xlink:href="#icon-detail"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <a title="Xem nhanh"
+                                                        href="<?= BASE_URL ?>?act=productDetail&id=<?= $pro['id'] ?>"
+                                                        data-handle="gucci-bloom-ambrosia-di-fiori"
+                                                        class="quick-view btn-views">
+                                                        <svg class="icon">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                xlink:href="#icon-quickview"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+
                                             </div>
-
-                                        </div>
-                                        <div class="smart"><span>-
-                                                19%
-                                            </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
-                                            data-wish="gucci-bloom-ambrosia-di-fiori" tabindex="0"
-                                            title="Thêm vào yêu thích">
-                                            <svg class="icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                    xlink:href="#icon-wishlist"></use>
-                                            </svg>
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center"
-                                                    href="gucci-bloom-ambrosia-di-fiori.html"
-                                                    title="Gucci Bloom Ambrosia di Fiori">Gucci Bloom Ambrosia di
-                                                    Fiori</a></h3>
-                                            <div class="price-box">
-                                                2.560.000₫
-                                                <span class="compare-price">3.150.000₫</span>
-
-                                            </div>
-                                        </div>
-                                        <ul class="fragrant_product">
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                                    alt="Hoa nhài">
-                                                <span>Hoa nhài</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
-                                                    alt="Hoa đào">
-                                                <span>Hoa đào</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_4.jpg?1709175143725"
-                                                    alt="Hoa hồng">
-                                                <span>Hoa hồng</span>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div>
-                            </div>
-
-
-
-                            <div class="swiper-slide">
-                                <div class=" item_product_main">
-
-
-
-
-
-
-
-
-
-
-                                    <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
-                                        class="variants product-action" data-cart-form
-                                        data-id="product-actions-33659039" enctype="multipart/form-data">
-                                        <div class="product-thumbnail">
-                                            <a class="image_thumb scale_hover" href="calvin-klein-ck-one-gold.html"
-                                                title="Calvin Klein CK One Gold">
-                                                <img width="480" height="480" class="lazyload image1"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
-                                                    alt="Calvin Klein CK One Gold">
+                                            <div class="smart"><span>-
+                                                    <?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                                                </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
+                                                data-wish="gucci-bloom-ambrosia-di-fiori" tabindex="0"
+                                                title="Thêm vào yêu thích">
+                                                <svg class="icon">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xlink:href="#icon-wishlist">
+                                                    </use>
+                                                </svg>
                                             </a>
-                                            <div class="action">
-                                                <input type="hidden" name="variantId" value="104172328" />
-                                                <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-cart"></use>
-                                                    </svg>
-                                                </button>
-                                                <a title="Xem nhanh" href="calvin-klein-ck-one-gold.html"
-                                                    data-handle="calvin-klein-ck-one-gold" class="quick-view btn-views">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-quickview"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
+                                            <div class="product-info">
+                                                <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center"
+                                                        href="<?= BASE_URL ?>?act=productDetail&id=<?= $pro['id'] ?>"
+                                                        title="<?= $pro['name'] ?>">
+                                                        <?= $pro['name'] ?>
+                                                    </a></h3>
+                                                <div class="price-box">
+                                                    <?= $pro['price_sale'] ?>₫
+                                                    <span class="compare-price">
+                                                        <?= $pro['price'] ?>₫
+                                                    </span>
 
-                                        </div>
-                                        <div class="smart"><span>-
-                                                34%
-                                            </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
-                                            data-wish="calvin-klein-ck-one-gold" tabindex="0"
-                                            title="Thêm vào yêu thích">
-                                            <svg class="icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                    xlink:href="#icon-wishlist"></use>
-                                            </svg>
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center"
-                                                    href="calvin-klein-ck-one-gold.html"
-                                                    title="Calvin Klein CK One Gold">Calvin Klein CK One Gold</a></h3>
-                                            <div class="price-box">
-                                                1.050.000₫
-                                                <span class="compare-price">1.580.000₫</span>
-
+                                                </div>
                                             </div>
-                                        </div>
-                                        <ul class="fragrant_product">
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
-                                                    alt="Cam">
-                                                <span>Cam</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                                    alt="Trái cây">
-                                                <span>Trái cây</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                                    alt="Hoa nhài">
-                                                <span>Hoa nhài</span>
-                                            </li>
-                                        </ul>
-                                    </form>
+                                            <ul class="fragrant_product">
+                                                <li class="text-center">
+                                                    <img width="90" height="90" class="lazyload"
+                                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                                        data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
+                                                        alt="Hoa nhài">
+                                                    <span>Hoa nhài</span>
+                                                </li>
+                                                <li class="text-center">
+                                                    <img width="90" height="90" class="lazyload"
+                                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                                        data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_2.jpg?1709175143725"
+                                                        alt="Hoa đào">
+                                                    <span>Hoa đào</span>
+                                                </li>
+                                                <li class="text-center">
+                                                    <img width="90" height="90" class="lazyload"
+                                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                                        data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_4.jpg?1709175143725"
+                                                        alt="Hoa hồng">
+                                                    <span>Hoa hồng</span>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-
-
-
-                            <div class="swiper-slide">
-                                <div class=" item_product_main">
-
-
-
-
-
-
-
-
-
-
-                                    <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
-                                        class="variants product-action" data-cart-form
-                                        data-id="product-actions-33658880" enctype="multipart/form-data">
-                                        <div class="product-thumbnail">
-                                            <a class="image_thumb scale_hover" href="nuoc-hoa-le-labo-santal-33.html"
-                                                title="Nước hoa Le Labo Santal 33">
-                                                <img width="480" height="480" class="lazyload image1"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/le-labo-santal-33-fa66901a85514b-removebg-preview.png?v=1701249584653"
-                                                    alt="Nước hoa Le Labo Santal 33">
-                                            </a>
-                                            <div class="action">
-                                                <input type="hidden" name="variantId" value="104171872" />
-                                                <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-cart"></use>
-                                                    </svg>
-                                                </button>
-                                                <a title="Xem nhanh" href="nuoc-hoa-le-labo-santal-33.html"
-                                                    data-handle="nuoc-hoa-le-labo-santal-33"
-                                                    class="quick-view btn-views">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-quickview"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                        <div class="smart"><span>-
-                                                9%
-                                            </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
-                                            data-wish="nuoc-hoa-le-labo-santal-33" tabindex="0"
-                                            title="Thêm vào yêu thích">
-                                            <svg class="icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                    xlink:href="#icon-wishlist"></use>
-                                            </svg>
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center"
-                                                    href="nuoc-hoa-le-labo-santal-33.html"
-                                                    title="Nước hoa Le Labo Santal 33">Nước hoa Le Labo Santal 33</a>
-                                            </h3>
-                                            <div class="price-box">
-                                                3.500.000₫
-                                                <span class="compare-price">3.850.000₫</span>
-
-                                            </div>
-                                        </div>
-                                        <ul class="fragrant_product">
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                                    alt="Gỗ">
-                                                <span>Gỗ</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
-                                                    alt="Cỏ">
-                                                <span>Cỏ</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                                    alt="Hoa nhài">
-                                                <span>Hoa nhài</span>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div>
-                            </div>
-
-
-
-                            <div class="swiper-slide">
-                                <div class=" item_product_main">
-
-
-
-
-
-
-
-
-
-
-                                    <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
-                                        class="variants product-action" data-cart-form
-                                        data-id="product-actions-33658783" enctype="multipart/form-data">
-                                        <div class="product-thumbnail">
-                                            <a class="image_thumb scale_hover" href="gucci-bloom-for-her-mini-size.html"
-                                                title="Gucci Bloom For Her Mini Size">
-                                                <img width="480" height="480" class="lazyload image1"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-02f6ff28224143c6a358.png?v=1701248994263"
-                                                    alt="Gucci Bloom For Her Mini Size">
-                                            </a>
-                                            <div class="action">
-                                                <input type="hidden" name="variantId" value="104171603" />
-                                                <button class="btn-cart btn-views add_to_cart " title="Thêm vào giỏ">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-cart"></use>
-                                                    </svg>
-                                                </button>
-                                                <a title="Xem nhanh" href="gucci-bloom-for-her-mini-size.html"
-                                                    data-handle="gucci-bloom-for-her-mini-size"
-                                                    class="quick-view btn-views">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-quickview"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                        <div class="smart"><span>-
-                                                9%
-                                            </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
-                                            data-wish="gucci-bloom-for-her-mini-size" tabindex="0"
-                                            title="Thêm vào yêu thích">
-                                            <svg class="icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                    xlink:href="#icon-wishlist"></use>
-                                            </svg>
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center"
-                                                    href="gucci-bloom-for-her-mini-size.html"
-                                                    title="Gucci Bloom For Her Mini Size">Gucci Bloom For Her Mini
-                                                    Size</a></h3>
-                                            <div class="price-box">
-                                                480.000₫
-                                                <span class="compare-price">530.000₫</span>
-
-                                            </div>
-                                        </div>
-                                        <ul class="fragrant_product">
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
-                                                    alt="Cỏ">
-                                                <span>Cỏ</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
-                                                    alt="Hoa nhài">
-                                                <span>Hoa nhài</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                                    alt="Gỗ">
-                                                <span>Gỗ</span>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div>
-                            </div>
-
-
-
-
-
-                            <div class="swiper-slide">
-                                <div class=" item_product_main">
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
-                                        class="variants product-action" data-cart-form
-                                        data-id="product-actions-33658079" enctype="multipart/form-data">
-                                        <div class="product-thumbnail">
-                                            <a class="image_thumb scale_hover" href="gucci-flora-gorgeous-gardenia.html"
-                                                title="Gucci Flora Gorgeous Gardenia">
-                                                <img width="480" height="480" class="lazyload image1"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/flora-gorgeous-preview.png?v=1701247923653"
-                                                    alt="Gucci Flora Gorgeous Gardenia">
-                                            </a>
-                                            <div class="action">
-                                                <input class="hidden" type="hidden" name="variantId"
-                                                    value="104170628" />
-                                                <button class="btn-cart btn-views" title="Xem chi tiết" type="button"
-                                                    onclick="window.location.href='gucci-flora-gorgeous-gardenia.html'">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-detail"></use>
-                                                    </svg>
-                                                </button>
-                                                <a title="Xem nhanh" href="gucci-flora-gorgeous-gardenia.html"
-                                                    data-handle="gucci-flora-gorgeous-gardenia"
-                                                    class="quick-view btn-views">
-                                                    <svg class="icon">
-                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                            xlink:href="#icon-quickview"></use>
-                                                    </svg>
-                                                </a>
-                                            </div>
-
-                                        </div>
-                                        <div class="smart"><span>-
-                                                8%
-                                            </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
-                                            data-wish="gucci-flora-gorgeous-gardenia" tabindex="0"
-                                            title="Thêm vào yêu thích">
-                                            <svg class="icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                    xlink:href="#icon-wishlist"></use>
-                                            </svg>
-                                        </a>
-                                        <div class="product-info">
-                                            <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center"
-                                                    href="gucci-flora-gorgeous-gardenia.html"
-                                                    title="Gucci Flora Gorgeous Gardenia">Gucci Flora Gorgeous
-                                                    Gardenia</a></h3>
-                                            <div class="price-box">
-                                                1.830.000₫
-                                                <span class="compare-price">2.000.000₫</span>
-
-                                            </div>
-                                        </div>
-                                        <ul class="fragrant_product">
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
-                                                    alt="Cam">
-                                                <span>Cam</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
-                                                    alt="Trái cây">
-                                                <span>Trái cây</span>
-                                            </li>
-                                            <li class="text-center">
-                                                <img width="90" height="90" class="lazyload"
-                                                    src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                    data-src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
-                                                    alt="Gỗ">
-                                                <span>Gỗ</span>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div>
-                            </div>
-
+                            <?php } ?>
 
                         </div>
+
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </div>
@@ -1573,8 +1004,7 @@
                         </h3>
                         <div class="sliderecenreview">
                             <div class="products product_related recent-viewed  swiper-container ">
-                                <div class="swiper-wrapper">
-                                </div>
+                                <div class="swiper-wrapper"></div>
                                 <div class="swiper-button-prev"></div>
                                 <div class="swiper-button-next"></div>
                             </div>
@@ -1888,7 +1318,7 @@
         jQuery(function ($) {
 
             new Bizweb.OptionSelectors('product-selectors', {
-                product: { "id": 33658271, "name": "Tommy Hilfiger Tommy Girl", "alias": "tommy-hilfiger-tommy-girl", "vendor": "Tommy Hilfiger", "type": "Nước hoa nữ", "content": "<p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương miêu tả như thế nào? Nếu chưa thì hãy mở nắp Tommy Hilfiger Tommy Girl, cô gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>\n<p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa và Gỗ.\"</p>\n<p>Tommy Hilfiger Tommy Girl đích thị là chai nước hoa dành cho những cô nàng yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>\n<p><img alt=\"Banner\" height=\"480\" src=\"//bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513\" width=\"480\" /></p>\n<p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>\n<ul>\n<li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và thuận lợi trong việc tỏa mùi hương.</li>\n<li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh hơn.</li>\n<li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ bám tỏa trên da của bạn.</li>\n<li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay, đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>\n<li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc mọi nơi.</li></ul>\n<p>&nbsp;</p>\n<p><strong>Bảo quản nước hoa:</strong></p>\n<ul>\n<li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24 đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.</li>\n<li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng, nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có nhiệt độ nóng lạnh thất thường...</li></ul>", "summary": "<p>Giới tính: Nữ</p>\n<p>Xuất xứ: Anh, Đức, Pháp</p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>", "template_layout": "product", "available": true, "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"], "price": 705000.0000, "price_min": 705000.0000, "price_max": 1230000.0000, "price_varies": true, "compare_at_price": 830000.0000, "compare_at_price_min": 830000.0000, "compare_at_price_max": 1450000.0000, "compare_at_price_varies": true, "variants": [{ "id": 104170999, "barcode": null, "sku": null, "title": "30ml", "options": ["30ml"], "option1": "30ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 705000.0000, "compare_at_price": 830000.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 50, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }, { "id": 104171001, "barcode": null, "sku": null, "title": "100ml", "options": ["100ml"], "option1": "100ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 1230000.0000, "compare_at_price": 1450000.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 28, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }], "featured_image": { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, "images": [{ "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513" }], "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00" },
+                product: { "id": <?= $product['id'] ?>, "name": "<?= $product['name'] ?>", "alias": "tommy-hilfiger-tommy-girl", "vendor": "Tommy Hilfiger", "type": "<?= $product['t_name'] ?>", "content": "<p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương miêu tả như thế nào? Nếu chưa thì hãy mở nắp <?= $product['name'] ?>, cô gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>\n<p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa và Gỗ.\"</p>\n<p><?= $product['name'] ?> đích thị là chai nước hoa dành cho những cô nàng yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>\n<p><img alt=\"Banner\" height=\"480\" src=\"//bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513\" width=\"480\" /></p>\n<p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>\n<ul>\n<li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và thuận lợi trong việc tỏa mùi hương.</li>\n<li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh hơn.</li>\n<li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ bám tỏa trên da của bạn.</li>\n<li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay, đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>\n<li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc mọi nơi.</li></ul>\n<p>&nbsp;</p>\n<p><strong>Bảo quản nước hoa:</strong></p>\n<ul>\n<li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24 đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.</li>\n<li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng, nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có nhiệt độ nóng lạnh thất thường...</li></ul>", "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>", "template_layout": "product", "available": true, "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"], "price": <?= $product['price_sale'] ?>.0000, "price_min": <?= $product['price_sale'] ?>.0000, "price_max": 1230000.0000, "price_varies": true, "compare_at_price": <?= $product['price'] ?>.0000, "compare_at_price_min": <?= $product['price'] ?>.0000, "compare_at_price_max": 1450000.0000, "compare_at_price_varies": true, "variants": [{ "id": <?= $product['id'] ?>, "barcode": null, "sku": null, "title": "30ml", "options": ["30ml"], "option1": "30ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": <?= $product['price_sale'] ?>.0000, "compare_at_price": <?= $product['price'] ?>.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 50, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }, { "id": 104171001, "barcode": null, "sku": null, "title": "100ml", "options": ["100ml"], "option1": "100ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 1230000.0000, "compare_at_price": 1450000.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 28, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }], "featured_image": { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, "images": [{ "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513" }], "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00" },
                 onVariantSelected: selectCallback,
                 enableHistoryState: true
             });
@@ -2039,7 +1469,68 @@
 
         $(document).ready(function ($) {
             var getLimit = 20;
-            var product = { "id": 33658271, "name": "Tommy Hilfiger Tommy Girl", "alias": "tommy-hilfiger-tommy-girl", "vendor": "Tommy Hilfiger", "type": "Nước hoa nữ", "content": "<p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương miêu tả như thế nào? Nếu chưa thì hãy mở nắp Tommy Hilfiger Tommy Girl, cô gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>\n<p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa và Gỗ.\"</p>\n<p>Tommy Hilfiger Tommy Girl đích thị là chai nước hoa dành cho những cô nàng yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>\n<p><img alt=\"Banner\" height=\"480\" src=\"//bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513\" width=\"480\" /></p>\n<p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>\n<ul>\n<li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và thuận lợi trong việc tỏa mùi hương.</li>\n<li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh hơn.</li>\n<li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ bám tỏa trên da của bạn.</li>\n<li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay, đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>\n<li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc mọi nơi.</li></ul>\n<p>&nbsp;</p>\n<p><strong>Bảo quản nước hoa:</strong></p>\n<ul>\n<li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24 đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.</li>\n<li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng, nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có nhiệt độ nóng lạnh thất thường...</li></ul>", "summary": "<p>Giới tính: Nữ</p>\n<p>Xuất xứ: Anh, Đức, Pháp</p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>", "template_layout": "product", "available": true, "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"], "price": 705000.0000, "price_min": 705000.0000, "price_max": 1230000.0000, "price_varies": true, "compare_at_price": 830000.0000, "compare_at_price_min": 830000.0000, "compare_at_price_max": 1450000.0000, "compare_at_price_varies": true, "variants": [{ "id": 104170999, "barcode": null, "sku": null, "title": "30ml", "options": ["30ml"], "option1": "30ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 705000.0000, "compare_at_price": 830000.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 50, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }, { "id": 104171001, "barcode": null, "sku": null, "title": "100ml", "options": ["100ml"], "option1": "100ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 1230000.0000, "compare_at_price": 1450000.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 28, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }], "featured_image": { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, "images": [{ "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513" }], "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00" };
+            var product = {
+                "id": <?= $product['id'] ?>,
+                "name": "<?= $product['name'] ?>",
+                "alias": "tommy-hilfiger-tommy-girl",
+                "vendor": "Tommy Hilfiger",
+                "type": "<?= $product['t_name'] ?>",
+                "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>",
+                "template_layout": "product",
+                "available": true,
+                "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"],
+                "price": <?= $product['price_sale'] ?>.0000,
+                "price_min": <?= $product['price_sale'] ?>.0000,
+                "price_max": 1230000.0000, "price_varies": true,
+                "compare_at_price": <?= $product['price'] ?>.0000,
+                "compare_at_price_min": <?= $product['price'] ?>.0000,
+                "compare_at_price_max": 1450000.0000,
+                "compare_at_price_varies": true,
+                "variants": [{
+                    "id": <?= $product['id'] ?>,
+                    "barcode": null,
+                    "sku": null,
+                    "title": "30ml",
+                    "options": ["30ml"],
+                    "option1": "30ml",
+                    "option2": null,
+                    "option3": null,
+                    "available": true,
+                    "taxable": false,
+                    "price": <?= $product['price_sale'] ?>.0000,
+                    "compare_at_price": <?= $product['price'] ?>.0000,
+                    "inventory_management": "bizweb",
+                    "inventory_policy": "deny",
+                    "inventory_quantity": 50,
+                    "weight_unit": "g",
+                    "weight": 0,
+                    "requires_shipping": true,
+                    "image": null
+                },
+                {
+                    "id": 104171001,
+                    "barcode": null,
+                    "sku": null,
+                    "title": "100ml",
+                    "options": ["100ml"],
+                    "option1": "100ml",
+                    "option2": null,
+                    "option3": null,
+                    "available": true,
+                    "taxable": false,
+                    "price": 1230000.0000,
+                    "compare_at_price": 1450000.0000,
+                    "inventory_management": "bizweb",
+                    "inventory_policy": "deny",
+                    "inventory_quantity": 28,
+                    "weight_unit": "g",
+                    "weight": 0,
+                    "requires_shipping": true,
+                    "image": null
+                }],
+                "featured_image": { "src": "<?= $product['img'] ?>" },
+                "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00"
+            };
             var alias_pro = 'tommy-hilfiger-tommy-girl';
             var array_list = [product];
             var list_viewed_pro_old = localStorage.getItem('last_viewed_products');

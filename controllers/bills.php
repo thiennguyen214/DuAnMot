@@ -1,9 +1,9 @@
 <?php
-function showThanhtoan()
+function showBills()
 {
-    $tittle = "Thanh toán";
-    $view = "viewAll/thanhtoan";
-    $style = 'styles/thanhtoan';
+    $tittle = "hóa đơn";
+    $view = "viewAll/bills";
+    $style = 'styles/bills';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

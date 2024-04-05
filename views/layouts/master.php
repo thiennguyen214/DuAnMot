@@ -8,15 +8,17 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="theme-color" content="#ce0082" />
-	//
+
 	<link rel="canonical" href="index.html" />
 
 	<meta name='revisit-after' content='2 days' />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="robots" content="noodp,index,follow" />
 	<meta name="description" content="" />
-	//
-	<title><?= $tittle  ?></title>
+
+	<title>
+		<?= $tittle ?>
+	</title>
 	<meta name="keywords" content="Cập nhật sau" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Bean Perfume" />
@@ -26,7 +28,7 @@
 	<meta property="og:image:secure_url"
 		content="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725" />
 	<meta property="og:description" content="" />
-	//
+
 	<meta property="og:url" content="index.html" />
 
 	<meta property="og:site_name" content="Bean Perfume" />
@@ -625,21 +627,16 @@
 
 <body>
 
-	<?php require_once PATH_VIEW . 'layouts/partials/header.php'; ?>
+
+	<!-- tìm kiếm -->
+	<?php require_once PATH_VIEW_USER . '/partials/header.php' ?>
+	<!-- content -->
+	<?php require_once PATH_VIEW . $view . ".php" ?>
+
+	<!-- footer -->
+	<?php require_once PATH_VIEW_USER . '/partials/footer.php' ?>
 
 
-	<?php require_once PATH_VIEW . $view . '.php'; ?>
-
-
-	<?php require_once PATH_VIEW . 'layouts/partials/footer.php'; ?>
-
-
-	//
-
-
-	<?php if (!empty($script) && $script) {
-		require_once PATH_VIEW . $script . '.php';
-	} ?>
 
 </body>
 <!-- Mirrored from bean-perfume.mysapo.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Mar 2024 01:08:18 GMT -->

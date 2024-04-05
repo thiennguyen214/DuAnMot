@@ -22,6 +22,9 @@ function showIntroduction()
 
     $product = listAll('products');
     $countProduct = count($product);
+
+    $top10Pro = top1OPro();
+
     
 
     require_once PATH_VIEW . '/layouts/master.php';

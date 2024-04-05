@@ -21,7 +21,9 @@ function authenLogin()
         exit();
     }
 
+
     $_SESSION['user'] = $user;
+    
 
     header('Location: ' . BASE_URL_ADMIN);
     exit();
