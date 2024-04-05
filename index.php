@@ -42,7 +42,7 @@ match ($act) {
     // 'user-detail' => userDetail(),
 
     '/' => showHome(),
-    // 'log' => showLog(),
+    'log' => showLog(),
     'posts' => showPost(),
     // <<<<<<< HEAD
     // 'cart' => showCart(),
