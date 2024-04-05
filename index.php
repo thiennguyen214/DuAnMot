@@ -74,7 +74,11 @@ match ($act) {
 // =======
 'Male' => showProduct(),
 'Female' => showProduct(),
+<<<<<<< Updated upstream
 'Unisex' => showProduct(),
+=======
+'Unisex' =>showProduct(),
+>>>>>>> Stashed changes
 
 
 // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241

@@ -3,6 +3,7 @@ function showIntroduction()
 {
     $view = "viewAll/introduce";
     $style = 'styles/gioithieu';
+    $active3 = 'active';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
