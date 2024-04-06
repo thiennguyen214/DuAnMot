@@ -42,11 +42,12 @@ match ($act) {
     // 'user-detail' => userDetail(),
 
     '/' => showHome(),
-    // 'log' => showLog(),
+    'log' => showLog(),
     'posts' => showPost(),
     // <<<<<<< HEAD
     // 'cart' => showCart(),
     'products' => showProduct(),
+    
     // =======
     'productDetail' => showProductDetail($_GET['id']),
     // 'posts' => showPost(),
@@ -75,8 +76,10 @@ match ($act) {
     'log' => showLog(),
     'logoutc' => authenCliLogout(),
 // =======
-// 'Male' => showProduct(),
-// 'Female' => showProduct(),
+'Male' => showProduct(),
+'Female' => showProduct(),
+
+'Unisex' => showProduct(),
 
 
 // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241

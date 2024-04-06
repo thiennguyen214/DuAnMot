@@ -34,17 +34,20 @@
             <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-shopping-bag-alt'></i>
                 <div class="info">
                     <h4>Tổng đơn hàng</h4>
-                     <p><b>   <!-- 457 đơn hàng -->
-                        <?= $count ?> đơn hàng
-                    </b></p>
+                     <p>
+                        <b>   
+                        <?= $countBillStatus ?> đơn hàng
+                    </b>
+                </p>
                 </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-3">
             <div class="widget-small primary coloured-icon"><i class='icon fa-3x bx bxs-chart'></i>
                 <div class="info">
-                    <h4>Tổng thu nhập</h4>
-                    <p><b>104.890.000 đ
+                    <h4>Tổng giá các đơn hiện có</h4>
+                    <p><b>
+                        <?= $tong ?> đ
                         
                     </b></p>
                 </div>
@@ -55,7 +58,7 @@
         <div class="col-md-6 col-lg-3">
             <div class="widget-small info coloured-icon"><i class='icon fa-3x bx bxs-user-badge'></i>
                 <div class="info">
-                    <h4>Nhân viên mới</h4>
+                    <h4>Nhân viên</h4>
                     <p><b>
                         <?= $countAd ?> nhân viên
                     </b></p>
@@ -76,7 +79,9 @@
             <div class="widget-small danger coloured-icon"><i class='icon fa-3x bx bxs-receipt'></i>
                 <div class="info">
                     <h4>Đơn hàng hủy</h4>
-                    <p><b>2 đơn hàng</b></p>
+                    <p><b>
+                        <?= $countOrderCancle ?> đơn hàng
+                    </b></p>
                 </div>
             </div>
         </div>
@@ -123,24 +128,27 @@
                         <thead>
                             <tr>
                                 <th>ID đơn hàng</th>
-                                <th>Khách hàng</th>
-                                <th>Đơn hàng</th>
+                                <th>Tên khách hàng</th>
+                                <th>Tên sản phẩm</th>
                                 <th>Số lượng</th>
                                 <th>Tổng tiền</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($TableSum as $bills) : ?>
                             <tr>
-                                <td>MD0837</td>
-                                <td>Triệu Thanh Phú</td>
-                                <td>Ghế làm việc Zuno, Bàn ăn gỗ Theresa</td>
-                                <td>2 sản phẩm</td>
-                                <td>9.400.000 đ</td>
-
+                                <td><?= $bills['bill_id']  ?></td>
+                                <td><?= $bills['client_name']  ?></td>
+                                <td><?= $bills['pr_name']  ?></td>
+                                <td><?= $bills['so_luong']  ?></td>
+                                <td><?= $bills['b_tong']  ?> đ</td>
+                            </tr>
+                            <?php endforeach; ?>
                             <tr>
                                 <th colspan="4">Tổng cộng:</th>
-                                <td>104.890.000 đ</td>
+                                <td><?=  $tong ?> đ</td>
                             </tr>
+                           
                         </tbody>
                     </table>
                 </div>
@@ -156,6 +164,7 @@
                 <div class="tile-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead>
+                           
                             <tr>
                                 <th>Mã sản phẩm</th>
                                 <th>Tên sản phẩm</th>
@@ -167,15 +176,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php foreach($sp_het as $item_het): ?>
                             <tr>
-                                <td>83826226</td>
-                                <td>Tủ ly - tủ bát</td>
-                                <td><img src="/img-sanpham/tu.jpg" alt="" width="100px;"></td>
-                                <td>0</td>
+                                <td><?= $item_het['id'] ?></td>
+                                <td><?= $item_het['name'] ?></td>
+                                <td><img src="<?= BASE_URL.$item_het['img'] ?>" alt="ảnh" width="100px;"></td>
+                                <td><?= $item_het['so_luong_kho'] ?></td>
                                 <td><span class="badge bg-danger">Hết hàng</span></td>
-                                <td>2.450.000 đ</td>
-                                <td>Tủ</td>
+                                <td><?= $item_het['price'] ?></td>
+                                <td><?= $item_het['type_id'] ?></td>
                             </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -186,7 +197,7 @@
         <div class="col-md-12">
             <div class="tile">
                 <div>
-                    <h3 class="tile-title">NHÂN VIÊN MỚI</h3>
+                    <h3 class="tile-title">KHÁCH HÀNG MỚI</h3>
                 </div>
                 <div class="tile-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
@@ -194,21 +205,24 @@
                             <tr>
                                 <th>Họ và tên</th>
                                 <th>Địa chỉ</th>
-                                <th>Ngày sinh</th>
-                                <th>Giới tính</th>
+                                <th>Ngày tạo</th>
+                                <th>Email</th>
                                 <th>SĐT</th>
                                 <th>Chức vụ</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($NewUser as $userN) :  ?>
                             <tr>
-                                <td>Hồ Thị Thanh Ngân</td>
-                                <td>155-157 Trần Quốc Thảo, Quận 3, Hồ Chí Minh </td>
-                                <td>12/02/1999</td>
-                                <td>Nữ</td>
-                                <td>0926737168</td>
-                                <td>Bán hàng</td>
+                                <td><?= $userN['name'] ?></td>
+                                <td><?= $userN['address'] ?></td>
+                                <td><?= $userN['crea'] ?></td>
+                                <td><?= $userN['email'] ?></td>
+                                <td><?= $userN['tell'] ?></td>
+                                <td><?= ($userN['role'] == 1) ? 'Admin' : 'Member' ?></td>
                             </tr>
+
+                            <?php endforeach;  ?>
 
                         </tbody>
                     </table>

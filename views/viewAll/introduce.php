@@ -84,22 +84,15 @@
 			</h2>
 			<p class="content-module">Các sản phẩm nổi bật và được mua nhiều nhất!</p>
 			<div class="row row-fix">
+			<?php foreach($top10Pro as $item) :?>
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+				
 					<div class="item_product_main">
-
-
-
-
-
-
-
-
-
 
 <form action="https://bean-perfume.mysapo.net/cart/add" method="post" class="variants product-action" data-cart-form data-id="product-actions-33659593" enctype="multipart/form-data">
 	<div class="product-thumbnail">
-		<a class="image_thumb scale_hover" href="unisex-creed-millesime-imperial.html" title="Unisex Creed Millesime Imperial">
-			<img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"  data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-creed-millesime-imperial-edp-100ml.png?v=1701251789210" alt="Unisex Creed Millesime Imperial">
+		<a class="image_thumb scale_hover" href="<?=BASE_URL ?>?act=productDetail&id=<?= $item['id'] ?>" title="<?= $item['name'] ?>">
+			<img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL.$item['img'] ?>"  data-src="<?= BASE_URL.$item['img'] ?>" alt="Unisex Creed Millesime Imperial">
 		</a>
 		<div class="action">
 			<input type="hidden" name="variantId" value="104173585" />
@@ -118,10 +111,10 @@
 	<svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wishlist"></use> </svg>
 	</a>
 	<div class="product-info">
-		<h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="unisex-creed-millesime-imperial.html" title="Unisex Creed Millesime Imperial">Unisex Creed Millesime Imperial</a></h3>
+		<h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="unisex-creed-millesime-imperial.html" title="<?= $item['name'] ?>"><?= $item['name'] ?></a></h3>
 		<div class="price-box">
-			5.680.000₫
-			<span class="compare-price">6.500.000₫</span>
+		<?= $item['price_sale'] ?>₫
+			<span class="compare-price"><?= $item['price'] ?>₫</span>
 
 		</div>
 	</div>
@@ -140,8 +133,13 @@
 		</li>
 	</ul></form>					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
-					<div class="item_product_main">
+
+				<?php endforeach; ?>
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+
+<div class="item_product_main">
 
 
 
@@ -195,8 +193,10 @@
 			<span>Hoa nhài</span>
 		</li>
 	</ul></form>					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+				</div> -->
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
 					<div class="item_product_main">
 
 
@@ -251,8 +251,11 @@
 			<span>Hoa hồng</span>
 		</li>
 	</ul></form>					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+				</div> -->
+
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
 					<div class="item_product_main">
 
 
@@ -307,8 +310,11 @@
 			<span>Hoa nhài</span>
 		</li>
 	</ul></form>					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+				</div> -->
+
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
 					<div class="item_product_main">
 
 
@@ -363,8 +369,11 @@
 			<span>Hoa nhài</span>
 		</li>
 	</ul></form>					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+				</div> -->
+
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
 					<div class="item_product_main">
 
 
@@ -419,8 +428,12 @@
 			<span>Gỗ</span>
 		</li>
 	</ul></form>					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+				</div> -->
+
+
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
 					<div class="item_product_main">
 
 
@@ -477,8 +490,11 @@
 			<span>Hoa nhài</span>
 		</li>
 	</ul></form>					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
+				</div> -->
+
+
+
+				<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6 col-fix">
 					<div class="item_product_main">
 
 
@@ -535,7 +551,9 @@
 			<span>Gỗ</span>
 		</li>
 	</ul></form>					</div>
-				</div>
+				</div> -->
+
+				
 			</div>
 			<div class="view-more clearfix">
 				<a href="san-pham-noi-bat.html" title="Xem tất cả" class="btn">

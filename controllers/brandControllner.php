@@ -4,6 +4,7 @@ function showBrand()
     $view = "viewAll/brand";
     $style = 'styles/brand';
     $active3d = 'active';
+    $active4 = 'active';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

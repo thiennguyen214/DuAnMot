@@ -198,7 +198,7 @@
                             Chúng tôi mong muốn mang đến cho những người yêu nước hoa sản
                             phẩm chính hãng từ Pháp với mức giá tốt nhất
                         </p>
-                        <a class="view_more" href="gioi-thieu.html" title="Xem thêm">Xem thêm</a>
+                        <a class="view_more" href="<?= BASE_URL  ?>?act=introduce" title="Xem thêm">Xem thêm</a>
                     </div>
                 </div>
                 <div class="item_about">
@@ -672,7 +672,7 @@
                             Mùi hương đặc trưng dùng cho cả nam và nữ
                         </p>
                         <div class="view-more clearfix">
-                            <a href="collections/all.html" title="Xem thêm" class="btn">
+                            <a href="<?= BASE_URL?>?act=Unisex" title="Xem thêm" class="btn">
                                 Xem thêm
                                 <svg xmlns="http:<?= BASE_URLS ?>www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

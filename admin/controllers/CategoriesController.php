@@ -23,6 +23,7 @@ function categoryListAll()
 //Delete category
 function categoryDelete($id)
 {
+    DeleteTheoTypeID('products',$id);
     delete2('type_pro', $id);
 
     $_SESSION['success'] = 'Thao tác thành công!';
