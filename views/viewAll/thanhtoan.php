@@ -15,7 +15,8 @@
 	<link rel="shortcut icon"
 		href="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_favicon.ico?1711356971279"
 		type="image/x-icon" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+	<link rel="stylesheet"
+		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/flag-icons.min.css" />
 
 	<link rel="stylesheet"
 		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.css?v=4fcd86c">
@@ -25,7 +26,7 @@
 		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css?v=ce7712f">
 
 	<!-- Begin checkout custom css -->
-	<style>
+	<!-- <style>
 		.field__input:focus,
 		.select2-selection:focus,
 		.select2-search__field:focus {
@@ -67,10 +68,11 @@
 		.btn:focus {
 			color: #FFFFFF;
 		}
-	</style>
+	</style> -->
 	<!-- End checkout custom css -->
 
-	<script src="//bizweb.dktcdn.net/assets/themes_support/libphonenumber-v3.2.30.min.js?1711356971279"></script>
+	<script
+		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min.js?1711356971279"></script>
 
 	<script
 		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.js?v=11006c9"></script>
@@ -124,7 +126,7 @@
 
 				<a href="/">
 					<img class="logo__image  logo__image--medium " alt="Bean Perfume"
-						src="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png?1711356971279" />
+						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png.webp" />
 				</a>
 
 			</div>
@@ -155,6 +157,10 @@
 				<main class="main">
 					<header class="main__header">
 						<div class="logo logo--center">
+							<a href="/">
+								<img class="logo__image  logo__image--medium " alt="Bean Perfume"
+									src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png.webp" />
+							</a>
 						</div>
 					</header>
 					<div class="main__content">
@@ -173,7 +179,7 @@
 
 
 											<a href="">
-												<i class="fa fa-user-circle-o fa-lg"></i>
+												<!-- <i class="fa fa-user-circle-o fa-lg"></i> -->
 												<span>Đăng nhập </span>
 											</a>
 
@@ -184,9 +190,10 @@
 										<div class="fieldset">
 
 
-											<div class="field ">
+											<div class="field "
+												data-bind-class=" {'field--show-floating-label': email}">
 												<div class="field__input-wrapper">
-													<label for="email" class="field__label">Email</label>
+													<label for="email" class="field__label">email</label>
 													<input name="email" id="email" type="email" class="field__input"
 														data-bind="email" value="<?= $_SESSION['user']['email'] ?>">
 												</div>
@@ -236,7 +243,7 @@
 											</div>
 
 
-											<!-- <div class="field field--show-floating-label ">
+											<div class="field field--show-floating-label ">
 												<div class="field__input-wrapper field__input-wrapper--select2">
 													<label for="billingProvince" class="field__label">Tỉnh thành</label>
 													<select name="billingProvince" id="billingProvince" size="1"
@@ -247,9 +254,9 @@
 													</select>
 												</div>
 
-											</div> -->
+											</div>
 
-											<!-- <div class="field field--show-floating-label ">
+											<div class="field field--show-floating-label ">
 												<div class="field__input-wrapper field__input-wrapper--select2">
 													<label for="billingDistrict" class="field__label">
 														Quận huyện (tùy chọn)
@@ -262,9 +269,9 @@
 													</select>
 												</div>
 
-											</div> -->
+											</div>
 
-											<!-- <div class="field field--show-floating-label ">
+											<div class="field field--show-floating-label ">
 												<div class="field__input-wrapper field__input-wrapper--select2">
 													<label for="billingWard" class="field__label">
 														Phường xã (tùy chọn)
@@ -277,7 +284,7 @@
 													</select>
 												</div>
 
-											</div> -->
+											</div>
 
 
 
@@ -310,7 +317,7 @@
 
 
 
-								<!-- <section class="section" data-define="{shippingMethod: ''}">
+								<section class="section" data-define="{shippingMethod: ''}">
 									<div class="section__header">
 										<div class="layout-flex">
 											<h2 class="section__title layout-flex__item layout-flex__item--stretch">
@@ -349,9 +356,9 @@
 											Vui lòng nhập thông tin giao hàng
 										</div>
 									</div>
-								</section> -->
+								</section>
 
-								<!-- <section class="section">
+								<section class="section">
 									<div class="section__header">
 										<div class="layout-flex">
 											<h2 class="section__title layout-flex__item layout-flex__item--stretch">
@@ -377,7 +384,7 @@
 														<span class="radio__label__primary">Thu hộ (COD)</span>
 														<span class="radio__label__accessory">
 															<span class="radio__label__icon">
-																<i class="fa fa-user-circle-o fa-lg"></i>
+																<!-- <i class="fa fa-user-circle-o fa-lg"></i> -->
 															</span>
 														</span>
 
@@ -397,7 +404,7 @@
 														<span class="radio__label__primary">Chuyển khoản</span>
 														<span class="radio__label__accessory">
 															<span class="radio__label__icon">
-																<i class="fa fa-user-circle-o fa-lg"></i>
+																<!-- <i class="fa fa-user-circle-o fa-lg"></i> -->
 															</span>
 														</span>
 
@@ -408,7 +415,7 @@
 
 										</div>
 									</div>
-								</section> -->
+								</section>
 							</div>
 						</article>
 						<div class="field__input-btn-wrapper field__input-btn-wrapper--vertical hide-on-desktop">
@@ -510,7 +517,7 @@
 										</tbody>
 									</table>
 								</div>
-								<!-- <div class="order-summary__section order-summary__section--discount-code"
+								<div class="order-summary__section order-summary__section--discount-code"
 									data-tg-refresh="refreshDiscount" id="discountCode">
 									<h3 class="visually-hidden">Mã khuyến mại</h3>
 									<div class="edit_checkout animate-floating-labels">
@@ -546,7 +553,7 @@
 
 										</div>
 									</div>
-								</div> -->
+								</div>
 								<div class="order-summary__section order-summary__section--total-lines order-summary--collapse-element"
 									data-define="{subTotalPriceText: '1.800.000₫'}"
 									data-tg-refresh="refreshOrderTotalPrice" id="orderSummary">
