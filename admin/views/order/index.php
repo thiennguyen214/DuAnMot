@@ -15,29 +15,34 @@
                 <div class="tile-body">
                     <div class="row element-button">
                         <div class="col-sm-2">
-                            <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=oders&status=1"
-                                title="List"><i class="fas fa-plus"></i>
-                                Đơn chờ xác nhận</a>
+                            <a class="btn btn-add btn-sm <?= !empty($btn1) ? 'btn-addd' : null ?>"
+                                href="<?= BASE_URL_ADMIN ?>?act=oders&status=1" title="List">
+                                <span>Đơn chờ xác nhận</span>
+                            </a>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=oders&status=2"
-                                title="List"><i class="fas fa-plus"></i>
-                                Đơn chờ lấy hàng</a>
+                            <a class="btn btn-add btn-sm <?= !empty($btn2) ? 'btn-addd' : null ?>"
+                                href="<?= BASE_URL_ADMIN ?>?act=oders&status=2" title="List">
+                                <span>Đơn chờ lấy hàng</span>
+                            </a>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=oders&status=3"
-                                title="List"><i class="fas fa-plus"></i>
-                                Đơn chờ giao hàng</a>
+                            <a class="btn btn-add btn-sm <?= !empty($btn3) ? 'btn-addd' : null ?>"
+                                href="<?= BASE_URL_ADMIN ?>?act=oders&status=3" title="List">
+                                <span>Đơn chờ giao hàng</span>
+                            </a>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=oders&status=4"
-                                title="List"><i class="fas fa-plus"></i>
-                                Đơn đã giao</a>
+                            <a class="btn btn-add btn-sm <?= !empty($btn4) ? 'btn-addd' : null ?>"
+                                href="<?= BASE_URL_ADMIN ?>?act=oders&status=4" title="List">
+                                <span>Đơn đã giao</span>
+                            </a>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-add btn-sm" href="<?= BASE_URL_ADMIN ?>?act=oders&status=0"
-                                title="List"><i class="fas fa-plus"></i>
-                                Đơn đã hủy</a>
+                            <a class="btn btn-add btn-sm <?= !empty($btn0) ? 'btn-addd' : null ?>"
+                                href="<?= BASE_URL_ADMIN ?>?act=oders&status=0" title="List">
+                                <span>Đơn đã hủy</span>
+                            </a>
                         </div>
                     </div>
                     <table class="table table-hover table-bordered" id="sampleTable">

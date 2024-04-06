@@ -2,11 +2,26 @@
 function oderListAll1($status)
 {
     $title = 'Danh sách Oder';
+    if ($status == '1') {
+        $btn1 = 'btn-addd';
+    } else if ($status == "2") {
+        $btn2 = 'btn-addd';
+    } else if ($status == '3') {
+        $btn3 = 'btn-addd';
+    } else if ($status == '4') {
+        $btn4 = 'btn-addd';
+    } else if ($status == '0') {
+        $btn0 = 'btn-addd';
+    }
+
     $view = 'order/index';
     $viewtable = 'table1';
     $script = 'datetime';
     $style = 'datatable';
+
     // $style2 = 'form';
+
+
     $script3 = 'table';
     $active4 = 'active';
     $checkbox = 'create2';
