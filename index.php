@@ -69,16 +69,17 @@ match ($act) {
     'cart-dec' => cartDec($_GET['productID']),
     'cart-del' => cartDel($_GET['productID']),
 
-    'login' => authenShowFormLogin(),
+
+    'order-purchase' => orderPurchase(),
+    'order-success' => orderSuccess(),
+
+    'log' => showLog(),
     'logoutc' => authenCliLogout(),
 // =======
 'Male' => showProduct(),
 'Female' => showProduct(),
-<<<<<<< Updated upstream
+
 'Unisex' => showProduct(),
-=======
-'Unisex' =>showProduct(),
->>>>>>> Stashed changes
 
 
 // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241

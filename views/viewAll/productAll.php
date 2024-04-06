@@ -787,7 +787,7 @@
                             </div>
                         </div>
 
-                        <div class="product-favi-mb">
+                        <!-- <div class="product-favi-mb">
                             <a href="san-pham-noi-bat.html" title="Có thể bạn thích">
                                 <div class="title-head">
                                     Có thể bạn thích
@@ -885,7 +885,7 @@
 
                             </div>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
