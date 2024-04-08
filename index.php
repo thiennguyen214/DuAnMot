@@ -42,12 +42,11 @@ match ($act) {
     // 'user-detail' => userDetail(),
 
     '/' => showHome(),
-    'log' => showLog(),
     'posts' => showPost(),
     // <<<<<<< HEAD
     // 'cart' => showCart(),
     'products' => showProduct(),
-    
+
     // =======
     'productDetail' => showProductDetail($_GET['id']),
     // 'posts' => showPost(),
@@ -63,7 +62,7 @@ match ($act) {
     'thongtintk' => showThongtintk(),
 
     // <<<<<<< HEAD
-    'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),
+    'cart-add' => cartAdd(),
     'cart' => cartList(),
     'cart-inc' => cartInc($_GET['productID']),
     'cart-dec' => cartDec($_GET['productID']),
@@ -75,11 +74,15 @@ match ($act) {
 
     'log' => showLog(),
     'logoutc' => authenCliLogout(),
-// =======
-'Male' => showProduct(),
-'Female' => showProduct(),
+    // =======
+    'Male' => showProduct(),
+    'Female' => showProduct(),
 
-'Unisex' => showProduct(),
+    'Unisex' => showProduct(),
+
+    // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),
+
+    'favorite' => showFavs($_GET['userID']),
 
 
 // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241

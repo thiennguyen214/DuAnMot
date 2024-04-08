@@ -86,15 +86,15 @@
 
                             <div class="swiper-container gallery-top">
                                 <div class="swiper-wrapper" id="lightgallery">
-                                    <?php //foreach ($imgs as $img) { ?>
-                                        <a class="swiper-slide" data-hash="0" href="<?= $img['img'] ?>"
-                                            title="Click để xem">
-                                            <img height="480" width="480" src="<?= $data['img'] ?>"
-                                                alt="<?= $product['name'] ?>"
-                                                data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
-                                                class="img-responsive mx-auto d-block swiper-lazy" />
-                                        </a>
-                                    <?php //} ?>
+                                    <?php //foreach ($imgs as $img) {                                                                                                                 ?>
+                                    <a class="swiper-slide" data-hash="0" href="<?= $img['img'] ?>"
+                                        title="Click để xem">
+                                        <img height="480" width="480" src="<?= $data['img'] ?>"
+                                            alt="<?= $product['name'] ?>"
+                                            data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
+                                            class="img-responsive mx-auto d-block swiper-lazy" />
+                                    </a>
+                                    <?php //}                                                                                                                 ?>
 
                                 </div>
 
@@ -109,16 +109,16 @@
                             </div>
                             <div class="swiper-container gallery-thumbs">
                                 <div class="swiper-wrapper">
-                                    <?php //foreach ($imgs as $img) { ?>
-                                        <div class="swiper-slide" data-hash="0">
-                                            <div class="p-100">
-                                                <img height="100" width="100" src="<?= $data['img'] ?>"
-                                                    alt="<?= $product['name'] ?>"
-                                                    data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
-                                                    class="swiper-lazy" />
-                                            </div>
+                                    <?php //foreach ($imgs as $img) {                                                                                                                 ?>
+                                    <div class="swiper-slide" data-hash="0">
+                                        <div class="p-100">
+                                            <img height="100" width="100" src="<?= $data['img'] ?>"
+                                                alt="<?= $product['name'] ?>"
+                                                data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
+                                                class="swiper-lazy" />
                                         </div>
-                                    <?php //} ?>
+                                    </div>
+                                    <?php //}                                                                                                                 ?>
 
 
                                 </div>
@@ -468,74 +468,32 @@
                                 })
                             </script>
 
-                            <form enctype="multipart/form-data" data-cart-form id="add-to-cart-form" action=""
-                                method="post" class="form-inline">
-
+                            <form class="add-to-cart-form" action="" method="post" class="form-inline">
                                 <div class="form-product">
-                                    <!-- <div class="select-swatch">
-                                        <script>$(window).load(function () { $('.selector-wrapper:eq(0)').hide(); });</script>
-                                        <div class="swatch clearfix" data-option-index="0">
-                                            <div class="header">Dung tích: <span class="value-roperties"></span></div>
-                                            <div class="thump-swatch">
-                                                <div data-value="30ml" class="swatch-element 30ml available">
-                                                    <input id="swatch-0-30ml" type="radio" name="option-0" value="30ml"
-                                                        checked />
-                                                    <label for="swatch-0-30ml">
-                                                        30ml
-                                                    </label>
-                                                </div>
-                                                <script>
-                                                    jQuery('.swatch[data-option-index="0"] .30ml').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
-                                                </script>
-                                                <div data-value="100ml" class="swatch-element 100ml available">
-
-                                                    <input id="swatch-0-100ml" type="radio" name="option-0"
-                                                        value="100ml" />
-
-                                                    <label for="swatch-0-100ml">
-                                                        100ml
-                                                    </label>
-
-                                                </div>
-                                                <script>
-                                                    jQuery('.swatch[data-option-index="0"] .100ml').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="box-variant clearfix  d-none ">
-
-                                        <select id="product-selectors" class="form-control form-control-lg"
-                                            name="variantId" style="display:none">
-
-                                            <option selected="selected" value="<?= $product['id'] ?>">30ml - 705.000₫</option>
-
-                                             <option value="104171001">100ml - 1.230.000₫</option>
-
-                                    </select>
-
-                                </div> -->
                                     <div class="clearfix form-group ">
                                         <div class="flex-quantity">
                                             <div class="custom custom-btn-number show">
                                                 <div class="input_number_product">
                                                     <button class="btn_num num_1 button button_qty"
                                                         onClick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro ) && qtypro > 1 ) {result.value--;}return false;"
-                                                        type="button">&minus;</button>
+                                                        type="button">-</button>
                                                     <input type="text" id="qtym" name="quantity" value="1" maxlength="3"
                                                         class="form-control prd_quantity"
                                                         onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"
                                                         onchange="if(this.value == 0)this.value=1;">
                                                     <button class="btn_num num_2 button button_qty"
                                                         onClick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;"
-                                                        type="button"><span>&plus;</span></button>
+                                                        type="button"><span>+</span></button>
                                                 </div>
                                             </div>
                                             <div class="btn-mua button_actions clearfix">
-                                                <button
+                                                <input type="hidden" name="proID" value="<?= $product['id'] ?>">
+                                                <input type="hidden" name="userID"
+                                                    value="<?= !empty($_SESSION['userm']) ? $_SESSION['userm']['id'] : null ?>">
+                                                <button type="submit"
                                                     class="btn btn_base normal_button btn_add_cart add_to_cart btn-cart">
-                                                    <a href="<?= BASE_URL . '?act=cart-add&productID=' . $product['id'] . '&quantity=1' ?>"
-                                                        class="txt-main text_1">Thêm vào giỏ hàng</a>
+
+                                                    Thêm vào giỏ hàng
                                                 </button>
                                                 <a href="<?= BASE_URL ?>?act=thanhtoan" class="buynow" title="">
                                                     Mua ngay
@@ -545,7 +503,27 @@
                                     </div>
                                 </div>
                             </form>
-
+                            <script>
+                                let urlAddCart = '<?= BASE_URL . '?act=cart-add' ?>';
+                                $(".add-to-cart-form").submit(function (event) {
+                                    event.preventDefault();
+                                    // console.log("Data: ", $(this).serializeArray());
+                                    $.ajax({
+                                        type: "post",
+                                        url: urlAddCart,
+                                        data: $(this).serializeArray(),
+                                        // success: function (response) {
+                                        //     response = JSON.parse(response);
+                                        //     if (response.status == 0) {
+                                        //         alert(response.message);
+                                        //     } else {
+                                        //         alert(response.message);
+                                        //         location.reload();
+                                        //     }
+                                        // }
+                                    });
+                                });
+                            </script>
 
                             <div class="chinhsach-box">
                                 <div class="chinhsach-slider swiper-container">
@@ -609,48 +587,13 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="content-pro">
                 <div class="row row-mb3">
                     <div class="col-12 col-lg-4 col-col-md-4 col-sm-12 col-xs-12  order-lg-2">
                         <div class="product_info">
-                            <!-- <div class="cart-tinhtrang">
-                                <div class="title_voucher">
-                                    <span>Nhận quà tặng !!!</span>
-                                </div>
-                                <div class="js-gift gift mb-4 p-3">
-                                    <div class="align-items-lg-center align-items-start d-flex">
-                                        <div class="image overflow-hidden">
-                                            <img width="480" height="480" class="lazyload image1"
-                                                src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/h24-abf884ca034241b894f24c31c1d2-removebg-preview-min.png?v=1701315334450"
-                                                alt="<?= $product['name'] ?>">
-                                        </div>
-                                        <div class="d-flex flex-column pl-2 pl-lg-3 coupon-1">
-                                            <div class="mb-2 title_gift">
-                                                <div class="coupon-content">Mua tối thiểu <b> 3.000.000₫ </b> để nhận
-                                                    <b>Hermès H24 Travel Spray - Quà tặng</b> miễn phí
-                                                </div>
-                                            </div>
-                                            <form action="https://bean-perfume.mysapo.net/cart/add" method="post"
-                                                class="variants" data-cart-form data-id="product-actions-33640207"
-                                                enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="104047192" />
-                                                <a class="mr-auto btn js-gift-item text-center rounded-10 text-white font-weight-bold py-2 px-3"
-                                                    href="javascript:;" data-id="<?= $product['id'] ?>"
-                                                    data-alias="hermes-h24-travel-spray-qua-tang" title="Nhận ngay">
-                                                    <svg width="18" height="18">
-                                                        <path
-                                                            d="M18 5.55475H16.791C16.922 5.14375 17 4.65075 17 4.05475C17 2.12475 15.43 0.554749 13.5 0.554749C11.878 0.554749 10.795 2.03675 10.096 3.63975C9.407 2.12475 8.269 0.554749 6.5 0.554749C4.57 0.554749 3 2.12475 3 4.05475C3 4.65075 3.079 5.14375 3.209 5.55475H2C0.897 5.55475 0 6.45175 0 7.55475V9.55475C0 10.6577 0.897 11.5547 2 11.5547V18.5547C2 19.6577 2.897 20.5547 4 20.5547H9H11H16C17.103 20.5547 18 19.6577 18 18.5547V11.5547C19.103 11.5547 20 10.6577 20 9.55475V7.55475C20 6.45175 19.103 5.55475 18 5.55475ZM13.5 2.55475C14.327 2.55475 15 3.22775 15 4.05475C15 5.55475 14.374 5.55475 14 5.55475H11.522C12.033 3.97875 12.775 2.55475 13.5 2.55475ZM5 4.05475C5 3.22775 5.673 2.55475 6.5 2.55475C7.388 2.55475 8.214 4.07975 8.698 5.55475H6C5.626 5.55475 5 5.55475 5 4.05475ZM2 7.55475H9V9.55475H2V7.55475ZM4 18.5547V11.5547H9V18.5547H4ZM16 18.5547H11V11.5547H16V18.5547ZM11 9.55475V7.63975C11.005 7.61175 11.011 7.58275 11.017 7.55475H18L18.001 9.55475H11Z" />
-                                                    </svg>
-                                                    <span class="cnt">Nhận ngay</span>
-                                                </a>
-                                            </form>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="product-favi">
                                 <a href="san-pham-noi-bat.html" title="Có thể bạn thích">
                                     <div class="title-head">
@@ -786,106 +729,6 @@
 
                             </div>
                         </div>
-
-                        <!-- <div class="product-favi-mb">
-                            <a href="san-pham-noi-bat.html" title="Có thể bạn thích">
-                                <div class="title-head">
-                                    Có thể bạn thích
-                                </div>
-                            </a>
-                            <div class="product-favi-content">
-
-
-
-
-                                <div class="product-view">
-                                    <a class="image_thumb" href="unisex-creed-millesime-imperial.html"
-                                        title="Unisex Creed Millesime Imperial">
-                                        <img width="480" height="480" class="lazyload"
-                                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                            data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-creed-millesime-imperial-edp-100ml.png?v=1701251789210"
-                                            alt="Unisex Creed Millesime Imperial">
-                                    </a>
-                                    <div class="product-info">
-                                        <h3 class="product-name"><a href="unisex-creed-millesime-imperial.html"
-                                                title="Unisex Creed Millesime Imperial">Unisex Creed Millesime
-                                                Imperial</a></h3>
-                                        <div class="price-box">
-                                            <span class="price">5.680.000₫</span>
-                                            <span class="compare-price">6.500.000₫</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="product-view">
-                                    <a class="image_thumb" href="nuoc-hoa-unisex-gucci-the-virgin-violet.html"
-                                        title="Nước Hoa Unisex Gucci The Virgin Violet">
-                                        <img width="480" height="480" class="lazyload"
-                                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                            data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-gucci-the-virgin-violet-edp-100ml.png?v=1701251056543"
-                                            alt="Nước Hoa Unisex Gucci The Virgin Violet">
-                                    </a>
-                                    <div class="product-info">
-                                        <h3 class="product-name"><a href="nuoc-hoa-unisex-gucci-the-virgin-violet.html"
-                                                title="Nước Hoa Unisex Gucci The Virgin Violet">Nước Hoa Unisex Gucci
-                                                The Virgin Violet</a></h3>
-                                        <div class="price-box">
-                                            <span class="price">5.800.000₫</span>
-                                            <span class="compare-price">7.900.000₫</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="product-view">
-                                    <a class="image_thumb" href="gucci-bloom-ambrosia-di-fiori.html"
-                                        title="<?= $pro['name'] ?>">
-                                        <img width="480" height="480" class="lazyload"
-                                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                            data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/gucci-bloom-ambrosia-di-fiori-ea.png?v=1701250586413"
-                                            alt="<?= $pro['name'] ?>">
-                                    </a>
-                                    <div class="product-info">
-                                        <h3 class="product-name"><a href="gucci-bloom-ambrosia-di-fiori.html"
-                                                title="<?= $pro['name'] ?>">
-                                                <?= $pro['name'] ?>
-                                            </a>
-                                        </h3>
-                                        <div class="price-box">
-                                            <span class="price">2.560.000₫</span>
-                                            <span class="compare-price">3.150.000₫</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="product-view">
-                                    <a class="image_thumb" href="calvin-klein-ck-one-gold.html"
-                                        title="Calvin Klein CK One Gold">
-                                        <img width="480" height="480" class="lazyload"
-                                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                            data-src="//bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
-                                            alt="Calvin Klein CK One Gold">
-                                    </a>
-                                    <div class="product-info">
-                                        <h3 class="product-name"><a href="calvin-klein-ck-one-gold.html"
-                                                title="Calvin Klein CK One Gold">Calvin Klein CK One Gold</a></h3>
-                                        <div class="price-box">
-                                            <span class="price">1.050.000₫</span>
-                                            <span class="compare-price">1.580.000₫</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div> -->
                     </div>
                 </div>
 
@@ -1593,3 +1436,4 @@
 <script>
     (function ($) { "use strict"; $.ajaxChimp = { responses: { "We have sent you a confirmation email": 0, "Please enter a valueggg": 1, "An email address must contain a single @": 2, "The domain portion of the email address is invalid (the portion after the @: )": 3, "The username portion of the email address is invalid (the portion before the @: )": 4, "This email address looks fake or invalid. Please enter a real email address": 5 }, translations: { en: null }, init: function (selector, options) { $(selector).ajaxChimp(options) } }; $.fn.ajaxChimp = function (options) { $(this).each(function (i, elem) { var form = $(elem); var email = form.find("input[type=email]"); var label = form.find("label[for=" + email.attr("id") + "]"); var settings = $.extend({ url: form.attr("action"), language: "en" }, options); var url = settings.url.replace("/post?", "/post-json?").concat("&c=?"); form.attr("novalidate", "true"); email.attr("name", "EMAIL"); form.submit(function () { var msg; function successCallback(resp) { if (resp.result === "success") { msg = "We have sent you a confirmation email"; label.removeClass("error").addClass("valid"); email.removeClass("error").addClass("valid") } else { email.removeClass("valid").addClass("error"); label.removeClass("valid").addClass("error"); var index = -1; try { var parts = resp.msg.split(" - ", 2); if (parts[1] === undefined) { msg = resp.msg } else { var i = parseInt(parts[0], 10); if (i.toString() === parts[0]) { index = parts[0]; msg = parts[1] } else { index = -1; msg = resp.msg } } } catch (e) { index = -1; msg = resp.msg } } if (settings.language !== "en" && $.ajaxChimp.responses[msg] !== undefined && $.ajaxChimp.translations && $.ajaxChimp.translations[settings.language] && $.ajaxChimp.translations[settings.language][$.ajaxChimp.responses[msg]]) { msg = $.ajaxChimp.translations[settings.language][$.ajaxChimp.responses[msg]] } label.html(msg); label.show(2e3); if (settings.callback) { settings.callback(resp) } } var data = {}; var dataArray = form.serializeArray(); $.each(dataArray, function (index, item) { data[item.name] = item.value }); $.ajax({ url: url, data: data, success: successCallback, dataType: "jsonp", error: function (resp, text) { console.log("mailchimp ajax submit error: " + text) } }); var submitMsg = "Submitting..."; if (settings.language !== "en" && $.ajaxChimp.translations && $.ajaxChimp.translations[settings.language] && $.ajaxChimp.translations[settings.language]["submit"]) { submitMsg = $.ajaxChimp.translations[settings.language]["submit"] } label.html(submitMsg).show(2e3); return false }) }); return this } })(jQuery);
 </script>
+<?= debug($_SESSION['cart']) ?>

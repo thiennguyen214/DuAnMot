@@ -188,7 +188,7 @@
 												<div class="field__input-wrapper">
 													<label for="email" class="field__label"></label>
 													<input name="email" id="email" type="email" class="field__input"
-														data-bind="email" value="<?= $_SESSION['user']['email'] ?>">
+														data-bind="email" value="<?= $_SESSION['userm']['email'] ?>">
 												</div>
 
 											</div>
@@ -201,7 +201,7 @@
 													<label for="billingName" class="field__label">Họ và tên</label>
 													<input name="name" id="billingName" type="text" class="field__input"
 														data-bind="billing.name"
-														value="<?= $_SESSION['user']['name'] ?>">
+														value="<?= $_SESSION['userm']['name'] ?>">
 												</div>
 
 											</div>
@@ -215,7 +215,7 @@
 													</label>
 													<input name="tell" id="billingPhone" type="tel" class="field__input"
 														data-bind="billing.phone"
-														value="<?= $_SESSION['user']['tell'] ?>">
+														value="<?= $_SESSION['userm']['tell'] ?>">
 
 												</div>
 
@@ -230,7 +230,7 @@
 													</label>
 													<input name="address" id="billingAddress" type="text"
 														class="field__input" data-bind="billing.address"
-														value="<?= $_SESSION['user']['address'] ?>">
+														value="<?= $_SESSION['userm']['address'] ?>">
 												</div>
 
 											</div>

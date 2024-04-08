@@ -25,7 +25,7 @@ function authenCliLogin()
         exit();
     }
 
-    $_SESSION['user'] = $user;
+    $_SESSION['userm'] = $user;
 
     header('Location: ' . BASE_URL);
     exit();
@@ -33,7 +33,7 @@ function authenCliLogin()
 
 function authenCliLogout()
 {
-    if (!empty($_SESSION['user'])) {
+    if (!empty($_SESSION['userm'])) {
         session_destroy();
     }
 

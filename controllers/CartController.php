@@ -1,6 +1,9 @@
 <?php
-function cartAdd($productID, $quantity = 0)
+function cartAdd()
 {
+    $productID = $_POST['proID'];
+    $userID = $_POST['userID'];
+    $quantity = $_POST['quantity'];
     // Kiểm tra xem là có product với cái ID kia không
     $product = showOne('products', $productID);
 
@@ -10,18 +13,16 @@ function cartAdd($productID, $quantity = 0)
 
     // Kiểm tra xem trong bảng carts thì đã có bản ghi nào của user đang đăng nhập chưa
     // Có rồi thì lấy ra cartID, nếu chưa thì tạo mới
-    $cartID = getCartID($_SESSION['user']['id']);
+    $cartID = getCartID($userID);
 
     $_SESSION['cartID'] = $cartID;
 
 
     // Add sản phẩm vào session cart: $_SESSION['cart'][$productID] = $product
     // Add tiếp sản phẩm vào thằng cart_items
-    if (!isset($_SESSION['cart'][$productID])) {
+    if (empty($_SESSION['cart'][$productID])) {
         $_SESSION['cart'][$productID] = $product;
         $_SESSION['cart'][$productID]['quantity'] = $quantity;
-
-
         insert('cart_item', [
             'cart_id' => $cartID,
             'pro_id' => $productID,
@@ -29,9 +30,9 @@ function cartAdd($productID, $quantity = 0)
         ]);
     } else {
         $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
-
         updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
     }
+
 
     // Chuyển hướng qua trang list cart
     header('Location: ' . BASE_URL . '?act=cart');
@@ -40,7 +41,15 @@ function cartList()
 {
     $view = "viewAll/cart";
     $style = 'styles/cart';
-    $carts = cartItemAll($_SESSION['user']['id']);
+    $totalc = 0;
+    if (!empty($_SESSION['userm'])) {
+        $favs = listFav($_SESSION['userm']['id']);
+        $carts = cartItemAll($_SESSION['userm']['id']);
+        foreach ($carts as $cart) {
+            $totalc += $cart['quantity'];
+        }
+        // $_SESSION['cart'] = $carts;
+    }
     $tittle = 'Giỏ hàng';
 
 
@@ -50,6 +59,7 @@ function cartList()
 
 function cartInc($productID)
 {
+
     // Kiểm tra sản phẩm có tồn tại không
     $product = showOne('products', $productID);
 
@@ -63,6 +73,8 @@ function cartInc($productID)
 
         updateQuantityByCartIDAndProductID($_SESSION['cartID'], $productID, $qtyTMP);
     }
+
+    // debug($_SESSION['cart']['quantity']);
 
     // Chuyển hướng qua trang list cart
     header('Location: ' . BASE_URL . '?act=cart');
