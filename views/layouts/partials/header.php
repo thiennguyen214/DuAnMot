@@ -266,7 +266,7 @@
 								</li>
 
 								<li class="nav-item">
-									<a class="a-img a-index" href="<?= BASE_URL ?>?act=bills" title="Liên hệ">
+									<a class="a-img a-index" href="<?= BASE_URL ?>?act=lienhe" title="Liên hệ">
 										Liên hệ
 									</a>
 								</li>

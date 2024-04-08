@@ -243,7 +243,7 @@
 											</div>
 
 
-											<div class="field field--show-floating-label ">
+											<!-- <div class="field field--show-floating-label ">
 												<div class="field__input-wrapper field__input-wrapper--select2">
 													<label for="billingProvince" class="field__label">Tỉnh thành</label>
 													<select name="billingProvince" id="billingProvince" size="1"
@@ -284,7 +284,7 @@
 													</select>
 												</div>
 
-											</div>
+											</div> -->
 
 
 
