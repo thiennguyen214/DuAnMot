@@ -39,7 +39,7 @@
                                     <a class="title-info" href="/account/changepassword">Đổi mật khẩu</a>
                                 </li>
                                 <li>
-                                    <a class="title-info" href="/account/addresses">Sổ địa chỉ (1)</a>
+                                    <a class="title-info" href="<?= BASE_URL ?>?act=addresses">Sổ địa chỉ (1)</a>
                                 </li>
                             </ul>
                         </div>

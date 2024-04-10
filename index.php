@@ -63,6 +63,7 @@ match ($act) {
     'thongtintk' => showThongtintk(),
     'lienhe' => showLienhe(),
     'chitietsp' => showChitietsp(),
+    'addresses' => showAddresses(),
 
     // <<<<<<< HEAD
     'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),
