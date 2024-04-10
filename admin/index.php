@@ -81,12 +81,11 @@ match ($act) {
 
 
     // CRUD oder
-    'oders' => oderListAll(),
+    'oders' => oderListAll1($_GET['status']),
     // 'oder-detail' => oderShowOne($_GET['id']),
-    'oder_status' => upStatus($_GET['id']),
+    'oder_status' => upStatus($_GET['id'], $_GET['status']),
     // 'oder-create' => oderCreate(),
-    'oder-update' => orderUpdate($_GET['id']),
-    'oder-delete' => oderDelete($_GET['id']),
+
 
     // CRUD products
     'products' => viewProductListAll(),
@@ -96,11 +95,12 @@ match ($act) {
     'product-delete' => productDelete($_GET['id']),
 
     //     // CRUD post
-//     'posts' => postListAll(),
-//     'post-detail' => postShowOne($_GET['id']),
-//     'post-create' => postCreate(),
-//     'post-update' => postUpdate($_GET['id']),
-//     'post-delete' => postDelete($_GET['id']),
+    'posts' => postListAll(),
+    'post-detail' => postShowOne($_GET['id']),
+    'post-create' => postCreate(),
+    'post-update' => postUpdate($_GET['id']),
+    'post-delete' => postDelete($_GET['id']),
+    'showPost' => postShow($_GET['id']),
 
     //     // Setting
 //     'setting-form' => settingShowForm(),
@@ -110,6 +110,7 @@ match ($act) {
     'login' => authenShowFormLogin(),
     'logout' => authenLogout(),
 // 'forgot' => authenShowFormForgot(),
+
 
 };
 

@@ -1,10 +1,11 @@
 <?php
 if (!function_exists('listOder')) {
-    function listOder()
+    function listOder($status)
     {
         try {
             $sql = "SELECT 
                 bi.id AS bi_id,
+                b.id AS b_id,
                 b.tong AS b_tong,
                 b.name AS b_name,
                 p.name AS p_name,
@@ -15,10 +16,13 @@ if (!function_exists('listOder')) {
             FROM bills_item AS bi
             INNER JOIN bills AS b ON b.id = bi.bill_id
             INNER JOIN products AS p ON p.id = bi.pro_id
+            HAVING b_status = :statuss 
             ORDER BY bi_id DESC;
             ";
 
             $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->bindParam(":statuss", $status);
 
             $stmt->execute();
 

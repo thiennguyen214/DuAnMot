@@ -41,6 +41,7 @@ function cartList()
     $view = "viewAll/cart";
     $style = 'styles/cart';
     $carts = cartItemAll($_SESSION['user']['id']);
+    $tittle = 'Giỏ hàng';
 
 
     require_once PATH_VIEW . '/layouts/master.php';

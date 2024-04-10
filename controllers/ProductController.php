@@ -1,12 +1,12 @@
 <?php
 function showProduct()
 {
-    // <<<<<<< HEAD
+   
 
     // echo $product['type_id'];
 
 
-    // =======
+    
     $view = "viewAll/product";
     $style = "styles/product";
     $active4 = "active";
@@ -24,13 +24,13 @@ function showProduct()
 
     }
 
-    // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
+    if ($_GET['act'] == 'Unisex') {
+        $products = selectSeg('Nước Hoa Unisex');
 
+    }
+
+    
 
     require_once PATH_VIEW . '/layouts/master.php';
 
 }
-// <<<<<<< HEAD
-// =======
-
-// >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241

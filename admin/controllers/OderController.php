@@ -1,23 +1,36 @@
 <?php
-function oderListAll()
+function oderListAll1($status)
 {
     $title = 'Danh sách Oder';
+    if ($status == '1') {
+        $btn1 = 'btn-addd';
+    } else if ($status == "2") {
+        $btn2 = 'btn-addd';
+    } else if ($status == '3') {
+        $btn3 = 'btn-addd';
+    } else if ($status == '4') {
+        $btn4 = 'btn-addd';
+    } else if ($status == '0') {
+        $btn0 = 'btn-addd';
+    }
+
     $view = 'order/index';
+    $viewtable = 'table1';
     $script = 'datetime';
     $style = 'datatable';
+
     // $style2 = 'form';
+
+
     $script3 = 'table';
     $active4 = 'active';
     $checkbox = 'create2';
-
-
-    $oders = listOder();
-
-
-
-
+    $oders = listOder($status);
+    // debug($oders);
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
+
 }
+
 
 function oderShowOne($id)
 {
@@ -32,63 +45,25 @@ function oderShowOne($id)
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
-function oderDelete($id)
-{
-    delete2('bills', $id);
-    delete2('bills_item', $id);
-    $script3 = 'table';
 
 
-    $_SESSION['success'] = 'Thao tác thành công!';
-
-    header('Location: ' . BASE_URL_ADMIN . '?act=oders');
-    exit();
-}
-
-function orderUpdate($id)
-{
-    $oder = listOneOder($id);
-
-    if (empty($oder)) {
-        e404();
-    }
-
-    $title = 'Cập nhật User: ' . $oder['b_name'];
-    $view = 'order/update';
-    $style2 = 'form';
-    $script = 'datetime';
-    $style = 'datatable';
-    $script2 = 'create';
-    $script3 = 'create2';
-    $active4 = 'active';
-
-    if (!empty($_POST)) {
-        $data = [
-            "name" => $_POST['name'] ?? null,
-            "email" => $_POST['email'] ?? null,
-        ];
-
-        update('users', $id, $data);
-        header('Location: ' . BASE_URL_ADMIN . '?act=users');
-        exit();
-    }
-
-    require_once PATH_VIEW_ADMIN . 'layout/master.php';
-}
-
-function upStatus($id)
+function upStatus($id, $sta)
 {
 
-    $oder = showOne('bills', $id);
-    $status = $oder['status'] + 1;
-    if ($oder['status'] == 1) {
-        updateOrder($id, $status);
-    } else if ($oder['status'] == 2) {
-        updateOrder($id, $status);
-    } else if ($oder['status'] == 3) {
-        updateOrder($id, $status);
+    $status = $sta + 1;
+    if ($sta == 0) {
+        updateOrder($id, 0);
+    } else {
+        if ($sta == 1) {
+            updateOrder($id, $status);
+        } else if ($sta == 2) {
+            updateOrder($id, $status);
+        } else if ($sta == 3) {
+            updateOrder($id, $status);
+        }
     }
 
-    header('Location: ' . BASE_URL_ADMIN . '?act=oder-update&id=' . $oder['id']);
+
+    header('Location: ' . BASE_URL_ADMIN . '?act=oders&status=' . $sta);
     exit();
 }

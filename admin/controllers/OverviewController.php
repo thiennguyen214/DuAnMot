@@ -26,7 +26,7 @@ function overListAll()
 
     $countCli = count($cli);
 
-//count admin
+    //count admin
     $ad = array_filter($users, function ($admin) {
         return $admin['role'] == 1;
     });
@@ -41,7 +41,48 @@ function overListAll()
 
     // san pham ban chay
     $sp_ban_chay = topBanchay('products');
+
+    $bills = listAll('bills');
+
+
+    //số dơn hang
+    $billsStatus = array_filter($bills, function ($status) {
+        return $status['status'] == 2 || $status['status'] == 1 || $status['status'] == 3;
+    });
+
+    $countBillStatus = count($billsStatus);
+
+    //Don hang huy
+
+    $OrderCancle = array_filter($bills, function ($status) {
+        return $status['status'] == 0;
+    });
+
+    $countOrderCancle = count($OrderCancle);
+
+
+    //Tong thu nhập trên các đơn hiện có
+
+    $tong = oderSum();
+
+    //bảng tổng các đơn hiện có
+    $TableSum = FillDataBills();
+
+
+    //user mới
+    $NewUser = NewUser();
     
+
+
+
+
+
+
+
+
+
+
+
 
 
 

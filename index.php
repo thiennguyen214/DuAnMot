@@ -42,25 +42,27 @@ match ($act) {
     // 'user-detail' => userDetail(),
 
     '/' => showHome(),
-    // 'log' => showLog(),
+    'log' => showLog(),
     'posts' => showPost(),
-    // <<<<<<< HEAD
+    
     // 'cart' => showCart(),
     'products' => showProduct(),
-    // =======
+    
+    
     'productDetail' => showProductDetail($_GET['id']),
     // 'posts' => showPost(),
 
     // 'productDetail' => showProductDetail(),
 
 
-    // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
+  
     'introduce' => showIntroduction(),
     'brand' => showBrand(),
     'thanhtoan' => showThanhtoan(),
     'bills' => showBills(),
     'thongtintk' => showThongtintk(),
     'lienhe' => showLienhe(),
+    'chitietsp' => showChitietsp(),
 
     // <<<<<<< HEAD
     'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),
@@ -76,11 +78,13 @@ match ($act) {
     'log' => showLog(),
     'logoutc' => authenCliLogout(),
 // =======
-// 'Male' => showProduct(),
-// 'Female' => showProduct(),
+'Male' => showProduct(),
+'Female' => showProduct(),
+
+'Unisex' => showProduct(),
 
 
-// >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
+
 
 
 

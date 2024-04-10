@@ -28,8 +28,8 @@ function orderPurchase()
             $data['tell'] = $_POST['tell'];
             $data['address'] = $_POST['address'];
             $data['note'] = $_POST['note'];
-            // $data['total'] = 
-            $data['total'] = caculator_total_order(false);
+            $data['total'] = $_POST['tong'];
+            $data['tong'] = caculator_total_order(false);
             $data['status'] = STATUS_DELIVERY_WFC;
             $data['paymethod'] = STATUS_PAYMENT_UNPAID;
 

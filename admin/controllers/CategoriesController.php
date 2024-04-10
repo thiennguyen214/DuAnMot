@@ -7,7 +7,6 @@ function categoryListAll()
     $view = 'viewProducts/index';
     $viewtable = 'type_pros/index';
     $script = 'datetime';
-    // $script2 = 'categories/script';
     $script3 = 'table';
     $style = 'datatable';
     $style2 = 'form';
@@ -23,6 +22,7 @@ function categoryListAll()
 //Delete category
 function categoryDelete($id)
 {
+    DeleteTheoTypeID('products',$id);
     delete2('type_pro', $id);
 
     $_SESSION['success'] = 'Thao tác thành công!';

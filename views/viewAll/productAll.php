@@ -86,22 +86,15 @@
 
                             <div class="swiper-container gallery-top">
                                 <div class="swiper-wrapper" id="lightgallery">
-                                    <a class="swiper-slide" data-hash="0" href="<?= $product['img'] ?>"
-                                        title="Click để xem">
-                                        <img height="480" width="480" src="<?= $product['img'] ?>"
-                                            alt="<?= $product['name'] ?>"
-                                            data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
-                                            class="img-responsive mx-auto d-block swiper-lazy" />
-                                    </a>
-                                    <?php foreach ($imgs as $img) { ?>
+                                    <?php //foreach ($imgs as $img) { ?>
                                         <a class="swiper-slide" data-hash="0" href="<?= $img['img'] ?>"
                                             title="Click để xem">
-                                            <img height="480" width="480" src="<?= $img['img'] ?>"
+                                            <img height="480" width="480" src="<?= $data['img'] ?>"
                                                 alt="<?= $product['name'] ?>"
                                                 data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
                                                 class="img-responsive mx-auto d-block swiper-lazy" />
                                         </a>
-                                    <?php } ?>
+                                    <?php //} ?>
 
                                 </div>
 
@@ -116,24 +109,16 @@
                             </div>
                             <div class="swiper-container gallery-thumbs">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide" data-hash="0">
-                                        <div class="p-100">
-                                            <img height="100" width="100" src="<?= $product['img'] ?>"
-                                                alt="<?= $product['name'] ?>"
-                                                data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
-                                                class="swiper-lazy" />
-                                        </div>
-                                    </div>
-                                    <?php foreach ($imgs as $img) { ?>
+                                    <?php //foreach ($imgs as $img) { ?>
                                         <div class="swiper-slide" data-hash="0">
                                             <div class="p-100">
-                                                <img height="100" width="100" src="<?= $img['img'] ?>"
+                                                <img height="100" width="100" src="<?= $data['img'] ?>"
                                                     alt="<?= $product['name'] ?>"
                                                     data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
                                                     class="swiper-lazy" />
                                             </div>
                                         </div>
-                                    <?php } ?>
+                                    <?php //} ?>
 
 
                                 </div>
