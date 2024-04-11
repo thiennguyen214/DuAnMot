@@ -32,36 +32,19 @@ middleware_auth_check_cl($act, $arrRouteNeedAuth);
 //
 match ($act) {
 
-    // '/' => index(),
-    // 'gioithieu' => gioithieu(),
-    // 'tintuc' => tintuc(),
-    // 'trangchu' => trangchu(),
-    // 'thuonghieu' => thuonghieu(),
-    // 'sanpham' => sanpham(),
-    // 'giohang' => giohang(),
-    // 'user-detail' => userDetail(),
-
     '/' => showHome(),
     'posts' => showPost(),
-    // <<<<<<< HEAD
-    // 'cart' => showCart(),
+
     'products' => showProduct(),
 
-    // =======
     'productDetail' => showProductDetail($_GET['id']),
-    // 'posts' => showPost(),
 
-    // 'productDetail' => showProductDetail(),
-
-
-    // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
     'introduce' => showIntroduction(),
     'brand' => showBrand(),
     'thanhtoan' => showThanhtoan(),
     'bills' => showBills(),
     'thongtintk' => showThongtintk(),
 
-    // <<<<<<< HEAD
     'cart-add' => cartAdd(),
     'cart' => cartList(),
     'cart-inc' => cartInc($_GET['productID']),
@@ -74,6 +57,8 @@ match ($act) {
 
     'log' => showLog(),
     'logoutc' => authenCliLogout(),
+
+    'reg' => showReg(),
     // =======
     'Male' => showProduct(),
     'Female' => showProduct(),
@@ -83,6 +68,7 @@ match ($act) {
     // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),
 
     'favorite' => showFavs($_GET['userID']),
+    'favCreat' => ajaxFavCreate()
 
 
 // >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241

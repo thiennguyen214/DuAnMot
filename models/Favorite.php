@@ -27,13 +27,18 @@ if (!function_exists('listFav')) {
         }
     }
 }
-if (!function_exists('updateFav')) {
-    function updateFav($name, $userID, $proID)
+
+if (!function_exists('deleteFav')) {
+    function deleteFav($userID, $proID)
     {
         try {
-            $sql = "UPDATE '$name' SET user_id = '$userID',pro_id = '$proID'  WHERE user_id = :userID";
+            $sql = "DELETE FROM favourite WHERE user_id = :userid AND pro_id = :proid";
+
             $stmt = $GLOBALS['conn']->prepare($sql);
-            $stmt->bindParam(":userID", $userID);
+
+            $stmt->bindParam(":userid", $userID);
+            $stmt->bindParam(":proid", $proID);
+
             $stmt->execute();
         } catch (\Exception $e) {
             debug($e);

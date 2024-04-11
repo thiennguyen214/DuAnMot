@@ -9,10 +9,6 @@ function showThanhtoan()
     // debug($dataUser);
     // $users = listAll('users');
     // debug($_SESSION['cart']);
-
-
-
-
     require_once PATH_VIEW . '/viewAll/thanhtoan.php';
 
 }

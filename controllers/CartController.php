@@ -1,6 +1,7 @@
 <?php
 function cartAdd()
 {
+    $flag = false;
     $productID = $_POST['proID'];
     $userID = $_POST['userID'];
     $quantity = $_POST['quantity'];
@@ -16,11 +17,11 @@ function cartAdd()
     $cartID = getCartID($userID);
 
     $_SESSION['cartID'] = $cartID;
-
+    $carts = cartItemAll($userID);
 
     // Add sản phẩm vào session cart: $_SESSION['cart'][$productID] = $product
     // Add tiếp sản phẩm vào thằng cart_items
-    if (empty($_SESSION['cart'][$productID])) {
+    if (!isset($_SESSION['cart'][$productID])) {
         $_SESSION['cart'][$productID] = $product;
         $_SESSION['cart'][$productID]['quantity'] = $quantity;
         insert('cart_item', [
@@ -28,14 +29,19 @@ function cartAdd()
             'pro_id' => $productID,
             'quantity' => $quantity
         ]);
+        $flag = true;
     } else {
         $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
         updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
+        $flag = true;
     }
-
-
-    // Chuyển hướng qua trang list cart
-    header('Location: ' . BASE_URL . '?act=cart');
+    echo json_encode(
+        array(
+            'status' => $flag,
+        )
+    );
+    // header("location: " . __DIR__);
+    // require_once PATH_VIEW . '/layouts/master.php';
 }
 function cartList()
 {
@@ -48,7 +54,6 @@ function cartList()
         foreach ($carts as $cart) {
             $totalc += $cart['quantity'];
         }
-        // $_SESSION['cart'] = $carts;
     }
     $tittle = 'Giỏ hàng';
 
@@ -59,29 +64,35 @@ function cartList()
 
 function cartInc($productID)
 {
-
+    $flag = false;
     // Kiểm tra sản phẩm có tồn tại không
     $product = showOne('products', $productID);
 
     if (empty($product)) {
         debug('404 Not found');
     }
-
     // Tăng số lượng lên 1
     if (isset($_SESSION['cart'][$productID])) {
         $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += 1;
-
         updateQuantityByCartIDAndProductID($_SESSION['cartID'], $productID, $qtyTMP);
+        $flag = true;
     }
 
     // debug($_SESSION['cart']['quantity']);
+    echo json_encode(
+        array(
+            'status' => $flag,
+        )
+    );
 
     // Chuyển hướng qua trang list cart
-    header('Location: ' . BASE_URL . '?act=cart');
+    // header('Location: ' . BASE_URL . '?act=cart');
 }
 
 function cartDec($productID)
 {
+    $flag = false;
+    $quantity = $_GET['total'];
     // Kiểm tra sản phẩm có tồn tại không
     $product = showOne('products', $productID);
 
@@ -92,32 +103,40 @@ function cartDec($productID)
     // giảm số lượng lên 1
     if (isset($_SESSION['cart'][$productID]) && $_SESSION['cart'][$productID]['quantity'] > 2) {
         $qtyTMP = $_SESSION['cart'][$productID]['quantity'] -= 1;
-
         updateQuantityByCartIDAndProductID($_SESSION['cartID'], $productID, $qtyTMP);
+        $flag = true;
     }
-
-    // Chuyển hướng qua trang list cart
-    header('Location: ' . BASE_URL . '?act=cart');
+    echo json_encode(
+        array(
+            'status' => $flag,
+        )
+    );
+    // header('Location: ' . BASE_URL . '?act=cart');
 }
 
 function cartDel($productID)
 {
+    // $productID = $_GET['id'];
     // Kiểm tra sản phẩm có tồn tại không
     $product = showOne('products', $productID);
-
+    $flag = false;
     if (empty($product)) {
         debug('404 Not found');
     }
-
     // Xóa bản ghi trong session và cart_items
     if (isset($_SESSION['cart'][$productID])) {
         unset($_SESSION['cart'][$productID]);
-
         deleteCartItemByCartIDAndProductID($_SESSION['cartID'], $productID);
+        $flag = true;
     }
+    echo json_encode(
+        array(
+            'status' => $flag,
+        )
+    );
 
     // Chuyển hướng qua trang list cart
-    header('Location: ' . BASE_URL . '?act=cart');
+    // header('Location: ' . BASE_URL . '?act=cart');
 }
 
 

@@ -7362,36 +7362,36 @@ Ajax Bizweb Add To Cart
 			  <?php
 			  $tong = 0;
 			  foreach ($carts as $cart) { ?>
-										  <div class="ajaxcart__product cart_product">
-											  <a href="" class="ajaxcart__product-image cart_image" title="<?= $cart['p_name'] ?>"><img width="80" height="80" src="<?= $cart['p_name'] ?>" alt="<?= $cart['p_name'] ?>"></a>
-											  <div class="grid__item cart_info">
-												  <div class="ajaxcart__product-name-wrapper cart_name">
-													  <a href="" class="ajaxcart__product-name h4" title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
-													  <span class="ajaxcart__product-meta variant-title"></span>
-													  <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;">Xóa</a>
-												  </div>
-												  <div class="grid">
-													  <div class="grid__item one-half cart_select cart_item_name ">
-													  <label class="cart_quantity">Số lượng</label>
-														  <div class="ajaxcart__qty input-group-btn">
-															  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count" aria-label="-">
-															  <a href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
-															  </button>
-															  <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="<?= $cart['quantity'] ?>" min="0">
-															  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count" aria-label="+">
-															  <a href="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
-															  </button>
-														  </div>
-													  </div>
-													  <div class="grid__item one-half text-right cart_prices">
-													  <span class="cart-price"><?= $cart['p_price_sale'] ?></span>
-													  </div>
-												  	<?php $tone = $cart['p_price_sale'] * $cart['quantity'] ?>
-												  	<?php $tong += $tone ?>
-												  </div>
-											  </div>
-										  </div>
-									  </div>
+																	  <div class="ajaxcart__product cart_product">
+																		  <a href="" class="ajaxcart__product-image cart_image" title="<?= $cart['p_name'] ?>"><img width="80" height="80" src="<?= $cart['p_name'] ?>" alt="<?= $cart['p_name'] ?>"></a>
+																		  <div class="grid__item cart_info">
+																			  <div class="ajaxcart__product-name-wrapper cart_name">
+																				  <a href="" class="ajaxcart__product-name h4" title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
+																				  <span class="ajaxcart__product-meta variant-title"></span>
+																				  <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;">Xóa</a>
+																			  </div>
+																			  <div class="grid">
+																				  <div class="grid__item one-half cart_select cart_item_name ">
+																				  <label class="cart_quantity">Số lượng</label>
+																					  <div class="ajaxcart__qty input-group-btn">
+																						  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count" aria-label="-">
+																						  <a href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
+																						  </button>
+																						  <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="<?= $cart['quantity'] ?>" min="0">
+																						  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count" aria-label="+">
+																						  <a href="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
+																						  </button>
+																					  </div>
+																				  </div>
+																				  <div class="grid__item one-half text-right cart_prices">
+																				  <span class="cart-price"><?= $cart['p_price_sale'] ?></span>
+																				  </div>
+																			  	<?php $tone = $cart['p_price_sale'] * $cart['quantity'] ?>
+																			  	<?php $tong += $tone ?>
+																			  </div>
+																		  </div>
+																	  </div>
+																  </div>
 			  <?php } ?>
 		  </div>
 		  <div class="ajaxcart__footer ajaxcart__footer--fixed cart-footer">
@@ -7571,7 +7571,7 @@ Ajax Bizweb Add To Cart
 	  </div>
 	</script>
 
-<div id="popup-cart-mobile" class="popup-cart-mobile">
+<div class="popup-cart-mobile">
 	<div class="header-popcart">
 		<div class="top-cart-header">
 			<span>
@@ -7585,7 +7585,7 @@ Ajax Bizweb Add To Cart
 		</div>
 		<div class="media-content bodycart-mobile"></div>
 		<a class="noti-cart-count" href="cart.html" title="Giỏ hàng">
-			Giỏ hàng của bạn hiện có <span class="count_item_pr"></span> sản phẩm
+			Giỏ hàng của bạn hiện có <span class="count_item_pr"><?= $totalc ?></span> sản phẩm
 		</a>
 		<a title="Đóng" class="cart_btn-close iconclose">
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
@@ -7600,8 +7600,8 @@ Ajax Bizweb Add To Cart
 			</svg>
 		</a>
 		<div class="bottom-action">
-			<div class="cart_btn-close tocontinued">Tiếp tục mua hàng</div>
-			<a href="cart.html" class="checkout"> Thanh toán ngay </a>
+			<div class="cart_btn-close tocontinuedc">Tiếp tục mua hàng</div>
+			<a href="cart.html" class="checkoutc"> Thanh toán ngay </a>
 		</div>
 	</div>
 </div>

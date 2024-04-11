@@ -16,7 +16,8 @@
             </ul>
         </div>
     </section>
-    <section class="main-cart-page main-container col1-layout">
+
+    <section class="cartload main-cart-page main-container col1-layout">
         <div class="main container cartpcstyle">
             <div class="wrap_background_aside margin-bottom-40" style="display: inline-block;   width: 100%;">
                 <?php
@@ -42,22 +43,21 @@
                                             </div>
                                             <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
                                                 <?php $tong = 0;
-                                                foreach ($carts as $cart) { ?>
+                                                foreach ($_SESSION['cart'] as $key => $cart) { ?>
                                                     <div class="ajaxcart__row">
                                                         <div class="ajaxcart__product cart_product">
                                                             <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['pro_id'] ?>"
                                                                 class="ajaxcart__product-image cart_image"
                                                                 title="<?= $cart['p_name'] ?>"><img width="80" height="80"
-                                                                    src="<?= $cart['p_img'] ?>"
+                                                                    src="<?= $cart['p_img'] ?>"0
                                                                     alt="<?= $cart['p_name'] ?>"></a>
                                                             <div class="grid__item cart_info">
                                                                 <div class="ajaxcart__product-name-wrapper cart_name">
                                                                     <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['pro_id'] ?>"
                                                                         class="ajaxcart__product-name h4"
                                                                         title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
-                                                                    <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove"
-                                                                        href="<?= BASE_URL . '?act=cart-del&productID=' . $item['id'] ?>"
-                                                                        onclick="return confirm('có chắc xóa không')">Xóa</a>
+                                                                    <a class="cart__btn-remove remoc" href=""
+                                                                        data-url="<?= BASE_URL . '?act=cart-del&productID=' . $cart['pro_id'] ?>">Xóa</a>
                                                                 </div>
                                                                 <div class="grid">
                                                                     <div class="grid__item one-half text-right cart_prices">
@@ -67,20 +67,17 @@
                                                                 </div>
                                                                 <div class="grid">
                                                                     <div class="grid__item one-half cart_select">
-                                                                        <div class="ajaxcart__qty input-group-btn">
-                                                                            <button type="button" class="sitems-count"
-                                                                                aria-label="-">
-                                                                                <a
-                                                                                    href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
+                                                                        <div class="input-group-btn">
+                                                                            <button class="sitems-count">
+                                                                                <a class="dec" href=""
+                                                                                    data-total="<?= $cart['quantity'] ?>"
+                                                                                    data-url="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['pro_id'] ?>">-</a>
                                                                             </button>
-                                                                            <input type="text" name="updates[]"
-                                                                                class="ajaxcart__qty-num number-sidebar"
-                                                                                maxlength="3" value="<?= $cart['quantity'] ?>"
-                                                                                min="0">
-                                                                            <button type="button" class="items-count"
-                                                                                aria-label="+"
-                                                                                onclick="inc(<?= $cart['id'] ?>)">
-                                                                                +
+                                                                            <input type="text" class="uptotal" maxlength="3"
+                                                                                value="<?= $cart['quantity'] ?>" min="0">
+                                                                            <button class="items-count">
+                                                                                <a class="inc" href=""
+                                                                                    data-url="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
                                                                             </button>
                                                                         </div>
                                                                     </div>
@@ -351,63 +348,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <script>
-                                $(document).on('click', '.modalcoupon-close, #modal-coupon-product .modalcoupon-overlay, .fancybox-overlay', function (e) {
-                                    $("#modal-coupon-product").fadeOut(0);
-                                    awe_hidePopup();
-                                });
-                                $(document).ready(function ($) {
-                                    var modal = $('.modalcoupon-product');
-                                    var btn = $('.coupon-toggle-btn');
-                                    var span = $('.modalcoupon-close');
-                                    btn.click(function () {
-                                        modal.show();
-                                    });
-                                    span.click(function () {
-                                        modal.hide();
-                                    });
-                                    $(window).on('click', function (e) {
-                                        if ($(e.target).is('.modal')) {
-                                            modal.hide();
-                                        }
-                                    });
-                                });
-                                $('.dk_btn_1').click(function () {
-                                    $('.contet_dk_1').slideToggle();
-                                    return false;
-                                });
-                                $('.dk_btn_2').click(function () {
-                                    $('.contet_dk_2').slideToggle();
-                                    return false;
-                                });
-                                $('.dk_btn_3').click(function () {
-                                    $('.contet_dk_3').slideToggle();
-                                    return false;
-                                });
-                                $('.dk_btn_4').click(function () {
-                                    $('.contet_dk_4').slideToggle();
-                                    return false;
-                                });
-                                $(document).on('click', '.dis_copy', function (e) {
-                                    e.preventDefault();
-                                    var copyText = $(this).attr('data-copy');
-                                    var copyTextarea = document.createElement("textarea");
-                                    copyTextarea.textContent = copyText;
-                                    document.body.appendChild(copyTextarea);
-                                    copyTextarea.select();
-                                    document.execCommand("copy");
-                                    document.body.removeChild(copyTextarea);
-                                    var cur_text = $(this).text();
-                                    var $cur_btn = $(this);
-                                    $(this).addClass("disabled");
-                                    $(this).text("Đã lưu");
-                                    $(this).parent().addClass('active');
-                                    setTimeout(function () {
-                                        $cur_btn.removeClass("disabled");
-                                        $cur_btn.parent().removeClass('active');
-                                        $cur_btn.text(cur_text);
-                                    }, 2500)
-                                })
+                            <script>                             $(document).on('click', '.modalcoupon-close, #modal-coupon-product .modalcoupon-overlay, .fancybox-overlay', function (e) {                                 $("#modal-coupon-product").fadeOut(0);                                 awe_hidePopup();                             });                             $(document).ready(function ($) {                                 var modal = $('.modalcoupon-product');                                 var btn = $('.coupon-toggle-btn');                                 var span = $('.modalcoupon-close');                                 btn.click(function () {                                     modal.show();                                 });                                 span.click(function () {                                     modal.hide();                                 });                                 $(window).on('click', function (e) {                                     if ($(e.target).is('.modal')) {                                         modal.hide();                                     }                                 });                             });                             $('.dk_btn_1').click(function () {                                 $('.contet_dk_1').slideToggle();                                 return false;                             });                             $('.dk_btn_2').click(function () {                                 $('.contet_dk_2').slideToggle();                                 return false;                             });                             $('.dk_btn_3').click(function () {                                 $('.contet_dk_3').slideToggle();                                 return false;                             });                             $('.dk_btn_4').click(function () {                                 $('.contet_dk_4').slideToggle();                                 return false;                             });                             $(document).on('click', '.dis_copy', function (e) {                                 e.preventDefault();                                 var copyText = $(this).attr('data-copy');                                 var copyTextarea = document.createElement("textarea");                                 copyTextarea.textContent = copyText;                                 document.body.appendChild(copyTextarea);                                 copyTextarea.select();                                 document.execCommand("copy");                                 document.body.removeChild(copyTextarea);                                 var cur_text = $(this).text();                                 var $cur_btn = $(this);                                 $(this).addClass("disabled");                                 $(this).text("Đã lưu");                                 $(this).parent().addClass('active');                                 setTimeout(function () {                                     $cur_btn.removeClass("disabled");                                     $cur_btn.parent().removeClass('active');                                     $cur_btn.text(cur_text);                                 }, 2500)                             })
                             </script>
                         </div>
                     </div>
@@ -502,22 +443,68 @@
                     <?php
                 } ?>
             </div>
+            <script>
+                $(document).ready(function () {
+                    $(".inc").click(function (event) {
+                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
+                        $.ajax({
+                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
+                            url: url,
+                            success: function (response) {
+                                response = JSON.parse(response);
+                                if (response.status == 0) {
+                                    alert(response.message);
+                                } else {
+                                    $('.cartload').load(location.href + ' .cartload');
+                                    $('.block-cart').load(location.href + ' .block-cart');
+                                }
+                            }
+                        });
+                    });
+                    $(".dec").click(function (event) {
+                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+                        var total = $(this).data("total");
+                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
+                        // console.log(total);
+                        // console.log(urli);
+                        $.ajax({
+                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
+                            url: url,
+                            data: { total: total },
+                            success: function (response) {
+                                response = JSON.parse(response);
+                                if (response.status == 0) {
+                                    alert(response.message);
+                                } else {
+                                    $('.cartload').load(location.href + ' .cartload');
+                                    $('.block-cart').load(location.href + ' .block-cart');
+                                }
+                            }
+                        });
+                    });
+                    $(".remoc").click(function (event) {
+                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
+                        // console.log(id);
+                        // console.log(url);
+                        $.ajax({
+                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
+                            url: url,
+                            // data: { id: id },
+                            success: function (response) {
+                                response = JSON.parse(response);
+                                if (response.status == 0) {
+                                    alert(response.message);
+                                } else {
+                                    $('.cartload').load(location.href + ' .cartload');
+                                    $('.block-cart').load(location.href + ' .block-cart');
+                                }
+                            }
+                        });
+                    });
+                });
+            </script>
         </div>
     </section>
-
-
-    <script>
-        let linkCartInc = '<?= BASE_URL . '?act=cart-inc&&sproductID=' ?>';
-        function inc(id) {
-            $.get(linkCartInc + id)
-                .then((result) => {
-                    alert("Thao tác thành công!");
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-        }
-    </script>
-
-    <?= debug($carts) ?>
+</div>

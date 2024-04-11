@@ -7,15 +7,11 @@ function showHome()
     $tittle = 'Trang chủ';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
-
     // $users = listAll('users');
     $brand = listAll('brands');
     $products = listAll('products');
-
-
     // $proTop10 = getTop10product('products');
     $top10Pro = top1OPro();
-
     $brands = listAll('brands');
     $products = listAll('products');
     $xuHuong = xuHuong();
@@ -25,16 +21,16 @@ function showHome()
     $totalc = 0;
     if (!empty($_SESSION['userm'])) {
         $favs = listFav($_SESSION['userm']['id']);
+        foreach ($favs as $fav) {
+            $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+        }
         $carts = cartItemAll($_SESSION['userm']['id']);
         foreach ($carts as $cart) {
+            $_SESSION['cart'][$cart['pro_id']] = $cart;
             $totalc += $cart['quantity'];
         }
-        $_SESSION['cart'] = $cart;
     }
-
-
     require_once PATH_VIEW . '/layouts/master.php';
-
 }
 function showne($id)
 {

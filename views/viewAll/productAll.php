@@ -86,7 +86,7 @@
 
                             <div class="swiper-container gallery-top">
                                 <div class="swiper-wrapper" id="lightgallery">
-                                    <?php //foreach ($imgs as $img) {                                                                                                                 ?>
+                                    <?php //foreach ($imgs as $img) {                                                                                                                            ?>
                                     <a class="swiper-slide" data-hash="0" href="<?= $img['img'] ?>"
                                         title="Click để xem">
                                         <img height="480" width="480" src="<?= $data['img'] ?>"
@@ -94,7 +94,7 @@
                                             data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
                                             class="img-responsive mx-auto d-block swiper-lazy" />
                                     </a>
-                                    <?php //}                                                                                                                 ?>
+                                    <?php //}                                                                                                                            ?>
 
                                 </div>
 
@@ -109,7 +109,7 @@
                             </div>
                             <div class="swiper-container gallery-thumbs">
                                 <div class="swiper-wrapper">
-                                    <?php //foreach ($imgs as $img) {                                                                                                                 ?>
+                                    <?php //foreach ($imgs as $img) {                                                                                                                            ?>
                                     <div class="swiper-slide" data-hash="0">
                                         <div class="p-100">
                                             <img height="100" width="100" src="<?= $data['img'] ?>"
@@ -118,7 +118,7 @@
                                                 class="swiper-lazy" />
                                         </div>
                                     </div>
-                                    <?php //}                                                                                                                 ?>
+                                    <?php //}                                                                                                                            ?>
 
 
                                 </div>
@@ -512,19 +512,17 @@
                                         type: "post",
                                         url: urlAddCart,
                                         data: $(this).serializeArray(),
-                                        // success: function (response) {
-                                        //     response = JSON.parse(response);
-                                        //     if (response.status == 0) {
-                                        //         alert(response.message);
-                                        //     } else {
-                                        //         alert(response.message);
-                                        //         location.reload();
-                                        //     }
-                                        // }
+                                        success: function (response) {
+                                            response = JSON.parse(response);
+                                            if (response.status == 0) {
+                                                alert(response.message);
+                                            } else {
+                                                $('.block-cart').load(location.href + ' .block-cart');
+                                            }
+                                        }
                                     });
                                 });
                             </script>
-
                             <div class="chinhsach-box">
                                 <div class="chinhsach-slider swiper-container">
                                     <div class="swiper-wrapper">

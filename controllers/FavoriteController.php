@@ -1,19 +1,32 @@
 <?php
-function ajaxFavCreate($userID, $proID)
+function ajaxFavCreate()
 {
-    try {
-        updateFav('favourite', $userID, $proID);
-    } catch (Throwable $th) {
-        http_response_code(500);
+    $data = [
+        "user_id" => $_GET['userid'],
+        'pro_id' => $_GET['proid'],
+    ];
+    if ($data['user_id'] == '') {
+        $flag = 0;
+        $mess = 'Cần đăng nhập để thực hiện chức năng này ';
+    } else {
+        if (empty($_SESSION['favs'][$data['pro_id']]) && $data['user_id'] != '') {
+            $_SESSION['favs'][$data['pro_id']] = $data['pro_id'];
+            insert('favourite', $data);
+            $flag = 1;
+            $mess = 'Thêm vào yêu thích thành công';
+        } else if (isset($_SESSION['favs'][$data['pro_id']]) && $data['user_id'] != '') {
+            unset($_SESSION['favs'][$data['pro_id']]);
+            deleteFav($data['user_id'], $data['pro_id']);
+            $flag = 2;
+            $mess = 'Xóa SP yêu thích thành công';
+        }
     }
-}
-function ajaxFavDelete($userID, $proID)
-{
-    try {
-        updateFav('favourite', $userID, $proID);
-    } catch (Throwable $th) {
-        http_response_code(500);
-    }
+    echo json_encode(
+        array(
+            'status' => $flag,
+            'mess' => $mess,
+        )
+    );
 }
 
 function showFavs($userID)
@@ -23,9 +36,6 @@ function showFavs($userID)
     $style = 'styles/favorite';
     if ($userID) {
         $favs = listFav($userID);
-        $favac = 'active';
-    } else {
-        $favs = '';
     }
     require_once PATH_VIEW . '/layouts/master.php';
 }
