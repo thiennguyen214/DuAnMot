@@ -411,6 +411,7 @@
 	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/ajaxcart.scss02fb.css?1709175143725"
 	rel="stylesheet" type="text/css" media="all" />
 <div class="backdrop__body-backdrop___1rvky"></div>
+s
 <script type="text/javascript">
 	//api bizweb
 	window.Bizweb || (window.Bizweb = {}),
@@ -7355,55 +7356,57 @@ Ajax Bizweb Add To Cart
 	</script>
 
 <script id="CartHeaderTemplate" type="text/template">
-
 	  <form action="/cart" method="post" novalidate class="cart ajaxcart cartheader">
 		  <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-			  {{#items}}
 			  <div class="ajaxcart__row">
-				  <div class="ajaxcart__product cart_product {{itemquatang}}" data-line="{{line}}">
-					  <a href="{{url}}" class="ajaxcart__product-image cart_image" title="{{name}}"><img width="80" height="80" src="{{img}}" alt="{{name}}"></a>
-					  <div class="grid__item cart_info">
-						  <div class="ajaxcart__product-name-wrapper cart_name">
-							  <a href="{{url}}" class="ajaxcart__product-name h4" title="{{name}}">{{name}}</a>
-							  {{#if variation}}
-							  <span class="ajaxcart__product-meta variant-title">{{variation}}</span>
-							  {{/if}}
-							  <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;" data-line="{{line}}">Xóa</a>
-						  </div>
-						  <div class="grid">
-							  <div class="grid__item one-half cart_select cart_item_name {{nopro}}">
-							  <label class="cart_quantity">Số lượng</label>
-								  <div class="ajaxcart__qty input-group-btn">
-									  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count" data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}" aria-label="-">
-									  -
-									  </button>
-									  <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
-									  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}" aria-label="+">
-									  +
-									  </button>
-								  </div>
-							  </div>
-							  <div class="grid__item one-half text-right cart_prices">
-							  <span class="cart-price">{{price}}</span>
-							  </div>
-						  </div>
-					  </div>
-				  </div>
-			  </div>
-			  {{/items}}
+			  <?php
+			  $tong = 0;
+			  foreach ($carts as $cart) { ?>
+																	  <div class="ajaxcart__product cart_product">
+																		  <a href="" class="ajaxcart__product-image cart_image" title="<?= $cart['p_name'] ?>"><img width="80" height="80" src="<?= $cart['p_name'] ?>" alt="<?= $cart['p_name'] ?>"></a>
+																		  <div class="grid__item cart_info">
+																			  <div class="ajaxcart__product-name-wrapper cart_name">
+																				  <a href="" class="ajaxcart__product-name h4" title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
+																				  <span class="ajaxcart__product-meta variant-title"></span>
+																				  <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;">Xóa</a>
+																			  </div>
+																			  <div class="grid">
+																				  <div class="grid__item one-half cart_select cart_item_name ">
+																				  <label class="cart_quantity">Số lượng</label>
+																					  <div class="ajaxcart__qty input-group-btn">
+																						  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count" aria-label="-">
+																						  <a href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
+																						  </button>
+																						  <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="<?= $cart['quantity'] ?>" min="0">
+																						  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count" aria-label="+">
+																						  <a href="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
+																						  </button>
+																					  </div>
+																				  </div>
+																				  <div class="grid__item one-half text-right cart_prices">
+																				  <span class="cart-price"><?= $cart['p_price_sale'] ?></span>
+																				  </div>
+																			  	<?php $tone = $cart['p_price_sale'] * $cart['quantity'] ?>
+																			  	<?php $tong += $tone ?>
+																			  </div>
+																		  </div>
+																	  </div>
+																  </div>
+			  <?php } ?>
 		  </div>
 		  <div class="ajaxcart__footer ajaxcart__footer--fixed cart-footer">
 			  <div class="ajaxcart__subtotal">
 				  <div class="cart__subtotal">
 					  <div class="cart__col-6">Tổng tiền:</div>
-					  <div class="text-right cart__totle"><span class="total-price">{{{totalPrice}}}</span></div>
+					  <div class="text-right cart__totle"><span class="total-price"><?= $tong ?></span></div>
 				  </div>
 			  </div>
 			  <div class="cart__btn-proceed-checkout-dt">
-				  <button onclick="location.href='/checkout'" type="button" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout" title="Thanh toán">Thanh toán</button>
+				  <button onclick="<?= BASE_URL ?>?act=thanhtoan" type="button" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout" title="Thanh toán">Thanh toán</button>
 			  </div>
 		  </div>
 	  </form>
+	  
 	</script>
 
 <script id="CartPopupTemplate" type="text/template">
@@ -7568,7 +7571,7 @@ Ajax Bizweb Add To Cart
 	  </div>
 	</script>
 
-<div id="popup-cart-mobile" class="popup-cart-mobile">
+<div class="popup-cart-mobile">
 	<div class="header-popcart">
 		<div class="top-cart-header">
 			<span>
@@ -7582,7 +7585,7 @@ Ajax Bizweb Add To Cart
 		</div>
 		<div class="media-content bodycart-mobile"></div>
 		<a class="noti-cart-count" href="cart.html" title="Giỏ hàng">
-			Giỏ hàng của bạn hiện có <span class="count_item_pr"></span> sản phẩm
+			Giỏ hàng của bạn hiện có <span class="count_item_pr"><?= $totalc ?></span> sản phẩm
 		</a>
 		<a title="Đóng" class="cart_btn-close iconclose">
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
@@ -7597,8 +7600,8 @@ Ajax Bizweb Add To Cart
 			</svg>
 		</a>
 		<div class="bottom-action">
-			<div class="cart_btn-close tocontinued">Tiếp tục mua hàng</div>
-			<a href="cart.html" class="checkout"> Thanh toán ngay </a>
+			<div class="cart_btn-close tocontinuedc">Tiếp tục mua hàng</div>
+			<a href="cart.html" class="checkoutc"> Thanh toán ngay </a>
 		</div>
 	</div>
 </div>
@@ -8061,47 +8064,6 @@ Ajax Bizweb Add To Cart
 							recentview_promises.push(promise);
 						}
 					}
-					Promise.all(recentview_promises).then(function (values) {
-						if (values.length > 0) {
-							var x = [];
-							setTimeout(function () {
-								$(".js-wishlist-count").html(values.length);
-							}, 500);
-							$.each(values, function (i, v) {
-								if (v.error) {
-									x.push(v.handle);
-								} else {
-									awe_lazyloadImage();
-								}
-							});
-							if (x.length > 0) {
-								var new_last_viewed_pro_array = [];
-								$.each(last_wishlist_pro_array, function (i, v) {
-									if ($.inArray(v, x) === -1) {
-										new_last_viewed_pro_array.push(v);
-									}
-								});
-								if (new_last_viewed_pro_array.length > 0) {
-									Cookies.set(
-										"last_viewed_products",
-										new_last_viewed_pro_array,
-										{
-											expires: 180,
-											sameSite: "None",
-											secure: true,
-										}
-									);
-								}
-							}
-						} else {
-							$(".js-wishlist-count").html("0");
-							$(
-								'#list-favorite .list-favorite-right[data-type="wishlist"] .list-favorite-list'
-							).append(
-								'<div class="list-favorite-main-top-error col-lg-12 col-md-12 col-sm-12 col-12 no-padding"><span style="display: block;" class="alert alert-warning" role="alert">Bạn chưa có sản phẩm yêu thích nào!</span></div>'
-							);
-						}
-					});
 				} else {
 					$(
 						'#list-favorite .list-favorite-right[data-type="wishlist"] .list-favorite-list'
@@ -8465,83 +8427,6 @@ Ajax Bizweb Add To Cart
 	$(".listSharing_overlay").on("click", function (e) {
 		$(".addThis_listSharing").removeClass("active");
 		$(".addThis_listSharing").fadeOut(150);
-	});
-</script>
-
-<div class="popup-sapo active">
-	<div class="icon">
-		<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-			<!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-			<path
-				d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z" />
-		</svg>
-	</div>
-	<div class="content">
-		<div class="title">Tích hợp sẵn các ứng dụng</div>
-		<ul>
-			<li>
-				<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-					<!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-					<path
-						d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" />
-				</svg>
-				<a href="https://apps.sapo.vn/danh-gia-san-pham-v2" target="_blank" title="Đánh giá sản phẩm">Đánh giá
-					sản phẩm</a>
-			</li>
-
-			<li>
-				<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-					<!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-					<path
-						d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" />
-				</svg>
-				<a href="https://apps.sapo.vn/mua-x-tang-y-v2" target="_blank" title="Mua X tặng Y">Mua X tặng Y</a>
-			</li>
-
-			<li>
-				<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-					<!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-					<path
-						d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" />
-				</svg>
-				<a href="https://apps.sapo.vn/quan-ly-affiliate-v2" target="_blank" title="Ứng dụng Affiliate">Ứng dụng
-					Affiliate</a>
-			</li>
-
-			<li>
-				<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-					<!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-					<path
-						d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" />
-				</svg>
-				<a href="https://apps.sapo.vn/ae-da-ngon-ngu" target="_blank" title="Đa ngôn ngữ">Đa ngôn ngữ</a>
-			</li>
-		</ul>
-		<div class="ghichu">
-			Lưu ý với các ứng dụng trả phí bạn cần cài đặt và mua ứng dụng này
-			trên App store Sapo để sử dụng ngay
-		</div>
-		<a title="Đóng" class="close-popup-sapo">
-			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
-				y="0px" viewBox="0 0 512.001 512.001" style="enable-background: new 0 0 512.001 512.001"
-				xml:space="preserve">
-				<g>
-					<g>
-						<path
-							d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z">
-						</path>
-					</g>
-				</g>
-			</svg>
-		</a>
-	</div>
-</div>
-<script>
-	$(".popup-sapo .icon").click(function () {
-		$(".popup-sapo").toggleClass("active");
-	});
-	$(".close-popup-sapo").click(function () {
-		$(".popup-sapo").toggleClass("active");
 	});
 </script>
 

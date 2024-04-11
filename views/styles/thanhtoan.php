@@ -1,43 +1,48 @@
-<link rel="shortcut icon"
-		href="<?= BASE_URL ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_favicon.ico"
-		type="image/x-icon" />
-	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/flag-icons.min.css" />
-	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.css?v=4fcd86c">
-	<link rel="stylesheet" href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css?v=96e877f">
-    <script
-		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min.js?1711356971279"></script>
+<link rel="shortcut icon" href="<?= BASE_URL ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_favicon.ico"
+	type="image/x-icon" />
+<link rel="stylesheet"
+	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/flag-icons.min.css" />
+<link rel="stylesheet"
+	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.css?v=4fcd86c">
+<link rel="stylesheet"
+	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css?v=96e877f">
+<script
+	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min.js?1711356971279"></script>
 
-	<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.js?v=11006c9"></script>
-
-    
-
-	<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.js?v=a0ee933"></script>
-
-
-    <script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js?v=f021d1e"></script>
-	<script>
-		var Bizweb = Bizweb || {};
-		Bizweb.id = '503826';
-		Bizweb.store = 'bean-perfume.mysapo.net';
-
-		Bizweb.template = 'checkout';
-		Bizweb.Checkout = Bizweb.Checkout || {};
-
-	</script>
-
-	<script>
-		window.BizwebAnalytics = window.BizwebAnalytics || {};
-		window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
-		window.BizwebAnalytics.meta.currency = 'VND';
-		window.BizwebAnalytics.tracking_url = '/s';
-		var meta = {};
+<script
+	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.js?v=11006c9"></script>
 
 
-		for (var attr in meta) {
-			window.BizwebAnalytics.meta[attr] = meta[attr];
-		}
-	</script>
-    <style>
+
+<script
+	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.js?v=a0ee933"></script>
+
+
+<script
+	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js?v=f021d1e"></script>
+<script>
+	var Bizweb = Bizweb || {};
+	Bizweb.id = '503826';
+	Bizweb.store = 'bean-perfume.mysapo.net';
+
+	Bizweb.template = 'checkout';
+	Bizweb.Checkout = Bizweb.Checkout || {};
+
+</script>
+
+<script>
+	window.BizwebAnalytics = window.BizwebAnalytics || {};
+	window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
+	window.BizwebAnalytics.meta.currency = 'VND';
+	window.BizwebAnalytics.tracking_url = '/s';
+	var meta = {};
+
+
+	for (var attr in meta) {
+		window.BizwebAnalytics.meta[attr] = meta[attr];
+	}
+</script>
+<style>
 	.field__input:focus,
 	.select2-selection:focus,
 	.select2-search__field:focus {
@@ -71,8 +76,6 @@
 		background-color: #9A0061;
 		border-color: #9A0061;
 	}
-
-
 
 	.btn,
 	.btn:hover,

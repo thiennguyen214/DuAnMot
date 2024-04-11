@@ -9,10 +9,6 @@ function showThanhtoan()
     // debug($dataUser);
     // $users = listAll('users');
     // debug($_SESSION['cart']);
-
-
-
-
     require_once PATH_VIEW . '/viewAll/thanhtoan.php';
 
 }
@@ -34,6 +30,7 @@ function orderPurchase()
             $data['paymethod'] = STATUS_PAYMENT_UNPAID;
 
             $orderID = insert_get_last_id('bills', $data);
+            debug($orderID);
 
             foreach ($_SESSION['cart'] as $productID => $item) {
                 $orderItem = [

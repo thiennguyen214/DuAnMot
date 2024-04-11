@@ -78,11 +78,11 @@ if (!function_exists('middleware_auth_check_cl')) {
     function middleware_auth_check_cl($act, $arrRouteNeedAuth)
     {
         if ($act == 'log') {
-            if (!empty($_SESSION['user'])) {
+            if (!empty($_SESSION['userm'])) {
                 header('Location: ' . BASE_URL);
                 exit();
             }
-        } elseif (empty($_SESSION['user']) && in_array($act, $arrRouteNeedAuth)) {
+        } elseif (empty($_SESSION['userm']) && in_array($act, $arrRouteNeedAuth)) {
             header('Location: ' . BASE_URL . '?act=log');
             exit();
         }

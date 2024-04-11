@@ -32,30 +32,27 @@ middleware_auth_check_cl($act, $arrRouteNeedAuth);
 //
 match ($act) {
 
-    // '/' => index(),
-    // 'gioithieu' => gioithieu(),
-    // 'tintuc' => tintuc(),
-    // 'trangchu' => trangchu(),
-    // 'thuonghieu' => thuonghieu(),
-    // 'sanpham' => sanpham(),
-    // 'giohang' => giohang(),
-    // 'user-detail' => userDetail(),
-
     '/' => showHome(),
-    'log' => showLog(),
     'posts' => showPost(),
+
     
     // 'cart' => showCart(),
     'products' => showProduct(),
     
     
+
+
+    'products' => showProduct(),
+
+
     'productDetail' => showProductDetail($_GET['id']),
-    // 'posts' => showPost(),
+
 
     // 'productDetail' => showProductDetail(),
 
 
   
+
     'introduce' => showIntroduction(),
     'brand' => showBrand(),
     'thanhtoan' => showThanhtoan(),
@@ -65,8 +62,7 @@ match ($act) {
     'chitietsp' => showChitietsp(),
     'addresses' => showAddresses(),
 
-    // <<<<<<< HEAD
-    'cart-add' => cartAdd($_GET['productID'], $_GET['quantity']),
+    'cart-add' => cartAdd(),
     'cart' => cartList(),
     'cart-inc' => cartInc($_GET['productID']),
     'cart-dec' => cartDec($_GET['productID']),
@@ -78,11 +74,18 @@ match ($act) {
 
     'log' => showLog(),
     'logoutc' => authenCliLogout(),
-// =======
-'Male' => showProduct(),
-'Female' => showProduct(),
 
-'Unisex' => showProduct(),
+    'reg' => showReg(),
+    // =======
+    'Male' => showProduct(),
+    'Female' => showProduct(),
+
+    'Unisex' => showProduct(),
+
+    // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),
+
+    'favorite' => showFavs($_GET['userID']),
+    'favCreat' => ajaxFavCreate()
 
 
 

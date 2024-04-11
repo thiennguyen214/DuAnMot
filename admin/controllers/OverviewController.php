@@ -35,7 +35,7 @@ function overListAll()
 
     //count sp het
     $sp_het = array_filter($products, function ($product) {
-        return $product['so_luong_kho'] == 0;
+        return $product['so_luong_kho'] - $product['so_luong_ban'] == 0;
     });
     $countSp_het = count($sp_het);
 
@@ -71,7 +71,7 @@ function overListAll()
 
     //user mới
     $NewUser = NewUser();
-    
+
 
 
 

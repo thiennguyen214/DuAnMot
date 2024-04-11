@@ -30,10 +30,10 @@
                                 <div class="wpx">
                                     <ul class="auth-block__menu-list">
                                         <li class="active">
-                                            <a href="#" title="Đăng nhập">Đăng nhập</a>
+                                            <a href="<?= BASE_URL ?>?act=log" title="Đăng nhập">Đăng nhập</a>
                                         </li>
                                         <li>
-                                            <a href="register.html" title="Đăng ký">Đăng ký</a>
+                                            <a href="<?= BASE_URL ?>?act=reg" title="Đăng ký">Đăng ký</a>
                                         </li>
                                     </ul>
                                     <h1 class="title_heads a-center">
