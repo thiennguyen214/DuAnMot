@@ -7,7 +7,6 @@ function categoryListAll()
     $view = 'viewProducts/index';
     $viewtable = 'type_pros/index';
     $script = 'datetime';
-    // $script2 = 'categories/script';
     $script3 = 'table';
     $style = 'datatable';
     $style2 = 'form';

@@ -35,15 +35,32 @@ match ($act) {
     '/' => showHome(),
     'posts' => showPost(),
 
+    
+    // 'cart' => showCart(),
+    'products' => showProduct(),
+    
+    
+
+
     'products' => showProduct(),
 
+
     'productDetail' => showProductDetail($_GET['id']),
+
+
+    // 'productDetail' => showProductDetail(),
+
+
+  
 
     'introduce' => showIntroduction(),
     'brand' => showBrand(),
     'thanhtoan' => showThanhtoan(),
     'bills' => showBills(),
     'thongtintk' => showThongtintk(),
+    'lienhe' => showLienhe(),
+    'chitietsp' => showChitietsp(),
+    'addresses' => showAddresses(),
 
     'cart-add' => cartAdd(),
     'cart' => cartList(),
@@ -71,7 +88,7 @@ match ($act) {
     'favCreat' => ajaxFavCreate()
 
 
-// >>>>>>> abde912301b35e9d49dfd7962ed3a68628d28241
+
 
 
 

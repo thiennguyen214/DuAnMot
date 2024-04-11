@@ -754,12 +754,93 @@
                         </div>
 
                     <?php endforeach; ?>
+<<<<<<< HEAD
+
+                    <!-- <div class="item_pro_top">
+                        <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
+                            class="variants product-action" data-cart-form data-id="product-actions-33659039"
+                            enctype="multipart/form-data">
+                            <div class="product-thumbnail">
+                                <a class="image_thumb scale_hover" href="calvin-klein-ck-one-gold.html"
+                                    title="Calvin Klein CK One Gold">
+                                    <img width="480" height="480" class="lazyload image1"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/ck-one-gold-9cac464fd12640c28a22-min.png?v=1701250049417"
+                                        alt="Calvin Klein CK One Gold" />
+                                </a>
+                                <div class="action">
+                                    <input type="hidden" name="variantId" value="104172328" />
+                                    <button class="btn-cart btn-views add_to_cart" title="Thêm vào giỏ">
+                                        <svg class="icon">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-cart">
+                                            </use>
+                                        </svg>
+                                    </button>
+                                    <a title="Xem nhanh" href="calvin-klein-ck-one-gold.html"
+                                        data-handle="calvin-klein-ck-one-gold" class="quick-view btn-views">
+                                        <svg class="icon">
+                                            <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                                xlink:href="#icon-quickview">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="smart"><span>- 34% </span></div>
+                            <a href="javascript:void(0)" class="setWishlist btn-wishlist"
+                                data-wish="calvin-klein-ck-one-gold" tabindex="0" title="Thêm vào yêu thích">
+                                <svg class="icon">
+                                    <use xmlns:xlink="http:<?= BASE_URLS ?>www.w3.org/1999/xlink"
+                                        xlink:href="#icon-wishlist">
+                                    </use>
+                                </svg>
+                            </a>
+                            <div class="product-info">
+                                <h3 class="product-name">
+                                    <a class="line-clamp line-clamp-1 text-center" href="calvin-klein-ck-one-gold.html"
+                                        title="Calvin Klein CK One Gold">Calvin
+                                        Klein CK One Gold</a>
+                                </h3>
+                                <div class="price-box">
+                                    1.050.000₫
+                                    <span class="compare-price">1.580.000₫</span>
+                                </div>
+                            </div>
+                            <ul class="fragrant_product">
+                                <li class="text-center">
+                                    <img width="90" height="90" class="lazyload"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
+                                        alt="Cam" />
+                                    <span>Cam</span>
+                                </li>
+                                <li class="text-center">
+                                    <img width="90" height="90" class="lazyload"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
+                                        alt="Trái cây" />
+                                    <span>Trái cây</span>
+                                </li>
+                                <li class="text-center">
+                                    <img width="90" height="90" class="lazyload"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
+                                        alt="Hoa nhài" />
+                                    <span>Hoa nhài</span>
+                                </li>
+                            </ul>
+                        </form>
+                    </div> -->
+
+=======
+>>>>>>> 494f239f1a6d855ac3cbf9fef72171f56cf37481
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 order-md-3">
                     <div class="banner_tren banner_tren_2">
                         <img width="570" height="430" class="lazyload"
-                            src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                            data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_pro_2.jpg?1709175143725"
+                            src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                            data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/banner_pro_2.jpg?1709175143725"
                             alt="Xu hướng" />
                         <div class="content_bst">
                             <p class="content">BST MÙA HÈ</p>
@@ -772,13 +853,19 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 item_pro_tren order-md-4">
                     <div class="item_pro_top">
+<<<<<<< HEAD
+                        <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
+                            class="variants product-action" data-cart-form data-id="product-actions-33659593"
+                            enctype="multipart/form-data">
+=======
                         <form action="" method="post" class="product-action ad_tocart" enctype="multipart/form-data">
+>>>>>>> 494f239f1a6d855ac3cbf9fef72171f56cf37481
                             <div class="product-thumbnail">
                                 <a class="image_thumb scale_hover" href="unisex-creed-millesime-imperial.html"
                                     title="Unisex Creed Millesime Imperial">
                                     <img width="480" height="480" class="lazyload image1"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-creed-millesime-imperial-edp-100ml.png?v=1701251789210"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-creed-millesime-imperial-edp-100ml.png?v=1701251789210"
                                         alt="Unisex Creed Millesime Imperial" />
                                 </a>
                                 <div class="action">
@@ -823,22 +910,22 @@
                             <ul class="fragrant_product">
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_10.jpg?1709175143725"
                                         alt="Cam" />
                                     <span>Cam</span>
                                 </li>
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_7.jpg?1709175143725"
                                         alt="Gỗ" />
                                     <span>Gỗ</span>
                                 </li>
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_1.jpg?1709175143725"
                                         alt="Trái cây" />
                                     <span>Trái cây</span>
                                 </li>
@@ -846,13 +933,19 @@
                         </form>
                     </div>
                     <div class="item_pro_top">
+<<<<<<< HEAD
+                        <form action="https:<?= BASE_URLS ?>bean-perfume.mysapo.net/cart/add" method="post"
+                            class="variants product-action" data-cart-form data-id="product-actions-33659343"
+                            enctype="multipart/form-data">
+=======
                         <form action="" method="post" class=" product-action ad_tocart" enctype="multipart/form-data">
+>>>>>>> 494f239f1a6d855ac3cbf9fef72171f56cf37481
                             <div class="product-thumbnail">
                                 <a class="image_thumb scale_hover" href="nuoc-hoa-unisex-gucci-the-virgin-violet.html"
                                     title="Nước Hoa Unisex Gucci The Virgin Violet">
                                     <img width="480" height="480" class="lazyload image1"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-gucci-the-virgin-violet-edp-100ml.png?v=1701251056543"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-gucci-the-virgin-violet-edp-100ml.png?v=1701251056543"
                                         alt="Nước Hoa Unisex Gucci The Virgin Violet" />
                                 </a>
                                 <div class="action">
@@ -900,22 +993,22 @@
                             <ul class="fragrant_product">
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_3.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_3.jpg?1709175143725"
                                         alt="Xạ hương" />
                                     <span>Xạ hương</span>
                                 </li>
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_8.jpg?1709175143725"
                                         alt="Cỏ" />
                                     <span>Cỏ</span>
                                 </li>
                                 <li class="text-center">
                                     <img width="90" height="90" class="lazyload"
-                                        src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                        data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
+                                        src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
+                                        data-src="<?= BASE_URLS ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/icon_fra_6.jpg?1709175143725"
                                         alt="Hoa nhài" />
                                     <span>Hoa nhài</span>
                                 </li>

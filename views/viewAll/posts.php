@@ -24,7 +24,7 @@
         <meta itemprop="description" content="" />
         <div class="container">
             <h1 class="title-page" style="
-              background-image: url(../bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_collections02fb.jpg?1709175143725);
+              background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_collections02fb.jpg?1709175143725);
             ">
                 <span>Tin tức</span>
             </h1>
@@ -34,14 +34,14 @@
                         <div class="row row-fix">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
                                 <div class="item-blog">
+                                <?php
+									foreach ($posts as $post) { ?>
                                     <div class="block-thumb">
                                         <a class="thumb"
-                                            href="5-huong-nuoc-hoa-ngot-ngao-day-tinh-te-ghi-dau-an-kho-phai.html"
+                                            href="<?= BASE_URL ?>?act=chitietsp"
                                             title="5 hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn khó phai">
-                                            <img width="600" height="380" class="lazyload"
-                                                src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                data-src="https://bizweb.dktcdn.net/100/503/826/articles/5-huong-nuoc-hoa-ngot-ngao-day-tinh-te.jpg?v=1701332538430"
-                                                alt="5 hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn khó phai" />
+                                            <img src="<?= BASE_URL . $post['img'] ?>" height="300" width="300"
+												alt="Thumb image" id="thumbimage" />
                                         </a>
                                         <p class="time-post">
                                             <span>04/12/2023</span>
@@ -49,23 +49,13 @@
                                     </div>
                                     <div class="block-content">
                                         <h3>
-                                            <a href="5-huong-nuoc-hoa-ngot-ngao-day-tinh-te-ghi-dau-an-kho-phai.html"
-                                                title="5 hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn khó phai">5
-                                                hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn
-                                                khó phai</a>
+                                            <a><?= $post['title'] ?> </a>
                                         </h3>
 
-                                        <p class="justify">
-                                            Ai mê mệt hương thơm ngọt ngào của trái cây và hoa cỏ
-                                            thì lựa chọn 5 chai nước hoa xịn mịn này là đúng
-                                            chuẩn.&nbsp; Khác với sự nồng nàn của hương gỗ, nước
-                                            hoa mang hương thơm ngọt thường được chiết xuất từ
-                                            những loại trái cây, hoa cỏ trong thiên nhiên. Do đó,
-                                            chúng thường mang đến cảm giác dễ chịu, nhẹ nhàng
-                                            không quá nồng nhưng vẫn đủ sức khiến người khác phải
-                                            ngất ngây. Nếu bạn...
+                                        <p><?= $post['subtitle'] ?>
                                         </p>
                                     </div>
+                                    <?php } ?>
                                 </div>
                             </div>
 
@@ -73,7 +63,7 @@
                                 <div class="item-blog">
                                     <div class="block-thumb">
                                         <a class="thumb"
-                                            href="khong-phai-toc-hay-co-day-moi-la-noi-ban-nen-xit-nuoc-hoa.html"
+                                            href="<?= BASE_URL ?>?act=chitietsp"
                                             title="Không phải tóc hay cổ, đây mới là nơi bạn nên xịt nước hoa">
                                             <img width="600" height="380" class="lazyload"
                                                 src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
@@ -108,7 +98,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
                                 <div class="item-blog">
                                     <div class="block-thumb">
-                                        <a class="thumb" href="cach-chon-nuoc-hoa-mua-he-phu-hop-cong-so.html"
+                                        <a class="thumb" href="<?= BASE_URL ?>?act=chitietsp"
                                             title="Cách chọn nước hoa mùa hè phù hợp công sở">
                                             <img width="600" height="380" class="lazyload"
                                                 src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
@@ -143,7 +133,7 @@
                                 <div class="item-blog">
                                     <div class="block-thumb">
                                         <a class="thumb"
-                                            href="louis-vuitton-ra-mat-nuoc-hoa-pacific-chill-lay-cam-hung-tu-california.html"
+                                            href="<?= BASE_URL ?>?act=chitietsp"
                                             title="Louis Vuitton ra mắt nước hoa Pacific Chill lấy cảm hứng từ California">
                                             <img width="600" height="380" class="lazyload"
                                                 src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
@@ -181,7 +171,7 @@
                                 <div class="item-blog">
                                     <div class="block-thumb">
                                         <a class="thumb"
-                                            href="thanh-pho-nam-giu-cac-bi-mat-ve-hoa-va-huong-nuoc-hoa.html"
+                                            href="<?= BASE_URL ?>?act=chitietsp"
                                             title="Thành phố nắm giữ các bí mật về hoa và hương nước hoa">
                                             <img width="600" height="380" class="lazyload"
                                                 src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
@@ -217,7 +207,7 @@
                                 <div class="item-blog">
                                     <div class="block-thumb">
                                         <a class="thumb"
-                                            href="5-cach-dung-nuoc-hoa-giup-luu-giu-huong-lau-trong-mua-lanh.html"
+                                            href="<?= BASE_URL ?>?act=chitietsp"
                                             title="5 cách dùng nước hoa, giúp lưu giữ hương lâu trong mùa lạnh">
                                             <img width="600" height="380" class="lazyload"
                                                 src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
@@ -267,9 +257,9 @@
                                         <a class="page-link" href="#">1</a>
                                     </li>
 
-                                    <li class="page-item">
+                                    <!-- <li class="page-item">
                                         <a class="page-link" href="tin-tuc4658.html?page=2">2</a>
-                                    </li>
+                                    </li> -->
 
                                     <li class="page-item hidden-xs">
                                         <a class="page-link" href="tin-tuc4658.html?page=2">

@@ -40,6 +40,10 @@
                     class="app-menu__label">Báo cáo doanh
                     thu</span></a>
         </li>
+        <li><a class="app-menu__item <?= (isset($active7)) ? $active7 : null ?>"
+                href="<?= BASE_URL_ADMIN . '?act=posts' ?>"><i class='app-menu__icon bx bx-pie-chart-alt-2'></i><span
+                    class="app-menu__label">Quản lý Tin Tức</span></a>
+        </li>
         <li><a class="app-menu__item <?= (isset($active6)) ? $active6 : null ?>"
                 href="<?= BASE_URL_ADMIN . '?act=settings' ?>"><i class='app-menu__icon bx bx-cog'></i><span
                     class="app-menu__label">Setting</span></a></li>
