@@ -56,6 +56,8 @@ match ($act) {
     'lienhe' => showLienhe(),
     'chitietsp' => showChitietsp(),
     'addresses' => showAddresses(),
+    'yourCart' => showYourCart(),
+    'repass' => showrePass(),
 
     'cart-add' => cartAdd(),
     'cart' => cartList(),

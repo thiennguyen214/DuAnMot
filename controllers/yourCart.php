@@ -1,9 +1,9 @@
 <?php
-function showAddresses()
+function showyourCart()
 {
-    $tittle = "sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "đơn hàng của bạn";
+    $view = "viewAll/yourCart";
+    $style = 'styles/yourCart';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
