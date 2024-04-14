@@ -1,6 +1,4 @@
-<!-- <<<<<<< HEAD
-<footer class="footer" style="background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_foo02fb.jpg?1709175143725);">
-======= -->
+
 <footer class="footer"
 	style="
 		background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_foo02fb.jpg?1709175143725);">
@@ -411,7 +409,7 @@
 	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/ajaxcart.scss02fb.css?1709175143725"
 	rel="stylesheet" type="text/css" media="all" />
 <div class="backdrop__body-backdrop___1rvky"></div>
-s
+
 <script type="text/javascript">
 	//api bizweb
 	window.Bizweb || (window.Bizweb = {}),

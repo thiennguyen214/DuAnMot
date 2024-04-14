@@ -26,7 +26,9 @@ function showHome()
         }
         $carts = cartItemAll($_SESSION['userm']['id']);
         foreach ($carts as $cart) {
-            $_SESSION['cart'][$cart['pro_id']] = $cart;
+            if (empty($_SESSION['cart'])) {
+                $_SESSION['cart'][$cart['pro_id']] = $cart;
+            }
             $totalc += $cart['quantity'];
         }
     }

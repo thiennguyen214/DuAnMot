@@ -570,46 +570,8 @@
 	} ?>
 
 
-	<script>
-		var Bizweb = Bizweb || {};
-		Bizweb.store = 'bean-perfume.mysapo.net';
-		Bizweb.id = 503826;
-		Bizweb.theme = { "id": 932476, "name": "Bean Perfume", "role": "main" };
-		Bizweb.template = 'index';
-		if (!Bizweb.fbEventId) Bizweb.fbEventId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-			var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-			return v.toString(16);
-		});		
-	</script>
-	<script>
-		(function () {
-			function asyncLoad() {
-				var urls = ["//newproductreviews.sapoapps.vn/assets/js/productreviews.min.js?store=bean-perfume.mysapo.net"];
-				for (var i = 0; i < urls.length; i++) {
-					var s = document.createElement('script');
-					s.type = 'text/javascript';
-					s.async = true;
-					s.src = urls[i];
-					var x = document.getElementsByTagName('script')[0];
-					x.parentNode.insertBefore(s, x);
-				}
-			};
-			window.attachEvent ? window.attachEvent('onload', asyncLoad) : window.addEventListener('load', asyncLoad, false);
-		})();
-	</script>
-	<script>
-		window.BizwebAnalytics = window.BizwebAnalytics || {};
-		window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
-		window.BizwebAnalytics.meta.currency = 'VND';
-		window.BizwebAnalytics.tracking_url = 's.html';
-
-		var meta = {};
 
 
-		for (var attr in meta) {
-			window.BizwebAnalytics.meta[attr] = meta[attr];
-		}
-	</script>
 	<script src="<?= BASE_URL ?>assets/client/bean-perfume.mysapo.net/dist/js/stats.min8612.js?v=f021d1e"></script>
 	<script>
 		$(document).ready(function ($) {

@@ -8,10 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	<meta name="description" content="Bean Perfume - Thanh toán đơn hàng" />
 	<title>Bean Perfume - Thanh toán đơn hàng</title>
-
-
-
-
 	<link rel="shortcut icon"
 		href="//bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_favicon.ico?1711356971279"
 		type="image/x-icon" />
@@ -24,53 +20,6 @@
 
 	<link rel="stylesheet"
 		href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css?v=ce7712f">
-
-	<!-- Begin checkout custom css -->
-	<!-- <style>
-		.field__input:focus,
-		.select2-selection:focus,
-		.select2-search__field:focus {
-			border-color: #ce0082;
-			box-shadow: 0 0 0 1px #ce0082;
-		}
-
-		.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-			background-color: #ce0082;
-		}
-
-		.btn {
-			background-color: #ce0082;
-			border-color: #ce0082;
-		}
-
-		.btn:focus {
-			outline-color: #ce0082;
-		}
-
-
-
-		.btn.disabled {
-			background-color: #DA3FA1;
-			border-color: #DA3FA1;
-		}
-
-
-
-		.btn:hover {
-			background-color: #9A0061;
-			border-color: #9A0061;
-		}
-
-
-
-		.btn,
-		.btn:hover,
-		.btn:focus {
-			color: #FFFFFF;
-		}
-	</style> -->
-	<!-- End checkout custom css -->
-
 	<script
 		src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min.js?1711356971279"></script>
 
@@ -484,6 +433,7 @@
 												</th>
 											</tr>
 										</thead>
+
 										<tbody>
 											<?php $tong = 0;
 											if (!empty($_SESSION['cart']))
@@ -492,7 +442,7 @@
 														<td class="product__image">
 															<div class="product-thumbnail">
 																<div class="product-thumbnail__wrapper" data-tg-static>
-																	<img src="<?= BASE_URL . $items['img'] ?>" alt=""
+																	<img src="<?= BASE_URL . $items['p_img'] ?>" alt=""
 																		class="product-thumbnail__image" />
 																</div>
 																<span class="product-thumbnail__quantity">
@@ -502,7 +452,7 @@
 														</td>
 														<th class="product__description">
 															<span class="product__description__name">
-																<?= $items['name'] ?>
+																<?= $items['p_name'] ?>
 															</span>
 
 
@@ -510,7 +460,7 @@
 														<td class="product__quantity visually-hidden"><em>Số lượng:</em> </td>
 														<td class="product__price">
 
-															<?= number_format($tone = $items['price_sale'] * $items['quantity']) ?>₫
+															<?= number_format($tone = $items['p_price_sale'] * $items['quantity']) ?>₫
 															<?php $tong += $tone ?>
 														</td>
 													</tr>
@@ -647,6 +597,7 @@
 			</symbol>
 		</svg>
 	</div>
+
 
 </body>
 

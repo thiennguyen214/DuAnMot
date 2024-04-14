@@ -69,7 +69,7 @@
                                                 <div class="smart"><span>-
                                                         <?= floor((1 - ($fav['p_price_sale'] / $fav['p_price'])) * 100) ?>%
                                                     </span></div> <a href="javascript:void(0)"
-                                                    class="setWishlist btn-wishlist <?= (!empty($favac)) ? 'active' : null ?>"
+                                                    class="setWishlist btn-wishlist active"
                                                     data-wish="mancera-cedrat-boise" tabindex="0" title="Thêm vào yêu thích">
                                                     <svg class="icon">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"

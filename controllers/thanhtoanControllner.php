@@ -18,7 +18,7 @@ function orderPurchase()
     if (!empty($_POST) && !empty($_SESSION['cart'])) {
         try {
             // Xử lý lưu vào bảng orders và order_items
-            $data = $_POST;
+            // $data = $_POST;
             $data['name'] = $_POST['name'];
             $data['email'] = $_POST['email'];
             $data['tell'] = $_POST['tell'];
@@ -30,14 +30,14 @@ function orderPurchase()
             $data['paymethod'] = STATUS_PAYMENT_UNPAID;
 
             $orderID = insert_get_last_id('bills', $data);
-            debug($orderID);
+            // debug($orderID);
 
             foreach ($_SESSION['cart'] as $productID => $item) {
                 $orderItem = [
                     'bill_id' => $orderID,
                     'pro_id' => $productID,
                     'quantity' => $item['quantity'],
-                    'price' => $item['price_sale'] ?: $item['price_regular'],
+                    'price' => $item['p_price_sale'],
                 ];
 
                 insert('bills_item', $orderItem);

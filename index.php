@@ -38,11 +38,6 @@ match ($act) {
     
     // 'cart' => showCart(),
     'products' => showProduct(),
-    
-    
-
-
-    'products' => showProduct(),
 
 
     'productDetail' => showProductDetail($_GET['id']),
