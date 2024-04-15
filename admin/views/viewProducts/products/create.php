@@ -43,19 +43,19 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Số lượng đã bán</label>
-                        <input class="form-control" type="text" name="pro_db" placeholder="Số lượng đã bán">
+                        <input class="form-control" type="number" name="pro_db" placeholder="Số lượng đã bán">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Số lượng trong kho</label>
-                        <input class="form-control" type="text" name="pro_kho" placeholder="Số lượng trong kho">
+                        <input class="form-control" type="number" name="pro_kho" placeholder="Số lượng trong kho">
                     </div>
                     <div class="form-group  col-md-4">
-                        <label class="control-label">Giá bán</label>
+                        <label class="control-label">Giá gốc</label>
                         <input class="form-control" type="number" name="price" placeholder="Giá tiền">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Giá sales</label>
-                        <input class="form-control" type="text" name="price-sale" placeholder="Giá sales">
+                        <input class="form-control" type="number" name="price-sale" placeholder="Giá sales">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Thương hiệu</label>

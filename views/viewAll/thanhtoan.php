@@ -399,15 +399,7 @@
 				<aside class="sidebar">
 					<div class="sidebar__header">
 						<h2 class="sidebar__title">
-							Đơn hàng (
-							<?php
-							$sl = 0;
-							foreach ($_SESSION['cart'] as $items) {
-								$sl += $items['quantity'];
-							}
-							echo $sl;
-							?>
-							sản phẩm)
+							Đơn hàng ( <?=$GLOBALS['totalc']?> sản phẩm)
 						</h2>
 					</div>
 					<div class="sidebar__content">
@@ -442,7 +434,7 @@
 														<td class="product__image">
 															<div class="product-thumbnail">
 																<div class="product-thumbnail__wrapper" data-tg-static>
-																	<img src="<?= BASE_URL . $items['p_img'] ?>" alt=""
+																	<img src="<?= BASE_URL . $items['img'] ?>" alt=""
 																		class="product-thumbnail__image" />
 																</div>
 																<span class="product-thumbnail__quantity">
@@ -452,7 +444,7 @@
 														</td>
 														<th class="product__description">
 															<span class="product__description__name">
-																<?= $items['p_name'] ?>
+																<?= $items['name'] ?>
 															</span>
 
 
@@ -460,7 +452,7 @@
 														<td class="product__quantity visually-hidden"><em>Số lượng:</em> </td>
 														<td class="product__price">
 
-															<?= number_format($tone = $items['p_price_sale'] * $items['quantity']) ?>₫
+															<?= number_format($tone = $items['price_sale'] * $items['quantity']) ?>₫
 															<?php $tong += $tone ?>
 														</td>
 													</tr>

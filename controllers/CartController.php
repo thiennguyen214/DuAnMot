@@ -47,14 +47,6 @@ function cartList()
 {
     $view = "viewAll/cart";
     $style = 'styles/cart';
-    $totalc = 0;
-    if (!empty($_SESSION['userm'])) {
-        $favs = listFav($_SESSION['userm']['id']);
-        $carts = cartItemAll($_SESSION['userm']['id']);
-        foreach ($carts as $cart) {
-            $totalc += $cart['quantity'];
-        }
-    }
     $tittle = 'Giỏ hàng';
 
 
