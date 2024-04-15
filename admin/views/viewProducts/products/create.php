@@ -115,6 +115,12 @@
                         </div>
                     </div>
 
+                   
+
+                   
+
+                    
+
                     <button class="btn btn-save" type="submit" name="add">Thêm mới</button>
                     <a class="btn btn-cancel" href="<?= BASE_URL_ADMIN . '?act=products' ?>">Hủy bỏ</a>
                 </form>
