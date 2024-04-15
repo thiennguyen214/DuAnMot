@@ -33,13 +33,13 @@
                                     tin tài khoản</a>
                             </li>
                             <li>
-                                <a class="title-info" href="/account/orders">Đơn hàng của bạn</a>
+                                <a class="title-info" href="<?= BASE_URL ?>?act=yourCart">Đơn hàng của bạn</a>
                             </li>
                             <li>
-                                <a class="title-info" href="/account/changepassword">Đổi mật khẩu</a>
+                                <a class="title-info" href="<?= BASE_URL ?>?act=repass">Đổi mật khẩu</a>
                             </li>
                             <li>
-                                <a class="title-info" href="/account/addresses">Sổ địa chỉ (1)</a>
+                                <a class="title-info" href="<?= BASE_URL ?>?act=addresses">Sổ địa chỉ (1)</a>
                             </li>
                         </ul>
                     </div>

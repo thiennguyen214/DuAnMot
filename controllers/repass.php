@@ -1,9 +1,9 @@
 <?php
-function showAddresses()
+function showrePass()
 {
-    $tittle = "sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "đổi mật khẩu";
+    $view = "viewAll/repass";
+    $style = 'styles/repass';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
