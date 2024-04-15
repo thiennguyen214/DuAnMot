@@ -22,6 +22,10 @@ function showProductDetail($id)
         $sex = 'Unisex';
     }
     $tittle = 'Chi tiết';
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
 
     require_once PATH_VIEW . '/layouts/master.php';
 

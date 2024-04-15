@@ -48,7 +48,10 @@ function cartList()
     $view = "viewAll/cart";
     $style = 'styles/cart';
     $tittle = 'Giỏ hàng';
-
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
 
     require_once PATH_VIEW . '/layouts/master.php';
 

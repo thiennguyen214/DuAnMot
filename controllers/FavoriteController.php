@@ -37,6 +37,10 @@ function showFavs($userID)
     if ($userID) {
         $favs = listFav($userID);
     }
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
     require_once PATH_VIEW . '/layouts/master.php';
 }
 function ajaxUserCreate($data)

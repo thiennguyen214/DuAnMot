@@ -13,14 +13,18 @@ function showHome()
     // $proTop10 = getTop10product('products');
     $top10Pro = top1OPro();
     $brands = listAll('brands');
-    $products = listAll('products');
+    $products = showGh('products',8);
     $xuHuong = xuHuong();
     $users = listAll('users');
     $banChaytt = spBanChay();
     $spSale = spSale();
     
     $brandsh = listAll('brands'); 
-    
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
+
 
     
     require_once PATH_VIEW . '/layouts/master.php';

@@ -9,7 +9,10 @@ function showChitietsp()
     // debug($dataUser);
     // $users = listAll('users');
     $posts = listAll('posts');
-
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
 
     require_once PATH_VIEW . '/layouts/master.php';
 
