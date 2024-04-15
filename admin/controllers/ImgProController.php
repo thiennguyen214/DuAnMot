@@ -172,3 +172,14 @@ function validateImgProUpdate($data)
         exit();
     }
 }
+
+
+function ImgProDelete($id)
+{
+    delete2('img_products', $id);
+
+    $_SESSION['success'] = 'Thao tác thành công!';
+
+    header('Location: ' . BASE_URL_ADMIN . '?act=imgs');
+    exit();
+}

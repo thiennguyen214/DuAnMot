@@ -57,7 +57,7 @@
                                 </td>
 
                                 <td class="table-td-center">
-                                    <a href="<?= BASE_URL_ADMIN ?>?act=imgPro-delete&id=<?= $imgPro['ip_id'] ?>"
+                                    <a href="<?= BASE_URL_ADMIN ?>?act=imgPro-del&id=<?= $imgPro['ip_id'] ?>"
                                         class="btn btn-primary btn-sm trash" title="Xóa"
                                         onclick="confirmDelete(event, this)">
                                         <i class="fas fa-trash-alt"></i>
