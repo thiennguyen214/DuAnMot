@@ -7,6 +7,10 @@ function showLog()
     // $dataUser = getAllUser();
     // debug($dataUser);
     $tittle = 'Đăng nhập';
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
     if ($_POST) {
         authenCliLogin();
     }

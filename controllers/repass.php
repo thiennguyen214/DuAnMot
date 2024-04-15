@@ -1,14 +1,13 @@
 <?php
-function showChitietsp()
+function showrePass()
 {
-    $tittle = "chi tiết sản phẩm";
-    $view = "viewAll/chitietsp";
-    $style = 'styles/chitietsp';
+    $tittle = "đổi mật khẩu";
+    $view = "viewAll/repass";
+    $style = 'styles/repass';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
     // $users = listAll('users');
-    $posts = listAll('posts');
     $fnames = charter();
     foreach ($fnames as $fname) {
         $brands[$fname['initial']] = ascBrand($fname['initial']);

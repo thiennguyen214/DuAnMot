@@ -53,13 +53,13 @@
                             placeholder="Số lượng trong kho">
                     </div>
                     <div class="form-group  col-md-4">
-                        <label class="control-label">Giá bán</label>
-                        <input class="form-control" type="number" value="<?= $products['price'] ?>" name="price"
+                        <label class="control-label">Giá gốc</label>
+                        <input class="form-control" type="number" value="<?= (int) str_replace('.', '', $products['price']) ?>" name="price"
                             placeholder="Giá tiền">
                     </div>
                     <div class="form-group col-md-4">
                         <label class="control-label">Giá sales</label>
-                        <input class="form-control" type="text" name="price-sale" value="<?= $products['price_sale'] ?>"
+                        <input class="form-control" type="number" name="price-sale" value="<?= (int) str_replace('.', '', $products['price_sale']) ?>"
                             placeholder="Giá sales">
                     </div>
                     <div class="form-group col-md-4">

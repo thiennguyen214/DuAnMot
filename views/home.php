@@ -92,8 +92,9 @@
                 <div class="swi_brand swiper-container">
                     <div class="swiper-wrapper">
                         <!-- thuong-hieu -->
-                        <?php foreach ($brands as $brand): ?>
-
+                        <?php
+                         foreach ($brandsh as $brand): ?>
+            
                             <div class="item_brand swiper-slide">
                                 <a href="collections/all.html" class="a_brand" title="Chanel">
                                     <img width="180" height="180" class="lazyload" src="<?= BASE_URL . $brand['img'] ?>"
@@ -282,7 +283,11 @@
                                                 </div>
                                             </div>
                                             <div class="smart">
-                                                <span>-<?= floor((1 - ($item['price_sale'] / $item['price'])) * 100) ?>%</span>
+                                                <?php 
+                                                $price_sale = str_replace(".", "", $item['price_sale']);
+                                                $price = str_replace(".", "", $item['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%</span>
                                             </div>	
                                             <a class="creatf btn-wishlist" href="#" data-proid="<?= $item['id'] ?>" data-userid="<?=(isset($_SESSION['userm']))?$_SESSION['userm']['id']:''?>" 
                                                 data-url="<?= BASE_URL ?>?act=favCreat" title="Thêm vào yêu thích">
@@ -491,8 +496,11 @@
                                         </div>
                                     </div>
                                     <div class="smart">
-                                        <span>-
-                                            <?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                                    <?php 
+                                                $price_sale = str_replace(".", "", $product['price_sale']);
+                                                $price = str_replace(".", "", $product['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%
                                         </span>
                                     </div>	
                                     <a href="javascript:void(0)" class="creatWish btn-wishlist 
@@ -705,7 +713,11 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="smart"><span>- 19% </span></div>
+                                <div class="smart"><?php 
+                                                $price_sale = str_replace(".", "", $trend['price_sale']);
+                                                $price = str_replace(".", "", $trend['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?></span></div>
                                 <a class="creatWish <?= $trend['id'] ?> btn-wishlist" href="#" data-proid="<?= $trend['id'] ?>" data-userid="<?=(isset($_SESSION['userm']))?$_SESSION['userm']['id']:''?>" 
                                                 data-url="<?= BASE_URL ?>?act=favCreat" title="Thêm vào yêu thích">
                                     <svg class="icon">

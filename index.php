@@ -28,6 +28,20 @@ $arrRouteNeedAuth = [
 
 // Kiểm tra xem user đã đăng nhập chưa
 middleware_auth_check_cl($act, $arrRouteNeedAuth);
+if (!empty($_SESSION['userm'])) {
+    $favs = listFav($_SESSION['userm']['id']);
+    foreach ($favs as $fav) {
+        $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+    }
+    $carts = cartItemAll($_SESSION['userm']['id']);
+    $totalc = 0;
+    foreach ($carts as $cart) {
+        if (empty($_SESSION['cart'])) {
+            $_SESSION['cart'][$cart['pro_id']] = $cart;
+        }
+        $totalc += $cart['quantity'];
+    }
+}
 
 //
 match ($act) {
@@ -56,6 +70,8 @@ match ($act) {
     'lienhe' => showLienhe(),
     'chitietsp' => showChitietsp(),
     'addresses' => showAddresses(),
+    'yourCart' => showYourCart(),
+    'repass' => showrePass(),
 
     'cart-add' => cartAdd(),
     'cart' => cartList(),

@@ -47,16 +47,11 @@ function cartList()
 {
     $view = "viewAll/cart";
     $style = 'styles/cart';
-    $totalc = 0;
-    if (!empty($_SESSION['userm'])) {
-        $favs = listFav($_SESSION['userm']['id']);
-        $carts = cartItemAll($_SESSION['userm']['id']);
-        foreach ($carts as $cart) {
-            $totalc += $cart['quantity'];
-        }
-    }
     $tittle = 'Giỏ hàng';
-
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
 
     require_once PATH_VIEW . '/layouts/master.php';
 

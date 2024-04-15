@@ -92,46 +92,19 @@
 										<div class="row">
 											<div class="col-lg-9 col-12">
 												<ul class="level0">
-													<li class="level1 parent item fix-navs" data-title="A"
+													<?php foreach ($fnames as $fname) { ?>
+														<li class="level1 parent item fix-navs" data-title="A"
 														data-link="javascript:;">
-														<a class="hmega" href="javascript:;" title="A">A</a>
+														<a class="hmega" href="javascript:;" title="A"><?=$fname['initial']?></a>
 														<ul class="level1">
+														<?php foreach ($brands[$fname['initial']] as $brand) { ?>
 															<li class="level2">
-																<a href="afnan.html" title="Afnan">Afnan</a>
+																<a href="afnan.html" title="Afnan"><?=$brand['name']?></a>
 															</li>
+															<?php }?>
 														</ul>
 													</li>
-
-													<li class="level1 parent item fix-navs" data-title="B"
-														data-link="javascript:;">
-														<a class="hmega" href="javascript:;" title="B">B</a>
-														<ul class="level1">
-															<li class="level2">
-																<a href="bond-no-9.html" title="Bond No. 9">Bond No.
-																	9</a>
-															</li>
-														</ul>
-													</li>
-
-													<li class="level1 parent item fix-navs" data-title="C"
-														data-link="javascript:;">
-														<a class="hmega" href="javascript:;" title="C">C</a>
-														<ul class="level1">
-															<li class="level2">
-																<a href="chopard.html" title="Chopard">Chopard</a>
-															</li>
-														</ul>
-													</li>
-
-													<li class="level1 parent item fix-navs" data-title="D"
-														data-link="javascript:;">
-														<a class="hmega" href="javascript:;" title="D">D</a>
-														<ul class="level1">
-															<li class="level2">
-																<a href="diesel.html" title="Diesel">Diesel</a>
-															</li>
-														</ul>
-													</li>
+													<?php }?>
 												</ul>
 											</div>
 											<div class="col-lg-3 col-12">
@@ -342,7 +315,7 @@
 									<path
 										d="m195 0c-57.898438 0-105 47.101562-105 105v15h-90v392h390v-392h-90v-15c0-57.898438-47.101562-105-105-105zm-75 105c0-41.355469 33.644531-75 75-75s75 33.644531 75 75v15h-150zm240 45v332h-330v-332h60v60h30v-60h150v60h30v-60zm0 0" />
 								</svg>
-								<span class="count count_item_pr"><?= isset($_SESSION['userm'])? $totalc : 0 ?></span>
+								<span class="count count_item_pr"><?= $GLOBALS['totalc'] ?? 0 ?></span>
 							</a>
 							<?php if (!empty($_SESSION['cart'])) { ?>
 								<div class="top-cart-content">
@@ -352,7 +325,7 @@
 												<div class="ajaxcart__row">
 													<?php
 													$tong = 0;
-													foreach ($carts as $cart) { ?>
+													foreach ($GLOBALS['carts'] as $cart) { ?>
 														<div class="ajaxcart__product cart_product">
 															<a href="" class="ajaxcart__product-image cart_image"
 																title="<?= $cart['p_name'] ?>"><img width="80" height="80"

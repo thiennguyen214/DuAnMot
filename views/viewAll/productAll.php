@@ -85,16 +85,17 @@
                         <div class="product-image-block relative">
 
                             <div class="swiper-container gallery-top">
+                                
                                 <div class="swiper-wrapper" id="lightgallery">
-                                    <?php //foreach ($imgs as $img) {                                                                                                                            ?>
-                                    <a class="swiper-slide" data-hash="0" href="<?= $img['img'] ?>"
+                                                                                                                                
+                                    <a class="swiper-slide" data-hash="0" href=""
                                         title="Click để xem">
-                                        <img height="480" width="480" src="<?= $data['img'] ?>"
+                                        <img height="480" width="480" src="<?= $product['img'] ?>"
                                             alt="<?= $product['name'] ?>"
                                             data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
                                             class="img-responsive mx-auto d-block swiper-lazy" />
                                     </a>
-                                    <?php //}                                                                                                                            ?>
+                                                                                                                     
 
                                 </div>
 
@@ -109,18 +110,16 @@
                             </div>
                             <div class="swiper-container gallery-thumbs">
                                 <div class="swiper-wrapper">
-                                    <?php //foreach ($imgs as $img) {                                                                                                                            ?>
+                                                                                                                 
                                     <div class="swiper-slide" data-hash="0">
                                         <div class="p-100">
-                                            <img height="100" width="100" src="<?= $data['img'] ?>"
-                                                alt="<?= $product['name'] ?>"
+                                            <img height="100" width="100" src="<?= $product['img'] ?>"
+                                                alt=""
                                                 data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
                                                 class="swiper-lazy" />
                                         </div>
                                     </div>
-                                    <?php //}                                                                                                                            ?>
-
-
+                                                                                                    
                                 </div>
                                 <div class="swiper-button-next">
                                 </div>
@@ -183,9 +182,11 @@
                                 </span> <!-- Giá gốca -->
 
                                 <span class="label_product">
-                                    -
-                                    15%
-
+                                    <?php 
+                                                $price_sale = str_replace(".", "", $product['price_sale']);
+                                                $price = str_replace(".", "", $product['price']);
+                                                ?>
+                                                -<?= floor((1 - ($price_sale / $price)) * 100) ?>%
                                 </span>
 
 
@@ -777,8 +778,11 @@
                                                 </div>
 
                                             </div>
-                                            <div class="smart"><span>-
-                                                    <?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                                            <div class="smart"><?php 
+                                                $price_sale = str_replace(".", "", $product['price_sale']);
+                                                $price = str_replace(".", "", $product['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%
                                                 </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                                                 data-wish="gucci-bloom-ambrosia-di-fiori" tabindex="0"
                                                 title="Thêm vào yêu thích">
@@ -1159,7 +1163,7 @@
         jQuery(function ($) {
 
             new Bizweb.OptionSelectors('product-selectors', {
-                product: { "id": <?= $product['id'] ?>, "name": "<?= $product['name'] ?>", "alias": "tommy-hilfiger-tommy-girl", "vendor": "Tommy Hilfiger", "type": "<?= $product['t_name'] ?>", "content": "<p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương miêu tả như thế nào? Nếu chưa thì hãy mở nắp <?= $product['name'] ?>, cô gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>\n<p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa và Gỗ.\"</p>\n<p><?= $product['name'] ?> đích thị là chai nước hoa dành cho những cô nàng yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>\n<p><img alt=\"Banner\" height=\"480\" src=\"//bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513\" width=\"480\" /></p>\n<p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>\n<ul>\n<li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và thuận lợi trong việc tỏa mùi hương.</li>\n<li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh hơn.</li>\n<li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ bám tỏa trên da của bạn.</li>\n<li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay, đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>\n<li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc mọi nơi.</li></ul>\n<p>&nbsp;</p>\n<p><strong>Bảo quản nước hoa:</strong></p>\n<ul>\n<li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24 đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.</li>\n<li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng, nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có nhiệt độ nóng lạnh thất thường...</li></ul>", "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>", "template_layout": "product", "available": true, "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"], "price": <?= $product['price_sale'] ?>.0000, "price_min": <?= $product['price_sale'] ?>.0000, "price_max": 1230000.0000, "price_varies": true, "compare_at_price": <?= $product['price'] ?>.0000, "compare_at_price_min": <?= $product['price'] ?>.0000, "compare_at_price_max": 1450000.0000, "compare_at_price_varies": true, "variants": [{ "id": <?= $product['id'] ?>, "barcode": null, "sku": null, "title": "30ml", "options": ["30ml"], "option1": "30ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": <?= $product['price_sale'] ?>.0000, "compare_at_price": <?= $product['price'] ?>.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 50, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }, { "id": 104171001, "barcode": null, "sku": null, "title": "100ml", "options": ["100ml"], "option1": "100ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 1230000.0000, "compare_at_price": 1450000.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 28, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }], "featured_image": { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, "images": [{ "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513" }], "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00" },
+                product: { "id": <?= $product['id'] ?>, "name": "<?= $product['name'] ?>", "alias": "tommy-hilfiger-tommy-girl", "vendor": "Tommy Hilfiger", "type": "<?= $product['t_name'] ?>", "content": "<p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương miêu tả như thế nào? Nếu chưa thì hãy mở nắp <?= $product['name'] ?>, cô gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>\n<p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa và Gỗ.\"</p>\n<p><?= $product['name'] ?> đích thị là chai nước hoa dành cho những cô nàng yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>\n<p><img alt=\"Banner\" height=\"480\" src=\"//bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513\" width=\"480\" /></p>\n<p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>\n<ul>\n<li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và thuận lợi trong việc tỏa mùi hương.</li>\n<li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh hơn.</li>\n<li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ bám tỏa trên da của bạn.</li>\n<li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay, đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>\n<li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc mọi nơi.</li></ul>\n<p>&nbsp;</p>\n<p><strong>Bảo quản nước hoa:</strong></p>\n<ul>\n<li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24 đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.</li>\n<li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng, nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có nhiệt độ nóng lạnh thất thường...</li></ul>", "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>", "template_layout": "product", "available": true, "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"], "price": <?=str_replace(".", "", $product['price_sale'])?>.0000, "price_min": <?=str_replace(".", "", $product['price_sale'])?>.0000, "price_max": 10000000.0000, "price_varies": true, "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000, "compare_at_price_min": <?= $product['price'] ?>, "compare_at_price_max": 10000000.0000, "compare_at_price_varies": true, "variants": [{ "id": <?= $product['id'] ?>, "barcode": null, "sku": null, "title": "30ml", "options": ["30ml"], "option1": "30ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": <?=str_replace(".", "", $product['price_sale'])?>.0000, "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 50, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }, { "id": 104171001, "barcode": null, "sku": null, "title": "100ml", "options": ["100ml"], "option1": "100ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 1230000, "compare_at_price": 1450000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 28, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }], "featured_image": { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, "images": [{ "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513" }], "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00" },
                 onVariantSelected: selectCallback,
                 enableHistoryState: true
             });
@@ -1320,12 +1324,12 @@
                 "template_layout": "product",
                 "available": true,
                 "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"],
-                "price": <?= $product['price_sale'] ?>.0000,
-                "price_min": <?= $product['price_sale'] ?>.0000,
-                "price_max": 1230000.0000, "price_varies": true,
-                "compare_at_price": <?= $product['price'] ?>.0000,
-                "compare_at_price_min": <?= $product['price'] ?>.0000,
-                "compare_at_price_max": 1450000.0000,
+                "price": <?=str_replace(".", "", $product['price_sale'])?>.0000,
+                "price_min": <?=str_replace(".", "", $product['price_sale'])?>.0000,
+                "price_max": 10000000.0000, "price_varies": true,
+                "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000,
+                "compare_at_price_min": <?=str_replace(".", "", $product['price'])?>.0000,
+                "compare_at_price_max": 10000000.0000,
                 "compare_at_price_varies": true,
                 "variants": [{
                     "id": <?= $product['id'] ?>,
@@ -1338,8 +1342,8 @@
                     "option3": null,
                     "available": true,
                     "taxable": false,
-                    "price": <?= $product['price_sale'] ?>.0000,
-                    "compare_at_price": <?= $product['price'] ?>.0000,
+                    "price": <?=str_replace(".", "", $product['price_sale'])?>.0000,
+                    "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000,
                     "inventory_management": "bizweb",
                     "inventory_policy": "deny",
                     "inventory_quantity": 50,

@@ -18,6 +18,10 @@ function showIntroduction()
     $ad = array_filter($users, function ($admin) {
         return $admin['role'] == 1;
     });
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
 
     $countAd = count($ad);
 
