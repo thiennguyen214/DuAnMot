@@ -1,9 +1,9 @@
 <?php
-function showAddresses()
+function showhuongdandoitra()
 {
-    $tittle = "Sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "hướng dẫn đổi trả";
+    $view = "viewAll/huongdandoitra";
+    $style = 'styles/huongdandoitra';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

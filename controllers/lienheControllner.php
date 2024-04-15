@@ -1,6 +1,7 @@
 <?php
 function showLienhe()
 {
+    $tittle = "Liên hệ";
     $view = "viewAll/lienhe";
     $style = 'styles/lienhe';
     // $script = 'scripts/home';

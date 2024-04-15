@@ -31,7 +31,7 @@ function ajaxFavCreate()
 
 function showFavs($userID)
 {
-    $title = 'Favorite';
+    $title = 'Yêu thích';
     $view = 'viewAll/favorite';
     $style = 'styles/favorite';
     if ($userID) {

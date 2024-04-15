@@ -1,9 +1,9 @@
 <?php
-function showAddresses()
+function showhuongdanmuahang()
 {
-    $tittle = "Sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "hướng dẫn mua hàng";
+    $view = "viewAll/huongdanmuahang";
+    $style = 'styles/huongdanmuahang';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

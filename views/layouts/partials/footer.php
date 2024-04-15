@@ -94,26 +94,26 @@
 							<h4 class="title-menu title-menu2">Chính sách</h4>
 							<ul class="list-menu hidden-mobile">
 								<li>
-									<a href="chinh-sach-thanh-vien.html" title="Chính sách thành viên">Chính sách thành
+									<a href="<?= BASE_URL ?>?act=chinhsachthanhvien" title="Chính sách thành viên">Chính sách thành
 										viên</a>
 								</li>
 
 								<li>
-									<a href="chinh-sach-thanh-toan.html" title="Chính sách thanh toán">Chính sách thanh
+									<a href="<?= BASE_URL ?>?act=chinhsachthanhtoan" title="Chính sách thanh toán">Chính sách thanh
 										toán</a>
 								</li>
 
 								<li>
-									<a href="chinh-sach-doi-san-pham.html" title="Chính sách đổi sản phẩm">Chính sách
+									<a href="<?= BASE_URL ?>?act=chinhsachdoisanpham" title="Chính sách đổi sản phẩm">Chính sách
 										đổi sản phẩm</a>
 								</li>
 
 								<li>
-									<a href="chinh-sach-bao-mat.html" title="Chính sách bảo mật">Chính sách bảo mật</a>
+									<a href="<?= BASE_URL ?>?act=chinhsachbaomat" title="Chính sách bảo mật">Chính sách bảo mật</a>
 								</li>
 
 								<li>
-									<a href="chinh-sach-cong-tac-vien.html" title="Chính sách cộng tác viên">Chính sách
+									<a href="<?= BASE_URL ?>?act=chinhsachcongtacvien" title="Chính sách cộng tác viên">Chính sách
 										cộng tác viên</a>
 								</li>
 							</ul>
@@ -122,25 +122,25 @@
 							<h4 class="title-menu title-menu2">Hướng dẫn</h4>
 							<ul class="list-menu hidden-mobile">
 								<li>
-									<a href="huong-dan-mua-hang.html" title="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a>
+									<a href="<?= BASE_URL ?>?act=huongdanmuahang" title="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a>
 								</li>
 
 								<li>
-									<a href="huong-dan-doi-tra.html" title="Hướng dẫn đổi trả">Hướng dẫn đổi trả</a>
+									<a href="<?= BASE_URL ?>?act=huongdandoitra" title="Hướng dẫn đổi trả">Hướng dẫn đổi trả</a>
 								</li>
 
 								<li>
-									<a href="huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán">Hướng dẫn thanh
+									<a href="<?= BASE_URL ?>?act=huongdanthanhtoan" title="Hướng dẫn thanh toán">Hướng dẫn thanh
 										toán</a>
 								</li>
 
 								<li>
-									<a href="chuong-trinh-cong-tac-vien.html" title="Chương trình cộng tác viên">Chương
+									<a href="<?= BASE_URL ?>?act=chuongtrinhcongtacvien" title="Chương trình cộng tác viên">Chương
 										trình cộng tác viên</a>
 								</li>
 
 								<li>
-									<a href="giai-dap-thac-mac.html" title="Giải đáp thắc mắc">Giải đáp thắc mắc</a>
+									<a href="<?= BASE_URL ?>?act=giaidapthacmac" title="Giải đáp thắc mắc">Giải đáp thắc mắc</a>
 								</li>
 							</ul>
 						</div>

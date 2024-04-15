@@ -1,7 +1,7 @@
 <?php
 function showrePass()
 {
-    $tittle = "đổi mật khẩu";
+    $tittle = "Đổi mật khẩu";
     $view = "viewAll/repass";
     $style = 'styles/repass';
     // $script = 'scripts/home';

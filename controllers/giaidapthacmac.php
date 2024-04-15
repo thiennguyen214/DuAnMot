@@ -1,9 +1,9 @@
 <?php
-function showAddresses()
+function showGiaidapthacmac()
 {
-    $tittle = "Sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "Giải đáp thắc mắc";
+    $view = "viewAll/giaidapthacmac";
+    $style = 'styles/giaidapthacmac';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

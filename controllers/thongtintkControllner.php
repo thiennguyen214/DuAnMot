@@ -1,7 +1,7 @@
 <?php
 function showthongtintk()
 {
-    $tittle = "thông tin tài khoản";
+    $tittle = "Thông tin tài khoản";
     $view = "viewAll/thongtintk";
     $style = 'styles/thongtintk';
     // $script = 'scripts/home';

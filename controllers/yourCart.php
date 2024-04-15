@@ -1,7 +1,7 @@
 <?php
 function showyourCart()
 {
-    $tittle = "đơn hàng của bạn";
+    $tittle = "Đơn hàng của bạn";
     $view = "viewAll/yourCart";
     $style = 'styles/yourCart';
     // $script = 'scripts/home';

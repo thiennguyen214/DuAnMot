@@ -1,9 +1,10 @@
+
 <?php
-function showAddresses()
+function showChinhsachbaomat()
 {
-    $tittle = "Sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "Chính sách bảo mật";
+    $view = "viewAll/chinhsachbaomat";
+    $style = 'styles/chinhsachbaomat';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

@@ -1,9 +1,9 @@
 <?php
-function showAddresses()
+function showChinhsachthanhtoan()
 {
-    $tittle = "Sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "Chính sách thanh toán";
+    $view = "viewAll/chinhsachthanhtoan";
+    $style = 'styles/chinhsachthanhtoan';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

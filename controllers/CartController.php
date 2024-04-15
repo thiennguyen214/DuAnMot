@@ -45,6 +45,7 @@ function cartAdd()
 }
 function cartList()
 {
+    $tittle = "Giỏ hàng";
     $view = "viewAll/cart";
     $style = 'styles/cart';
     $totalc = 0;

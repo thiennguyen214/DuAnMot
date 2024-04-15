@@ -1,9 +1,10 @@
+
 <?php
-function showAddresses()
+function showhuongdanthanhtoan()
 {
-    $tittle = "Sổ địa chỉ";
-    $view = "viewAll/addresses";
-    $style = 'styles/addresses';
+    $tittle = "hướng dẫn thanh toán";
+    $view = "viewAll/huongdanthanhtoan";
+    $style = 'styles/huongdanthanhtoan';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
