@@ -42,10 +42,10 @@
                                     <a class="title-info" href="<?= BASE_URL ?>?act=thongtintk">Thông tin tài khoản</a>
                                 </li>
                                 <li>
-                                    <a class="title-info" href="/account/orders">Đơn hàng của bạn</a>
+                                    <a class="title-info" href="<?= BASE_URL ?>?act=yourCart">Đơn hàng của bạn</a>
                                 </li>
                                 <li>
-                                    <a class="title-info" href="/account/changepassword">Đổi mật khẩu</a>
+                                    <a class="title-info" href="<?= BASE_URL ?>?act=repass">Đổi mật khẩu</a>
                                 </li>
                                 <li>
                                     <a disabled="disabled" class="title-info active" href="javascript:void(0);">Sổ địa
