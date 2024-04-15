@@ -1,7 +1,7 @@
 <?php
 function showhuongdanmuahang()
 {
-    $tittle = "hướng dẫn mua hàng";
+    $tittle = "Hướng dẫn mua hàng";
     $view = "viewAll/huongdanmuahang";
     $style = 'styles/huongdanmuahang';
     // $script = 'scripts/home';

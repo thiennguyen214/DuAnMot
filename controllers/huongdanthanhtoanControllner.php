@@ -2,7 +2,7 @@
 <?php
 function showhuongdanthanhtoan()
 {
-    $tittle = "hướng dẫn thanh toán";
+    $tittle = "Hướng dẫn thanh toán";
     $view = "viewAll/huongdanthanhtoan";
     $style = 'styles/huongdanthanhtoan';
     // $script = 'scripts/home';

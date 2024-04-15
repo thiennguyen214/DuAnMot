@@ -1,7 +1,7 @@
 <?php
 function showhuongdandoitra()
 {
-    $tittle = "hướng dẫn đổi trả";
+    $tittle = "Hướng dẫn đổi trả";
     $view = "viewAll/huongdandoitra";
     $style = 'styles/huongdandoitra';
     // $script = 'scripts/home';
