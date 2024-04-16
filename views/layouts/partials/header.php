@@ -56,7 +56,7 @@
 				</svg>
 			</div>
 			<div class="col-lg-2 col-12 logo-war">
-				<a href="index.html" class="logo" title="Logo">
+				<a href="<?= BASE_URL ?>" class="logo" title="Logo">
 					<img width="240" height="109"
 						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725"
 						alt="Bean Perfume" />
@@ -416,8 +416,7 @@
 					autocomplete="off" />
 				<!-- <input type="hidden" name="type" value="product" /> -->
 				<button type="submit" class="btn icon-fallback-text" aria-label="Tìm kiếm" title="Tìm kiếm">
-					<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="#000"
-						xmlns="http://www.w3.org/2000/svg">
+					<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="#000">
 						<path fill="#000"
 							d="M14.1404 13.4673L19.852 19.1789C20.3008 19.6276 19.6276 20.3008 19.1789 19.852L13.4673 14.1404C12.0381 15.4114 10.1552 16.1835 8.09176 16.1835C3.6225 16.1835 0 12.5613 0 8.09176C0 3.6225 3.62219 0 8.09176 0C12.561 0 16.1835 3.62219 16.1835 8.09176C16.1835 10.1551 15.4115 12.038 14.1404 13.4673ZM0.951972 8.09176C0.951972 12.0356 4.14824 15.2316 8.09176 15.2316C12.0356 15.2316 15.2316 12.0353 15.2316 8.09176C15.2316 4.14797 12.0353 0.951972 8.09176 0.951972C4.14797 0.951972 0.951972 4.14824 0.951972 8.09176Z">
 						</path>
@@ -428,6 +427,29 @@
 					<div class="list-search list-search-style"></div>
 				</div>
 			</form>
+			<script>
+				$(document).ready(function () {
+					let urlse = '<?= BASE_URL . '?act=searchpro' ?>';
+					let urlProd = '<?= BASE_URL ?>/views/layouts/master.php';
+					$(".search-bar").submit(function (event) {
+						event.preventDefault();
+						// console.log("Data: ", $(this).serializeArray());
+						$.ajax({
+							type: "post",
+							url: urlse,
+							data: $(this).serializeArray(),
+							success: function (response) {
+								// Sau khi hoàn thành AJAX request, chuyển hướng đến trang được chỉ định
+								window.location.href = urlProd;
+							},
+							error: function (xhr, status, error) {
+								// Xử lý lỗi nếu có
+								console.log(error);
+							}
+						});
+					});
+				});
+			</script>
 		</div>
 	</div>
 	<!-- <a href="javascript:void(0)" class="close-popup-search">

@@ -72,7 +72,7 @@
                                                 <th>Địa chỉ</th>
                                                 <th>Giá trị đơn hàng</th>
                                                 <th>TT thanh toán</th>
-                                                <th>TT vận chuyển</th>
+                                                <!-- <th>TT vận chuyển</th> -->
                                             </tr>
                                         </thead>
 
@@ -102,13 +102,13 @@
 
 
                                                 </td>
-                                                <td>
+                                                <!-- <td>
 
 
                                                     <span class="span_">Chưa chuyển</span>
 
 
-                                                </td>
+                                                </td> -->
                                             </tr>
 
                                             <tr class="first odd">
@@ -134,13 +134,13 @@
 
 
                                                 </td>
-                                                <td>
+                                                <!-- <td>
 
 
                                                     <span class="span_">Chưa chuyển</span>
 
 
-                                                </td>
+                                                </td> -->
                                             </tr>
 
                                             <tr class="first odd">
@@ -166,13 +166,13 @@
 
 
                                                 </td>
-                                                <td>
+                                                <!-- <td>
 
 
                                                     <span class="span_">Chưa chuyển</span>
 
 
-                                                </td>
+                                                </td> -->
                                             </tr>
 
                                             <tr class="first odd">
@@ -198,13 +198,13 @@
 
 
                                                 </td>
-                                                <td>
+                                                <!-- <td>
 
 
                                                     <span class="span_">Chưa chuyển</span>
 
 
-                                                </td>
+                                                </td> -->
                                             </tr>
 
                                             <tr class="first odd">
@@ -230,13 +230,13 @@
 
 
                                                 </td>
-                                                <td>
+                                                <!-- <td>
 
 
                                                     <span class="span_">Chưa chuyển</span>
 
 
-                                                </td>
+                                                </td> -->
                                             </tr>
 
 

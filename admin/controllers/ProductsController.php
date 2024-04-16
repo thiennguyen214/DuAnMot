@@ -55,8 +55,8 @@ function productCreate()
 
         $data = [
             "name" => $_POST['name'] ?? null,
-            "price" => number_format($_POST['price'], 0, ',', '.') ?? null,
-            "price_sale" => number_format($_POST['price-sale'], 0, ',', '.') ?? null,
+            "price" => $_POST['price'] ?? null,
+            "price_sale" => $_POST['price-sale'] ?? null,
             "brand_id" => $_POST['brand'] ?? null,
             "mota" => $_POST['mota'] ?? null,
             "so_luong_ban" => $_POST['pro_db'] ?? null,
@@ -116,7 +116,7 @@ function validateProductCreate($data)
 
     if (empty($data['price_sale'])) {
         $errors[] = 'Trường giá sale là bắt buộc';
-    } else if ((int) str_replace(',', '', $data['price_sale']) >= (int) str_replace(',', '', $data['price'])) {
+    } else if ($data['price_sale'] >= $data['price']) {
         $errors[] = 'Giá sale không được lớn hơn giá thường';
 
     }
@@ -179,8 +179,8 @@ function productUpdate($id)
     if (!empty($_POST)) {
         $data = [
             "name" => $_POST['name'] ?? $products['name'],
-            "price" => number_format($_POST['price'], 0, ',', '.') ?? $products['price'],
-            "price_sale" => number_format($_POST['price-sale'], 0, ',', '.') ?? $products['price_sale'],
+            "price" => $_POST['price'] ?? $products['price'],
+            "price_sale" => $_POST['price-sale'] ?? $products['price_sale'],
             "brand_id" => $_POST['brand'] ?? $products['brand_id'],
             "mota" => $_POST['mota'] ?? $products['mota'],
             "so_luong_ban" => $_POST['pro_db'] ?? $products['so_luong_ban'],
@@ -250,7 +250,7 @@ function validateProductUpdate($id, $data)
 
     if (empty($data['price_sale'])) {
         $errors[] = 'Trường giá sale là bắt buộc';
-    } else if ((int) str_replace('.', '', $data['price_sale']) >= (int) str_replace('.', '', $data['price'])) {
+    } else if ($data['price_sale'] >= $data['price']) {
         $errors[] = 'Giá sale không được lớn hơn giá thường';
     }
 

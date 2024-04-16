@@ -80,3 +80,26 @@ if (!function_exists('cartItemAll')) {
         }
     }
 }
+if (!function_exists('cartItemOne')) {
+    function cartItemOne($userID,$productID)
+    {
+        try {
+            $sql = "SELECT ci.*, p.name as p_name, p.price_sale as p_price_sale, p.img as p_img
+            FROM cart_item AS ci
+            INNER JOIN products AS p ON p.id = ci.pro_id
+            INNER JOIN carts AS c ON c.id = ci.cart_id 
+            WHERE c.user_id = :user_id  AND ci.pro_id = :pro_id;";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->bindParam(":user_id", $userID);
+            $stmt->bindParam(":pro_id", $productID);
+
+            $stmt->execute();
+
+            return $stmt->fetch();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}

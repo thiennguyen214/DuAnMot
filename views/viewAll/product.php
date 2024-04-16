@@ -542,12 +542,8 @@
                             </a>
                           </div>
                         </div>
-                        <div class="smart"><?php 
-                                                $price_sale = str_replace(".", "", $product['price_sale']);
-                                                $price = str_replace(".", "", $product['price']);
-                                                ?>
-                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%
-
+                        <div class="smart">
+                          <span>-<?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
                           </span></div>
                         <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                           data-wish="unisex-creed-millesime-imperial" tabindex="0" title="Thêm vào yêu thích">
@@ -563,9 +559,9 @@
                             </a>
                           </h3>
                           <div class="price-box">
-                            <?= $product['price_sale'] ?>₫
+                            <?=  number_format($product['price_sale'], 0, ',', '.') ?>₫
                             <span class="compare-price">
-                              <?= $product['price'] ?>₫
+                              <?=  number_format($product['price'], 0, ',', '.') ?>₫
                             </span>
                           </div>
                         </div>

@@ -1,7 +1,7 @@
 <?php
 function showChitietsp()
 {
-    $tittle = "chi tiết sản phẩm";
+    $tittle = "Chi tiết sản phẩm";
     $view = "viewAll/chitietsp";
     $style = 'styles/chitietsp';
     // $script = 'scripts/home';

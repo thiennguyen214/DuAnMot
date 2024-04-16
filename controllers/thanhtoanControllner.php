@@ -10,10 +10,10 @@ function showThanhtoan()
     // $users = listAll('users');
     // debug($_SESSION['cart']);
     if (!empty($_SESSION['userm'])) {
-        $favs = listFav($_SESSION['userm']['id']);
-        foreach ($favs as $fav) {
-            $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
-        }
+        // $favs = listFav($_SESSION['userm']['id']);
+        // foreach ($favs as $fav) {
+        //     $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+        // }
         $carts = cartItemAll($_SESSION['userm']['id']);
         $totalc = 0;
         foreach ($carts as $cart) {
@@ -76,5 +76,18 @@ function orderPurchase()
 
 function orderSuccess()
 {
-    require_once PATH_VIEW . 'viewAll/bills.php';
+
+    $tittle = "Hóa đơn";
+    $view = "viewAll/bills";
+    $style = 'styles/bills';
+    // $script = 'scripts/home';
+    // $dataUser = getAllUser();
+    // debug($dataUser);
+    // $users = listAll('users');
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
+
+    require_once PATH_VIEW . '/layouts/master.php';
 }

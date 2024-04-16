@@ -66,9 +66,8 @@
                                                     </div>
 
                                                 </div>
-                                                <div class="smart"><span>-
-                                                        <?= floor((1 - (str_replace(".", "", $fav['p_price_sale']) / str_replace(".", "", $fav['p_price']))) * 100) ?>%
-                                                    </span></div> <a href="javascript:void(0)"
+                                                <div class="smart"><span>-<?= floor((1 - ($fav['p_price_sale'] / $fav['p_price'])) * 100) ?>%
+                                                </span></div> <a href="javascript:void(0)"
                                                     class="setWishlist btn-wishlist active"
                                                     data-wish="mancera-cedrat-boise" tabindex="0" title="Thêm vào yêu thích">
                                                     <svg class="icon">
@@ -81,8 +80,8 @@
                                                             href="<?= $fav['p_name'] ?>"
                                                             title="<?= $fav['p_name'] ?>"><?= $fav['p_name'] ?></a></h3>
                                                     <div class="price-box">
-                                                        <?= $fav['p_price_sale'] ?>₫
-                                                        <span class="compare-price"> <?= $fav['p_price'] ?>₫</span>
+                                                        <?=  number_format($fav['p_price_sale'], 0, ',', '.') ?>₫
+                                                        <span class="compare-price"> <?=  number_format($fav['p_price'], 0, ',', '.') ?>₫</span>
 
                                                     </div>
                                                 </div>

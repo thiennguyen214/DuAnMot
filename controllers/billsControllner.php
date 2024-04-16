@@ -1,7 +1,7 @@
 <?php
 function showBills()
 {
-    $tittle = "hóa đơn";
+    $tittle = "Hóa đơn";
     $view = "viewAll/bills";
     $style = 'styles/bills';
     // $script = 'scripts/home';
@@ -12,10 +12,10 @@ function showBills()
     foreach ($fnames as $fname) {
         $brands[$fname['initial']] = ascBrand($fname['initial']);
     }if (!empty($_SESSION['userm'])) {
-        $favs = listFav($_SESSION['userm']['id']);
-        foreach ($favs as $fav) {
-            $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
-        }
+        // $favs = listFav($_SESSION['userm']['id']);
+        // foreach ($favs as $fav) {
+        //     $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+        // }
         $carts = cartItemAll($_SESSION['userm']['id']);
         $totalc = 0;
         foreach ($carts as $cart) {

@@ -1,7 +1,7 @@
 <?php
 function showAddresses()
 {
-    $tittle = "sổ địa chỉ";
+    $tittle = "Sổ địa chỉ";
     $view = "viewAll/addresses";
     $style = 'styles/addresses';
     // $script = 'scripts/home';
@@ -13,10 +13,10 @@ function showAddresses()
         $brands[$fname['initial']] = ascBrand($fname['initial']);
     }
     if (!empty($_SESSION['userm'])) {
-        $favs = listFav($_SESSION['userm']['id']);
-        foreach ($favs as $fav) {
-            $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
-        }
+        // $favs = listFav($_SESSION['userm']['id']);
+        // foreach ($favs as $fav) {
+        //     $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+        // }
         $carts = cartItemAll($_SESSION['userm']['id']);
         $totalc = 0;
         foreach ($carts as $cart) {
