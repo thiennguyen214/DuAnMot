@@ -39,7 +39,35 @@
                                         <a class="thumb"
                                             href="<?= BASE_URL ?>?act=chitietsp"
                                             title="5 hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn khó phai">
-                                            <img src="<?= BASE_URL . $post['img'] ?>" height="300" width="300"
+                                            <img src="<?= BASE_URL . $post['img'] ?>" height="380" width="600"
+												alt="Thumb image" id="thumbimage" />
+                                        </a>
+                                        <p class="time-post">
+                                            <span>04/12/2023</span>
+                                        </p>
+                                    </div>
+                                    <div class="block-content">
+                                        <h3>
+                                            <a><?= $post['title'] ?> </a>
+                                        </h3>
+
+                                        <p><?= $post['subtitle'] ?>
+                                        </p>
+                                    </div>
+                                    <?php } ?>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
+                                <div class="item-blog">
+                                <?php
+									foreach ($posts as $post) { ?>
+                                    <div class="block-thumb">
+                                        <a class="thumb"
+                                            href="<?= BASE_URL ?>?act=chitietsp"
+                                            title="5 hương nước hoa ngọt ngào đầy tinh tế, ghi dấu ấn khó phai">
+                                            <img src="<?= BASE_URL . $post['img'] ?>" height="380" width="600"
 												alt="Thumb image" id="thumbimage" />
                                         </a>
                                         <p class="time-post">
@@ -58,43 +86,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
-                                <div class="item-blog">
-                                    <div class="block-thumb">
-                                        <a class="thumb"
-                                            href="<?= BASE_URL ?>?act=chitietsp"
-                                            title="Không phải tóc hay cổ, đây mới là nơi bạn nên xịt nước hoa">
-                                            <img width="600" height="380" class="lazyload"
-                                                src="../bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-                                                data-src="https://bizweb.dktcdn.net/100/503/826/articles/khong-phai-toc-hay-co-day-moi-la-noi-ban-nen-xit-nuoc-hoa.jpg?v=1701654839137"
-                                                alt="Không phải tóc hay cổ, đây mới là nơi bạn nên xịt nước hoa" />
-                                        </a>
-                                        <p class="time-post">
-                                            <span>04/12/2023</span>
-                                        </p>
-                                    </div>
-                                    <div class="block-content">
-                                        <h3>
-                                            <a href="khong-phai-toc-hay-co-day-moi-la-noi-ban-nen-xit-nuoc-hoa.html"
-                                                title="Không phải tóc hay cổ, đây mới là nơi bạn nên xịt nước hoa">Không
-                                                phải tóc hay cổ, đây mới là nơi bạn nên xịt
-                                                nước hoa</a>
-                                        </h3>
-
-                                        <p class="justify">
-                                            Từ lâu, nước hoa không chỉ giúp chúng ta thu hút người
-                                            xung quanh mà còn phần nào thể hiện cá tính của bản
-                                            thân. Tùy vào từng hãng sản xuất và nồng độ tinh dầu
-                                            có trong sản phẩm mà nước hoa sẽ có độ bám tỏa riêng
-                                            biệt. Thế nhưng theo các chuyên gia, việc biết cách
-                                            xịt hoặc thoa nước hoa vào đúng vị trí cần trên cơ thể
-                                            để làm tăng độ lưu hương lên đáng kể....
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
                                 <div class="item-blog">
                                     <div class="block-thumb">
                                         <a class="thumb" href="<?= BASE_URL ?>?act=chitietsp"
@@ -126,9 +118,9 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-fix">
                                 <div class="item-blog">
                                     <div class="block-thumb">
                                         <a class="thumb"
@@ -236,7 +228,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="text-center">
                             <nav class="clearfix relative nav_pagi w_100">

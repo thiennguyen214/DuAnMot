@@ -1,7 +1,7 @@
 <?php
 function showBills()
 {
-    $tittle = "hóa đơn";
+    $tittle = "Hóa đơn";
     $view = "viewAll/bills";
     $style = 'styles/bills';
     // $script = 'scripts/home';

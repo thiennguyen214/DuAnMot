@@ -1,9 +1,9 @@
 <?php
-function showrePass()
+function showyourCart()
 {
-    $tittle = "đổi mật khẩu";
-    $view = "viewAll/repass";
-    $style = 'styles/repass';
+    $tittle = "Đơn hàng của bạn";
+    $view = "viewAll/yourCart";
+    $style = 'styles/yourCart';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
@@ -12,6 +12,7 @@ function showrePass()
     foreach ($fnames as $fname) {
         $brands[$fname['initial']] = ascBrand($fname['initial']);
     }
+
 
     require_once PATH_VIEW . '/layouts/master.php';
 
