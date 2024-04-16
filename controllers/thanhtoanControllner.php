@@ -9,8 +9,21 @@ function showThanhtoan()
     // debug($dataUser);
     // $users = listAll('users');
     // debug($_SESSION['cart']);
+    if (!empty($_SESSION['userm'])) {
+        $favs = listFav($_SESSION['userm']['id']);
+        foreach ($favs as $fav) {
+            $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+        }
+        $carts = cartItemAll($_SESSION['userm']['id']);
+        $totalc = 0;
+        foreach ($carts as $cart) {
+            if (empty($_SESSION['cart'][$cart['pro_id']])) {
+                $_SESSION['cart'][$cart['pro_id']] = $cart;
+            }
+            $totalc += $_SESSION['cart'][$cart['pro_id']]['quantity'];
+        }
+    }
     require_once PATH_VIEW . '/viewAll/thanhtoan.php';
-
 }
 
 function orderPurchase()
@@ -49,12 +62,13 @@ function orderPurchase()
 
             unset($_SESSION['cart']);
             unset($_SESSION['cartID']);
+            header('Location: ' . BASE_URL . '?act=order-success');
+        exit();
         } catch (\Exception $e) {
             debug($e);
         }
 
-        header('Location: ' . BASE_URL . '?act=order-success');
-        exit();
+        
     }
 
     header('Location: ' . BASE_URL);

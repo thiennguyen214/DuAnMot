@@ -283,11 +283,7 @@
                                                 </div>
                                             </div>
                                             <div class="smart">
-                                                <?php 
-                                                $price_sale = str_replace(".", "", $item['price_sale']);
-                                                $price = str_replace(".", "", $item['price']);
-                                                ?>
-                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%</span>
+                                                <span>-<?= floor((1 - ($item['price_sale'] / $item['price'])) * 100) ?>%</span>
                                             </div>	
                                             <a class="creatf btn-wishlist" href="#" data-proid="<?= $item['id'] ?>" data-userid="<?=(isset($_SESSION['userm']))?$_SESSION['userm']['id']:''?>" 
                                                 data-url="<?= BASE_URL ?>?act=favCreat" title="Thêm vào yêu thích">
@@ -299,8 +295,8 @@
                                             <div class="product-info">
                                                 <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="/tommy-hilfiger-tommy-girl" title="<?= $item['name'] ?>"><?= $item['name'] ?></a></h3>
                                                 <div class="price-box">
-                                                <?= $item['price_sale'] ?>₫
-                                                    <span class="compare-price"><?= $item['price'] ?>₫</span>
+                                                <?=  number_format($item['price_sale'], 0, ',', '.') ?>₫
+                                                    <span class="compare-price"><?=  number_format($item['price'], 0, ',', '.') ?>₫</span>
                                                 </div>
                                                 <div class="productcount">
                                                     <div class="countitem visible">
@@ -496,11 +492,7 @@
                                         </div>
                                     </div>
                                     <div class="smart">
-                                    <?php 
-                                                $price_sale = str_replace(".", "", $product['price_sale']);
-                                                $price = str_replace(".", "", $product['price']);
-                                                ?>
-                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%
+                                                <span>-<?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
                                         </span>
                                     </div>	
                                     <a href="javascript:void(0)" class="creatWish btn-wishlist 
@@ -517,8 +509,8 @@
                                     <div class="product-info">
                                         <h3 class="product-name"><a class="line-clamp line-clamp-1 text-center" href="<?= $product['name'] ?>" title="<?= $product['name'] ?>"><?= $product['name'] ?></a></h3>
                                         <div class="price-box">
-                                        <?= $product['price_sale'] ?>₫
-                                            <span class="compare-price"> <?= $product['price'] ?>₫</span>
+                                        <?=  number_format($product['price_sale'], 0, ',', '.') ?>₫
+                                            <span class="compare-price"> <?=  number_format($product['price'], 0, ',', '.') ?>₫</span>
                                         </div>
                                     </div>
                                     <ul class="fragrant_product">
@@ -713,11 +705,8 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="smart"><?php 
-                                                $price_sale = str_replace(".", "", $trend['price_sale']);
-                                                $price = str_replace(".", "", $trend['price']);
-                                                ?>
-                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?></span></div>
+                                <div class="smart">
+                                                <span>-<?= floor((1 - ($trend['price_sale'] / $trend['price'])) * 100) ?></span></div>
                                 <a class="creatWish <?= $trend['id'] ?> btn-wishlist" href="#" data-proid="<?= $trend['id'] ?>" data-userid="<?=(isset($_SESSION['userm']))?$_SESSION['userm']['id']:''?>" 
                                                 data-url="<?= BASE_URL ?>?act=favCreat" title="Thêm vào yêu thích">
                                     <svg class="icon">
@@ -733,9 +722,9 @@
                                         </a>
                                     </h3>
                                     <div class="price-box">
-                                        <?= $trend['price_sale'] ?>₫
+                                        <?=  number_format($trend['price_sale'], 0, ',', '.') ?>₫
                                         <span class="compare-price">
-                                            <?= $trend['price'] ?>₫
+                                            <?=  number_format($trend['price'], 0, ',', '.') ?>₫
                                         </span>
                                     </div>
                                 </div>
@@ -1070,11 +1059,11 @@
                                 </h3>
                                 <div class="price-box">
                                     <span class="price">
-                                        <?= $banChay['price_sale'] ?>₫
+                                        <?=  number_format($banChay['price_sale'], 0, ',', '.') ?>₫
                                     </span>
 
                                     <span class="compare-price">
-                                        <?= $banChay['price'] ?>₫
+                                        <?=  number_format($banChay['price'], 0, ',', '.') ?>₫
                                     </span>
                                 </div>
                             </div>
@@ -1120,11 +1109,11 @@
                                     </h3>
                                     <div class="price-box">
                                         <span class="price">
-                                            <?= $sale['price_sale'] ?>₫
+                                            <?=  number_format($sale['price_sale'], 0, ',', '.') ?>₫
                                         </span>
 
                                         <span class="compare-price">
-                                            <?= $sale['price'] ?>₫
+                                            <?=  number_format($sale['price_sale'], 0, ',', '.') ?>₫
                                         </span>
                                     </div>
                                 </div>

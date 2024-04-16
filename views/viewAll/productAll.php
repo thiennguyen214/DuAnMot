@@ -61,13 +61,13 @@
             </div>
             <link itemprop="availability" href="http://schema.org/InStock">
             <meta itemprop="priceCurrency" content="VND">
-            <meta itemprop="price" content="<?= $product['price_sale'] ?>">
+            <meta itemprop="price" content="<?=  number_format($product['price_sale'], 0, ',', '.')?>">
             <meta itemprop="url" content="tommy-hilfiger-tommy-girl.html">
             <span itemprop="UnitPriceSpecification" itemscope itemtype="https://schema.org/Downpayment">
-                <meta itemprop="priceType" content="<?= $product['price_sale'] ?>">
+                <meta itemprop="priceType" content="<?=  number_format($product['price_sale'], 0, ',', '.')?>">
             </span>
             <span itemprop="UnitPriceSpecification" itemscope itemtype="https://schema.org/Downpayment">
-                <meta itemprop="priceSpecification" content="<?= $product['price'] ?>">
+                <meta itemprop="priceSpecification" content="<?=  number_format($product['price'], 0, ',', '.')?>">
             </span>
             <meta itemprop="priceValidUntil" content="2099-01-01">
         </div>
@@ -85,17 +85,16 @@
                         <div class="product-image-block relative">
 
                             <div class="swiper-container gallery-top">
-                                
+
                                 <div class="swiper-wrapper" id="lightgallery">
-                                                                                                                                
-                                    <a class="swiper-slide" data-hash="0" href=""
-                                        title="Click để xem">
+
+                                    <a class="swiper-slide" data-hash="0" href="" title="Click để xem">
                                         <img height="480" width="480" src="<?= $product['img'] ?>"
                                             alt="<?= $product['name'] ?>"
                                             data-image="https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
                                             class="img-responsive mx-auto d-block swiper-lazy" />
                                     </a>
-                                                                                                                     
+
 
                                 </div>
 
@@ -110,16 +109,15 @@
                             </div>
                             <div class="swiper-container gallery-thumbs">
                                 <div class="swiper-wrapper">
-                                                                                                                 
+
                                     <div class="swiper-slide" data-hash="0">
                                         <div class="p-100">
-                                            <img height="100" width="100" src="<?= $product['img'] ?>"
-                                                alt=""
+                                            <img height="100" width="100" src="<?= $product['img'] ?>" alt=""
                                                 data-image="//bizweb.dktcdn.net/thumb/medium/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597"
                                                 class="swiper-lazy" />
                                         </div>
                                     </div>
-                                                                                                    
+
                                 </div>
                                 <div class="swiper-button-next">
                                 </div>
@@ -167,26 +165,22 @@
 
                                 <span class="special-price">
                                     <span class="price product-price">
-                                        <?= $product['price_sale'] ?>₫
+                                        <?=  number_format($product['price_sale'], 0, ',', '.')?>₫
                                     </span>
-                                    <meta itemprop="price" content="<?= $product['price_sale'] ?>">
+                                    <meta itemprop="price" content="<?=  number_format($product['price_sale'], 0, ',', '.')?>">
                                     <meta itemprop="priceCurrency" content="VND">
                                 </span> <!-- Giá Khuyến mại -->
                                 <span class="old-price" itemprop="priceSpecification" itemscope=""
                                     itemtype="http://schema.org/priceSpecification">
                                     <del class="price product-price-old">
-                                        <?= $product['price'] ?>₫
+                                        <?=  number_format($product['price'], 0, ',', '.')?>₫
                                     </del>
-                                    <meta itemprop="price" content="<?= $product['price'] ?>">
+                                    <meta itemprop="price" content="<?=  number_format($product['price'], 0, ',', '.')?>">
                                     <meta itemprop="priceCurrency" content="VND">
                                 </span> <!-- Giá gốca -->
 
                                 <span class="label_product">
-                                    <?php 
-                                                $price_sale = str_replace(".", "", $product['price_sale']);
-                                                $price = str_replace(".", "", $product['price']);
-                                                ?>
-                                                -<?= floor((1 - ($price_sale / $price)) * 100) ?>%
+                                    -<?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
                                 </span>
 
 
@@ -504,27 +498,30 @@
                                     </div>
                                 </div>
                             </form>
+                            
                             <script>
-                                let urlAddCart = '<?= BASE_URL . '?act=cart-add' ?>';
-                                $(".add-to-cart-form").submit(function (event) {
-                                    event.preventDefault();
-                                    // console.log("Data: ", $(this).serializeArray());
-                                    $.ajax({
-                                        type: "post",
-                                        url: urlAddCart,
-                                        data: $(this).serializeArray(),
-                                        success: function (response) {
-                                            response = JSON.parse(response);
-                                            if (response.status == false) {
-                                                alert(response.mes);
-                                            } else {
-                                                $('.count_itempr').load(location.href + ' .count_itempr');
-                                                $('.block-cart').load(location.href + ' .block-cart');
-                                                $(".popup-cart-mobile").addClass("active");
+                                $(document).ready(function () {
+                                    let urlAddCart = '<?= BASE_URL . '?act=cart-add' ?>';
+                                    $(".add-to-cart-form").submit(function (event) {
+                                        event.preventDefault();
+                                        // console.log("Data: ", $(this).serializeArray());
+                                        $.ajax({
+                                            type: "post",
+                                            url: urlAddCart,
+                                            data: $(this).serializeArray(),
+                                            success: function (response) {
+                                                response = JSON.parse(response);
+                                                if (response.status == false) {
+                                                    alert(response.mes);
+                                                } else {
+                                                    $('.count_itempr').load(location.href + ' .count_itempr');
+                                                    $('.block-cart').load(location.href + ' .block-cart');
+                                                    $(".popup-cart-mobile").addClass("active");
+                                                }
                                             }
-                                        }
+                                        });
                                     });
-                                });
+                                    });
                             </script>
                             <div class="chinhsach-box">
                                 <div class="chinhsach-slider swiper-container">
@@ -572,15 +569,15 @@
                                 </div>
                             </div>
                             <script>
-                                var swiper = new Swiper('.chinhsach-slider', {
-                                    loop: false,
-                                    spaceBetween: 24,
-                                    autoplay: false,
-                                    pagination: {
-                                        el: '.chinhsach-slider .swiper-pagination',
-                                        clickable: true
-                                    },
-                                });
+    var swiper = new Swiper('.chinhsach-slider', {
+        loop: false,
+        spaceBetween: 24,
+        autoplay: false,
+        pagination: {
+            el: '.chinhsach-slider .swiper-pagination',
+            clickable: true
+        },
+    });
                             </script>
 
                         </div>
@@ -619,10 +616,10 @@
                                                     </a></h3>
                                                 <div class="price-box">
                                                     <span class="price">
-                                                        <?= $pro['price_sale'] ?>₫
+                                                        <?=  number_format($pro['price_sale'], 0, ',', '.') ?>₫
                                                     </span>
                                                     <span class="compare-price">
-                                                        <?= $pro['price'] ?>₫
+                                                        <?=  number_format($pro['price'], 0, ',', '.') ?>₫
                                                     </span>
 
                                                 </div>
@@ -780,12 +777,10 @@
                                                 </div>
 
                                             </div>
-                                            <div class="smart"><?php 
-                                                $price_sale = str_replace(".", "", $product['price_sale']);
-                                                $price = str_replace(".", "", $product['price']);
-                                                ?>
-                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%
-                                                </span></div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
+                                            <div class="smart">
+                                                <span>-<?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                                                </span>
+                                            </div> <a href="javascript:void(0)" class="setWishlist btn-wishlist"
                                                 data-wish="gucci-bloom-ambrosia-di-fiori" tabindex="0"
                                                 title="Thêm vào yêu thích">
                                                 <svg class="icon">
@@ -801,9 +796,9 @@
                                                         <?= $pro['name'] ?>
                                                     </a></h3>
                                                 <div class="price-box">
-                                                    <?= $pro['price_sale'] ?>₫
+                                                    <?=  number_format($pro['price_sale'], 0, ',', '.') ?>₫
                                                     <span class="compare-price">
-                                                        <?= $pro['price'] ?>₫
+                                                        <?=  number_format($pro['price'], 0, ',', '.') ?>₫
                                                     </span>
 
                                                 </div>
@@ -860,220 +855,250 @@
                 </div>
 
                 <script>
-                    if (localStorage.last_viewed_products != undefined) {
-                        jQuery('.recent-page-viewed').removeClass('d-none');
-                        var last_viewd_pro_array = JSON.parse(localStorage.last_viewed_products);
-                        var recentview_promises = [];
-                        var size_pro_review = last_viewd_pro_array.length;
-                        if (size_pro_review >= 14) {
-                            size_pro_review = 14;
-                        } else {
-                            size_pro_review = last_viewd_pro_array.length;
-                        }
-                        if (size_pro_review < 1) {
-                            jQuery('.recent-page-viewed').addClass('d-none');
-                        } else {
-                            jQuery('.recent-page-viewed').removeClass('d-none');
-                        }
-                        if (size_pro_review > 0) {
-                            for (i = 0; i < size_pro_review; i++) {
-                                var alias_product = last_viewd_pro_array[i];
-                                if (!!alias_product.alias) {
-                                    var promise = new Promise(function (resolve, reject) {
-                                        $.ajax({
-                                            url: '/' + alias_product.alias + '?view=viewed',
-                                            success: function (product) {
-                                                resolve(product);
+    if (localStorage.last_viewed_products != undefined) {
+        jQuery('.recent-page-viewed').removeClass('d-none');
+        var last_viewd_pro_array = JSON.parse(localStorage.last_viewed_products);
+        var recentview_promises = [];
+        var size_pro_review = last_viewd_pro_array.length;
+        if (size_pro_review >= 14) {
+            size_pro_review = 14;
+        } else {
+            size_pro_review = last_viewd_pro_array.length;
+        }
+        if (size_pro_review < 1) {
+            jQuery('.recent-page-viewed').addClass('d-none');
+        } else {
+            jQuery('.recent-page-viewed').removeClass('d-none');
+        }
+        if (size_pro_review > 0) {
+            for (i = 0; i < size_pro_review; i++) {
+                var alias_product = last_viewd_pro_array[i];
+                if (!!alias_product.alias) {
+                    var promise = new Promise(function (resolve, reject) {
+                        $.ajax({
+                            url: '/' + alias_product.alias + '?view=viewed',
+                            success: function (product) {
+                                resolve(product);
 
-                                                $(document).ready(function () {
+                                $(document).ready(function () {
 
-                                                    var modal = $('.quickview-product');
-                                                    var btn = $('.quick-view');
-                                                    var span = $('.quickview-close');
-                                                    favoriBean.Wishlist.wishlistProduct();
-                                                    btn.click(function () {
-                                                        modal.show();
-                                                    });
-
-                                                    span.click(function () {
-                                                        modal.hide();
-                                                    });
-
-                                                    $(window).on('click', function (e) {
-                                                        if ($(e.target).is('.modal')) {
-                                                            modal.hide();
-                                                        }
-                                                    });
-                                                });
-                                            },
-                                            error: function (err) {
-                                                resolve('');
-                                            }
-                                        })
+                                    var modal = $('.quickview-product');
+                                    var btn = $('.quick-view');
+                                    var span = $('.quickview-close');
+                                    favoriBean.Wishlist.wishlistProduct();
+                                    btn.click(function () {
+                                        modal.show();
                                     });
-                                    recentview_promises.push(promise);
-                                }
+
+                                    span.click(function () {
+                                        modal.hide();
+                                    });
+
+                                    $(window).on('click', function (e) {
+                                        if ($(e.target).is('.modal')) {
+                                            modal.hide();
+                                        }
+                                    });
+                                });
+                            },
+                            error: function (err) {
+                                resolve('');
                             }
-                            Promise.all(recentview_promises).then(function (values) {
-                                $.each(values, function (i, v) {
-                                    if (v != '') {
-                                        $('.recent-viewed .swiper-wrapper').append(v);
-                                    } else {
-                                        last_viewd_pro_array.splice(i, 1);
-                                    }
-                                });
-                                setTimeout(function () {
-                                    var swiper = new Swiper('.recent-viewed', {
-                                        slidesPerColumnFill: 'row',
-                                        direction: 'horizontal',
-                                        slidesPerView: 4,
-                                        spaceBetween: 20,
-                                        slidesPerGroup: 1,
-                                        slidesPerColumn: 1,
-                                        navigation: {
-                                            nextEl: '.recent-viewed .swiper-button-next',
-                                            prevEl: '.recent-viewed .swiper-button-prev',
-                                        },
-                                        breakpoints: {
-                                            280: {
-                                                slidesPerView: 2,
-                                                spaceBetween: 15
-                                            },
-                                            640: {
-                                                slidesPerView: 2,
-                                                spaceBetween: 15
-                                            },
-                                            768: {
-                                                slidesPerView: 3,
-                                                spaceBetween: 15
-                                            },
-                                            992: {
-                                                slidesPerView: 4,
-                                                spaceBetween: 15
-                                            },
-                                            1024: {
-                                                slidesPerView: 4,
-                                                spaceBetween: 20
-                                            }
-                                        }
-                                    });
-                                    awe_lazyloadImage();
-                                }, 500);
-
-                                localStorage.setItem('last_viewed_products', JSON.stringify(last_viewd_pro_array));
-                                awe_lazyloadImage();
-
-                            })
-                                .catch(function (productId) {
-                                    const listLocalStorage = (JSON.parse(localStorage.getItem('last_viewed_products')));
-                                    for (let i = 0; i < listLocalStorage.length; ++i) {
-                                        if (listLocalStorage[i].id == productId) {
-                                            listLocalStorage.splice(i, 1);
-                                        }
-                                    }
-                                    localStorage.setItem('last_viewed_products', JSON.stringify(listLocalStorage));
-                                });
-                        }
+                        })
+                    });
+                    recentview_promises.push(promise);
+                }
+            }
+            Promise.all(recentview_promises).then(function (values) {
+                $.each(values, function (i, v) {
+                    if (v != '') {
+                        $('.recent-viewed .swiper-wrapper').append(v);
                     } else {
-                        jQuery('.section-recenview-product').addClass('d-none');
+                        last_viewd_pro_array.splice(i, 1);
                     }
+                });
+                setTimeout(function () {
+                    var swiper = new Swiper('.recent-viewed', {
+                        slidesPerColumnFill: 'row',
+                        direction: 'horizontal',
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                        slidesPerGroup: 1,
+                        slidesPerColumn: 1,
+                        navigation: {
+                            nextEl: '.recent-viewed .swiper-button-next',
+                            prevEl: '.recent-viewed .swiper-button-prev',
+                        },
+                        breakpoints: {
+                            280: {
+                                slidesPerView: 2,
+                                spaceBetween: 15
+                            },
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 15
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 15
+                            },
+                            992: {
+                                slidesPerView: 4,
+                                spaceBetween: 15
+                            },
+                            1024: {
+                                slidesPerView: 4,
+                                spaceBetween: 20
+                            }
+                        }
+                    });
+                    awe_lazyloadImage();
+                }, 500);
+
+                localStorage.setItem('last_viewed_products', JSON.stringify(last_viewd_pro_array));
+                awe_lazyloadImage();
+
+            })
+                .catch(function (productId) {
+                    const listLocalStorage = (JSON.parse(localStorage.getItem('last_viewed_products')));
+                    for (let i = 0; i < listLocalStorage.length; ++i) {
+                        if (listLocalStorage[i].id == productId) {
+                            listLocalStorage.splice(i, 1);
+                        }
+                    }
+                    localStorage.setItem('last_viewed_products', JSON.stringify(listLocalStorage));
+                });
+        }
+    } else {
+        jQuery('.section-recenview-product').addClass('d-none');
+    }
                 </script>
 
             </div>
         </div>
     </section>
     <script>
-        $(document).on('click', '.buynow', function () {
-            var _variantID = $('#product-selectors').val();
-            var _Qty = parseInt($('#qtym').val());;
-            if (_variantID == null) {
-                _variantID = $('#one_variant').val();
-            }
-            jQuery.ajax({
-                type: "POST",
-                url: "/cart/add.js",
-                data: "quantity=" + _Qty + "&VariantId=" + _variantID,
-                dataType: "json",
-                success: function (e) {
-                    window.location = 'cart.html';
-                },
-                error: function (e, t) {
-                    Bizweb.onError(e, t);
-                }
-            });
-        })
-        function activeTab(obj) {
-            $('.product-tab ul li').removeClass('active');
-            $(obj).addClass('active');
-            var id = $(obj).attr('data-tab');
-            $('.tab-content').removeClass('active');
-            $(id).addClass('active');
+    $(document).on('click', '.buynow', function () {
+        var _variantID = $('#product-selectors').val();
+        var _Qty = parseInt($('#qtym').val());;
+        if (_variantID == null) {
+            _variantID = $('#one_variant').val();
         }
-
-        $('.product-tab ul li').click(function () {
-            activeTab(this);
-            return false;
+        jQuery.ajax({
+            type: "POST",
+            url: "/cart/add.js",
+            data: "quantity=" + _Qty + "&VariantId=" + _variantID,
+            dataType: "json",
+            success: function (e) {
+                window.location = 'cart.html';
+            },
+            error: function (e, t) {
+                Bizweb.onError(e, t);
+            }
         });
-        var variantsize = false;
-        var ww = $(window).width();
+    })
+    function activeTab(obj) {
+        $('.product-tab ul li').removeClass('active');
+        $(obj).addClass('active');
+        var id = $(obj).attr('data-tab');
+        $('.tab-content').removeClass('active');
+        $(id).addClass('active');
+    }
 
-        var selectCallback = function (variant, selector) {
-            if (variant) {
-                var form = jQuery('#' + selector.domIdPrefix).closest('form');
-                for (var i = 0, length = variant.options.length; i < length; i++) {
-                    var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] + '"]');
-                    if (radioButton.size()) {
-                        radioButton.get(0).checked = true;
-                    }
+    $('.product-tab ul li').click(function () {
+        activeTab(this);
+        return false;
+    });
+    var variantsize = false;
+    var ww = $(window).width();
+
+    var selectCallback = function (variant, selector) {
+        if (variant) {
+            var form = jQuery('#' + selector.domIdPrefix).closest('form');
+            for (var i = 0, length = variant.options.length; i < length; i++) {
+                var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] + '"]');
+                if (radioButton.size()) {
+                    radioButton.get(0).checked = true;
                 }
             }
-            var addToCart = jQuery('.form-product .btn-cart.normal_button'),
-                FastAddToCart = jQuery('.form-product .btn-cart.fast'),
-                form = jQuery('.form-product .form-group'),
-                productPrice = jQuery('.details-pro .special-price .product-price'),
-                qty = jQuery('.inventory_quantity .a-stock'),
-                comparePrice = jQuery('.details-pro .old-price .product-price-old'),
-                comparePriceText = jQuery('.details-pro .old-price'),
-                qtyBtn = jQuery('.form-product .form-group .custom-btn-number'),
-                BtnSold = jQuery('.form-product .form-group .btn-mua'),
-                discountLabel = jQuery('.details-pro .label_product'),
-                buynow = jQuery('.form-product .buynow'),
-                product_sku = jQuery('.details-product .sku-product .variant-sku');
-            if (variant && variant.sku != "" && variant.sku != null) {
-                product_sku.html(variant.sku);
-            } else {
-                product_sku.html('Đang cập nhật');
-            }
-            FastAddToCart.addClass('d-none');
-            if (variant && variant.available) {
-                if (variant.inventory_management == "bizweb") {
-                    if (variant.inventory_quantity != 0) {
-                        qty.html('<span class="a-stock">Còn hàng</span>');
-                    } else if (variant.inventory_quantity == '') {
-                        if (variant.inventory_policy == "continue") {
-                            qty.html('<span class="a-stock">Còn hàng</span>');
-                        } else {
-                            qty.html('<span class="a-stock a-stock-out">Hết hàng</span>');
-                        }
-                    }
-                } else {
+        }
+        var addToCart = jQuery('.form-product .btn-cart.normal_button'),
+            FastAddToCart = jQuery('.form-product .btn-cart.fast'),
+            form = jQuery('.form-product .form-group'),
+            productPrice = jQuery('.details-pro .special-price .product-price'),
+            qty = jQuery('.inventory_quantity .a-stock'),
+            comparePrice = jQuery('.details-pro .old-price .product-price-old'),
+            comparePriceText = jQuery('.details-pro .old-price'),
+            qtyBtn = jQuery('.form-product .form-group .custom-btn-number'),
+            BtnSold = jQuery('.form-product .form-group .btn-mua'),
+            discountLabel = jQuery('.details-pro .label_product'),
+            buynow = jQuery('.form-product .buynow'),
+            product_sku = jQuery('.details-product .sku-product .variant-sku');
+        if (variant && variant.sku != "" && variant.sku != null) {
+            product_sku.html(variant.sku);
+        } else {
+            product_sku.html('Đang cập nhật');
+        }
+        FastAddToCart.addClass('d-none');
+        if (variant && variant.available) {
+            if (variant.inventory_management == "bizweb") {
+                if (variant.inventory_quantity != 0) {
                     qty.html('<span class="a-stock">Còn hàng</span>');
+                } else if (variant.inventory_quantity == '') {
+                    if (variant.inventory_policy == "continue") {
+                        qty.html('<span class="a-stock">Còn hàng</span>');
+                    } else {
+                        qty.html('<span class="a-stock a-stock-out">Hết hàng</span>');
+                    }
                 }
-                FastAddToCart.removeClass('d-none');
-                addToCart.html('Thêm vào giỏ hàng').removeAttr('disabled');
-                BtnSold.removeClass('btnsold');
-                qtyBtn.removeClass('d-none');
-                buynow.removeClass('d-none');
-                if (variant.price == 0) {
-                    productPrice.html('Liên hệ');
+            } else {
+                qty.html('<span class="a-stock">Còn hàng</span>');
+            }
+            FastAddToCart.removeClass('d-none');
+            addToCart.html('Thêm vào giỏ hàng').removeAttr('disabled');
+            BtnSold.removeClass('btnsold');
+            qtyBtn.removeClass('d-none');
+            buynow.removeClass('d-none');
+            if (variant.price == 0) {
+                productPrice.html('Liên hệ');
+                comparePrice.hide();
+                comparePriceText.hide();
+                form.addClass('d-none');
+                discountLabel.hide();
+            } else {
+                form.removeClass('d-none');
+                productPrice.html(Bizweb.formatMoney(variant.price, "{{amount_no_decimals_with_comma_separator}}₫"));
+
+                if (variant.compare_at_price > variant.price) {
+                    let save = variant.compare_at_price - variant.price
+                    let savePercent = Math.ceil(save / variant.compare_at_price * 100);
+                    if (savePercent >= 100) {
+                        savePercent = 99;
+                    }
+                    if (savePercent < 1) {
+                        savePercent = 1;
+                    }
+                    discountLabel.html(`- ${savePercent}%`).show();
+                    comparePrice.html(Bizweb.formatMoney(variant.compare_at_price, "{{amount_no_decimals_with_comma_separator}}₫")).show();
+                    comparePriceText.show();
+                } else {
                     comparePrice.hide();
                     comparePriceText.hide();
-                    form.addClass('d-none');
                     discountLabel.hide();
-                } else {
+                }
+            }
+        } else {
+            qty.html('<span class="a-stock a-stock-out">Hết hàng</span>');
+            FastAddToCart.addClass('d-none');
+            buynow.addClass('d-none');
+            addToCart.html('<span class="txt-main">Hết hàng</span>').attr('disabled', 'disabled');
+            BtnSold.addClass('btnsold');
+            qtyBtn.addClass('d-none');
+            discountLabel.hide();
+            if (variant) {
+                if (variant.price != 0) {
                     form.removeClass('d-none');
                     productPrice.html(Bizweb.formatMoney(variant.price, "{{amount_no_decimals_with_comma_separator}}₫"));
-
                     if (variant.compare_at_price > variant.price) {
                         let save = variant.compare_at_price - variant.price
                         let savePercent = Math.ceil(save / variant.compare_at_price * 100);
@@ -1084,358 +1109,362 @@
                             savePercent = 1;
                         }
                         discountLabel.html(`- ${savePercent}%`).show();
+                        FastAddToCart.addClass('d-none');
+                        buynow.addClass('d-none');
+                        addToCart.html('<span class="txt-main">Hết hàng</span>').attr('disabled', 'disabled');
                         comparePrice.html(Bizweb.formatMoney(variant.compare_at_price, "{{amount_no_decimals_with_comma_separator}}₫")).show();
                         comparePriceText.show();
                     } else {
                         comparePrice.hide();
                         comparePriceText.hide();
-                        discountLabel.hide();
-                    }
-                }
-            } else {
-                qty.html('<span class="a-stock a-stock-out">Hết hàng</span>');
-                FastAddToCart.addClass('d-none');
-                buynow.addClass('d-none');
-                addToCart.html('<span class="txt-main">Hết hàng</span>').attr('disabled', 'disabled');
-                BtnSold.addClass('btnsold');
-                qtyBtn.addClass('d-none');
-                discountLabel.hide();
-                if (variant) {
-                    if (variant.price != 0) {
-                        form.removeClass('d-none');
-                        productPrice.html(Bizweb.formatMoney(variant.price, "{{amount_no_decimals_with_comma_separator}}₫"));
-                        if (variant.compare_at_price > variant.price) {
-                            let save = variant.compare_at_price - variant.price
-                            let savePercent = Math.ceil(save / variant.compare_at_price * 100);
-                            if (savePercent >= 100) {
-                                savePercent = 99;
-                            }
-                            if (savePercent < 1) {
-                                savePercent = 1;
-                            }
-                            discountLabel.html(`- ${savePercent}%`).show();
-                            FastAddToCart.addClass('d-none');
-                            buynow.addClass('d-none');
-                            addToCart.html('<span class="txt-main">Hết hàng</span>').attr('disabled', 'disabled');
-                            comparePrice.html(Bizweb.formatMoney(variant.compare_at_price, "{{amount_no_decimals_with_comma_separator}}₫")).show();
-                            comparePriceText.show();
-                        } else {
-                            comparePrice.hide();
-                            comparePriceText.hide();
-                            FastAddToCart.addClass('d-none');
-                            addToCart.html('<span class="txt-main">Hết hàng</span>').attr('disabled', 'disabled');
-                        }
-                    } else {
-                        productPrice.html('Liên hệ');
-                        comparePrice.hide();
-                        comparePriceText.hide();
-                        form.addClass('d-none');
+                        FastAddToCart.addClass('d-none');
+                        addToCart.html('<span class="txt-main">Hết hàng</span>').attr('disabled', 'disabled');
                     }
                 } else {
                     productPrice.html('Liên hệ');
                     comparePrice.hide();
                     comparePriceText.hide();
-                    discountLabel.hide();
                     form.addClass('d-none');
                 }
+            } else {
+                productPrice.html('Liên hệ');
+                comparePrice.hide();
+                comparePriceText.hide();
+                discountLabel.hide();
+                form.addClass('d-none');
             }
-            /*begin variant image*/
-            if (variant && variant.image) {
-                var originalImage = jQuery(".gallery-thumbs img");
-                var stickoriginalImage = jQuery(".nd-product-news img");
-                var newImage = variant.image;
-                var element = originalImage[0];
-                Bizweb.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
-                    $('.gallery-thumbs .swiper-slide').each(function () {
-                        var $this = $(this);
-                        var imgThis = $this.find('img').attr('data-image');
+        }
+        /*begin variant image*/
+        if (variant && variant.image) {
+            var originalImage = jQuery(".gallery-thumbs img");
+            var stickoriginalImage = jQuery(".nd-product-news img");
+            var newImage = variant.image;
+            var element = originalImage[0];
+            Bizweb.Image.switchImage(newImage, element, function (newImageSizedSrc, newImage, element) {
+                $('.gallery-thumbs .swiper-slide').each(function () {
+                    var $this = $(this);
+                    var imgThis = $this.find('img').attr('data-image');
 
-                        if (newImageSizedSrc.split("?")[0] == imgThis.split("?")[0]) {
-                            var pst = $this.attr('data-hash');
-                            galleryTop.slideTo(pst, 1000, false);
-                        }
-                        jQuery(stickoriginalImage).attr('src', newImageSizedSrc);
+                    if (newImageSizedSrc.split("?")[0] == imgThis.split("?")[0]) {
+                        var pst = $this.attr('data-hash');
+                        galleryTop.slideTo(pst, 1000, false);
+                    }
+                    jQuery(stickoriginalImage).attr('src', newImageSizedSrc);
 
 
-                    });
                 });
-            }
-            /*end of variant image*/
-        };
-        jQuery(function ($) {
-
-            new Bizweb.OptionSelectors('product-selectors', {
-                product: { "id": <?= $product['id'] ?>, "name": "<?= $product['name'] ?>", "alias": "tommy-hilfiger-tommy-girl", "vendor": "Tommy Hilfiger", "type": "<?= $product['t_name'] ?>", "content": "<p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương miêu tả như thế nào? Nếu chưa thì hãy mở nắp <?= $product['name'] ?>, cô gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>\n<p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa và Gỗ.\"</p>\n<p><?= $product['name'] ?> đích thị là chai nước hoa dành cho những cô nàng yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>\n<p><img alt=\"Banner\" height=\"480\" src=\"//bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513\" width=\"480\" /></p>\n<p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>\n<ul>\n<li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và thuận lợi trong việc tỏa mùi hương.</li>\n<li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh hơn.</li>\n<li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ bám tỏa trên da của bạn.</li>\n<li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay, đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>\n<li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc mọi nơi.</li></ul>\n<p>&nbsp;</p>\n<p><strong>Bảo quản nước hoa:</strong></p>\n<ul>\n<li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24 đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.</li>\n<li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng, nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có nhiệt độ nóng lạnh thất thường...</li></ul>", "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>", "template_layout": "product", "available": true, "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"], "price": <?=str_replace(".", "", $product['price_sale'])?>.0000, "price_min": <?=str_replace(".", "", $product['price_sale'])?>.0000, "price_max": 10000000.0000, "price_varies": true, "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000, "compare_at_price_min": <?= $product['price'] ?>, "compare_at_price_max": 10000000.0000, "compare_at_price_varies": true, "variants": [{ "id": <?= $product['id'] ?>, "barcode": null, "sku": null, "title": "30ml", "options": ["30ml"], "option1": "30ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": <?=str_replace(".", "", $product['price_sale'])?>.0000, "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 50, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }, { "id": 104171001, "barcode": null, "sku": null, "title": "100ml", "options": ["100ml"], "option1": "100ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 1230000, "compare_at_price": 1450000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 28, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }], "featured_image": { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, "images": [{ "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513" }], "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00" },
-                onVariantSelected: selectCallback,
-                enableHistoryState: true
             });
+        }
+        /*end of variant image*/
+    };
+    jQuery(function ($) {
 
-            // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
-
-            $('.selector-wrapper:eq(0)').prepend('<label>Dung tích</label>');
-
-            // Hide selectors if we only have 1 variant and its title contains 'Default'.
-
-            $('.selector-wrapper').css({
-                'text-align': 'left',
-                'margin-bottom': '15px'
-            });
+        new Bizweb.OptionSelectors('product-selectors', {
+            product: { "id": <?= $product['id'] ?>, "name": "<?= $product['name'] ?>", "alias": "tommy-hilfiger-tommy-girl", "vendor": "Tommy Hilfiger", "type": "<?= $product['t_name'] ?>", "content": "<p>Có bao giờ bạn tự hỏi một cô gái trẻ năng động và độc lập sẽ được mùi hương miêu tả như thế nào? Nếu chưa thì hãy mở nắp <?= $product['name'] ?>, cô gái sẽ tự hiện lên trong tưởng tượng của bạn với một mùi hương thật đẹp.</p>\n<p>Tommy Girl khá an toàn nhưng không hề nhàm chán. Với hai tầng hương đầu mang cái nhẹ nhàng của hương hoa trắng, tô điểm thêm nét tinh nghịch, tươi mới của cam chanh và một chút thanh mát của Bạc hà. Đến tầng hương cuối, cá tính của người chủ nhân được mùi hương khắc hoạ rõ nét hơn. Ấm áp, gợi cảm có lẽ là hai từ thích hợp nhất để miêu tả đối với màn kết hợp của nhóm hương Hoa và Gỗ.\"</p>\n<p><?= $product['name'] ?> đích thị là chai nước hoa dành cho những cô nàng yêu vận động. Bởi chính bản thân nó đã tự toả ra một năng lượng đặc trưng của các nàng ấy, đó là sự mạnh mẽ, bản lĩnh đầy phóng khoáng.</p>\n<p><img alt=\"Banner\" height=\"480\" src=\"//bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513\" width=\"480\" /></p>\n<p><strong>Cách sử dụng đề xuất dành cho bạn:</strong></p>\n<ul>\n<li>Nước hoa mang lại mùi hương cho cơ thể bạn thông qua việc tiếp xúc lên da và phản ứng với hơi ấm trên cơ thể của bạn. Việc được tiếp xúc với các bộ phận như cổ tay, khuỷu tay, sau tai, gáy, cổ trước là những vị trí được ưu tiên hàng đầu trong việc sử dụng nước hoa bởi sự kín đáo và thuận lợi trong việc tỏa mùi hương.</li>\n<li>Sau khi sử dụng, xịt nước hoa lên cơ thể, tránh dùng tay chà xát hoặc làm khô da bằng những vật dụng khác, điều này phá vỡ các tầng hương trong nước hoa, khiến nó có thể thay đổi mùi hương hoặc bay mùi nhanh hơn.</li>\n<li>Để chai nước hoa cách vị trí cần dùng nước hoa trong khoảng 15-20cm và xịt mạnh, dứt khoát để mật đổ phủ của nước hoa được rộng nhất, tăng độ bám tỏa trên da của bạn.</li>\n<li>Phần cổ tay được xịt nước hoa thường có nhiều tác động như lúc rửa tay, đeo vòng, đồng hồ, do đó để đảm bảo mùi hương được duy trì, bạn nên sử dụng nước hoa ở cổ tay ở tần suất nhiều hơn lúc cần thiết.</li>\n<li>Nước hoa có thể bám tốt hay không tốt tùy thuộc vào thời gian, không gian, cơ địa, chế độ sinh hoạt, ăn uống của bạn, việc sử dụng một loại nước hoa trong thời gian dài có thể khiến bạn bị quen mùi, dẫn đến hiện tượng không nhận biết được mùi hương. Mang theo nước hoa bên mình hoặc trang bị những mẫu mini tiện dụng để giúp bản thân luôn tự tin mọi lúc mọi nơi.</li></ul>\n<p>&nbsp;</p>\n<p><strong>Bảo quản nước hoa:</strong></p>\n<ul>\n<li>Nước hoa phổ thông (Designer) thường không có hạn sử dụng, ở một số Quốc gia, việc ghi chú hạn sử dụng là điều bắt buộc để hàng hóa được bán ra trên thị trường. Hạn sử dụng ở một số dòng nước hoa được chú thích từ 24 đến 36 tháng, và tính từ ngày bạn mở sản phẩm và sử dụng lần đầu tiên.</li>\n<li>Nước hoa là tổng hợp của nhiều thành phần hương liệu tự nhiên và tổng hợp, nên bảo quản nước hoa ở những nơi khô thoáng, mát mẻ, tránh nắng, nóng hoặc quá lạnh, lưu ý không để nước hoa trong cốp xe, những nơi có nhiệt độ nóng lạnh thất thường...</li></ul>", "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>", "template_layout": "product", "available": true, "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"], "price": <?=  $product['price_sale'] ?>.0000, "price_min": <?=  $product['price_sale'] ?>.0000, "price_max": 10000000.0000, "price_varies": true, "compare_at_price": <?= $product['price'] ?>.0000, "compare_at_price_min": <?= $product['price']?>, "compare_at_price_max": 10000000.0000, "compare_at_price_varies": true, "variants": [{ "id": <?= $product['id'] ?>, "barcode": null, "sku": null, "title": "30ml", "options": ["30ml"], "option1": "30ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": <?=  $product['price_sale'] ?>.0000, "compare_at_price": <?= $product['price'] ?>.0000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 50, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }, { "id": 104171001, "barcode": null, "sku": null, "title": "100ml", "options": ["100ml"], "option1": "100ml", "option2": null, "option3": null, "available": true, "taxable": false, "price": 1230000, "compare_at_price": 1450000, "inventory_management": "bizweb", "inventory_policy": "deny", "inventory_quantity": 28, "weight_unit": "g", "weight": 0, "requires_shipping": true, "image": null }], "featured_image": { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, "images": [{ "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-786135-removebg-preview.png?v=1701248377597" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-edt-30.jpg?v=1701248378547" }, { "src": "https://bizweb.dktcdn.net/100/503/826/products/tommy-hilfiger-tommy-girl-50ml-f.jpg?v=1701248379513" }], "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00" },
+            onVariantSelected: selectCallback,
+            enableHistoryState: true
         });
 
-        jQuery('.swatch :radio').change(function () {
-            var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
-            var optionValue = jQuery(this).val();
-            jQuery(this)
-                .closest('form')
-                .find('.single-option-selector')
-                .eq(optionIndex)
-                .val(optionValue)
-                .trigger('change');
-            $(this).closest('.swatch').find('.header .value-roperties').html(optionValue);
-        });
+        // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
 
-        setTimeout(function () {
-            $('.swatch .swatch-element').each(function () {
-                $(this).closest('.swatch').find('.header .value-roperties').html($(this).closest('.swatch').find('input:checked').val());
-            });
-        }, 500);
+        $('.selector-wrapper:eq(0)').prepend('<label>Dung tích</label>');
+
+        // Hide selectors if we only have 1 variant and its title contains 'Default'.
+
+        $('.selector-wrapper').css({
+            'text-align': 'left',
+            'margin-bottom': '15px'
+        });
+    });
+
+    jQuery('.swatch :radio').change(function () {
+        var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+        var optionValue = jQuery(this).val();
+        jQuery(this)
+            .closest('form')
+            .find('.single-option-selector')
+            .eq(optionIndex)
+            .val(optionValue)
+            .trigger('change');
+        $(this).closest('.swatch').find('.header .value-roperties').html(optionValue);
+    });
+
+    setTimeout(function () {
+        $('.swatch .swatch-element').each(function () {
+            $(this).closest('.swatch').find('.header .value-roperties').html($(this).closest('.swatch').find('input:checked').val());
+        });
+    }, 500);
 
     </script>
     <script>
-        setTimeout(function () {
-            var ch = $('.product_getcontent').height(),
-                smore = $('.show-more');
-            if (ch > 700) {
-                $('.ba-text-fpt').addClass('has-height');
-                smore.removeClass('d-none');
-            }
-        }, 200);
-        $('.btn--view-more').on('click', function (e) {
-            e.preventDefault();
-            var $this = $(this);
-            $this.parents('.product_getcontent').toggleClass('expanded');
-            $('html, body').animate({ scrollTop: $('.product_getcontent').offset().top - 110 }, 'slow');
-            $(this).toggleClass('active');
+    setTimeout(function () {
+        var ch = $('.product_getcontent').height(),
+            smore = $('.show-more');
+        if (ch > 700) {
+            $('.ba-text-fpt').addClass('has-height');
+            smore.removeClass('d-none');
+        }
+    }, 200);
+    $('.btn--view-more').on('click', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.parents('.product_getcontent').toggleClass('expanded');
+        $('html, body').animate({ scrollTop: $('.product_getcontent').offset().top - 110 }, 'slow');
+        $(this).toggleClass('active');
 
-        });
-        $('.product-tab .tab-link h3').on('click', function (e) {
-            $(this).closest('.tab-link').find('.tab-content').slideToggle();
-            $(this).closest('.tab-link').toggleClass('active');
-        });
-        var galleryThumbs = new Swiper('.gallery-thumbs', {
-            spaceBetween: 5,
-            slidesPerView: 20,
-            freeMode: true,
-            lazy: true,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
-            hashNavigation: true,
-            slideToClickedSlide: true,
-            breakpoints: {
-                300: {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
-                },
-                500: {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
-                },
-                640: {
-                    slidesPerView: 4,
-                    spaceBetween: 10,
-                },
-                768: {
-                    slidesPerView: 5,
-                    spaceBetween: 10,
-                },
-                992: {
-                    slidesPerView: 4,
-                    spaceBetween: 10,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 10,
-                },
-                1199: {
-                    slidesPerView: 4,
-                    spaceBetween: 10,
-                }
+    });
+    $('.product-tab .tab-link h3').on('click', function (e) {
+        $(this).closest('.tab-link').find('.tab-content').slideToggle();
+        $(this).closest('.tab-link').toggleClass('active');
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 5,
+        slidesPerView: 20,
+        freeMode: true,
+        lazy: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        hashNavigation: true,
+        slideToClickedSlide: true,
+        breakpoints: {
+            300: {
+                slidesPerView: 3,
+                spaceBetween: 10,
             },
-            navigation: {
-                nextEl: '.gallery-thumbs .swiper-button-next',
-                prevEl: '.gallery-thumbs .swiper-button-prev',
+            500: {
+                slidesPerView: 3,
+                spaceBetween: 10,
             },
-        });
-        var galleryTop = new Swiper('.gallery-top', {
-            spaceBetween: 0,
-            lazy: true,
-            hashNavigation: true,
-            thumbs: {
-                swiper: galleryThumbs
-            }
-        });
-        var swiper = new Swiper('.product-relate-swiper', {
-            slidesPerColumnFill: 'row',
-            direction: 'horizontal',
-            slidesPerView: 4,
-            spaceBetween: 20,
-            slidesPerGroup: 1,
-            slidesPerColumn: 1,
-            navigation: {
-                nextEl: '.product-relate-swiper .swiper-button-next',
-                prevEl: '.product-relate-swiper .swiper-button-prev',
+            640: {
+                slidesPerView: 4,
+                spaceBetween: 10,
             },
-            breakpoints: {
-                280: {
-                    slidesPerView: 2,
-                    spaceBetween: 15
-                },
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 15
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 15
-                },
-                992: {
-                    slidesPerView: 4,
-                    spaceBetween: 15
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 20
-                }
+            768: {
+                slidesPerView: 5,
+                spaceBetween: 10,
+            },
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1199: {
+                slidesPerView: 4,
+                spaceBetween: 10,
             }
-        });
-        $(document).ready(function () {
-            $("#lightgallery").lightGallery({
-                thumbnail: false
-            });
-        });
-
-        $(document).ready(function ($) {
-            var getLimit = 20;
-            var product = {
-                "id": <?= $product['id'] ?>,
-                "name": "<?= $product['name'] ?>",
-                "alias": "tommy-hilfiger-tommy-girl",
-                "vendor": "Tommy Hilfiger",
-                "type": "<?= $product['t_name'] ?>",
-                "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>",
-                "template_layout": "product",
-                "available": true,
-                "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"],
-                "price": <?=str_replace(".", "", $product['price_sale'])?>.0000,
-                "price_min": <?=str_replace(".", "", $product['price_sale'])?>.0000,
-                "price_max": 10000000.0000, "price_varies": true,
-                "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000,
-                "compare_at_price_min": <?=str_replace(".", "", $product['price'])?>.0000,
-                "compare_at_price_max": 10000000.0000,
-                "compare_at_price_varies": true,
-                "variants": [{
-                    "id": <?= $product['id'] ?>,
-                    "barcode": null,
-                    "sku": null,
-                    "title": "30ml",
-                    "options": ["30ml"],
-                    "option1": "30ml",
-                    "option2": null,
-                    "option3": null,
-                    "available": true,
-                    "taxable": false,
-                    "price": <?=str_replace(".", "", $product['price_sale'])?>.0000,
-                    "compare_at_price": <?=str_replace(".", "", $product['price'])?>.0000,
-                    "inventory_management": "bizweb",
-                    "inventory_policy": "deny",
-                    "inventory_quantity": 50,
-                    "weight_unit": "g",
-                    "weight": 0,
-                    "requires_shipping": true,
-                    "image": null
-                },
-                {
-                    "id": 104171001,
-                    "barcode": null,
-                    "sku": null,
-                    "title": "100ml",
-                    "options": ["100ml"],
-                    "option1": "100ml",
-                    "option2": null,
-                    "option3": null,
-                    "available": true,
-                    "taxable": false,
-                    "price": 1230000.0000,
-                    "compare_at_price": 1450000.0000,
-                    "inventory_management": "bizweb",
-                    "inventory_policy": "deny",
-                    "inventory_quantity": 28,
-                    "weight_unit": "g",
-                    "weight": 0,
-                    "requires_shipping": true,
-                    "image": null
-                }],
-                "featured_image": { "src": "<?= $product['img'] ?>" },
-                "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00"
-            };
-            var alias_pro = 'tommy-hilfiger-tommy-girl';
-            var array_list = [product];
-            var list_viewed_pro_old = localStorage.getItem('last_viewed_products');
-            var last_viewed_pro_new = "";
-            if (list_viewed_pro_old == null || list_viewed_pro_old == '')
-                last_viewed_pro_new = array_list;
-            else {
-                var list_viewed_pro_old = JSON.parse(localStorage.last_viewed_products);
-                list_viewed_pro_old.splice(20, 1);
-                for (i = 0; i < list_viewed_pro_old.length; i++) {
-                    if (list_viewed_pro_old[i].alias == alias_pro) {
-                        list_viewed_pro_old.splice(i, 1);
-                        break;
-                    }
-                }
-                list_viewed_pro_old.unshift(array_list[0]);
-                last_viewed_pro_new = list_viewed_pro_old;
-            }
-            localStorage.setItem('last_viewed_products', JSON.stringify(last_viewed_pro_new));
-            var last_viewd_pro_array = JSON.parse(localStorage.last_viewed_products);
-            var recentview_promises = [];
-            var size_pro_review = last_viewd_pro_array.length;
-            if (size_pro_review >= 20) {
-                size_pro_review = 20;
-            } else {
-                size_pro_review = last_viewd_pro_array.length;
-            }
-        });
-
-
-        $('.view_mores a.one').click(function () {
-            $(this).addClass('active');
-            $('.view_mores a.two').removeClass('active');
-            $('.content_coll').addClass('active');
-            $('.bg_cl').addClass('active');
-        });
-        $('.view_mores a.two').click(function () {
-            $(this).addClass('active');
-            $('.view_mores a.one').removeClass('active');
-            $('.content_coll').removeClass('active');
-            $('.bg_cl').removeClass('active');
-        });
-
-        $('.reviews_details_product').click(function () {
-            scrollToxx();
-        })
-        function scrollToxx() {
-            if ($(window).width() > 767) {
-                $('html, body').animate({ scrollTop: $('.product-tab.e-tabs').offset().top }, 'slow');
-                $('.tab-content, .product-tab .tab-link').removeClass('active');
-                $('#tab-3, .product-tab .tab-link:nth-child(3)').addClass('active');
-                return false;
-            } else {
-                $('html, body').animate({ scrollTop: $('.product-tab.e-tabs #tab-3').offset().top }, 'slow');
-                $('.product-tab.e-tabs #tab-3').addClass('active');
+        },
+        navigation: {
+            nextEl: '.gallery-thumbs .swiper-button-next',
+            prevEl: '.gallery-thumbs .swiper-button-prev',
+        },
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+        spaceBetween: 0,
+        lazy: true,
+        hashNavigation: true,
+        thumbs: {
+            swiper: galleryThumbs
+        }
+    });
+    var swiper = new Swiper('.product-relate-swiper', {
+        slidesPerColumnFill: 'row',
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+        slidesPerColumn: 1,
+        navigation: {
+            nextEl: '.product-relate-swiper .swiper-button-next',
+            prevEl: '.product-relate-swiper .swiper-button-prev',
+        },
+        breakpoints: {
+            280: {
+                slidesPerView: 2,
+                spaceBetween: 15
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 15
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 15
+            },
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 15
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20
             }
         }
+    });
+    $(document).ready(function () {
+        $("#lightgallery").lightGallery({
+            thumbnail: false
+        });
+    });
+
+    $(document).ready(function ($) {
+        var getLimit = 20;
+        var product = {
+            "id": <?= $product['id'] ?>,
+            "name": "<?= $product['name'] ?>",
+            "alias": "tommy-hilfiger-tommy-girl",
+            "vendor": "Tommy Hilfiger",
+            "type": "<?= $product['t_name'] ?>",
+            "summary": "<p>Giới tính: <?= $sex ?></p>\n<p>Xuất xứ: <?= $product['o_name'] ?></p>\n<p>Phong cách: Ngọt ngào, Gợi cảm, Mãnh liệt<br />\n<br />\n<strong>Hương đặc trưng</strong></p>\n<p>+ Hương đầu: Hoa đào,&nbsp;hoa kim ngân, bạc hà, hoa hồng</p>\n<p>+ Hương giữa: Cam,&nbsp;bạc hà, quà bưởi, quả chanh</p>\n<p>+ Hương cuối: Hoa nhài, hoa mộc lan</p>",
+            "template_layout": "product",
+            "available": true,
+            "tags": ["daban_220", "huongcuoi_Hoa nhài", "huongdau_Hoa đào", "huonggiua_Cam"],
+            "price": <?=  $product['price_sale'] ?>.0000,
+            "price_min": <?=  $product['price_sale'] ?>.0000,
+            "price_max": 10000000.0000, "price_varies": true,
+            "compare_at_price": <?= $product['price'] ?>.0000,
+            "compare_at_price_min": <?= $product['price'] ?>.0000,
+            "compare_at_price_max": 10000000.0000,
+            "compare_at_price_varies": true,
+            "variants": [{
+                "id": <?= $product['id'] ?>,
+                "barcode": null,
+                "sku": null,
+                "title": "30ml",
+                "options": ["30ml"],
+                "option1": "30ml",
+                "option2": null,
+                "option3": null,
+                "available": true,
+                "taxable": false,
+                "price": <?=  $product['price_sale'] ?>.0000,
+                "compare_at_price": <?= $product['price'] ?>.0000,
+                "inventory_management": "bizweb",
+                "inventory_policy": "deny",
+                "inventory_quantity": 50,
+                "weight_unit": "g",
+                "weight": 0,
+                "requires_shipping": true,
+                "image": null
+            },
+            {
+                "id": 104171001,
+                "barcode": null,
+                "sku": null,
+                "title": "100ml",
+                "options": ["100ml"],
+                "option1": "100ml",
+                "option2": null,
+                "option3": null,
+                "available": true,
+                "taxable": false,
+                "price": 1230000.0000,
+                "compare_at_price": 1450000.0000,
+                "inventory_management": "bizweb",
+                "inventory_policy": "deny",
+                "inventory_quantity": 28,
+                "weight_unit": "g",
+                "weight": 0,
+                "requires_shipping": true,
+                "image": null
+            }],
+            "featured_image": { "src": "<?= $product['img'] ?>" },
+            "options": ["Dung tích"], "created_on": "2023-11-29T15:59:27", "modified_on": "2024-01-23T10:27:12", "published_on": "2023-11-28T14:29:00"
+        };
+        var alias_pro = 'tommy-hilfiger-tommy-girl';
+        var array_list = [product];
+        var list_viewed_pro_old = localStorage.getItem('last_viewed_products');
+        var last_viewed_pro_new = "";
+        if (list_viewed_pro_old == null || list_viewed_pro_old == '')
+            last_viewed_pro_new = array_list;
+        else {
+            var list_viewed_pro_old = JSON.parse(localStorage.last_viewed_products);
+            list_viewed_pro_old.splice(20, 1);
+            for (i = 0; i < list_viewed_pro_old.length; i++) {
+                if (list_viewed_pro_old[i].alias == alias_pro) {
+                    list_viewed_pro_old.splice(i, 1);
+                    break;
+                }
+            }
+            list_viewed_pro_old.unshift(array_list[0]);
+            last_viewed_pro_new = list_viewed_pro_old;
+        }
+        localStorage.setItem('last_viewed_products', JSON.stringify(last_viewed_pro_new));
+        var last_viewd_pro_array = JSON.parse(localStorage.last_viewed_products);
+        var recentview_promises = [];
+        var size_pro_review = last_viewd_pro_array.length;
+        if (size_pro_review >= 20) {
+            size_pro_review = 20;
+        } else {
+            size_pro_review = last_viewd_pro_array.length;
+        }
+    });
+
+
+    $('.view_mores a.one').click(function () {
+        $(this).addClass('active');
+        $('.view_mores a.two').removeClass('active');
+        $('.content_coll').addClass('active');
+        $('.bg_cl').addClass('active');
+    });
+    $('.view_mores a.two').click(function () {
+        $(this).addClass('active');
+        $('.view_mores a.one').removeClass('active');
+        $('.content_coll').removeClass('active');
+        $('.bg_cl').removeClass('active');
+    });
+
+    $('.reviews_details_product').click(function () {
+        scrollToxx();
+    })
+    function scrollToxx() {
+        if ($(window).width() > 767) {
+            $('html, body').animate({ scrollTop: $('.product-tab.e-tabs').offset().top }, 'slow');
+            $('.tab-content, .product-tab .tab-link').removeClass('active');
+            $('#tab-3, .product-tab .tab-link:nth-child(3)').addClass('active');
+            return false;
+        } else {
+            $('html, body').animate({ scrollTop: $('.product-tab.e-tabs #tab-3').offset().top }, 'slow');
+            $('.product-tab.e-tabs #tab-3').addClass('active');
+        }
+    }
     </script>
+</div>
+<div class="popup-cart-mobile">
+	<div class="header-popcart">
+		<div class="top-cart-header">
+			<span>
+				<svg xmlns="http://www.w3.org/2000/svg" height="682.66669pt" viewBox="-21 -21 682.66669 682.66669"
+					width="682.66669pt">
+					<path
+						d="m322.820312 387.933594 279.949219-307.273438 36.957031 33.671875-314.339843 345.023438-171.363281-162.902344 34.453124-36.238281zm297.492188-178.867188-38.988281 42.929688c5.660156 21.734375 8.675781 44.523437 8.675781 68.003906 0 148.875-121.125 270-270 270s-270-121.125-270-270 121.125-270 270-270c68.96875 0 131.96875 26.007812 179.746094 68.710938l33.707031-37.113282c-58.761719-52.738281-133.886719-81.597656-213.453125-81.597656-85.472656 0-165.835938 33.285156-226.273438 93.726562-60.441406 60.4375-93.726562 140.800782-93.726562 226.273438s33.285156 165.835938 93.726562 226.273438c60.4375 60.441406 140.800782 93.726562 226.273438 93.726562s165.835938-33.285156 226.273438-93.726562c60.441406-60.4375 93.726562-140.800782 93.726562-226.273438 0-38.46875-6.761719-75.890625-19.6875-110.933594zm0 0" />
+				</svg>
+				Mua hàng thành công
+			</span>
+		</div>
+		<div class="media-content bodycart-mobile"></div>
+		<a class="noti-cart-count" href="cart.html" title="Giỏ hàng">
+			Giỏ hàng của bạn hiện có <span class="count_itempr"><?= $totalc ?></span> sản phẩm
+		</a>
+		<a title="Đóng" class="cart_btn-close iconclose">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
+				y="0px" viewBox="0 0 512.001 512.001" style="enable-background: new 0 0 512.001 512.001"
+				xml:space="preserve">
+				<g>
+					<g>
+						<path
+							d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z" />
+					</g>
+				</g>
+			</svg>
+		</a>
+		<div class="bottom-action">
+			<div class="cart_btn-close tocontinuedc">Tiếp tục mua hàng</div>
+			<a href="<?= BASE_URL ?>?act=cart" > Thanh toán ngay </a>
+		</div>
+	</div>
 </div>
 <script>
     (function ($) { "use strict"; $.ajaxChimp = { responses: { "We have sent you a confirmation email": 0, "Please enter a valueggg": 1, "An email address must contain a single @": 2, "The domain portion of the email address is invalid (the portion after the @: )": 3, "The username portion of the email address is invalid (the portion before the @: )": 4, "This email address looks fake or invalid. Please enter a real email address": 5 }, translations: { en: null }, init: function (selector, options) { $(selector).ajaxChimp(options) } }; $.fn.ajaxChimp = function (options) { $(this).each(function (i, elem) { var form = $(elem); var email = form.find("input[type=email]"); var label = form.find("label[for=" + email.attr("id") + "]"); var settings = $.extend({ url: form.attr("action"), language: "en" }, options); var url = settings.url.replace("/post?", "/post-json?").concat("&c=?"); form.attr("novalidate", "true"); email.attr("name", "EMAIL"); form.submit(function () { var msg; function successCallback(resp) { if (resp.result === "success") { msg = "We have sent you a confirmation email"; label.removeClass("error").addClass("valid"); email.removeClass("error").addClass("valid") } else { email.removeClass("valid").addClass("error"); label.removeClass("valid").addClass("error"); var index = -1; try { var parts = resp.msg.split(" - ", 2); if (parts[1] === undefined) { msg = resp.msg } else { var i = parseInt(parts[0], 10); if (i.toString() === parts[0]) { index = parts[0]; msg = parts[1] } else { index = -1; msg = resp.msg } } } catch (e) { index = -1; msg = resp.msg } } if (settings.language !== "en" && $.ajaxChimp.responses[msg] !== undefined && $.ajaxChimp.translations && $.ajaxChimp.translations[settings.language] && $.ajaxChimp.translations[settings.language][$.ajaxChimp.responses[msg]]) { msg = $.ajaxChimp.translations[settings.language][$.ajaxChimp.responses[msg]] } label.html(msg); label.show(2e3); if (settings.callback) { settings.callback(resp) } } var data = {}; var dataArray = form.serializeArray(); $.each(dataArray, function (index, item) { data[item.name] = item.value }); $.ajax({ url: url, data: data, success: successCallback, dataType: "jsonp", error: function (resp, text) { console.log("mailchimp ajax submit error: " + text) } }); var submitMsg = "Submitting..."; if (settings.language !== "en" && $.ajaxChimp.translations && $.ajaxChimp.translations[settings.language] && $.ajaxChimp.translations[settings.language]["submit"]) { submitMsg = $.ajaxChimp.translations[settings.language]["submit"] } label.html(submitMsg).show(2e3); return false }) }); return this } })(jQuery);

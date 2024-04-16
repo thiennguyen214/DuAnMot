@@ -24,8 +24,7 @@
         <meta itemprop="description" content="" />
         <div class="container">
             <h1 class="title-page" style="
-              background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_collections02fb.jpg?1709175143725);
-            ">
+              background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_collections02fb.jpg?1709175143725);">
                 <span>Tin tức</span>
             </h1>
             <div class="row">
