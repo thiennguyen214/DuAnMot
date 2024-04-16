@@ -4,18 +4,17 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
 
 <link rel="stylesheet"
-	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.css">
+	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min2.css?v=4fcd86c">
 <link rel="stylesheet"
-	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.css">
+	href="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min2.css?v=a9ecda5">
 <script
-	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min.js"></script>
+	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/libphonenumber-v3.2.30.min2.js?1711356971279"></script>
 
 <script
-	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min.js"></script>
-<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min.js"></script>
+	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.vendor.min2.js?v=11006c9"></script>
+<script src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout.min2.js?v=f100a47"></script>
 <script
-	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min.js?v=f021d1e"></script>
-
+	src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/stats.min2.js?v=96f2ff2"></script>
 
 
 	<script>
@@ -45,7 +44,7 @@
 		window.BizwebAnalytics.meta[attr] = meta[attr];
 	}
 </script>
-	<style>
+	<!-- <style>
 .field__input:focus,
 .select2-selection:focus, .select2-search__field:focus
 {
@@ -83,11 +82,11 @@
 .btn, .btn:hover, .btn:focus {
 	color: #FFFFFF;
 }
-</style>
+</style> -->
 <script>
 		(function () {
 			function asyncLoad() {
-				var urls = ["//newproductreviews.sapoapps.vn/assets/js/productreviews.min.js?store=bean-perfume.mysapo.net"] || [];
+				var urls = ["<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/productreviews.min2.js?store=bean-perfume.mysapo.net"] || [];
 				for (var i = 0; i < urls.length; i++) {
 					var s = document.createElement('script');
 					s.type = 'text/javascript';

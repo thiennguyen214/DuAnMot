@@ -3003,3 +3003,41 @@ td.printable-only {
     top: 37.5%;
     left: 39.5%
 }
+
+.field__input:focus,
+.select2-selection:focus, .select2-search__field:focus
+{
+	border-color: #ce0082;
+	box-shadow: 0 0 0 1px #ce0082;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable
+{
+	background-color: #ce0082;
+}
+.btn {
+	background-color: #ce0082;
+	border-color: #ce0082;
+}
+.btn:focus {
+	outline-color:#ce0082;
+}
+
+
+
+.btn.disabled {
+	background-color: #DA3FA1;
+	border-color: #DA3FA1;
+}
+
+
+
+.btn:hover {
+	background-color: #9A0061;
+	border-color: #9A0061;
+}
+
+
+
+.btn, .btn:hover, .btn:focus {
+	color: #FFFFFF;
+}

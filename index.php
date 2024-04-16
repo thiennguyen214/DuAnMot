@@ -101,7 +101,7 @@ match ($act) {
 
     // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),
 
-    'favorite' => showFavs($_GET['userID']),
+    // 'favorite' => showFavs($_GET['userID']),
     'favCreat' => ajaxFavCreate(),
     'searc' => searchn(),
 
