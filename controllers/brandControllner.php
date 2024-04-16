@@ -5,6 +5,9 @@ function showBrand()
     $style = 'styles/brand';
     $active3d = 'active';
     $active3 = 'active';
+
+    $tittle = "Thương hiệu";
+
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);

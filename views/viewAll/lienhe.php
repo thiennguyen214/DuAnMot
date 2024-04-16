@@ -3,7 +3,7 @@
         <div class="container">
           <ul class="breadcrumb">
             <li class="home">
-              <a href="index.html"><span>Trang chủ</span></a>
+              <a href="<?= BASE_URL ?>"><span>Trang chủ</span></a>
               <span class="mr_lr"
                 >&nbsp;<svg
                   aria-hidden="true"
