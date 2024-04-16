@@ -452,7 +452,7 @@
 														<td class="product__quantity visually-hidden"><em>Số lượng:</em> </td>
 														<td class="product__price">
 
-															<?= number_format($tone = str_replace(".", "", $items['p_price_sale']) * $items['quantity']) ?>₫
+															<?= number_format($tone = $items['p_price_sale'] * $items['quantity']) ?>₫
 															<?php $tong += $tone ?>
 														</td>
 													</tr>

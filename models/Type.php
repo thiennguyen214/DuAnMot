@@ -72,7 +72,7 @@ if (!function_exists('incPricePro')) {
     function incPricePro()
     {
         try {
-            $sql = "SELECT * FROM products ORDER BY price_sale";
+            $sql = "SELECT * FROM products ORDER BY price_sale ASC";
 
             $stmt = $GLOBALS['conn']->prepare($sql);
 

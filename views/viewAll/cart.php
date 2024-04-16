@@ -67,7 +67,7 @@
                                                                 <div class="grid">
                                                                     <div class="grid__item one-half text-right cart_prices">
                                                                         <span
-                                                                            class="cart-price"><?= $cart['p_price_sale'] ?></span>
+                                                                            class="cart-price"><?=  number_format($cart['p_price_sale'], 0, ',', '.') ?></span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="grid">
@@ -89,7 +89,7 @@
                                                                 <div class="grid">
                                                                     <div class="grid__item one-half text-right cart_prices">
                                                                         <span
-                                                                            class="cart-price"><?= $tone = str_replace(".", "", $cart['p_price_sale']) * str_replace(".", "", $cart['quantity']) ?></span>
+                                                                            class="cart-price"><?= $tone = $cart['p_price_sale'] * $cart['quantity'] ?></span>
                                                                         <?php $tong += $tone ?>
                                                                     </div>
                                                                 </div>
