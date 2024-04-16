@@ -137,6 +137,12 @@ function brandShowOne($id)
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
 
+
+
+
+
+
+
 function brandUpdate($id)
 {
     $brand = showOne('brands', $id);
@@ -153,9 +159,28 @@ function brandUpdate($id)
     if (!empty($_POST)) {
         $data = [
             "name" => $_POST['brand_name'] ?? $brand['name'],
+            
         ];
 
         validatebrandCreate($data);
+        $ImageUpload = $_FILES['ImageUpload'] ?? null;
+
+        // Kiểm tra xem có tệp tin được tải lên hay không
+        if (!empty($ImageUpload) && $ImageUpload['size'] > 0) {
+            // Nếu có, thực hiện việc tải lên và cập nhật dữ liệu
+            $data['img'] = upload_file($ImageUpload, 'uploads/brands/');
+        }
+
+        update('brands', $id, $data);
+        // Kiểm tra điều kiện để xóa tệp tin cũ (nếu cần)
+        if (
+            !empty($ImageUpload) && // Có tệp tin được tải lên
+            !empty($brand['img']) && // Có giá trị hình ảnh cũ
+            !empty($data['img']) && // Tệp tin mới được tải lên thành công
+            file_exists(PATH_UPLOAD . $brand['img']) // Tệp tin cũ tồn tại trên hệ thống
+        ) {
+            unlink(PATH_UPLOAD .$brand['img']);
+        }
 
         update('brands', $id, $data);
 
@@ -167,6 +192,50 @@ function brandUpdate($id)
 
     require_once PATH_VIEW_ADMIN . 'layout/master.php';
 }
+
+
+
+
+function validateBrandUpdate($id, $data)
+{
+    // name - bắt buộc, độ dài tối đa 50 ký tự
+    // email - bắt buộc, phải là email, không được trùng
+    // password - bắt buộc, đồ dài nhỏ nhất là 8, lớn nhất là 20
+    // type - bắt buộc, nó phải là 0 or 1
+
+
+    $errors = [];
+
+    if (empty($data['name'])) {
+        $errors[] = 'Trường name là bắt buộc';
+    } else if (strlen($data['name']) > 50) {
+        $errors[] = 'Trường name độ dài tối đa 50 ký tự';
+    }
+    if (!empty($data['ImageUpload']) && $data['ImageUpload']['size'] > 0) {
+
+        $typeImage = ['image/png', 'image/jpg', 'image/jpeg'];
+
+        if ($data['ImageUpload']['size'] > 2 * 1024 * 1024) {
+            $errors[] = 'Trường ImageUpload có dung lượng nhỏ hơn 2M';
+        } else if (!in_array($data['ImageUpload']['type'], $typeImage)) {
+            $errors[] = 'Trường ImageUpload chỉ chấp nhận định dạng file: png, jpg, jpeg';
+        }
+    }
+
+    if (!empty($errors)) {
+        $_SESSION['errors'] = $errors;
+
+        header('Location: ' . BASE_URL_ADMIN . '?act=brands' . $id);
+        exit();
+    }
+
+}
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-<?php
+<!-- 
 if (!function_exists('listFav')) {
     function listFav($userID)
     {
@@ -44,4 +44,4 @@ if (!function_exists('deleteFav')) {
             debug($e);
         }
     }
-}
+} -->
