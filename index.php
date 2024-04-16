@@ -79,7 +79,7 @@ match ($act) {
 
 
     'order-purchase' => orderPurchase(),
-    'order-success' => orderSuccess(),
+    'order-success' => orderSuccess($_GET['id']),
 
     'log' => showLog(),
     'logoutc' => authenCliLogout(),

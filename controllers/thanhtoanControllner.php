@@ -23,6 +23,8 @@ function showThanhtoan()
             $totalc += $_SESSION['cart'][$cart['pro_id']]['quantity'];
         }
     }
+    // debug($orderID);
+
     require_once PATH_VIEW . '/viewAll/thanhtoan.php';
 }
 
@@ -55,6 +57,7 @@ function orderPurchase()
 
                 insert('bills_item', $orderItem);
             }
+            $billItemId = $GLOBALS['conn']->lastInsertId();
 
             // Xử lý hậu
             deleteCartItemByCartID($_SESSION['cartID']);
@@ -62,7 +65,7 @@ function orderPurchase()
 
             unset($_SESSION['cart']);
             unset($_SESSION['cartID']);
-            header('Location: ' . BASE_URL . '?act=order-success');
+            header('Location: ' . BASE_URL . '?act=order-success&id=' . $orderID);
         exit();
         } catch (\Exception $e) {
             debug($e);
@@ -74,7 +77,7 @@ function orderPurchase()
     header('Location: ' . BASE_URL);
 }
 
-function orderSuccess()
+function orderSuccess($id)
 {
 
     $tittle = "Hóa đơn";
@@ -82,8 +85,10 @@ function orderSuccess()
     $style = 'styles/bills';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
-    // debug($dataUser);
-    // $users = listAll('users');
+    $orders = listOderOne($id);
+    $bill = showOne('bills',$id);
+// debug($orders);
+
     $fnames = charter();
     foreach ($fnames as $fname) {
         $brands[$fname['initial']] = ascBrand($fname['initial']);

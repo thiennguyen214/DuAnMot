@@ -98,7 +98,6 @@ if (!function_exists('caculator_total_order')) {
 
                 $total += $price * $item['quantity'];
             }
-
             return $flag ? number_format($total) : $total;
         }
 
