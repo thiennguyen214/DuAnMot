@@ -81,6 +81,14 @@ match ($act) {
 
     'Unisex' => showProduct(),
 
+    'filter_prAZ' => filter_proAZ(),
+    'filter_prZA' => filter_proAZ(),
+    'filterProByPriceAsc' => filter_proByPrice(),
+    'filterProByPriceDesc' => filter_proByPrice(),
+    'filterProByCreatedAsc' => filter_proByCreated(),
+    'filterProByCreatedDesc' => filter_proByCreated(),
+
+
     // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),
 
     'favorite' => showFavs($_GET['userID']),
