@@ -476,7 +476,7 @@
                     <script type="text/x-custom-template" data-template="section_product_noibat">
                         <?php foreach ($products as $product): ?>
                             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 col-fix">
-                                <form action="" method="post" class="product-action ad_tocartxh" enctype="multipart/form-data">
+                                <form action="" method="post" class="product-action ad_tocart" enctype="multipart/form-data">
                                     <div class="product-thumbnail">
                                         <a class="image_thumb scale_hover" href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>" title="<?= $product['name'] ?>">
                                             <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL . $product['img'] ?>"  data-src="<?= BASE_URL . $product['img'] ?>" alt="Sản phẩm">
@@ -1648,25 +1648,25 @@
 
 
 <script>
-    // let urlAddCart = '<?= BASE_URL . '?act=cart-add' ?>';
-    // $(".ad_tocart").submit(function (event) {
-    //     event.preventDefault();
-    //     // console.log("Data: ", $(this).serializeArray());
-    //     $.ajax({
-    //         type: "post",
-    //         url: urlAddCart,
-    //         data: $(this).serializeArray(),
-    //         success: function (response) {
-    //             response = JSON.parse(response);
-    //             if (response.status == 0) {
-    //                 alert("Lỗi");
-    //             } else {
-    //                 location.reload();
-    //                 $(".popup-cart-mobile").addClass("active");
-    //             }
-    //         }
-    //     });
-    // });
+    let urlAddCart = '<?= BASE_URL . '?act=cart-add' ?>';
+    $(".ad_tocart").submit(function (event) {
+        event.preventDefault();
+        // console.log("Data: ", $(this).serializeArray());
+        $.ajax({
+            type: "post",
+            url: urlAddCart,
+            data: $(this).serializeArray(),
+            success: function (response) {
+                response = JSON.parse(response);
+                if (response.status == 0) {
+                    alert("Lỗi");
+                } else {
+                    location.reload();
+                    $(".popup-cart-mobile").addClass("active");
+                }
+            }
+        });
+    });
     $(document).ready(function () {
         $(".creatWish").click(function (event) {
             event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a

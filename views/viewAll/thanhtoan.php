@@ -304,7 +304,7 @@
 
 										<div class="alert alert--info hide"
 											data-bind-show="!isLoadingShippingMethod && isAddressSelecting">
-											Vui lòng nhập thông tin giao hàng
+											Giao hàng tận nhà.
 										</div>
 									</div>
 								</section>
@@ -434,7 +434,7 @@
 														<td class="product__image">
 															<div class="product-thumbnail">
 																<div class="product-thumbnail__wrapper" data-tg-static>
-																	<img src="<?= BASE_URL . $items['img'] ?>" alt=""
+																	<img src="<?= BASE_URL . $items['p_img'] ?>" alt=""
 																		class="product-thumbnail__image" />
 																</div>
 																<span class="product-thumbnail__quantity">
@@ -444,7 +444,7 @@
 														</td>
 														<th class="product__description">
 															<span class="product__description__name">
-																<?= $items['name'] ?>
+																<?= $items['p_name'] ?>
 															</span>
 
 
@@ -452,7 +452,7 @@
 														<td class="product__quantity visually-hidden"><em>Số lượng:</em> </td>
 														<td class="product__price">
 
-															<?= number_format($tone = $items['price_sale'] * $items['quantity']) ?>₫
+															<?= number_format($tone = str_replace(".", "", $items['p_price_sale']) * $items['quantity']) ?>₫
 															<?php $tong += $tone ?>
 														</td>
 													</tr>
@@ -544,7 +544,7 @@
 										</tfoot>
 									</table>
 								</div>
-								<input type="hidden" name="tong" value="<?= $sl ?>" />
+								<input type="hidden" name="tong" value="<?=$GLOBALS['totalc']?>" />
 								<div
 									class="order-summary__nav field__input-btn-wrapper hide-on-mobile layout-flex--row-reverse">
 									<button type="submit" class="btn btn-checkout spinner">

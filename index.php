@@ -36,12 +36,13 @@ if (!empty($_SESSION['userm'])) {
     $carts = cartItemAll($_SESSION['userm']['id']);
     $totalc = 0;
     foreach ($carts as $cart) {
-        if (empty($_SESSION['cart'])) {
+        if (empty($_SESSION['cart'][$cart['pro_id']])) {
             $_SESSION['cart'][$cart['pro_id']] = $cart;
         }
-        $totalc += $cart['quantity'];
+        $totalc += $_SESSION['cart'][$cart['pro_id']]['quantity'];
     }
 }
+// debug($_SESSION['cart']);
 
 //
 match ($act) {
@@ -96,7 +97,8 @@ match ($act) {
     // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),
 
     'favorite' => showFavs($_GET['userID']),
-    'favCreat' => ajaxFavCreate()
+    'favCreat' => ajaxFavCreate(),
+    'searc' => searchn(),
 
 
 

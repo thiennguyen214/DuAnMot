@@ -490,7 +490,7 @@
                                             <div class="btn-mua button_actions clearfix">
                                                 <input type="hidden" name="proID" value="<?= $product['id'] ?>">
                                                 <input type="hidden" name="userID"
-                                                    value="<?= !empty($_SESSION['userm']) ? $_SESSION['userm']['id'] : null ?>">
+                                                    value="<?= $_SESSION['userm']['id'] ?? 0 ?>">
                                                 <button type="submit"
                                                     class="btn btn_base normal_button btn_add_cart add_to_cart btn-cart">
 
@@ -515,10 +515,12 @@
                                         data: $(this).serializeArray(),
                                         success: function (response) {
                                             response = JSON.parse(response);
-                                            if (response.status == 0) {
-                                                alert(response.message);
+                                            if (response.status == false) {
+                                                alert(response.mes);
                                             } else {
+                                                $('.count_itempr').load(location.href + ' .count_itempr');
                                                 $('.block-cart').load(location.href + ' .block-cart');
+                                                $(".popup-cart-mobile").addClass("active");
                                             }
                                         }
                                     });

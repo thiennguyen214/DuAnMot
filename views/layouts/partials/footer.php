@@ -6621,8 +6621,8 @@ Ajax Bizweb Add To Cart
 				cartContainerHeader: ".CartHeaderContainer",
 				cartContainerPopup: ".cartPopupContainer",
 				addToCartSelector: ".add_to_cart",
-				countItem: ".count_item_pr",
-				cartCountSelector: ".count_item_pr",
+				countItem: ".count_itempr",
+				cartCountSelector: ".count_itempr",
 				nameItemAdd: ".cart-popup-name",
 				cartCostSelector: null,
 				moneyFormat: "${{amount_no_decimals_with_comma_separator}}₫",
@@ -7583,7 +7583,7 @@ Ajax Bizweb Add To Cart
 		</div>
 		<div class="media-content bodycart-mobile"></div>
 		<a class="noti-cart-count" href="cart.html" title="Giỏ hàng">
-			Giỏ hàng của bạn hiện có <span class="count_item_pr"><?= $totalc ?></span> sản phẩm
+			Giỏ hàng của bạn hiện có <span class="count_itempr"><?= $GLOBALS['totalc'] ?></span> sản phẩm
 		</a>
 		<a title="Đóng" class="cart_btn-close iconclose">
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
@@ -7599,7 +7599,7 @@ Ajax Bizweb Add To Cart
 		</a>
 		<div class="bottom-action">
 			<div class="cart_btn-close tocontinuedc">Tiếp tục mua hàng</div>
-			<a href="cart.html" class="checkoutc"> Thanh toán ngay </a>
+			<a href="<?= BASE_URL ?>?act=cart" class="checkoutc"> Thanh toán ngay </a>
 		</div>
 	</div>
 </div>

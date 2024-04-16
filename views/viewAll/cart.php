@@ -22,6 +22,7 @@
         <div class="main container cartpcstyle">
             <div class="wrap_background_aside margin-bottom-40" style="display: inline-block;   width: 100%;">
                 <?php
+
                 if (!empty($_SESSION['cart'])) { ?>
                     <div class="row">
                         <div class="header-cart d-none">
@@ -45,27 +46,28 @@
                                             <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
                                                 
                                                 <?php
+                                                
                                                 $tong = 0;
-                                                foreach ($_SESSION['cart'] as $key => $cart) { ?>
+                                                foreach ($_SESSION['cart'] as $cart) { ?>
                                                     <div class="ajaxcart__row">
                                                         <div class="ajaxcart__product cart_product">
-                                                            <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['id'] ?>"
+                                                            <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['pro_id'] ?>"
                                                                 class="ajaxcart__product-image cart_image"
-                                                                title="<?= $cart['name'] ?>"><img width="80" height="80"
-                                                                    src="<?= $cart['img'] ?>" 
-                                                                    alt="<?= $cart['name'] ?>"></a>
+                                                                title="<?= $cart['p_name'] ?>"><img width="80" height="80"
+                                                                    src="<?= $cart['p_img'] ?>" 
+                                                                    alt="<?= $cart['p_name'] ?>"></a>
                                                             <div class="grid__item cart_info">
                                                                 <div class="ajaxcart__product-name-wrapper cart_name">
-                                                                    <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['id'] ?>"
+                                                                    <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['pro_id'] ?>"
                                                                         class="ajaxcart__product-name h4"
-                                                                        title="<?= $cart['name'] ?>"><?= $cart['name'] ?></a>
+                                                                        title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
                                                                     <a class="cart__btn-remove remoc" href=""
-                                                                        data-url="<?= BASE_URL . '?act=cart-del&productID=' . $cart['id'] ?>">Xóa</a>
+                                                                        data-url="<?= BASE_URL . '?act=cart-del&productID=' . $cart['pro_id'] ?>">Xóa</a>
                                                                 </div>
                                                                 <div class="grid">
                                                                     <div class="grid__item one-half text-right cart_prices">
                                                                         <span
-                                                                            class="cart-price"><?= $cart['price_sale'] ?></span>
+                                                                            class="cart-price"><?= $cart['p_price_sale'] ?></span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="grid">
@@ -74,13 +76,13 @@
                                                                             <button class="sitems-count">
                                                                                 <a class="dec" href=""
                                                                                     data-total="<?= $cart['quantity'] ?>"
-                                                                                    data-url="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
+                                                                                    data-url="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['pro_id'] ?>">-</a>
                                                                             </button>
                                                                             <input type="text" class="uptotal" maxlength="3"
                                                                                 value="<?= $cart['quantity'] ?>" min="0">
                                                                             <button class="items-count">
                                                                                 <a class="inc" href=""
-                                                                                    data-url="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['id'] ?>">+</a>
+                                                                                    data-url="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
                                                                             </button>
                                                                         </div>
                                                                     </div>
@@ -88,7 +90,7 @@
                                                                 <div class="grid">
                                                                     <div class="grid__item one-half text-right cart_prices">
                                                                         <span
-                                                                            class="cart-price"><?= $tone = $cart['price_sale'] * $cart['quantity'] ?></span>
+                                                                            class="cart-price"><?= $tone = str_replace(".", "", $cart['p_price_sale']) * str_replace(".", "", $cart['quantity']) ?></span>
                                                                         <?php $tong += $tone ?>
                                                                     </div>
                                                                 </div>
@@ -457,8 +459,9 @@
                             success: function (response) {
                                 response = JSON.parse(response);
                                 if (response.status == 0) {
-                                    alert(response.message);
+                                    alert("lklsdjl");
                                 } else {
+      
                                     $('.cartload').load(location.href + ' .cartload');
                                     $('.block-cart').load(location.href + ' .block-cart');
                                 }

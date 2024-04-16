@@ -94,7 +94,7 @@ if (!function_exists('caculator_total_order')) {
         if (isset($_SESSION['cart'])) {
             $total = 0;
             foreach ($_SESSION['cart'] as $item) {
-                $price = $item['p_price_sale'];
+                $price = str_replace(".", "", $item['p_price_sale']);
 
                 $total += $price * $item['quantity'];
             }

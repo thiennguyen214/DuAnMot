@@ -94,17 +94,19 @@
 												<ul class="level0">
 													<?php foreach ($fnames as $fname) { ?>
 														<li class="level1 parent item fix-navs" data-title="A"
-														data-link="javascript:;">
-														<a class="hmega" href="javascript:;" title="A"><?=$fname['initial']?></a>
-														<ul class="level1">
-														<?php foreach ($brands[$fname['initial']] as $brand) { ?>
-															<li class="level2">
-																<a href="afnan.html" title="Afnan"><?=$brand['name']?></a>
-															</li>
-															<?php }?>
-														</ul>
-													</li>
-													<?php }?>
+															data-link="javascript:;">
+															<a class="hmega" href="javascript:;"
+																title="A"><?= $fname['initial'] ?></a>
+															<ul class="level1">
+																<?php foreach ($brands[$fname['initial']] as $brand) { ?>
+																	<li class="level2">
+																		<a href="afnan.html"
+																			title="Afnan"><?= $brand['name'] ?></a>
+																	</li>
+																<?php } ?>
+															</ul>
+														</li>
+													<?php } ?>
 												</ul>
 											</div>
 											<div class="col-lg-3 col-12">
@@ -238,7 +240,7 @@
 									</a>
 								</li>
 
-								<li class="nav-item">
+								<li class="nav-item <?= (isset($active6)) ? $active6 : null ?>">
 									<a class="a-img a-index" href="<?= BASE_URL ?>?act=lienhe" title="Liên hệ">
 										Liên hệ
 									</a>
@@ -306,7 +308,8 @@
 									<path
 										d="m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm-112.96875-425.523437c-31.066406 0-59.605469 12.398437-80.367188 34.914062-21.070312 22.855469-32.675781 54.449219-32.675781 88.964844 0 36.417968 13.535157 68.988281 43.882813 105.605468 29.332031 35.394532 72.960937 72.574219 123.476562 115.625l.09375.078126c17.660156 15.050781 37.679688 32.113281 58.515625 50.332031 20.960938-18.253907 41.011719-35.34375 58.707031-50.417969 50.511719-43.050781 94.136719-80.222656 123.46875-115.617188 30.34375-36.617187 43.878907-69.1875 43.878907-105.605468 0-34.515625-11.605469-66.109375-32.675781-88.964844-20.757813-22.515625-49.300782-34.914062-80.363282-34.914062-22.757812 0-43.652344 7.234374-62.101562 21.5-16.441406 12.71875-27.894532 28.796874-34.609375 40.046874-3.453125 5.785157-9.53125 9.238282-16.261719 9.238282s-12.808594-3.453125-16.261719-9.238282c-6.710937-11.25-18.164062-27.328124-34.609375-40.046874-18.449218-14.265626-39.34375-21.5-62.097656-21.5zm0 0" />
 								</svg>
-								<span class="count js-wishlist-count js-wishlist-count-mobile"><?= (isset($_SESSION['favs'])) ? count($_SESSION['favs']):0 ?></span>
+								<span
+									class="count js-wishlist-count js-wishlist-count-mobile"><?= (isset($_SESSION['favs'])) ? count($_SESSION['favs']) : 0 ?></span>
 							</a>
 						</li>
 						<li class="header-cart block-cart">
@@ -325,7 +328,7 @@
 												<div class="ajaxcart__row">
 													<?php
 													$tong = 0;
-													foreach ($GLOBALS['carts'] as $cart) { ?>
+													foreach ($_SESSION['cart'] as $key => $cart) { ?>
 														<div class="ajaxcart__product cart_product">
 															<a href="" class="ajaxcart__product-image cart_image"
 																title="<?= $cart['p_name'] ?>"><img width="80" height="80"
@@ -348,7 +351,7 @@
 																				class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count"
 																				aria-label="-">
 																				<a
-																					href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
+																					href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['pro_id'] ?>">-</a>
 																			</button>
 																			<input type="text" name="updates[]"
 																				class="ajaxcart__qty-num number-sidebar"
@@ -357,8 +360,8 @@
 																			<button type="button"
 																				class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count"
 																				aria-label="+">
-																				<a
-																					href="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
+																				<a class="inc" href=""
+                                                                                    data-url="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
 																			</button>
 																		</div>
 																	</div>
@@ -366,7 +369,7 @@
 																		<span
 																			class="cart-price"><?= $cart['p_price_sale'] ?></span>
 																	</div>
-																	<?php $tone = $cart['p_price_sale'] * $cart['quantity'] ?>
+																	<?php $tone = str_replace(".", "", $cart['p_price_sale']) * $cart['quantity'] ?>
 																	<?php $tong += $tone ?>
 																</div>
 															</div>
@@ -407,11 +410,12 @@
 	<div class="title_search">Tìm kiếm sản phẩm</div>
 	<div class="search-header">
 		<div class="search-smart">
-			<form action="https://bean-perfume.mysapo.net/search" method="get"
-				class="header-search-form input-group search-bar" role="search">
-				<input type="text" name="query" required class="input-group-field auto-search search-auto form-control"
-					placeholder="Nhập tên sản phẩm..." autocomplete="off" />
-				<input type="hidden" name="type" value="product" />
+			<form action="" method="post"
+				class="header-search-form input-group search-bar" >
+				<input type="search" name="query" required id="search_name"
+					class="input-group-field auto-search search-auto " placeholder="Nhập tên sản phẩm..."
+					autocomplete="off" />
+				<!-- <input type="hidden" name="type" value="product" /> -->
 				<button type="submit" class="btn icon-fallback-text" aria-label="Tìm kiếm" title="Tìm kiếm">
 					<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="#000"
 						xmlns="http://www.w3.org/2000/svg">
@@ -422,12 +426,12 @@
 				</button>
 
 				<div class="search-suggest">
-					<div class="list-search list-search-style"></div>
+					<div class="list-search list-search-style" ></div>
 				</div>
 			</form>
 		</div>
 	</div>
-	<a href="javascript:void(0)" class="close-popup-search">
+	<!-- <a href="javascript:void(0)" class="close-popup-search">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
 			viewBox="0 0 512.001 512.001" style="enable-background: new 0 0 512.001 512.001" xml:space="preserve">
 			<g>
@@ -438,31 +442,60 @@
 				</g>
 			</g>
 		</svg>
-	</a>
-	<div class="product-search">
-		<div class="title-search">
-			<span>Đừng bỏ lỡ</span>
-		</div>
-		<div class="item">
-			<div class="image">
-				<a class="image_thumb" href="unisex-creed-millesime-imperial.html"
-					title="Unisex Creed Millesime Imperial">
-					<img width="100" height="100" class="lazyload"
-						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/lazy02fb.png?1709175143725"
-						data-src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/thumb/large/100/503/826/products/nuoc-hoa-unisex-creed-millesime-imperial-edp-100ml.png?v=1701251789210"
-						alt="Unisex Creed Millesime Imperial" />
-				</a>
-			</div>
-			<div class="content">
-				<h3 class="product-name">
-					<a class="line-clamp line-clamp-1" href="unisex-creed-millesime-imperial.html"
-						title="Unisex Creed Millesime Imperial">Unisex Creed Millesime Imperial</a>
-				</h3>
-				<div class="price-box">
-					5.680.000₫
-					<span class="compare-price">6.500.000₫</span>
-				</div>
-			</div>
-		</div>
+	</a> -->
+	<div class="product-search"  id="proSear">
+	<div class="title-search 1">
+                <span>Đừng bỏ lỡ</span>
+            </div>
+            <div class="item 2">
+                <div class="image">
+                    <a class="image_thumb" href="unisex-creed-millesime-imperial.html"
+                        title="">
+                        <img width="100" height="100" class="lazyload"
+                            src=""
+                            data-src=""
+                            alt="" />
+                    </a>
+                </div>
+                <div class="content">
+                    <h3 class="product-name">
+                        <a class="line-clamp line-clamp-1" href="unisex-creed-millesime-imperial.html"
+                            title="">dfsdf</a>
+                    </h3>
+                    <div class="price-box">
+                        ₫
+                        <span class="compare-price">₫</span>
+                    </div>
+                </div>
+            </div>
 	</div>
 </div>
+<script>
+$(document).ready(function () {
+    var action = "search";
+	var urll = "<?= BASE_URL ?>?act=searc";
+    $('#search_name').keyup(function () {
+        var search_name = $("#search_name").val().trim(); // Sử dụng $(this) để lấy giá trị của trường nhập liệu
+        if (search_name !== "") { // Kiểm tra xem trường nhập liệu có giá trị không
+            $.ajax({
+                url: urll,
+                method: "POST",
+                data: { action: action, search_name: search_name },
+                success: function (data) {
+                    $("#proSear").html(data); // Hiển thị dữ liệu nhận được trong phần tử có id là proSear
+					// $(".1").hide();
+				},
+                error: function () {
+                    console.log("Lỗi xảy ra khi gửi AJAX request."); // Xử lý lỗi nếu có
+                }
+            });
+        } else {
+			$(".1").show();
+			$(".2").show();
+			$(".3").hide();
+             // Xóa nội dung của phần tử proSear nếu trường nhập liệu rỗng
+        }
+    });
+});
+
+</script>

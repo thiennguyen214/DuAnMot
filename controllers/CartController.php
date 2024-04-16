@@ -1,12 +1,12 @@
 <?php
 function cartAdd()
 {
-    $flag = false;
+
     $productID = $_POST['proID'];
     $userID = $_POST['userID'];
     $quantity = $_POST['quantity'];
     // Kiểm tra xem là có product với cái ID kia không
-    $product = showOne('products', $productID);
+    // $product = showOne('products', $productID);
 
     if (empty($product)) {
         debug('404 Not found');
@@ -18,30 +18,33 @@ function cartAdd()
 
     $_SESSION['cartID'] = $cartID;
     $carts = cartItemAll($userID);
-
     // Add sản phẩm vào session cart: $_SESSION['cart'][$productID] = $product
     // Add tiếp sản phẩm vào thằng cart_items
-    if (!isset($_SESSION['cart'][$productID])) {
-        $_SESSION['cart'][$productID] = $product;
-        $_SESSION['cart'][$productID]['quantity'] = $quantity;
-        insert('cart_item', [
-            'cart_id' => $cartID,
-            'pro_id' => $productID,
-            'quantity' => $quantity
-        ]);
-        $flag = true;
-    } else {
-        $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
-        updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
-        $flag = true;
-    }
+    // if ($userID != 0) {
+        if (!isset($_SESSION['cart'][$productID])) {
+            $_SESSION['cart'][$productID] = $carts;
+            $_SESSION['cart'][$productID]['quantity'] = $quantity;
+            insert('cart_item', [
+                'cart_id' => $cartID,
+                'pro_id' => $productID,
+                'quantity' => $quantity
+            ]);
+            $flag = true; 
+        } else {
+            $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
+            updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
+            $flag = true;
+        }
+    // }else{
+    //     $flag = false;
+    //     $mess = 'Cần đăng nhập';
+    // }
     echo json_encode(
         array(
             'status' => $flag,
         )
     );
-    // header("location: " . __DIR__);
-    // require_once PATH_VIEW . '/layouts/master.php';
+
 }
 function cartList()
 {
@@ -80,8 +83,6 @@ function cartInc($productID)
         )
     );
 
-    // Chuyển hướng qua trang list cart
-    // header('Location: ' . BASE_URL . '?act=cart');
 }
 
 function cartDec($productID)

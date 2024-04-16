@@ -168,6 +168,26 @@ if (!function_exists('ascBrand')) {
 
     }
 }
+if (!function_exists('searchPro')) {
+    function searchPro($name)
+    {
+        try {
+            $sql = "SELECT * FROM products WHERE name LIKE :name";
+            
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $fnameParam = "%" .$name . "%";
+            $stmt->bindParam(":name", $fnameParam);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+
+    }
+}
 if (!function_exists('charter')) {
     function charter()
     {
