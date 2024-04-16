@@ -14,7 +14,7 @@ if (!function_exists('listFav')) {
                 INNER JOIN products AS p ON p.id = f.pro_id 
                 INNER JOIN users AS u ON u.id = f.user_id 
                 WHERE f.user_id = :userid
-                -- ORDER BY f.created DESC; 
+                ORDER BY f.created DESC; 
                 ;";
 
             $stmt = $GLOBALS['conn']->prepare($sql);
