@@ -56,7 +56,7 @@
 				</svg>
 			</div>
 			<div class="col-lg-2 col-12 logo-war">
-				<a href="<?= BASE_URL ?>" class="logo" title="Logo">
+				<a href="index.html" class="logo" title="Logo">
 					<img width="240" height="109"
 						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725"
 						alt="Bean Perfume" />
@@ -217,17 +217,17 @@
 									<i class="fa fa-caret-down"></i>
 									<ul class="item_small">
 										<li>
-											<a class="" href="<?= BASE_URL ?>?act=Male" title="Nước hoa Nam">
+											<a class="" href="nuoc-hoa-nam.html" title="Nước hoa Nam">
 												Nước hoa Nam
 											</a>
 										</li>
 										<li>
-											<a class="" href="<?= BASE_URL ?>?act=Female" title="Nước hoa Nữ">
+											<a class="" href="nuoc-hoa-nu.html" title="Nước hoa Nữ">
 												Nước hoa Nữ
 											</a>
 										</li>
 										<li>
-											<a class="" href="<?= BASE_URL ?>?act=Unisex" title="Nước hoa Unisex">
+											<a class="" href="nuoc-hoa-unisex.html" title="Nước hoa Unisex">
 												Nước hoa Unisex
 											</a>
 										</li>
@@ -318,7 +318,7 @@
 									<path
 										d="m195 0c-57.898438 0-105 47.101562-105 105v15h-90v392h390v-392h-90v-15c0-57.898438-47.101562-105-105-105zm-75 105c0-41.355469 33.644531-75 75-75s75 33.644531 75 75v15h-150zm240 45v332h-330v-332h60v60h30v-60h150v60h30v-60zm0 0" />
 								</svg>
-								<span class="count count_item_pr"><?= $GLOBALS['totalc'] ?? 0 ?></span>
+								<span class="count count_item_pr"><?= $totalc ?? 0 ?></span>
 							</a>
 							<?php if (!empty($_SESSION['cart'])) { ?>
 								<div class="top-cart-content">
@@ -464,3 +464,32 @@
 		</div>
 	</div>
 </div>
+<script>
+	$(document).ready(function () {
+		var action = "search";
+		var urll = "<?= BASE_URL ?>?act=searc";
+		$('#search_name').keyup(function () {
+			var search_name = $("#search_name").val().trim(); // Sử dụng $(this) để lấy giá trị của trường nhập liệu
+			if (search_name !== "") { // Kiểm tra xem trường nhập liệu có giá trị không
+				$.ajax({
+					url: urll,
+					method: "POST",
+					data: { action: action, search_name: search_name },
+					success: function (data) {
+						$("#proSear").html(data); // Hiển thị dữ liệu nhận được trong phần tử có id là proSear
+						// $(".1").hide();
+					},
+					error: function () {
+						console.log("Lỗi xảy ra khi gửi AJAX request."); // Xử lý lỗi nếu có
+					}
+				});
+			} else {
+				$(".1").show();
+				$(".2").show();
+				$(".3").hide();
+				// Xóa nội dung của phần tử proSear nếu trường nhập liệu rỗng
+			}
+		});
+	});
+
+</script>

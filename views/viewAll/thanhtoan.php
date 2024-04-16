@@ -399,7 +399,7 @@
 				<aside class="sidebar">
 					<div class="sidebar__header">
 						<h2 class="sidebar__title">
-							Đơn hàng ( <?=$GLOBALS['totalc']?> sản phẩm)
+							Đơn hàng ( <?=$totalc?> sản phẩm)
 						</h2>
 					</div>
 					<div class="sidebar__content">
@@ -544,7 +544,7 @@
 										</tfoot>
 									</table>
 								</div>
-								<input type="hidden" name="tong" value="<?=$GLOBALS['totalc']?>" />
+								<input type="hidden" name="tong" value="<?=$totalc?>" />
 								<div
 									class="order-summary__nav field__input-btn-wrapper hide-on-mobile layout-flex--row-reverse">
 									<button type="submit" class="btn btn-checkout spinner">

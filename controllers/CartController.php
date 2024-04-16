@@ -6,26 +6,21 @@ function cartAdd()
     $userID = $_POST['userID'];
     $quantity = $_POST['quantity'];
     // Kiểm tra xem là có product với cái ID kia không
-    // $product = showOne('products', $productID);
-    if (empty($product)) {
-        debug('404 Not found');
-    }
-    $cartID = getCartID($userID);
 
-    $_SESSION['cartID'] = $cartID;
+
     $carts = cartItemAll($userID);
-    if (empty($_SESSION['cart'][$productID])) {
+    if (!isset($_SESSION['cart'][$productID])) {
         $_SESSION['cart'][$productID] = $carts;
         $_SESSION['cart'][$productID]['quantity'] = $quantity;
         insert('cart_item', [
-            'cart_id' => $cartID,
+            'cart_id' => $_SESSION['cartID'],
             'pro_id' => $productID,
             'quantity' => $quantity
         ]);
         $flag = true;
     } else {
         $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
-        updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
+        updateQuantityByCartIDAndProductID($_SESSION['cartID'], $productID, $qtyTMP);
         $flag = true;
     }
     // }else{
@@ -45,9 +40,26 @@ function cartList()
     $style = 'styles/cart';
     $tittle = 'Giỏ hàng';
     $fnames = charter();
+    $carts = cartItemAll($_SESSION['userm']['id']);
     foreach ($fnames as $fname) {
         $brands[$fname['initial']] = ascBrand($fname['initial']);
     }
+    
+    if (!empty($_SESSION['userm'])) {
+        $favs = listFav($_SESSION['userm']['id']);
+        foreach ($favs as $fav) {
+            $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+        }
+        $carts = cartItemAll($_SESSION['userm']['id']);
+        $totalc = 0;
+        foreach ($carts as $cart) {
+            if (empty($_SESSION['cart'][$cart['pro_id']])) {
+                $_SESSION['cart'][$cart['pro_id']] = $cart;
+            }
+            $totalc += $_SESSION['cart'][$cart['pro_id']]['quantity'];
+        }
+    }
+
 
     require_once PATH_VIEW . '/layouts/master.php';
 
@@ -55,7 +67,7 @@ function cartList()
 
 function cartInc($productID)
 {
-    $flag = false;
+    $flag = 0;
     // Kiểm tra sản phẩm có tồn tại không
     $product = showOne('products', $productID);
 
@@ -66,7 +78,7 @@ function cartInc($productID)
     if (isset($_SESSION['cart'][$productID])) {
         $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += 1;
         updateQuantityByCartIDAndProductID($_SESSION['cartID'], $productID, $qtyTMP);
-        $flag = true;
+        $flag = 1;
     }
 
     // debug($_SESSION['cart']['quantity']);
