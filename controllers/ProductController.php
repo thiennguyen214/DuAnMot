@@ -30,3 +30,56 @@ function showProduct()
     require_once PATH_VIEW . '/layouts/master.php';
 
 }
+
+function filter_proAZ() {
+    $view = "viewAll/filter_pro";
+    $style = "styles/product";
+    $active4 = "active";
+    $tittle = 'Sản phẩm';
+
+    if ($_GET['act'] == 'filter_prAZ') {
+        $products = incNamePro();
+    }
+
+    if ($_GET['act'] == 'filter_prZA') {
+        $products = decNamePro();
+    }
+
+
+
+    require_once PATH_VIEW . '/layouts/master.php';
+
+}
+
+function filter_proByPrice(){
+    $view = "viewAll/filter_pro";
+    $style = "styles/product";
+    $active4 = "active";
+    $tittle = 'Sản phẩm';
+    if ($_GET['act'] == 'filterProByPriceAsc') {
+        $products = incPricePro();
+    }
+    if ($_GET['act'] == 'filterProByPriceDesc') {
+        $products = decPricePro();
+    }
+
+
+    require_once PATH_VIEW . '/layouts/master.php';
+}
+
+function filter_proByCreated(){
+    $view = "viewAll/filter_pro";
+    $style = "styles/product";
+    $active4 = "active";
+    $tittle = 'Sản phẩm';
+    
+    if ($_GET['act'] == 'filterProByCreatedAsc') {
+        $products = newPro();
+    }
+    if ($_GET['act'] == 'filterProByCreatedDesc') {
+        $products = oldPro();
+    }
+
+
+    require_once PATH_VIEW . '/layouts/master.php';
+}
