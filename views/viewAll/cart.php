@@ -448,69 +448,7 @@
                     <?php
                 } ?>
             </div>
-            <script>
-                $(document).ready(function () {
-                    $(".inc").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
-                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
-                        $.ajax({
-                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
-                            url: url,
-                            success: function (response) {
-                                response = JSON.parse(response);
-                                if (response.status == 0) {
-                                    alert("lklsdjl");
-                                } else {
-      
-                                    $('.cartload').load(location.href + ' .cartload');
-                                    $('.block-cart').load(location.href + ' .block-cart');
-                                }
-                            }
-                        });
-                    });
-                    $(".dec").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
-                        var total = $(this).data("total");
-                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
-                        // console.log(total);
-                        // console.log(urli);
-                        $.ajax({
-                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
-                            url: url,
-                            data: { total: total },
-                            success: function (response) {
-                                response = JSON.parse(response);
-                                if (response.status == 0) {
-                                    alert(response.message);
-                                } else {
-                                    $('.cartload').load(location.href + ' .cartload');
-                                    $('.block-cart').load(location.href + ' .block-cart');
-                                }
-                            }
-                        });
-                    });
-                    $(".remoc").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
-                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
-                        // console.log(id);
-                        // console.log(url);
-                        $.ajax({
-                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
-                            url: url,
-                            // data: { id: id },
-                            success: function (response) {
-                                response = JSON.parse(response);
-                                if (response.status == 0) {
-                                    alert(response.message);
-                                } else {
-                                    $('.cartload').load(location.href + ' .cartload');
-                                    $('.block-cart').load(location.href + ' .block-cart');
-                                }
-                            }
-                        });
-                    });
-                });
-            </script>
+            
         </div>
     </section>
 </div>

@@ -339,8 +339,8 @@
 																	<a href="" class="ajaxcart__product-name h4"
 																		title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
 																	<span class="ajaxcart__product-meta variant-title"></span>
-																	<a class="cart__btn-remove remove-item-cart ajaxifyCart--remove"
-																		href="javascript:;">Xóa</a>
+																	<a class="cart__btn-remove remoc" href=""
+																		data-url="<?= BASE_URL . '?act=cart-del&productID=' . $cart['pro_id'] ?>">Xóa</a>
 																</div>
 																<div class="grid">
 																	<div
@@ -361,7 +361,7 @@
 																				class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count"
 																				aria-label="+">
 																				<a class="inc" href=""
-                                                                                    data-url="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
+																					data-url="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
 																			</button>
 																		</div>
 																	</div>
@@ -410,8 +410,7 @@
 	<div class="title_search">Tìm kiếm sản phẩm</div>
 	<div class="search-header">
 		<div class="search-smart">
-			<form action="" method="post"
-				class="header-search-form input-group search-bar" >
+			<form action="" method="post" class="header-search-form input-group search-bar">
 				<input type="search" name="query" required id="search_name"
 					class="input-group-field auto-search search-auto " placeholder="Nhập tên sản phẩm..."
 					autocomplete="off" />
@@ -426,7 +425,7 @@
 				</button>
 
 				<div class="search-suggest">
-					<div class="list-search list-search-style" ></div>
+					<div class="list-search list-search-style"></div>
 				</div>
 			</form>
 		</div>
@@ -443,59 +442,25 @@
 			</g>
 		</svg>
 	</a> -->
-	<div class="product-search"  id="proSear">
-	<div class="title-search 1">
-                <span>Đừng bỏ lỡ</span>
-            </div>
-            <div class="item 2">
-                <div class="image">
-                    <a class="image_thumb" href="unisex-creed-millesime-imperial.html"
-                        title="">
-                        <img width="100" height="100" class="lazyload"
-                            src=""
-                            data-src=""
-                            alt="" />
-                    </a>
-                </div>
-                <div class="content">
-                    <h3 class="product-name">
-                        <a class="line-clamp line-clamp-1" href="unisex-creed-millesime-imperial.html"
-                            title="">dfsdf</a>
-                    </h3>
-                    <div class="price-box">
-                        ₫
-                        <span class="compare-price">₫</span>
-                    </div>
-                </div>
-            </div>
+	<div class="product-search" id="proSear">
+		<div class="title-search 1">
+			<span>Đừng bỏ lỡ</span>
+		</div>
+		<div class="item 2">
+			<div class="image">
+				<a class="image_thumb" href="unisex-creed-millesime-imperial.html" title="">
+					<img width="100" height="100" class="lazyload" src="" data-src="" alt="" />
+				</a>
+			</div>
+			<div class="content">
+				<h3 class="product-name">
+					<a class="line-clamp line-clamp-1" href="unisex-creed-millesime-imperial.html" title="">dfsdf</a>
+				</h3>
+				<div class="price-box">
+					₫
+					<span class="compare-price">₫</span>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-<script>
-$(document).ready(function () {
-    var action = "search";
-	var urll = "<?= BASE_URL ?>?act=searc";
-    $('#search_name').keyup(function () {
-        var search_name = $("#search_name").val().trim(); // Sử dụng $(this) để lấy giá trị của trường nhập liệu
-        if (search_name !== "") { // Kiểm tra xem trường nhập liệu có giá trị không
-            $.ajax({
-                url: urll,
-                method: "POST",
-                data: { action: action, search_name: search_name },
-                success: function (data) {
-                    $("#proSear").html(data); // Hiển thị dữ liệu nhận được trong phần tử có id là proSear
-					// $(".1").hide();
-				},
-                error: function () {
-                    console.log("Lỗi xảy ra khi gửi AJAX request."); // Xử lý lỗi nếu có
-                }
-            });
-        } else {
-			$(".1").show();
-			$(".2").show();
-			$(".3").hide();
-             // Xóa nội dung của phần tử proSear nếu trường nhập liệu rỗng
-        }
-    });
-});
-
-</script>

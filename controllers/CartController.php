@@ -7,34 +7,27 @@ function cartAdd()
     $quantity = $_POST['quantity'];
     // Kiểm tra xem là có product với cái ID kia không
     // $product = showOne('products', $productID);
-
     if (empty($product)) {
         debug('404 Not found');
     }
-
-    // Kiểm tra xem trong bảng carts thì đã có bản ghi nào của user đang đăng nhập chưa
-    // Có rồi thì lấy ra cartID, nếu chưa thì tạo mới
     $cartID = getCartID($userID);
 
     $_SESSION['cartID'] = $cartID;
     $carts = cartItemAll($userID);
-    // Add sản phẩm vào session cart: $_SESSION['cart'][$productID] = $product
-    // Add tiếp sản phẩm vào thằng cart_items
-    // if ($userID != 0) {
-        if (!isset($_SESSION['cart'][$productID])) {
-            $_SESSION['cart'][$productID] = $carts;
-            $_SESSION['cart'][$productID]['quantity'] = $quantity;
-            insert('cart_item', [
-                'cart_id' => $cartID,
-                'pro_id' => $productID,
-                'quantity' => $quantity
-            ]);
-            $flag = true; 
-        } else {
-            $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
-            updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
-            $flag = true;
-        }
+    if (empty($_SESSION['cart'][$productID])) {
+        $_SESSION['cart'][$productID] = $carts;
+        $_SESSION['cart'][$productID]['quantity'] = $quantity;
+        insert('cart_item', [
+            'cart_id' => $cartID,
+            'pro_id' => $productID,
+            'quantity' => $quantity
+        ]);
+        $flag = true;
+    } else {
+        $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
+        updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
+        $flag = true;
+    }
     // }else{
     //     $flag = false;
     //     $mess = 'Cần đăng nhập';

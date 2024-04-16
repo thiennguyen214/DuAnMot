@@ -1,4 +1,90 @@
+<script>
+	$(document).ready(function () {
+		$(".inc").click(function (event) {
+			event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+			var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
+			$.ajax({
+				type: "GET", // hoặc POST tùy theo yêu cầu của bạn
+				url: url,
+				success: function (response) {
+					response = JSON.parse(response);
+					if (response.status == 0) {
+						alert("lklsdjl");
+					} else {
 
+						$('.cartload').load(location.href + ' .cartload');
+						$('.block-cart').load(location.href + ' .block-cart');
+					}
+				}
+			});
+		});
+		$(".dec").click(function (event) {
+			event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+			var total = $(this).data("total");
+			var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
+			// console.log(total);
+			// console.log(urli);
+			$.ajax({
+				type: "GET", // hoặc POST tùy theo yêu cầu của bạn
+				url: url,
+				data: { total: total },
+				success: function (response) {
+					response = JSON.parse(response);
+					if (response.status == 0) {
+						alert(response.message);
+					} else {
+						$('.cartload').load(location.href + ' .cartload');
+						$('.block-cart').load(location.href + ' .block-cart');
+					}
+				}
+			});
+		});
+		$(".remoc").click(function (event) {
+			event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
+			var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
+			// console.log(id);
+			// console.log(url);
+			$.ajax({
+				type: "GET", // hoặc POST tùy theo yêu cầu của bạn
+				url: url,
+				// data: { id: id },
+				success: function (response) {
+					response = JSON.parse(response);
+					if (response.status == 0) {
+						alert(response.message);
+					} else {
+						$('.cartload').load(location.href + ' .cartload');
+						$('.block-cart').load(location.href + ' .block-cart');
+					}
+				}
+			});
+		});
+	});
+	var action = "search";
+		var urll = "<?= BASE_URL ?>?act=searc";
+		$('#search_name').keyup(function () {
+			var search_name = $("#search_name").val().trim(); // Sử dụng $(this) để lấy giá trị của trường nhập liệu
+			if (search_name !== "") { // Kiểm tra xem trường nhập liệu có giá trị không
+				$.ajax({
+					url: urll,
+					method: "POST",
+					data: { action: action, search_name: search_name },
+					success: function (data) {
+						$("#proSear").html(data); // Hiển thị dữ liệu nhận được trong phần tử có id là proSear
+						// $(".1").hide();
+					},
+					error: function () {
+						console.log("Lỗi xảy ra khi gửi AJAX request."); // Xử lý lỗi nếu có
+					}
+				});
+			} else {
+				$(".1").show();
+				$(".2").show();
+				$(".3").hide();
+				// Xóa nội dung của phần tử proSear nếu trường nhập liệu rỗng
+			}
+		});
+</script>
 <footer class="footer"
 	style="
 		background-image: url(<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/bg_foo02fb.jpg?1709175143725);">
@@ -7360,36 +7446,36 @@ Ajax Bizweb Add To Cart
 			  <?php
 			  $tong = 0;
 			  foreach ($carts as $cart) { ?>
-				  <div class="ajaxcart__product cart_product">
-					  <a href="" class="ajaxcart__product-image cart_image" title="<?= $cart['p_name'] ?>"><img width="80" height="80" src="<?= $cart['p_name'] ?>" alt="<?= $cart['p_name'] ?>"></a>
-					  <div class="grid__item cart_info">
-						  <div class="ajaxcart__product-name-wrapper cart_name">
-							  <a href="" class="ajaxcart__product-name h4" title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
-							  <span class="ajaxcart__product-meta variant-title"></span>
-							  <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;">Xóa</a>
-						  </div>
-						  <div class="grid">
-							  <div class="grid__item one-half cart_select cart_item_name ">
-							  <label class="cart_quantity">Số lượng</label>
-								  <div class="ajaxcart__qty input-group-btn">
-									  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count" aria-label="-">
-									  <a href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
-									  </button>
-									  <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="<?= $cart['quantity'] ?>" min="0">
-									  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count" aria-label="+">
-									  <a href="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
-									  </button>
+					  <div class="ajaxcart__product cart_product">
+						  <a href="" class="ajaxcart__product-image cart_image" title="<?= $cart['p_name'] ?>"><img width="80" height="80" src="<?= $cart['p_name'] ?>" alt="<?= $cart['p_name'] ?>"></a>
+						  <div class="grid__item cart_info">
+							  <div class="ajaxcart__product-name-wrapper cart_name">
+								  <a href="" class="ajaxcart__product-name h4" title="<?= $cart['p_name'] ?>"><?= $cart['p_name'] ?></a>
+								  <span class="ajaxcart__product-meta variant-title"></span>
+								  <a class="cart__btn-remove remove-item-cart ajaxifyCart--remove" href="javascript:;">Xóa</a>
+							  </div>
+							  <div class="grid">
+								  <div class="grid__item one-half cart_select cart_item_name ">
+								  <label class="cart_quantity">Số lượng</label>
+									  <div class="ajaxcart__qty input-group-btn">
+										  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus items-count" aria-label="-">
+										  <a href="<?= BASE_URL . '?act=cart-dec&productID=' . $cart['id'] ?>">-</a>
+										  </button>
+										  <input type="text" name="updates[]" class="ajaxcart__qty-num number-sidebar" maxlength="3" value="<?= $cart['quantity'] ?>" min="0">
+										  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count" aria-label="+">
+										  <a href="<?= BASE_URL . '?act=cart-inc&productID=' . $cart['pro_id'] ?>">+</a>
+										  </button>
+									  </div>
 								  </div>
+								  <div class="grid__item one-half text-right cart_prices">
+								  <span class="cart-price"><?= $cart['p_price_sale'] ?></span>
+								  </div>
+							  	<?php $tone = $cart['p_price_sale'] * $cart['quantity'] ?>
+							  	<?php $tong += $tone ?>
 							  </div>
-							  <div class="grid__item one-half text-right cart_prices">
-							  <span class="cart-price"><?= $cart['p_price_sale'] ?></span>
-							  </div>
-						  	<?php $tone = $cart['p_price_sale'] * $cart['quantity'] ?>
-						  	<?php $tong += $tone ?>
 						  </div>
-					  </div>
-				  	</div>
-				</div>
+						  </div>
+					</div>
 			  <?php } ?>
 		  </div>
 		  <div class="ajaxcart__footer ajaxcart__footer--fixed cart-footer">
