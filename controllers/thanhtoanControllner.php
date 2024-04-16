@@ -10,10 +10,10 @@ function showThanhtoan()
     // $users = listAll('users');
     // debug($_SESSION['cart']);
     if (!empty($_SESSION['userm'])) {
-        $favs = listFav($_SESSION['userm']['id']);
-        foreach ($favs as $fav) {
-            $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
-        }
+        // $favs = listFav($_SESSION['userm']['id']);
+        // foreach ($favs as $fav) {
+        //     $_SESSION['favs'][$fav['p_id']] = $fav['p_id'];
+        // }
         $carts = cartItemAll($_SESSION['userm']['id']);
         $totalc = 0;
         foreach ($carts as $cart) {
