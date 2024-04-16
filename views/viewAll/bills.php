@@ -3,18 +3,6 @@
 <!-- End checkout custom css -->
 
 <body data-no-turbolink>
-
-    <header class="banner">
-        <div class="wrap">
-            <div class="logo logo--center">
-
-                <!-- <a href="/">
-            <img class="logo__image  logo__image--medium " alt="Bean Perfume" src="<?= BASE_URL ?>bizweb.dktcdn.net/100/503/826/themes/932476/assets/checkout_logo.png" />
-        </a> -->
-
-            </div>
-        </div>
-    </header>
     <div class="content">
         <form>
             <div class="wrap wrap--mobile-fluid">
@@ -33,7 +21,7 @@
                         <article class="row">
                             <div class="col col--primary">
                                 <section class="section section--icon-heading">
-                                    <div class="section__icon unprintable">
+                                    <!-- <div class="section__icon unprintable">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="72px" height="72px">
                                             <g fill="none" stroke="#8EC343" stroke-width="2">
                                                 <circle cx="36" cy="36" r="35"
@@ -43,7 +31,7 @@
                                                     style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
                                             </g>
                                         </svg>
-                                    </div>
+                                    </div> -->
                                     <div class="thankyou-message-container">
                                         <h2 class="section__title">Cảm ơn bạn đã đặt hàng</h2>
 
@@ -154,7 +142,7 @@
 
                                         <div class="row">
 
-                                            <div class="col col--md-two">
+                                            <div class="col col--md-five">
                                                 <h2>Thông tin mua hàng</h2>
                                                 <p>truong thai tu</p>
 

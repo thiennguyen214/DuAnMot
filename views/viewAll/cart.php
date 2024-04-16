@@ -4,7 +4,7 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li class="home">
-                    <a href="index.html"><span>Trang chủ</span></a>
+                    <a href="<?= BASE_URL ?>"><span>Trang chủ</span></a>
                     <span class="mr_lr">&nbsp;<svg aria-hidden="true" focusable="false" data-prefix="fas"
                             data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512" class="svg-inline--fa fa-chevron-right fa-w-10">
@@ -22,6 +22,7 @@
         <div class="main container cartpcstyle">
             <div class="wrap_background_aside margin-bottom-40" style="display: inline-block;   width: 100%;">
                 <?php
+
                 if (!empty($_SESSION['cart'])) { ?>
                     <div class="row">
                         <div class="header-cart d-none">
@@ -43,14 +44,17 @@
                                                 <div>Thành tiền</div>
                                             </div>
                                             <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer cart_body items">
-                                                <?php $tong = 0;
-                                                foreach ($_SESSION['cart'] as $key => $cart) { ?>
+                                                
+                                                <?php
+                                                
+                                                $tong = 0;
+                                                foreach ($_SESSION['cart'] as $cart) { ?>
                                                     <div class="ajaxcart__row">
                                                         <div class="ajaxcart__product cart_product">
                                                             <a href="<?= BASE_URL ?>?act=productDetail&&id=<?= $cart['pro_id'] ?>"
                                                                 class="ajaxcart__product-image cart_image"
                                                                 title="<?= $cart['p_name'] ?>"><img width="80" height="80"
-                                                                    src="<?= $cart['p_img'] ?>"0
+                                                                    src="<?= $cart['p_img'] ?>" 
                                                                     alt="<?= $cart['p_name'] ?>"></a>
                                                             <div class="grid__item cart_info">
                                                                 <div class="ajaxcart__product-name-wrapper cart_name">
@@ -86,7 +90,7 @@
                                                                 <div class="grid">
                                                                     <div class="grid__item one-half text-right cart_prices">
                                                                         <span
-                                                                            class="cart-price"><?= $tone = $cart['p_price_sale'] * $cart['quantity'] ?></span>
+                                                                            class="cart-price"><?= $tone = str_replace(".", "", $cart['p_price_sale']) * str_replace(".", "", $cart['quantity']) ?></span>
                                                                         <?php $tong += $tone ?>
                                                                     </div>
                                                                 </div>
@@ -444,68 +448,7 @@
                     <?php
                 } ?>
             </div>
-            <script>
-                $(document).ready(function () {
-                    $(".inc").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
-                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
-                        $.ajax({
-                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
-                            url: url,
-                            success: function (response) {
-                                response = JSON.parse(response);
-                                if (response.status == 0) {
-                                    alert(response.message);
-                                } else {
-                                    $('.cartload').load(location.href + ' .cartload');
-                                    $('.block-cart').load(location.href + ' .block-cart');
-                                }
-                            }
-                        });
-                    });
-                    $(".dec").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
-                        var total = $(this).data("total");
-                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
-                        // console.log(total);
-                        // console.log(urli);
-                        $.ajax({
-                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
-                            url: url,
-                            data: { total: total },
-                            success: function (response) {
-                                response = JSON.parse(response);
-                                if (response.status == 0) {
-                                    alert(response.message);
-                                } else {
-                                    $('.cartload').load(location.href + ' .cartload');
-                                    $('.block-cart').load(location.href + ' .block-cart');
-                                }
-                            }
-                        });
-                    });
-                    $(".remoc").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a
-                        var url = $(this).data("url"); // Lấy URL từ thuộc tính data-url
-                        // console.log(id);
-                        // console.log(url);
-                        $.ajax({
-                            type: "GET", // hoặc POST tùy theo yêu cầu của bạn
-                            url: url,
-                            // data: { id: id },
-                            success: function (response) {
-                                response = JSON.parse(response);
-                                if (response.status == 0) {
-                                    alert(response.message);
-                                } else {
-                                    $('.cartload').load(location.href + ' .cartload');
-                                    $('.block-cart').load(location.href + ' .block-cart');
-                                }
-                            }
-                        });
-                    });
-                });
-            </script>
+            
         </div>
     </section>
 </div>

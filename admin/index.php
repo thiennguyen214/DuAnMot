@@ -74,6 +74,8 @@ match ($act) {
     //     // CRUD Category
     'imgs' => imgProListAll(),
     'imgs_create' => imgProCreate(),
+    'imgPro-update' => imgProUpadate($_GET['id']),
+    'imgPro-del' => ImgProDelete($_GET['id']),
     //     'category-detail' => categoryShowOne($_GET['id']),
 //     'category-create' => categoryCreate(),
 //     'category-update' => categoryUpdate($_GET['id']),

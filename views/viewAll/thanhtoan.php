@@ -304,7 +304,7 @@
 
 										<div class="alert alert--info hide"
 											data-bind-show="!isLoadingShippingMethod && isAddressSelecting">
-											Vui lòng nhập thông tin giao hàng
+											Giao hàng tận nhà.
 										</div>
 									</div>
 								</section>
@@ -399,15 +399,7 @@
 				<aside class="sidebar">
 					<div class="sidebar__header">
 						<h2 class="sidebar__title">
-							Đơn hàng (
-							<?php
-							$sl = 0;
-							foreach ($_SESSION['cart'] as $items) {
-								$sl += $items['quantity'];
-							}
-							echo $sl;
-							?>
-							sản phẩm)
+							Đơn hàng ( <?=$GLOBALS['totalc']?> sản phẩm)
 						</h2>
 					</div>
 					<div class="sidebar__content">
@@ -460,7 +452,7 @@
 														<td class="product__quantity visually-hidden"><em>Số lượng:</em> </td>
 														<td class="product__price">
 
-															<?= number_format($tone = $items['p_price_sale'] * $items['quantity']) ?>₫
+															<?= number_format($tone = str_replace(".", "", $items['p_price_sale']) * $items['quantity']) ?>₫
 															<?php $tong += $tone ?>
 														</td>
 													</tr>
@@ -552,7 +544,7 @@
 										</tfoot>
 									</table>
 								</div>
-								<input type="hidden" name="tong" value="<?= $sl ?>" />
+								<input type="hidden" name="tong" value="<?=$GLOBALS['totalc']?>" />
 								<div
 									class="order-summary__nav field__input-btn-wrapper hide-on-mobile layout-flex--row-reverse">
 									<button type="submit" class="btn btn-checkout spinner">

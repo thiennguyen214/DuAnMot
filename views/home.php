@@ -28,7 +28,7 @@
                     <div class="content2">
                         <span>Mới nhất</span>
                     </div>
-                    <a class="button" href="collections/all.html" title="Mua ngay">Mua ngay</a>
+                    <a class="button" href="<?=BASE_URL ?>?act=products" title="Mua ngay">Mua ngay</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -57,7 +57,7 @@
                     <div class="content2">
                         <span>Xu hướng</span>
                     </div>
-                    <a class="button" href="collections/all.html" title="Mua ngay">Mua ngay</a>
+                    <a class="button" href="<?=BASE_URL ?>?act=products" title="Mua ngay">Mua ngay</a>
                 </div>
             </div>
         </div>
@@ -92,8 +92,9 @@
                 <div class="swi_brand swiper-container">
                     <div class="swiper-wrapper">
                         <!-- thuong-hieu -->
-                        <?php foreach ($brands as $brand): ?>
-
+                        <?php
+                         foreach ($brandsh as $brand): ?>
+            
                             <div class="item_brand swiper-slide">
                                 <a href="collections/all.html" class="a_brand" title="Chanel">
                                     <img width="180" height="180" class="lazyload" src="<?= BASE_URL . $brand['img'] ?>"
@@ -282,7 +283,11 @@
                                                 </div>
                                             </div>
                                             <div class="smart">
-                                                <span>-<?= floor((1 - ($item['price_sale'] / $item['price'])) * 100) ?>%</span>
+                                                <?php 
+                                                $price_sale = str_replace(".", "", $item['price_sale']);
+                                                $price = str_replace(".", "", $item['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%</span>
                                             </div>	
                                             <a class="creatf btn-wishlist" href="#" data-proid="<?= $item['id'] ?>" data-userid="<?=(isset($_SESSION['userm']))?$_SESSION['userm']['id']:''?>" 
                                                 data-url="<?= BASE_URL ?>?act=favCreat" title="Thêm vào yêu thích">
@@ -471,7 +476,7 @@
                     <script type="text/x-custom-template" data-template="section_product_noibat">
                         <?php foreach ($products as $product): ?>
                             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 col-fix">
-                                <form action="" method="post" class="product-action ad_tocartxh" enctype="multipart/form-data">
+                                <form action="" method="post" class="product-action ad_tocart" enctype="multipart/form-data">
                                     <div class="product-thumbnail">
                                         <a class="image_thumb scale_hover" href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>" title="<?= $product['name'] ?>">
                                             <img  width="480" height="480" class="lazyload image1" src="<?= BASE_URL . $product['img'] ?>"  data-src="<?= BASE_URL . $product['img'] ?>" alt="Sản phẩm">
@@ -491,8 +496,11 @@
                                         </div>
                                     </div>
                                     <div class="smart">
-                                        <span>-
-                                            <?= floor((1 - ($product['price_sale'] / $product['price'])) * 100) ?>%
+                                    <?php 
+                                                $price_sale = str_replace(".", "", $product['price_sale']);
+                                                $price = str_replace(".", "", $product['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%
                                         </span>
                                     </div>	
                                     <a href="javascript:void(0)" class="creatWish btn-wishlist 
@@ -705,7 +713,11 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="smart"><span>- 19% </span></div>
+                                <div class="smart"><?php 
+                                                $price_sale = str_replace(".", "", $trend['price_sale']);
+                                                $price = str_replace(".", "", $trend['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?></span></div>
                                 <a class="creatWish <?= $trend['id'] ?> btn-wishlist" href="#" data-proid="<?= $trend['id'] ?>" data-userid="<?=(isset($_SESSION['userm']))?$_SESSION['userm']['id']:''?>" 
                                                 data-url="<?= BASE_URL ?>?act=favCreat" title="Thêm vào yêu thích">
                                     <svg class="icon">
@@ -1636,25 +1648,25 @@
 
 
 <script>
-    // let urlAddCart = '<?= BASE_URL . '?act=cart-add' ?>';
-    // $(".ad_tocart").submit(function (event) {
-    //     event.preventDefault();
-    //     // console.log("Data: ", $(this).serializeArray());
-    //     $.ajax({
-    //         type: "post",
-    //         url: urlAddCart,
-    //         data: $(this).serializeArray(),
-    //         success: function (response) {
-    //             response = JSON.parse(response);
-    //             if (response.status == 0) {
-    //                 alert("Lỗi");
-    //             } else {
-    //                 location.reload();
-    //                 $(".popup-cart-mobile").addClass("active");
-    //             }
-    //         }
-    //     });
-    // });
+    let urlAddCart = '<?= BASE_URL . '?act=cart-add' ?>';
+    $(".ad_tocart").submit(function (event) {
+        event.preventDefault();
+        // console.log("Data: ", $(this).serializeArray());
+        $.ajax({
+            type: "post",
+            url: urlAddCart,
+            data: $(this).serializeArray(),
+            success: function (response) {
+                response = JSON.parse(response);
+                if (response.status == 0) {
+                    alert("Lỗi");
+                } else {
+                    location.reload();
+                    $(".popup-cart-mobile").addClass("active");
+                }
+            }
+        });
+    });
     $(document).ready(function () {
         $(".creatWish").click(function (event) {
             event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ a

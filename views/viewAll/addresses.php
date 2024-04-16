@@ -4,7 +4,7 @@
             <div class="container">
                 <ul class="breadcrumb">
                     <li class="home">
-                        <a href="/"><span>Trang chủ</span></a>
+                        <a href="<?= BASE_URL ?>"><span>Trang chủ</span></a>
                         <span class="mr_lr">&nbsp;<svg aria-hidden="true" focusable="false" data-prefix="fas"
                                 data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 320 512" class="svg-inline--fa fa-chevron-right fa-w-10">
@@ -1625,7 +1625,7 @@
                                         <span class="soluong_h">Số lượng:</span>
                                         <div class="sssssscustom input_number_product">
                                             <button class="btn_num num_1 button button_qty"
-                                                onClick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv ) &amp;&amp; qtyqv &gt; 1 ) result.value--;return false;">-</button>
+                                                onClick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv ) && qtyqv > 1 ) result.value--;return false;">-</button>
                                             <input type="text" id="quantity-detail" name="quantity" value="1"
                                                 maxlength="2" class="form-control prd_quantity"
                                                 onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;"

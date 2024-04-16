@@ -1,28 +1,21 @@
 <?php
 function cartAdd()
 {
-    $flag = false;
+
     $productID = $_POST['proID'];
     $userID = $_POST['userID'];
     $quantity = $_POST['quantity'];
     // Kiểm tra xem là có product với cái ID kia không
-    $product = showOne('products', $productID);
-
+    // $product = showOne('products', $productID);
     if (empty($product)) {
         debug('404 Not found');
     }
-
-    // Kiểm tra xem trong bảng carts thì đã có bản ghi nào của user đang đăng nhập chưa
-    // Có rồi thì lấy ra cartID, nếu chưa thì tạo mới
     $cartID = getCartID($userID);
 
     $_SESSION['cartID'] = $cartID;
     $carts = cartItemAll($userID);
-
-    // Add sản phẩm vào session cart: $_SESSION['cart'][$productID] = $product
-    // Add tiếp sản phẩm vào thằng cart_items
-    if (!isset($_SESSION['cart'][$productID])) {
-        $_SESSION['cart'][$productID] = $product;
+    if (empty($_SESSION['cart'][$productID])) {
+        $_SESSION['cart'][$productID] = $carts;
         $_SESSION['cart'][$productID]['quantity'] = $quantity;
         insert('cart_item', [
             'cart_id' => $cartID,
@@ -35,29 +28,27 @@ function cartAdd()
         updateQuantityByCartIDAndProductID($cartID, $productID, $qtyTMP);
         $flag = true;
     }
+    // }else{
+    //     $flag = false;
+    //     $mess = 'Cần đăng nhập';
+    // }
     echo json_encode(
         array(
             'status' => $flag,
         )
     );
-    // header("location: " . __DIR__);
-    // require_once PATH_VIEW . '/layouts/master.php';
+
 }
 function cartList()
 {
     $tittle = "Giỏ hàng";
     $view = "viewAll/cart";
     $style = 'styles/cart';
-    $totalc = 0;
-    if (!empty($_SESSION['userm'])) {
-        $favs = listFav($_SESSION['userm']['id']);
-        $carts = cartItemAll($_SESSION['userm']['id']);
-        foreach ($carts as $cart) {
-            $totalc += $cart['quantity'];
-        }
-    }
     $tittle = 'Giỏ hàng';
-
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
 
     require_once PATH_VIEW . '/layouts/master.php';
 
@@ -86,8 +77,6 @@ function cartInc($productID)
         )
     );
 
-    // Chuyển hướng qua trang list cart
-    // header('Location: ' . BASE_URL . '?act=cart');
 }
 
 function cartDec($productID)

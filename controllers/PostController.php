@@ -7,8 +7,15 @@ function showPost()
     $style = 'styles/post';
     $tittle = 'Tin tức';
     $posts = listAll('posts');
+
     // $posts = showOne('posts');
 
+
+
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
 
 
     require_once PATH_VIEW . '/layouts/master.php';

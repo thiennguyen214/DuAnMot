@@ -524,7 +524,7 @@
                             href="<?= BASE_URL ?>?act=productDetail&id=<?= $product['id'] ?>"
                             title="Unisex Creed Millesime Imperial">
                             <img width="480" height="480" class="lazyload image1"
-                              src="<?= BASE_URL . $product['pr_img'] ?>" data-src="<?= BASE_URL . $product['pr_img'] ?>"
+                              src="<?= BASE_URL . $product['img'] ?>" data-src="<?= BASE_URL . $product['img'] ?>"
                               alt="Unisex Creed Millesime Imperial" />
                           </a>
                           <div class="action">
@@ -542,9 +542,11 @@
                             </a>
                           </div>
                         </div>
-                        <div class="smart"><span>
-
-                            <?= ceil((1 - ($product['pr_price_sale'] / $product['pr_price'])) * 100) ?>%
+                        <div class="smart"><?php 
+                                                $price_sale = str_replace(".", "", $product['price_sale']);
+                                                $price = str_replace(".", "", $product['price']);
+                                                ?>
+                                                <span>-<?= floor((1 - ($price_sale / $price)) * 100) ?>%
 
                           </span></div>
                         <a href="javascript:void(0)" class="setWishlist btn-wishlist"
@@ -556,21 +558,21 @@
                         <div class="product-info">
                           <h3 class="product-name">
                             <a class="line-clamp line-clamp-1 text-center" href="../unisex-creed-millesime-imperial.html"
-                              title="<?= $product['pr_name'] ?>">
-                              <?= $product['pr_name'] ?>
+                              title="<?= $product['name'] ?>">
+                              <?= $product['name'] ?>
                             </a>
                           </h3>
                           <div class="price-box">
-                            <?= $product['pr_price_sale'] ?>₫
+                            <?= $product['price_sale'] ?>₫
                             <span class="compare-price">
-                              <?= $product['pr_price'] ?>₫
+                              <?= $product['price'] ?>₫
                             </span>
                           </div>
                         </div>
                         <ul class="fragrant_product">
                           <li class="text-center">
-                            <img width="90" height="90" class="lazyload" src="<?= BASE_URL . $product['pr_img'] ?>"
-                              data-src="<?= BASE_URL . $product['pr_img'] ?>" alt="Cam" />
+                            <img width="90" height="90" class="lazyload" src="<?= BASE_URL . $product['img'] ?>"
+                              data-src="<?= BASE_URL . $product['img'] ?>" alt="Cam" />
                             <span>Cam</span>
                           </li>
                           <li class="text-center">
