@@ -29,7 +29,7 @@ $arrRouteNeedAuth = [
 // Kiểm tra xem user đã đăng nhập chưa
 middleware_auth_check_cl($act, $arrRouteNeedAuth);
 
-// debug($_SESSION['cartID']);
+// debug($_SESSION['cart']);
 
 //
 match ($act) {
@@ -79,17 +79,12 @@ match ($act) {
 
 
     'order-purchase' => orderPurchase(),
-    'order-success' => orderSuccess(),
+    'order-success' => orderSuccess($_GET['id']),
 
     'log' => showLog(),
     'logoutc' => authenCliLogout(),
 
     'reg' => showReg(),
-    // =======
-    'Male' => showProduct(),
-    'Female' => showProduct(),
-
-    'Unisex' => showProduct(),
 
     'filter_prAZ' => filter_proAZ(),
     'filter_prZA' => filter_proAZ(),
@@ -102,9 +97,12 @@ match ($act) {
     // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),
 
     // 'favorite' => showFavs($_GET['userID']),
-    'favCreat' => ajaxFavCreate(),
-    'searc' => searchn(),
 
+    'favCreat' => ajaxFavCreate(),
+
+
+    'searc' => searchn(),
+    'searchpro' => serach(),
 
 
 

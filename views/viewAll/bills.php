@@ -36,7 +36,7 @@
                                         <h2 class="section__title">Cảm ơn bạn đã đặt hàng</h2>
 
                                         <p class="section__text">
-                                            Một email xác nhận đã được gửi tới tuttph45304@fpt.edu.vn. <br />
+                                            Một email xác nhận đã được gửi tới <?= $bill['email'] ?>. <br />
                                             Xin vui lòng kiểm tra email của bạn
                                         </p>
 
@@ -49,8 +49,8 @@
                                     id="order-summary">
                                     <div class="order-summary__header">
                                         <div class="order-summary__title">
-                                            Đơn hàng #1004
-                                            <span class="unprintable">(1)</span>
+                                            Đơn hàng #100<?= $bill['id'] ?>
+                                            <span class="unprintable">(<?= $bill['total'] ?>)</span>
                                         </div>
                                         <div class="order-summary__action hide-on-desktop unprintable">
                                             <a data-toggle="#order-summary"
@@ -65,6 +65,9 @@
                                             <table class="product-table">
                                                 <tbody>
 
+                                                        <?php
+                                                        $tong = 0;
+                                                        foreach ($orders as $oder) {?>
                                                     <tr class="product">
                                                         <td class="product__image">
                                                             <div class="product-thumbnail">
@@ -73,12 +76,11 @@
                                                                         alt="" class="product-thumbnail__image" />
                                                                 </div>
                                                                 <span
-                                                                    class="product-thumbnail__quantity unprintable">1</span>
+                                                                    class="product-thumbnail__quantity "><?= $oder['quantity'] ?></span>
                                                             </div>
                                                         </td>
                                                         <th class="product__description">
-                                                            <span class="product__description__name">Tommy Hilfiger
-                                                                Tommy Girl</span>
+                                                            <span class="product__description__name"><?= $oder['p_name'] ?></span>
 
                                                             <span class="product__description__property">30ml</span>
 
@@ -89,36 +91,17 @@
                                                         </td>
                                                         <td class="product__price">
 
-                                                            705.000₫
+                                                        <?= number_format($ton = $oder['price']*$oder['quantity']) ?>₫
 
                                                         </td>
+                                                        
                                                     </tr>
+                                                    <?php  $tong += $ton; }?>
 
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="order-summary__section">
-                                            <table class="total-line-table">
-                                                <tbody class="total-line-table__tbody">
-
-
-                                                    <tr class="total-line total-line--subtotal">
-                                                        <th class="total-line__name">Tạm tính</th>
-                                                        <td class="total-line__price">705.000₫</td>
-                                                    </tr>
-
-                                                    <tr class="total-line total-line--shipping-fee">
-                                                        <th class="total-line__name">Phí vận chuyển</th>
-                                                        <td class="total-line__price">
-
-                                                            40.000₫
-
-                                                        </td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                        
                                         <div class="order-summary__section">
                                             <table class="total-line-table">
                                                 <tbody class="total-line-table__tbody">
@@ -127,7 +110,7 @@
                                                             <span class="payment-due__label-total">Tổng cộng</span>
                                                         </th>
                                                         <td class="total-line__price">
-                                                            <span class="payment-due__price">745.000₫</span>
+                                                            <span class="payment-due__price"><?= number_format($bill['tong']) ?>đ</span>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -144,34 +127,34 @@
 
                                             <div class="col col--md-five">
                                                 <h2>Thông tin mua hàng</h2>
-                                                <p>truong thai tu</p>
+                                                <p><?= $bill['name'] ?></p>
 
-                                                <p>tuttph45304@fpt.edu.vn</p>
+                                                <p><?= $bill['email'] ?></p>
 
 
-                                                <p>+84332390286</p>
+                                                <p><?= $bill['tell'] ?></p>
 
                                             </div>
 
                                             <div class="col col--md-two">
                                                 <h2>Địa chỉ nhận hàng</h2>
-                                                <p>truong thai tu</p>
+                                                <p><?= $bill['name'] ?></p>
 
-                                                <p>Khu 10 Đại Phúc, Thành Phố Bắc Ninh, Bắc Ninh</p>
+                                                <p><?= $bill['address'] ?></p>
 
 
 
                                                 <p>Phường Láng Thượng, Quận Đống Đa, Hà Nội</p>
 
 
-                                                <p>+84332390286</p>
+                                                <p><?= $bill['tell'] ?></p>
 
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col col--md-two">
                                                 <h2>Phương thức thanh toán</h2>
-                                                <p>Thu hộ (COD)</p>
+                                                <p>Thu hộ</p>
                                             </div>
                                             <div class="col col--md-two">
                                                 <h2>Phương thức vận chuyển</h2>

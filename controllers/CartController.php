@@ -8,15 +8,15 @@ function cartAdd()
     // Kiểm tra xem là có product với cái ID kia không
 
 
-    $carts = cartItemAll($userID);
     if (!isset($_SESSION['cart'][$productID])) {
-        $_SESSION['cart'][$productID] = $carts;
-        $_SESSION['cart'][$productID]['quantity'] = $quantity;
         insert('cart_item', [
             'cart_id' => $_SESSION['cartID'],
             'pro_id' => $productID,
             'quantity' => $quantity
         ]);
+        $carts = cartItemOne($userID,$productID);
+        $_SESSION['cart'][$productID] = $carts;
+        $_SESSION['cart'][$productID]['quantity'] = $quantity;
         $flag = true;
     } else {
         $qtyTMP = $_SESSION['cart'][$productID]['quantity'] += $quantity;
@@ -45,7 +45,7 @@ function cartList()
     foreach ($fnames as $fname) {
         $brands[$fname['initial']] = ascBrand($fname['initial']);
     }
-    
+
     if (!empty($_SESSION['userm'])) {
         // $favs = listFav($_SESSION['userm']['id']);
         // foreach ($favs as $fav) {
