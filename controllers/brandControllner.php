@@ -1,6 +1,7 @@
 <?php
 function showBrand()
 {
+    $tittle = "Thương hiệu";
     $view = "viewAll/brand";
     $style = 'styles/brand';
     $active3d = 'active';

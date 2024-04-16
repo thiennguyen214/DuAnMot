@@ -1,9 +1,9 @@
 <?php
-function showyourCart()
+function showrePass()
 {
-    $tittle = "đơn hàng của bạn";
-    $view = "viewAll/yourCart";
-    $style = 'styles/yourCart';
+    $tittle = "Đổi mật khẩu";
+    $view = "viewAll/repass";
+    $style = 'styles/repass';
     // $script = 'scripts/home';
     // $dataUser = getAllUser();
     // debug($dataUser);
@@ -26,7 +26,6 @@ function showyourCart()
             $totalc += $_SESSION['cart'][$cart['pro_id']]['quantity'];
         }
     }
-
 
     require_once PATH_VIEW . '/layouts/master.php';
 

@@ -1,7 +1,7 @@
 <?php
 function showAddresses()
 {
-    $tittle = "sổ địa chỉ";
+    $tittle = "Sổ địa chỉ";
     $view = "viewAll/addresses";
     $style = 'styles/addresses';
     // $script = 'scripts/home';
