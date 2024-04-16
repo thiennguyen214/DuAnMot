@@ -28,7 +28,7 @@
                     <div class="content2">
                         <span>Mới nhất</span>
                     </div>
-                    <a class="button" href="collections/all.html" title="Mua ngay">Mua ngay</a>
+                    <a class="button" href="<?=BASE_URL ?>?act=products" title="Mua ngay">Mua ngay</a>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -57,7 +57,7 @@
                     <div class="content2">
                         <span>Xu hướng</span>
                     </div>
-                    <a class="button" href="collections/all.html" title="Mua ngay">Mua ngay</a>
+                    <a class="button" href="<?=BASE_URL ?>?act=products" title="Mua ngay">Mua ngay</a>
                 </div>
             </div>
         </div>

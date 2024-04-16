@@ -56,7 +56,7 @@
 				</svg>
 			</div>
 			<div class="col-lg-2 col-12 logo-war">
-				<a href="index.html" class="logo" title="Logo">
+				<a href="<?= BASE_URL ?>" class="logo" title="Logo">
 					<img width="240" height="109"
 						src="<?= BASE_URL ?>assets/client/bizweb.dktcdn.net/100/503/826/themes/932476/assets/logo02fb.png?1709175143725"
 						alt="Bean Perfume" />
@@ -215,17 +215,17 @@
 									<i class="fa fa-caret-down"></i>
 									<ul class="item_small">
 										<li>
-											<a class="" href="nuoc-hoa-nam.html" title="Nước hoa Nam">
+											<a class="" href="<?= BASE_URL ?>?act=Male" title="Nước hoa Nam">
 												Nước hoa Nam
 											</a>
 										</li>
 										<li>
-											<a class="" href="nuoc-hoa-nu.html" title="Nước hoa Nữ">
+											<a class="" href="<?= BASE_URL ?>?act=Female" title="Nước hoa Nữ">
 												Nước hoa Nữ
 											</a>
 										</li>
 										<li>
-											<a class="" href="nuoc-hoa-unisex.html" title="Nước hoa Unisex">
+											<a class="" href="<?= BASE_URL ?>?act=Unisex" title="Nước hoa Unisex">
 												Nước hoa Unisex
 											</a>
 										</li>
@@ -238,7 +238,7 @@
 									</a>
 								</li>
 
-								<li class="nav-item">
+								<li class="nav-item <?= (isset($active6)) ? $active6 : null ?>">
 									<a class="a-img a-index" href="<?= BASE_URL ?>?act=lienhe" title="Liên hệ">
 										Liên hệ
 									</a>
