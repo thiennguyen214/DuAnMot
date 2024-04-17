@@ -86,12 +86,20 @@ match ($act) {
 
     'reg' => showReg(),
 
+    // =======
+    'Male' => filter_proBySex(),
+    'Female' => filter_proBySex(),
+    'Unisex' => filter_proBySex(),
+
+
+
     'filter_prAZ' => filter_proAZ(),
     'filter_prZA' => filter_proAZ(),
     'filterProByPriceAsc' => filter_proByPrice(),
     'filterProByPriceDesc' => filter_proByPrice(),
     'filterProByCreatedAsc' => filter_proByCreated(),
     'filterProByCreatedDesc' => filter_proByCreated(),
+    'filter_brand' => filterProByBrand($_GET['id']),
 
 
     // 'ajax-Fav-update' => ajaxFavUpdate($_GET['userID'], $_GET['proID']),

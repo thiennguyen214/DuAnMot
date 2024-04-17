@@ -132,6 +132,75 @@ if (!function_exists('oldPro')) {
         }
     }
 }
+
+if (!function_exists('Male')) {
+    function Male()
+    {
+        try {
+            $sql = "SELECT * FROM products WHERE type_id = 1 ";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}
+
+if (!function_exists('Female')) {
+    function Female()
+    {
+        try {
+            $sql = "SELECT * FROM products WHERE type_id = 2 ";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}
+
+if (!function_exists('Unisex')) {
+    function Unisex()
+    {
+        try {
+            $sql = "SELECT * FROM products WHERE type_id = 3 ";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}
+
+if (!function_exists('filterByBrand')) {
+    function filterByBrand($brand_id)
+    {
+        try {
+            $sql = "SELECT * FROM products WHERE brand_id = :brand_id ";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+            $stmt->bindParam(":brand_id", $brand_id);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (\Exception $e) {
+            debug($e);
+        }
+    }
+}
+
 if (!function_exists('pricePro')) {
     function pricePro($min,$max)
     {
@@ -148,6 +217,8 @@ if (!function_exists('pricePro')) {
         }
     }
 }
+
+
 if (!function_exists('ascBrand')) {
     function ascBrand($fname)
     {

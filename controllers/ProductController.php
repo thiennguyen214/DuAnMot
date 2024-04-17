@@ -12,6 +12,7 @@ function showProduct()
     foreach ($fnames as $fname) {
         $brands[$fname['initial']] = ascBrand($fname['initial']);
     }
+    
     if (!empty($_SESSION['userm'])) {
         // $favs = listFav($_SESSION['userm']['id']);
         // foreach ($favs as $fav) {
@@ -133,6 +134,47 @@ function filter_proByCreated(){
         $products = oldPro();
     }
 
+
+    require_once PATH_VIEW . '/layouts/master.php';
+}
+
+function filter_proBySex(){
+    $view = "viewAll/filter_sex";
+    $style = "styles/product";
+    $active4 = "active";
+    $tittle = 'Sản phẩm';
+    
+    if ($_GET['act'] == 'Male') {
+        $products = Male();
+    }
+    if ($_GET['act'] == 'Female') {
+        $products = Female();
+    }
+
+    if ($_GET['act'] == 'Unisex') {
+        $products = Unisex();
+    }
+
+
+    require_once PATH_VIEW . '/layouts/master.php';
+}
+
+function filterProByBrand($id) {
+    $view = "viewAll/filter_proByBrand";
+    $style = "styles/product";
+    $active4 = "active";
+    $tittle = 'Sản phẩm';
+
+
+    $fnames = charter();
+    foreach ($fnames as $fname) {
+        $brands[$fname['initial']] = ascBrand($fname['initial']);
+    }
+    if ($_GET['act'] == 'filter_brand') {
+        $products = filterByBrand($id);
+    }
+
+    
 
     require_once PATH_VIEW . '/layouts/master.php';
 }

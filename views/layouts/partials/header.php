@@ -100,8 +100,8 @@
 															<ul class="level1">
 																<?php foreach ($brands[$fname['initial']] as $brand) { ?>
 																	<li class="level2">
-																		<a href="afnan.html"
-																			title="Afnan"><?= $brand['name'] ?></a>
+																		<a href="<?= BASE_URL ?>?act=filter_brand&id=<?= $brand['id']  ?>"
+																			title="<?= $brand['name'] ?>"><?= $brand['name'] ?></a>
 																	</li>
 																<?php } ?>
 															</ul>
@@ -217,17 +217,17 @@
 									<i class="fa fa-caret-down"></i>
 									<ul class="item_small">
 										<li>
-											<a class="" href="nuoc-hoa-nam.html" title="Nước hoa Nam">
+											<a class="" href="<?= BASE_URL ?>?act=Male" title="Nước hoa Nam">
 												Nước hoa Nam
 											</a>
 										</li>
 										<li>
-											<a class="" href="nuoc-hoa-nu.html" title="Nước hoa Nữ">
+											<a class="" href="<?= BASE_URL ?>?act=Female" title="Nước hoa Nữ">
 												Nước hoa Nữ
 											</a>
 										</li>
 										<li>
-											<a class="" href="nuoc-hoa-unisex.html" title="Nước hoa Unisex">
+											<a class="" href="<?= BASE_URL ?>?act=Unisex" title="Nước hoa Unisex">
 												Nước hoa Unisex
 											</a>
 										</li>
